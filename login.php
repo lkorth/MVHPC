@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) { // if form has been submitted
 
     // checks it against the database
     if (!get_magic_quotes_gpc()) {
-        $_POST['email'] = addslashes($_POST['email']);
+        $_POST['username'] = addslashes($_POST['username']);
     }
     $check = mysql_query("SELECT * FROM users WHERE username = '".$_POST['username']."'")or die(mysql_error());
 
