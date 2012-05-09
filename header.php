@@ -18,7 +18,7 @@
         <script type="text/javascript" src="tiny_mce/options.js"></script>
         <?php } ?>
         <?php if(!($upload!=null)) { ?>
-        <script type="text/javascript" src="lib/jquery.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type='text/javascript' src='lib/jquery.bgiframe.min.js'></script>
         <script type='text/javascript' src='lib/jquery.ajaxQueue.js'></script>
         <script type='text/javascript' src='lib/jquery.autocomplete.js'></script>
@@ -43,7 +43,7 @@
 	<script type="text/javascript" src="js/cookiesupport.js"></script>
 	<link href="js/googiespell.css" rel="stylesheet" type="text/css" media="all" />
 	<script type="text/javascript" src="js/prototype.js"></script>
-	<script type="text/javascript" src="lib/jquery.js"></script> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
         <script>
         var $j = jQuery.noConflict();
         function editfunction(id)
