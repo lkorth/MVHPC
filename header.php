@@ -19,11 +19,11 @@
         <?php } ?>
         <?php if(isset($upload) && !($upload!=null)) { ?>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type='text/javascript' src='lib/jquery.bgiframe.min.js'></script>
-        <script type='text/javascript' src='lib/jquery.ajaxQueue.js'></script>
-        <script type='text/javascript' src='lib/jquery.autocomplete.js'></script>
-        <script type='text/javascript' src='lib/inpage_script.js'></script>
-        <link rel="stylesheet" type="text/css" href="lib/jquery.autocomplete.css" />
+        <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
+        <script type='text/javascript' src='js/jquery.ajaxQueue.js'></script>
+        <script type='text/javascript' src='js/jquery.autocomplete.js'></script>
+        <script type='text/javascript' src='js/inpage_script.js'></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
         <?php }
         else { ?>
         <script type="text/javascript" src="source/mootools.js"></script>
