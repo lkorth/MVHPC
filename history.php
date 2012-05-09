@@ -1,6 +1,4 @@
 <?php
-//Database credentials
-include 'db.php';
 
 $title = "MVHPC :: History";
 include'header.php';

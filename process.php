@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 $data = $_POST['data'];
 //$data =  mysql_real_escape_string($data);

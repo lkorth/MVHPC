@@ -1,12 +1,10 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 $id = $_POST['id'];
 $updatedinfo = $_POST['info' . $id];
 $updatedtags = $_POST['tags' . $id];
 $updatedtags = strtolower($updatedtags);
-
 
 $query = "UPDATE search SET tags = '$updatedtags', information = '$updatedinfo' WHERE id = '$id'";
 mysql_query($query);

@@ -1,6 +1,4 @@
 <?php
-//Database credentials
-include 'db.php';
 
 $title = "Mount Vernon Historic Preservation Commision";
 include'header.php';

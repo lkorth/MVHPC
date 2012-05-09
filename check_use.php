@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require_once 'includes/master.inc.php';
 
 $id = $_GET['id'];
 $query="SELECT edit FROM search WHERE id = '$id'";

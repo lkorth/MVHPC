@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 if ($_GET['changetags'] != null) {
     $pagetype = "change_tags.php?";

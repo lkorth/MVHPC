@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 $id = $_GET['id'];
 $query="SELECT * FROM search WHERE id = '$id'";

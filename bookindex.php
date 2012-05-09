@@ -14,7 +14,6 @@ $upperLetter = strtoupper($letter);
 
 //require 'shared/header.php';
 require 'header.php';
-require 'db.php';
 
 echo '<div align="center">';
 $ct = 0;

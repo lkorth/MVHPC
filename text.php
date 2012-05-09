@@ -1,7 +1,6 @@
 <?php
 $title = "MVHPC :: History :: Text";
 $id = 5;
-require 'db.php';
 require 'header.php';
 $query="SELECT * FROM pages WHERE id = '$id'";
 $result=mysql_query($query);

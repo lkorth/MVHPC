@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 //Checks if there is a login cookie
 if(isset($_COOKIE['ID_my_site'])) {
@@ -60,9 +59,9 @@ if (isset($_POST['submit'])) { // if form has been submitted
 }
 else {
 // if they are not logged in
-    $title = "Login";
-    include 'header.php';
-    ?>
+$title = "Login";
+include 'header.php';
+?>
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
     <table align="center">
         <tr>

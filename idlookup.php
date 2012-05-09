@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 $q = strtolower($_GET["q"]);
 $q =  mysql_real_escape_string($q);

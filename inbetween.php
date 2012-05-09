@@ -1,6 +1,5 @@
 <?php
-//Database credentials
-include 'db.php';
+require_once 'includes/master.inc.php';
 
 //checks cookies to make sure they are logged in
 if(isset($_COOKIE['ID_my_site'])) {
