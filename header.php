@@ -116,7 +116,7 @@ var value = '';
     </head>
     <body>
             <div id="header">
-                <a href="index.php"><img src="assets/MVHPC-Logo800.jpg" border=0/></a>
+                <a href="index.php"><img src="images/header.jpg" border=0/></a>
             </div>
             <div id="container">
                 <div id="navbar">
