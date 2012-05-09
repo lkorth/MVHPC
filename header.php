@@ -26,12 +26,12 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
         <?php }
         else { ?>
-        <script type="text/javascript" src="source/mootools.js"></script>
-        <script type="text/javascript" src="source/Swiff.Uploader.js"></script>
-        <script type="text/javascript" src="source/Fx.ProgressBar.js"></script>
-        <script type="text/javascript" src="source/Lang.js"></script>
-        <script type="text/javascript" src="source/FancyUpload2.js"></script>
-        <script type="text/javascript" src="source/script.js"></script>
+        <script type="text/javascript" src="js/mootools.js"></script>
+        <script type="text/javascript" src="js/Swiff.Uploader.js"></script>
+        <script type="text/javascript" src="js/Fx.ProgressBar.js"></script>
+        <script type="text/javascript" src="js/Lang.js"></script>
+        <script type="text/javascript" src="js/FancyUpload2.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
         <?php } ?>
         <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
