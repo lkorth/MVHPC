@@ -17,7 +17,7 @@ if(isset($_COOKIE['ID_my_site'])) {
         //otherwise they are shown the admin area
         else {
             session_start();
-            if($_SESSION['redirect'] == 1) {
+            if(isset($_SESSION['redirect']) && $_SESSION['redirect'] == 1) {
                 $id = $_SESSION['id'];
                 session_destroy();
                 header ("Location: change_tags.php?id=$id");
