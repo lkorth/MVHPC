@@ -4,20 +4,20 @@
     <head>
         <meta content="text/html;charset=UTF-8" http-equiv="Content-type"/>
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
-       <?php if($upload!=null)
+       <?php if(isset($upload) && $upload!=null)
             echo $upload;
         ?>
-        <?php if ($delete == 1) { ?>
+        <?php if (isset($delete) && $delete == 1) { ?>
         <script type="text/javascript" src="js/delete.js"></script>
         <?php } ?>
-        <?php if ($update == 1) { ?>
+        <?php if (isset($update) && $update == 1) { ?>
         <script type="text/javascript" src="js/update.js"></script>
         <?php } ?>
-        <?php if ($tag != 1) { ?>
+        <?php if (isset($tag) && $tag != 1) { ?>
         <script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
         <script type="text/javascript" src="tiny_mce/options.js"></script>
         <?php } ?>
-        <?php if(!($upload!=null)) { ?>
+        <?php if(isset($upload) && !($upload!=null)) { ?>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type='text/javascript' src='lib/jquery.bgiframe.min.js'></script>
         <script type='text/javascript' src='lib/jquery.ajaxQueue.js'></script>
@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
         <title><?php echo $title; ?></title>
         <script type="text/javascript" src="js/magiczoom.js"></script>
-        <?php if($all == 1) { ?>
+        <?php if(isset($all) && $all == 1) { ?>
         <script type="text/javascript" src="js/AJS.js"></script>
 	<script type="text/javascript" src="js/googiespell.js"></script>
 	<script type="text/javascript" src="js/cookiesupport.js"></script>
@@ -74,7 +74,7 @@ var value = '';
         <script type="text/javascript" src="js/lightbox.js"></script>
         <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
        <?php  } ?>
-       <?php if ($change == 1) { ?>
+       <?php if (isset($change) && $change == 1) { ?>
       <script>
         var $j = jQuery.noConflict();
         function editfunction(id)
@@ -143,7 +143,7 @@ var value = '';
   				</li>
 			</ul>
                             <div id="search">
-                                <?php if (!($upload != null)) { ?>
+                                <?php if (isset($upload) && !($upload != null)) { ?>
                                         <form enctype="multipart/form-data" action="search.php" method="GET" autocomplete="off">
                                             <input type="hidden" value="1" name="page" />
                                             <input name="terms" type="text" id="global"/>
