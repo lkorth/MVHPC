@@ -1,3 +1,6 @@
+<?php
+require 'includes/master.inc.php';
+?>
 <!doctype html>
 <html lang="en">
     <head>
