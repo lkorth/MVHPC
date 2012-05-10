@@ -1,28 +1,17 @@
 <?php
 require_once 'includes/master.inc.php';
 
-//checks cookies to make sure they are logged in
-if(isset($_COOKIE['ID_my_site'])) {
-    $username = $_COOKIE['ID_my_site'];
-    $pass = $_COOKIE['Key_my_site'];
-    $check = mysql_query("SELECT * FROM users WHERE username = '$username'")or die(mysql_error());
-    while($info = mysql_fetch_array( $check )) {
+$Auth->requireUser();
 
-    //if the cookie has the wrong password, they are taken to the login page
-        if ($pass != $info['password']) { header("Location: login.php");
-        }
-
-        //otherwise they are shown the admin area
-        else {
-            $upload ="
+$upload = "
 <link rel=\"stylesheet\" type=\"text/css\" href=\"css/uploadstyle.css\" />
 	<link rel=\"stylesheet\" href=\"css/screen.css\" type=\"text/css\" media=\"screen, projection\">
 	<link rel=\"stylesheet\" href=\"css/print.css\" type=\"text/css\" media=\"print\">
 	<!--[if IE]><link rel=\"stylesheet\" href=\"css/ie.css\" type=\"text/css\" media=\"screen, projection\"><![endif]-->
 	";
-            $title = "Upload Files";
-            include 'header.php';
-            ?>
+$title = "Upload Files";
+include 'header.php';
+?>
 <br />
 <div align="center">
     <form action="upload.php" method="post" enctype="multipart/form-data" id="form-demo">
@@ -30,10 +19,10 @@ if(isset($_COOKIE['ID_my_site'])) {
         <fieldset id="demo-fallback">
             <legend>File Upload</legend>
             <p>
-			We were not able to load the multiple picture upload manager, please upload one picture at a time.
+                We were not able to load the multiple picture upload manager, please upload one picture at a time.
             </p>
             <label for="demo-photoupload">
-			Upload a Photo:
+                Upload a Photo:
                 <input type="file" name="Filedata" />
             </label>
         </fieldset>
@@ -85,15 +74,3 @@ if(isset($_COOKIE['ID_my_site'])) {
 </div>
 </body>
 </html>
-        <?php
-
-        }
-    }
-}
-else
-
-//if the cookie does not exist, they are taken to the login screen
-{
-    header("Location: login.php");
-}
-?> 
