@@ -44,64 +44,10 @@ require_once 'includes/master.inc.php';
 <?php if (isset($all) && $all == 1) { ?>
             <script type="text/javascript" src="js/prototype.js"></script>
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script> 
-            <script>
-                var $j = jQuery.noConflict();
-                function editfunction(id)
-                {
-                    var value = '';
-                    $j.ajax({    //create an ajax request to check_use.php
-                        type: "GET",
-                        url: "check_use.php",
-                        data: 'id='+id,  //with the id as a parameter
-                        dataType: value,
-                        success: function(msg){
-                            if(parseInt(msg)==1){  //if no errors make text areas editable 
-                                alert('You may now begin editing this item. You have 1 hour to edit it before your changes are discarded');
-                                var info = 'info' + id;
-                                var tags = 'tags' + id;
-                                document.form[info].readOnly = false;
-                                document.form[tags].readOnly = false;
-                                document.getElementById('button' + id).style.visibility='visible';
-                            }
-                            else if(parseInt(msg)==0){
-                                alert('Someone else is editing this item at this time.  Please come back later.  This item will be available in 1 hour or less.'); 
-                            }
-                        }
-                    });
-                }
-            </script>
             <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
             <script type="text/javascript" src="js/lightbox.js"></script>
             <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
         <?php } ?>
-<?php if (isset($change) && $change == 1) { ?>
-            <script>
-                var $j = jQuery.noConflict();
-                function editfunction(id)
-                {
-                    var value = '';
-                    $j.ajax({    //create an ajax request to check_use.php
-                        type: "GET",
-                        url: "check_use.php",
-                        data: 'id='+id,  //with the id as a parameter
-                        dataType: value,
-                        success: function(msg){
-                            if(parseInt(msg)==1){  //if no errors make text areas editable 
-                                alert('You may now begin editing this item. You have 1 hour to edit it before your changes are discarded');
-                                var info = 'info' + id;
-                                var tags = 'tags' + id;
-                                document.form[info].readOnly = false;
-                                document.form[tags].readOnly = false;
-                                document.getElementById('button' + id).style.visibility='visible';
-                            }
-                            else if(parseInt(msg)==0){
-                                alert('Someone else is editing this item at this time.  Please come back later.  This item will be available in 1 hour or less.'); 
-                            }
-                        }
-                    });
-                }
-            </script> 
-<?php } ?>
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-23828542-1']);
