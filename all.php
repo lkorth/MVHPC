@@ -51,16 +51,6 @@ while ($i < $finish) {
 	  <input type=button value=\"Update\" onClick=\"updatefunction($id)\">
 	  <input type=button id=\"$button\" class=\"button\" value=\"Delete\" onClick=\"deletefunction($id)\">
 	  </td></tr><tr><td><br><br></td></tr>";
-    //echo "<script type=\"text/javascript\">";
-    //echo "var googie_" . $pictags . " = new GoogieSpell(\"js/\", \"https://www.google.com/tbproxy/spell?lang=\");";
-    //echo "googie_" . $pictags . ".setLanguages({'en': 'English'});";
-    //echo "googie_" . $pictags . ".dontUseCloseButtons();";
-    //echo "googie_" . $pictags . ".decorateTextarea(\"". $pictags . "\");";
-    //echo "var googie_" . $picinfo . "= new GoogieSpell(\"js/\", \"https://www.google.com/tbproxy/spell?lang=\");";
-    //echo "googie_" . $picinfo . ".setLanguages({'en': 'English'});";
-    //echo "googie_" . $picinfo . ".dontUseCloseButtons();";
-    // echo "googie_" . $picinfo . ".decorateTextarea(\"" . $picinfo . "\");";
-    // echo "</script>";
 }
 echo "</form>";
 echo "</table>";

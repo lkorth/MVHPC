@@ -42,10 +42,6 @@ require_once 'includes/master.inc.php';
         <title><?php echo $title; ?></title>
         <script type="text/javascript" src="js/magiczoom.js"></script>
 <?php if (isset($all) && $all == 1) { ?>
-            <script type="text/javascript" src="js/AJS.js"></script>
-            <script type="text/javascript" src="js/googiespell.js"></script>
-            <script type="text/javascript" src="js/cookiesupport.js"></script>
-            <link href="js/googiespell.css" rel="stylesheet" type="text/css" media="all" />
             <script type="text/javascript" src="js/prototype.js"></script>
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script> 
             <script>
