@@ -15,8 +15,8 @@
         // Each array item should be a regular expression. This gives you the option to detect a whole range
         // of server names if needed. Otherwise, you can simply detect a single server like '/^servername\.com$/'
         private $productionServers = array('/^mvhpc\.org$/');
-        private $stagingServers    = array('/^localhost.*$/');
-        private $localServers      = array();
+        private $stagingServers    = array('/^testdomain.*$/');
+        private $localServers      = array('/^localhost.*$/');
 
         // Standard Config Options...
 
@@ -82,7 +82,7 @@
 
             // Settings for the Auth class
             $this->authDomain = $_SERVER['HTTP_HOST'];
-            $this->authSalt   = '';
+            $this->authSalt   = "S&I'>6;R~6+!IBK3RWI8MpPr,WTuW=,`}Q*2+f*u|O.amX1`M.";
         }
 
         // Add code/variables to be run only on production servers
@@ -109,7 +109,7 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '');
+            define('WEB_ROOT', '/mvhpc/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
@@ -128,13 +128,13 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '');
+            define('WEB_ROOT', '/mvhpc/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
-            $this->dbName          = '';
-            $this->dbReadUsername  = '';
-            $this->dbWriteUsername = '';
+            $this->dbName          = 'mvhpcorg_main';
+            $this->dbReadUsername  = 'root';
+            $this->dbWriteUsername = 'root';
             $this->dbReadPassword  = '';
             $this->dbWritePassword = '';
             $this->dbOnError       = 'die';
