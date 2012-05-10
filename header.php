@@ -6,11 +6,15 @@ require_once 'includes/master.inc.php';
     <head>
         <meta content="text/html;charset=UTF-8" http-equiv="Content-type"/>
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
+        <?php if (isset($upload) && $upload != null) { ?>
+            <link rel="stylesheet" type="text/css" href="css/uploadstyle.css" />
+            <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+            <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+            <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php
-        if (isset($upload) && $upload != null)
-            echo $upload;
-        ?>
-        <?php if (isset($delete) && $delete == 1) { ?>
+        }
+        if (isset($delete) && $delete == 1) {
+            ?>
             <script type="text/javascript" src="js/delete.js"></script>
         <?php } ?>
         <?php if (isset($update) && $update == 1) { ?>
@@ -20,7 +24,7 @@ require_once 'includes/master.inc.php';
             <script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
             <script type="text/javascript" src="tiny_mce/options.js"></script>
         <?php } ?>
-<?php if (isset($upload) && !($upload != null)) { ?>
+<?php if (!isset($upload)) { ?>
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
             <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
             <script type='text/javascript' src='js/jquery.ajaxQueue.js'></script>

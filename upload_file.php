@@ -3,12 +3,7 @@ require_once 'includes/master.inc.php';
 
 $Auth->requireUser();
 
-$upload = "
-<link rel=\"stylesheet\" type=\"text/css\" href=\"css/uploadstyle.css\" />
-	<link rel=\"stylesheet\" href=\"css/screen.css\" type=\"text/css\" media=\"screen, projection\">
-	<link rel=\"stylesheet\" href=\"css/print.css\" type=\"text/css\" media=\"print\">
-	<!--[if IE]><link rel=\"stylesheet\" href=\"css/ie.css\" type=\"text/css\" media=\"screen, projection\"><![endif]-->
-	";
+$upload = 1;
 $title = "Upload Files";
 include 'header.php';
 ?>
