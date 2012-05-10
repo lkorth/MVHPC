@@ -89,13 +89,13 @@ require_once 'includes/master.inc.php';
                     </li>
                 </ul>
                 <div id="search">
-<?php if (!isset($upload)) { ?>
+                    <?php if (!isset($upload)) { ?>
                         <form enctype="multipart/form-data" action="search.php" method="GET" autocomplete="off">
                             <input type="hidden" value="1" name="page" />
                             <input name="terms" type="text" id="global"/>
                             <input type="submit" value="Search" />
                         </form>
-<?php } ?>
+                    <?php } ?>
                 </div>
                 <div id="clear"></div>
             </div>
