@@ -35,10 +35,11 @@ function editfunction(id)
                 var tags = 'tags' + id; 
                 document.form[info].readOnly = false;
                 document.form[tags].readOnly = false;
+                document.getElementById('button' + id).style.visibility='visible';
             }
             else if(parseInt(msg)==0){
                 alert('Someone else is editing this item at this time.  Please come back later.  This item will be available in 1 hour or less.'); 
             }
         }
     });
-}
+}        
