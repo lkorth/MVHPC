@@ -21,7 +21,7 @@ require_once 'includes/master.inc.php';
             <script type="text/javascript" src="tiny_mce/options.js"></script>
         <?php } ?>
 <?php if (isset($upload) && !($upload != null)) { ?>
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
             <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
             <script type='text/javascript' src='js/jquery.ajaxQueue.js'></script>
             <script type='text/javascript' src='js/jquery.autocomplete.js'></script>
@@ -46,7 +46,7 @@ require_once 'includes/master.inc.php';
             <script type="text/javascript" src="js/cookiesupport.js"></script>
             <link href="js/googiespell.css" rel="stylesheet" type="text/css" media="all" />
             <script type="text/javascript" src="js/prototype.js"></script>
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+            <script type="text/javascript" src="js/jquery-1.7.2.js"></script> 
             <script>
                 var $j = jQuery.noConflict();
                 function editfunction(id)
