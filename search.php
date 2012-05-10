@@ -15,7 +15,7 @@ $terms=$_GET['terms'];
 $title = "Search of " . $terms;
 $terms=strtolower($terms);
 include 'header.php';
-echo "<br />";
+echo "<br>";
 
 $query = "SELECT thumbnail,id MATCH(tags, information) AGAINST('$terms') AS score FROM search WHERE MATCH(tags, information) AGAINST('$terms') ORDER BY score DESC, views DESC"; 
 $result=mysql_query($query);
@@ -57,7 +57,7 @@ if($num == 0) {
             $i=(($page-1)*25);
         }
     if($num != 0){
-    	echo "<p>Your search returned " . $num . " results</p><br />";
+    	echo "<p>Your search returned " . $num . " results</p><br>";
     }
     $i24 = $i + 25;
     while ($i < $num && $i < $i24) {
@@ -85,7 +85,7 @@ if($needed > 1) {
     $next = $page +1;
     $space = str_replace(" ", "+", $terms);
     echo "<div>";
-    echo "<br />";
+    echo "<br>";
     if($page > 1) {
         $pre = $page -1 ;
         echo "<a href=\"search.php?page=$pre&terms=$space&changetags=$cgtags\"/><=Prevous Page=</a>";
@@ -104,7 +104,7 @@ if($needed > 1) {
     if($page < $needed) {
         echo "<a href=\"search.php?page=$next&terms=$space&changetags=$cgtags\"/>=Next Page=></a>";
     }
-    echo "<br />";
+    echo "<br>";
     echo "</div>";
 }
 include 'footer.php';

@@ -10,7 +10,7 @@ include 'header.php';
     <tr>
     <tr>
         <td>
-    <tr><td><h3>Welcome<br />
+    <tr><td><h3>Welcome<br>
                 What would you like to do?</h3></td></tr>
     <tr><td><a href="upload_file.php">Upload Files</a></td></tr>
     <tr><td><a href="select_to_change.php">Change Tags</a></td></tr>
@@ -22,9 +22,9 @@ include 'header.php';
 </tr>
 </table>
 </div>
-<br />
+<br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br />
+    <p><a href="login.php">Manage site</a><br>
 </div>
 </div>
 </div>

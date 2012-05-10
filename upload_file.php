@@ -7,7 +7,7 @@ $upload = 1;
 $title = "Upload Files";
 include 'header.php';
 ?>
-<br />
+<br>
 <div align="center">
     <form action="upload.php" method="post" enctype="multipart/form-data" id="form-demo">
 
@@ -29,11 +29,11 @@ include 'header.php';
                 <a href="#" id="demo-upload">Start Upload</a>
             </p>
             <div>
-                <strong class="overall-title"></strong><br />
+                <strong class="overall-title"></strong><br>
                 <img src="images/progress-bar/bar.gif" class="progress overall-progress" />
             </div>
             <div>
-                <strong class="current-title"></strong><br />
+                <strong class="current-title"></strong><br>
                 <img src="images/progress-bar/bar.gif" class="progress current-progress" />
             </div>
             <div class="current-text">
@@ -45,25 +45,25 @@ include 'header.php';
     </form>
 </div>
 <div>
-    <br />
+    <br>
 </div>
 <div>
-    <br />
+    <br>
 </div>
 <div>
-    <br />
+    <br>
 </div>
-<p align="center">Please browse and select all the files you wish to upload and click upload.<br />  After the upload has finished click on the next page button to tag the files.</p>
+<p align="center">Please browse and select all the files you wish to upload and click upload.<br>  After the upload has finished click on the next page button to tag the files.</p>
 <div>
-    <br />
+    <br>
 </div>
 <div align="center">
     <form action="common_tag.php" method="post" enctype="multipart/form-data" id="nextpage">
         <input type="submit" value="Next Page" />
 </div>
-<br />
+<br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br />
+    <p><a href="login.php">Manage site</a><br>
 </div>
 </div>
 </div>

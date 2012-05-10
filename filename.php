@@ -5,7 +5,7 @@ $title = "Filename Search: " . $terms;
 $terms = ereg_replace("[^A-Za-z0-9]", " ", $terms);
 $terms = strtolower($terms);
 include 'header.php';
-echo "<br />";
+echo "<br>";
 $query = "SELECT thumbnail,id MATCH(location) AGAINST('$terms') AS score FROM search WHERE MATCH(location) AGAINST('$terms') ORDER BY score DESC, views DESC";
 $result = mysql_query($query);
 if (!($result == false)) {

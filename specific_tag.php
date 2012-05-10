@@ -7,7 +7,7 @@ $ctags = "mount vernon ; " . $_POST['ctags'] . " ;";
 $title = "Enter Specific Tags";
 $tag = 1;
 include 'header.php';
-echo "<br />";
+echo "<br>";
 echo "<table align=\"center\">";
 $mydir = dir('./tmp');
 echo "<form action=\"move_and_tag.php\" method=\"post\" enctype=\"multipart/form-data\">";
@@ -23,8 +23,8 @@ while (($file = $mydir->read()) !== false) {
             $file = $file_name . "_thumbnail" . "." . $file_ext;
             $pictags = "Tags_" . $file_name;
             $picinfo = "Info_" . $file_name;
-            echo "<tr><td><br /><br /><img src='tmp/$file'/></td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea name=\"$pictags\" rows=\"5\" cols=\"40\">$ctags</textarea></td></tr>
-	<tr><td></td><td align=\"right\"><p>Information:</p> <textarea name=\"$picinfo\" rows=\"5\" cols=\"40\"></textarea></td></tr><tr><td><br /><br /></td></tr>";
+            echo "<tr><td><br><br><img src='tmp/$file'/></td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea name=\"$pictags\" rows=\"5\" cols=\"40\">$ctags</textarea></td></tr>
+	<tr><td></td><td align=\"right\"><p>Information:</p> <textarea name=\"$picinfo\" rows=\"5\" cols=\"40\"></textarea></td></tr><tr><td><br><br></td></tr>";
         }
     }
 }
@@ -33,9 +33,9 @@ echo "<tr><td></td><td><input type=\"submit\" value=\"Submit\" /></form></td>";
 echo "</table>";
 ?>
 </div>
-<br />
+<br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br />
+    <p><a href="login.php">Manage site</a><br>
 </div>
 </div>
 </div>

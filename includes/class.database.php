@@ -260,9 +260,9 @@
 
             if($this->onError == 'die')
             {
-                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Read Database Error:</strong><br/>" . mysql_error($this->readDB) . "</p>";
-                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Write Database Error:</strong><br/>" . mysql_error($this->writeDB) . "</p>";
-                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Last Query:</strong><br/>" . $this->lastQuery() . "</p>";
+                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Read Database Error:</strong><br>" . mysql_error($this->readDB) . "</p>";
+                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Write Database Error:</strong><br>" . mysql_error($this->writeDB) . "</p>";
+                echo "<p style='border:5px solid red;background-color:#fff;padding:5px;'><strong>Last Query:</strong><br>" . $this->lastQuery() . "</p>";
                 echo "<pre>";
                 debug_print_backtrace();
                 echo "</pre>";

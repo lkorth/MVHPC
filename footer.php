@@ -3,7 +3,7 @@
     <?php
     if ($Auth->loggedIn()) {
         ?>
-        <p><a href="login.php">Manage site</a><br />
+        <p><a href="login.php">Manage site</a><br>
             <?php if (isset($id)) { ?>
                 <a href="edit.php?id=<?php echo $id; ?>">Edit this Page</a></p>
             <?php
@@ -23,6 +23,6 @@
         ?>
 </div>
 </div>
-<br />
+<br>
 </body>
 </html>

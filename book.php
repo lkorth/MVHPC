@@ -107,7 +107,7 @@ echo "<br>";
 echo "<div id=\"loadPage\" class=\"loadingPage\"><img src=\"$path\" id=\"innerPage\" width=\"762px\" height=\"930px\"/></div>";
 //echo "</a>";
 //echo "<p>Click the picture to turn on zooming</p>";
-echo "<br />";
+echo "<br>";
 echo '<a href="#prev" onClick="prev()"><=Previous Page==</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 echo '<select id="pageSelect" onChange="changePage()">';
 for($p = 1; $p < 294; $p++){

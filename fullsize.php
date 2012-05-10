@@ -24,13 +24,13 @@ list($width, $height) = getimagesize("$mid");
 $width = $width . "px";
 $height = $height . "px";
 include 'header.php';
-echo "<br />";
+echo "<br>";
 echo "<a href=\"$medlg\" class=\"MagicZoom\" rel=\"click-to-initialize:true;zoom-position:inner;zoom-fade:true;\"><img src=\"$mid\"/></a>";
 echo "<p>Click the picture to turn on zooming</p>";
-echo "<br /><br />";
+echo "<br><br>";
 echo "<p>$information</p>";
-echo "<br /><br />";
-echo "<a href=\"$location\">Click here for full resolution picture (Warning some pictures are VERY large)</a><br />";
+echo "<br><br>";
+echo "<a href=\"$location\">Click here for full resolution picture (Warning some pictures are VERY large)</a><br>";
 echo "<a href=\"feedback.php?id=$id\">Click here to request tag update</a>";
 include 'footer.php';
 ?>

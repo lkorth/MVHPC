@@ -16,9 +16,9 @@ include 'header.php';
     </form>
 </table>
 </div>
-<br />
+<br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br />
+    <p><a href="login.php">Manage site</a><br>
 </div>
 </div>
 </div>
