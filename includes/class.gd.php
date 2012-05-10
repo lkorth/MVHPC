@@ -41,7 +41,7 @@
             $this->type   = image_type_to_extension($info[2], false);
             $this->mime   = $info['mime'];
 
-            if($this->type == 'jpeg' && (imagetypes() & IMG_JPG))
+            if(($this->type == 'jpeg' || $this->type == 'jpg') && (imagetypes() & IMG_JPG))
                 $this->im = imagecreatefromjpeg($filename);
             elseif($this->type == 'png' && (imagetypes() & IMG_PNG))
                 $this->im = imagecreatefrompng($filename);
@@ -61,7 +61,7 @@
 
         public function saveAs($filename, $type = 'jpg', $quality = 75)
         {
-            if($type == 'jpg' && (imagetypes() & IMG_JPG))
+            if(($type == 'jpg' || $type == 'jpeg') && (imagetypes() & IMG_JPG))
                 return imagejpeg($this->im, $filename, $quality);
             elseif($type == 'png' && (imagetypes() & IMG_PNG))
                 return imagepng($this->im, $filename);
