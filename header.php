@@ -6,22 +6,7 @@ require_once 'includes/master.inc.php';
     <head>
         <meta content="text/html;charset=UTF-8" http-equiv="Content-type"/>
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
-        <?php if (isset($upload) && $upload != null) { ?>
-            <link rel="stylesheet" type="text/css" href="css/uploadstyle.css" />
-            <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
-            <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
-            <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
-        <?php
-        }
-        if ((isset($delete) && $delete == 1) || (isset($update) && $update == 1)) {
-            ?>
-            <script type="text/javascript" src="js/functions.js"></script>
-        <?php } ?>
-<?php if (isset($tag) && $tag != 1) { ?>
-            <script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
-            <script type="text/javascript" src="tiny_mce/options.js"></script>
-        <?php } ?>
-<?php if (!isset($upload)) { ?>
+        <?php if (!isset($upload)) { ?>
             <!-- need a jquery lightbox -->
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
             <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
@@ -29,6 +14,10 @@ require_once 'includes/master.inc.php';
             <script type='text/javascript' src='js/jquery.autocomplete.js'></script>
             <script type='text/javascript' src='js/inpage_script.js'></script>
             <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
+            <script type="text/javascript" src="js/functions.js"></script>
+            <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
+            <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
+            <script type="text/javascript" src="js/magiczoom.js"></script>
         <?php } else {
             ?>
             <script type="text/javascript" src="js/mootools.js"></script>
@@ -37,12 +26,12 @@ require_once 'includes/master.inc.php';
             <script type="text/javascript" src="js/Lang.js"></script>
             <script type="text/javascript" src="js/FancyUpload2.js"></script>
             <script type="text/javascript" src="js/script.js"></script>
-<?php } ?>
-        <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
-        <title><?php echo $title; ?></title>
-        <script type="text/javascript" src="js/magiczoom.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/uploadstyle.css" />
+            <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+            <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+            <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php } ?>
+        <title><?php echo $title; ?></title>
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-23828542-1']);
