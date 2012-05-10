@@ -7,9 +7,39 @@
 # Note: If you're having trouble making Apache pickup your .htaccess file,
 # make sure AllowOverride is set to "All" instead of "None".
 
-# RewriteEngine On
-# RewriteBase /
+RewriteEngine On
+RewriteBase /
 
-# RewriteCond %{REQUEST_FILENAME} !-f # If not a file...
-# RewriteCond %{REQUEST_FILENAME} !-d # and not a directory...
-# RewriteRule . /index.php [L]        # serve index.php
+RewriteCond %{REQUEST_FILENAME} !-f # If not a file...
+RewriteCond %{REQUEST_FILENAME} !-d # and not a directory...
+RewriteRule . /index.php [L]        # serve index.php
+
+# ----------------------------------------------------------------------
+# Prevent 404 errors for non-existing redirected folders
+# ----------------------------------------------------------------------
+
+# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist 
+#   e.g. /blog/hello : webmasterworld.com/apache/3808792.htm
+
+Options -MultiViews 
+
+
+# ----------------------------------------------------------------------
+# Custom 404 page
+# ----------------------------------------------------------------------
+
+# You can add custom pages to handle 500 or 403 pretty easily, if you like.
+ErrorDocument 404 /error/404.php
+ErrorDocument 500 /error/500.php
+ErrorDocument 403 /error/403.php
+
+
+# ----------------------------------------------------------------------
+# UTF-8 encoding
+# ----------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
