@@ -22,7 +22,7 @@ window.addEvent('domready', function() { // wait for the content
 		
         // remove that line to select all files, or edit it, add more items
         typeFilter: {
-            'Media: (*.jpg, *.jpeg, *.gif, *.pdf)': '*.jpg; *.jpeg; *.gif; *.pdf'
+            'Media: (*.jpg, *.jpeg, *.gif, *.png)': '*.jpg; *.jpeg; *.gif; *.png'
         },
 		
         // this is our browse button, *target* is overlayed with the Flash movie
