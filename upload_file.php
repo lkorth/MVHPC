@@ -35,11 +35,11 @@ include 'header.php';
             </p>
             <div>
                 <strong class="overall-title"></strong><br />
-                <img src="assets/progress-bar/bar.gif" class="progress overall-progress" />
+                <img src="images/progress-bar/bar.gif" class="progress overall-progress" />
             </div>
             <div>
                 <strong class="current-title"></strong><br />
-                <img src="assets/progress-bar/bar.gif" class="progress current-progress" />
+                <img src="images/progress-bar/bar.gif" class="progress current-progress" />
             </div>
             <div class="current-text">
             </div>

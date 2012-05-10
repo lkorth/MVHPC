@@ -17,7 +17,7 @@
 }
 
 #demo-status .progress {
-	background: url(../assets/progress-bar/progress.gif) no-repeat;
+	background: url(../images/progress-bar/progress.gif) no-repeat;
 	background-position: +50% 0;
 	margin-right: 0.5em;
 	vertical-align: middle;
