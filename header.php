@@ -22,6 +22,7 @@ require_once 'includes/master.inc.php';
             <script type="text/javascript" src="tiny_mce/options.js"></script>
         <?php } ?>
 <?php if (!isset($upload)) { ?>
+            <!-- need a jquery lightbox -->
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
             <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
             <script type='text/javascript' src='js/jquery.ajaxQueue.js'></script>
@@ -41,12 +42,6 @@ require_once 'includes/master.inc.php';
         <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
         <title><?php echo $title; ?></title>
         <script type="text/javascript" src="js/magiczoom.js"></script>
-<?php if (isset($all) && $all == 1) { ?>
-            <script type="text/javascript" src="js/prototype.js"></script>
-            <script type="text/javascript" src="js/jquery-1.7.2.js"></script> 
-            <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
-            <script type="text/javascript" src="js/lightbox.js"></script>
-            <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
         <?php } ?>
         <script type="text/javascript">
             var _gaq = _gaq || [];
