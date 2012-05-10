@@ -1,7 +1,7 @@
 <?PHP
     class Auth
     {
-        const SALT = 'insert some random text here';
+        const SALT = "S&I'>6;R~6+!IBK3RWI8MpPr,WTuW=,`}Q*2+f*u|O.amX1`M.";
 
         private static $me;
 
