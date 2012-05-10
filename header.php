@@ -13,12 +13,9 @@ require_once 'includes/master.inc.php';
             <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php
         }
-        if (isset($delete) && $delete == 1) {
+        if ((isset($delete) && $delete == 1) || (isset($update) && $update == 1)) {
             ?>
-            <script type="text/javascript" src="js/delete.js"></script>
-        <?php } ?>
-        <?php if (isset($update) && $update == 1) { ?>
-            <script type="text/javascript" src="js/update.js"></script>
+            <script type="text/javascript" src="js/functions.js"></script>
         <?php } ?>
 <?php if (isset($tag) && $tag != 1) { ?>
             <script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>
