@@ -320,7 +320,7 @@
 
         private function sendToLoginPage()
         {
-            $url = $this->loginUrl;
+            $url = WEB_ROOT . $this->loginUrl;
 
             $full_url = full_url();
             if(strpos($full_url, 'logout') === false)

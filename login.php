@@ -5,7 +5,6 @@ if ($Auth->loggedIn())
     redirect(WEB_ROOT . 'action.php');
 
 if (!empty($_POST['username'])) {
-    echo 'Checking username';
     if ($Auth->login($_POST['username'], $_POST['password'])) {
         if (isset($_REQUEST['r']) && strlen($_REQUEST['r']) > 0)
             redirect($_REQUEST['r']);
