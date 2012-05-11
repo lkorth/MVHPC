@@ -78,7 +78,7 @@
         private function everywhere()
         {
             // Store sesions in the database?
-            $this->useDBSessions = true;
+            $this->useDBSessions = false;
 
             // Settings for the Auth class
             $this->authDomain = $_SERVER['HTTP_HOST'];
