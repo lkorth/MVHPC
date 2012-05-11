@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/master.inc.php';
+require_once $level . 'includes/master.inc.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -7,17 +7,9 @@ require_once '../includes/master.inc.php';
         <meta content="text/html;charset=UTF-8" http-equiv="Content-type"/>
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
         <?php if (!isset($upload)) { ?>
-            <!-- need a jquery lightbox -->
-            <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-            <script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
-            <script type='text/javascript' src='js/jquery.ajaxQueue.js'></script>
-            <script type='text/javascript' src='js/jquery.autocomplete.js'></script>
-            <script type='text/javascript' src='js/inpage_script.js'></script>
-            <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
-            <script type="text/javascript" src="js/functions.js"></script>
-            <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
-            <link rel="stylesheet" href="css/magiczoom.css" type="text/css" />
-            <script type="text/javascript" src="js/magiczoom.js"></script>
+            <!-- need a jquery lightbox, spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
+            <script type="text/javascript" src="<?php WEBROOT() ?>min/?b=js&f=jquery-1.7.2.js,jquery.bgiframe.min.js,jquery.ajaxQueue.js,jquery.autocomplete.js,inpage_script.js,functions.js,magiczoom.js&1234"></script>
+            <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>min/?b=css&f=jquery.autocomplete.css,magiczoom.css,silhouette.css&1234" />
         <?php } else {
             ?>
             <script type="text/javascript" src="js/mootools.js"></script>
