@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,21 +55,21 @@ require_once 'includes/master.inc.php';
                     <li><a href="index.php">Home</a></li>
                 </ul>
                 <ul>
-                    <li><a href="districts.php">Districts</a></li>
+                    <li><a href="pages/districts.php">Districts</a></li>
                 </ul>
                 <ul>
-                    <li><a href="history.php">History</a>
+                    <li><a href="pages/history.php">History</a>
                         <ul>
-                            <li><a href="text.php">Text</a></li>
-                            <li><a href="images.php">Images</a></li>
+                            <li><a href="pages/text.php">Text</a></li>
+                            <li><a href="pages/images.php">Images</a></li>
                         </ul> 
                     </li>
                 </ul>
                 <ul>
-                    <li><a href="about.php">About Us</a>
+                    <li><a href="pages/about-us.php">About Us</a>
                         <ul>
-                            <li><a href="links.php">Links</a></li>
-                            <li><a href="design_review.php">Design Review</a></li>
+                            <li><a href="pages/links.php">Links</a></li>
+                            <li><a href="pages/design-review.php">Design Review</a></li>
                         </ul> 
                     </li>
                 </ul>
