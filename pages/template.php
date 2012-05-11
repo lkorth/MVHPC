@@ -1,5 +1,6 @@
 <?php
 
+$level = '../';
 include '../shared/header.php';
 
 $result = mysql_query("SELECT * FROM pages WHERE id = '$id'");

@@ -1,5 +1,6 @@
 <?php
 $title = "Mount Vernon Historic Preservation Commision";
+$level = '';
 include 'shared/header.php';
 ?>
 <div style="width:100px; float:left; padding: 8px">
