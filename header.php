@@ -29,6 +29,7 @@ require_once 'includes/master.inc.php';
             <link rel="stylesheet" type="text/css" href="css/uploadstyle.css" />
             <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
             <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+            <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
             <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php } ?>
         <title><?php echo $title; ?></title>
