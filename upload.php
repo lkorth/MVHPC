@@ -57,7 +57,7 @@ if ($_FILES['Filedata']['size'] > 30000000) {
                 }
             }
 
-            echo "<br>Sorry, there was a problem uploading your file.<br>";
+            echo "<br>Sorry, there was a problem resizing your picture.<br>";
         }
     } else {
         echo "<br>Sorry, there was a problem uploading your file.<br>";
