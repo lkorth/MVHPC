@@ -518,31 +518,6 @@
         }
     }
 
-    // Returns the lat, long of an address via Yahoo!'s geocoding service.
-    // You'll need an App ID, which is available from here:
-    // http://developer.yahoo.com/maps/rest/V1/geocode.html
-    // Note: needs to be updated to use PlaceFinder instead.
-    function geocode($location, $appid)
-    {
-        $location = urlencode($location);
-        $appid    = urlencode($appid);
-        $data     = file_get_contents("http://local.yahooapis.com/MapsService/V1/geocode?output=php&appid=$appid&location=$location");
-        $data     = unserialize($data);
-
-        if($data === false) return false;
-
-        $data = $data['ResultSet']['Result'];
-
-        return array('lat' => $data['Latitude'], 'lng' => $data['Longitude']);
-    }
-
-    // A stub for Yahoo!'s reverse geocoding service
-    // http://developer.yahoo.com/geo/placefinder/
-    function reverse_geocode($lat, $lng)
-    {
-
-    }
-
     // Quick and dirty wrapper for curl scraping.
     function curl($url, $referer = null, $post = null)
     {
