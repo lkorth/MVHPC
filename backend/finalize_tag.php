@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 

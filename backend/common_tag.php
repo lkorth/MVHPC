@@ -1,11 +1,12 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
 $title = "Enter Common Tags";
 $tag = 1;
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 ?>
 <br>
 <div align="center">

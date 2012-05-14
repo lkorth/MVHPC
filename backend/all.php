@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
@@ -9,7 +9,8 @@ $all = 1;
 $update = 1;
 $delete = 1;
 $page = $_GET['page'];
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 echo "<br>";
 echo "<table align=\"center\">";
 echo "<form name=\"form\" action=\"\" method=\"\" enctype=\"multipart/form-data\">";

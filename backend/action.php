@@ -1,10 +1,11 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
 $title = "Manage Site";
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 ?>
 <table align="center">
     <tr>

@@ -1,4 +1,4 @@
-<?php require_once 'includes/master.inc.php';
+<?php require_once '../includes/master.inc.php';
 $page = $_GET['page'];
 $terms = $_GET['filename'];
 $title = "Filename Search: " . $terms;
