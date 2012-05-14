@@ -12,17 +12,17 @@ require_once $level . 'includes/master.inc.php';
             <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>min/?b=css&f=jquery.autocomplete.css,magiczoom.css,silhouette.css&1234" />
         <?php } else {
             ?>
-            <script type="text/javascript" src="js/mootools.js"></script>
-            <script type="text/javascript" src="js/Swiff.Uploader.js"></script>
-            <script type="text/javascript" src="js/Fx.ProgressBar.js"></script>
-            <script type="text/javascript" src="js/Lang.js"></script>
-            <script type="text/javascript" src="js/FancyUpload2.js"></script>
-            <script type="text/javascript" src="js/script.js"></script>
-            <link rel="stylesheet" type="text/css" href="css/uploadstyle.css" />
-            <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
-            <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
-            <link href="css/silhouette.css" type="text/css" rel="stylesheet" />
-            <!--[if IE]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/mootools.js"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/Swiff.Uploader.js"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/Fx.ProgressBar.js"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/Lang.js"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/FancyUpload2.js"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>js/script.js"></script>
+            <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>css/uploadstyle.css" />
+            <link rel="stylesheet" href="<?php WEBROOT() ?>css/screen.css" type="text/css" media="screen, projection" />
+            <link rel="stylesheet" href="<?php WEBROOT() ?>css/print.css" type="text/css" media="print" />
+            <link href="<?php WEBROOT() ?>css/silhouette.css" type="text/css" rel="stylesheet" />
+            <!--[if IE]><link rel="stylesheet" href="<?php WEBROOT() ?>css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php } ?>
         <title><?php echo $title; ?></title>
         <script type="text/javascript">
@@ -39,35 +39,35 @@ require_once $level . 'includes/master.inc.php';
     </head>
     <body>
         <div id="header">
-            <a href="index.php"><img src="images/header.jpg" border=0/></a>
+            <a href="index.php"><img src="<?php WEBROOT(); ?>images/header.jpg" border=0/></a>
         </div>
         <div id="container">
             <div id="navbar">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="<?php WEBROOT(); ?>index.php">Home</a></li>
                 </ul>
                 <ul>
-                    <li><a href="pages/districts.php">Districts</a></li>
+                    <li><a href="<?php WEBROOT(); ?>pages/districts.php">Districts</a></li>
                 </ul>
                 <ul>
-                    <li><a href="pages/history.php">History</a>
+                    <li><a href="<?php WEBROOT(); ?>pages/history.php">History</a>
                         <ul>
-                            <li><a href="pages/text.php">Text</a></li>
-                            <li><a href="pages/images.php">Images</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/text.php">Text</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/images.php">Images</a></li>
                         </ul> 
                     </li>
                 </ul>
                 <ul>
-                    <li><a href="pages/about-us.php">About Us</a>
+                    <li><a href="<?php WEBROOT(); ?>pages/about-us.php">About Us</a>
                         <ul>
-                            <li><a href="pages/links.php">Links</a></li>
-                            <li><a href="pages/design-review.php">Design Review</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/links.php">Links</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/design-review.php">Design Review</a></li>
                         </ul> 
                     </li>
                 </ul>
                 <div id="search">
                     <?php if (!isset($upload)) { ?>
-                        <form enctype="multipart/form-data" action="search.php" method="GET" autocomplete="off">
+                        <form enctype="multipart/form-data" action="<?php WEBROOT(); ?>search.php" method="GET" autocomplete="off">
                             <input type="hidden" value="1" name="page" />
                             <input name="terms" type="text" id="global"/>
                             <input type="submit" value="Search" />

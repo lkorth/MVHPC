@@ -1,5 +1,6 @@
 <?php
-require_once 'includes/master.inc.php';
+$level = '../';
+require_once '../includes/master.inc.php';
 
 $title="MVHPC.org";
 $zoom = 1;
@@ -23,7 +24,7 @@ mysql_close();
 list($width, $height) = getimagesize("$mid");
 $width = $width . "px";
 $height = $height . "px";
-include 'header.php';
+include '../shared/header.php';
 echo "<br>";
 echo "<a href=\"$medlg\" class=\"MagicZoom\" rel=\"click-to-initialize:true;zoom-position:inner;zoom-fade:true;\"><img src=\"$mid\"/></a>";
 echo "<p>Click the picture to turn on zooming</p>";
@@ -32,5 +33,5 @@ echo "<p>$information</p>";
 echo "<br><br>";
 echo "<a href=\"$location\">Click here for full resolution picture (Warning some pictures are VERY large)</a><br>";
 echo "<a href=\"feedback.php?id=$id\">Click here to request tag update</a>";
-include 'footer.php';
+include '../shared/footer.php';
 ?>

@@ -1,4 +1,5 @@
 <?php
+//convert to framework for sendmail, store in db also
 if($_POST['type']==0){
 $email = $_POST['email'];
 $message = $_POST['message'];

@@ -1,5 +1,5 @@
 <?php
-//require 'shared/functions.php';
+
 
 $title="MVHPC :: Centennial Book Index";
 
