@@ -3,7 +3,8 @@ require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 ?>
 
 <p>Enter only ONE of the following</p>
@@ -18,7 +19,7 @@ include 'header.php';
 </div>
 <br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br>
+    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br>
 </div>
 </div>
 </div>

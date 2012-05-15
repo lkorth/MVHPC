@@ -1,5 +1,7 @@
 <?php
-require_once 'includes/master.inc.php';
+$title = "Edit";
+$level = '../';
+include '../shared/header.php';
 
 $Auth->requireUser();
 
@@ -21,5 +23,5 @@ $_SESSION['name'] = $row['name'];
     </form>
 </div>
 <?php
-include 'footer.php';
+include '../shared/footer.php';
 ?> 

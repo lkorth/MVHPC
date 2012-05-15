@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $q = strtolower($_GET["q"]);
 if (!$q) return;

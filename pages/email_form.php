@@ -1,7 +1,7 @@
 <?php
 $title = "Contact";
 $tag = 1;
-require 'header.php';
+require '../shared/header.php';
 ?>
 <br>
 <form method="POST" action="sendmail.php">
@@ -16,5 +16,5 @@ require 'header.php';
 </form>
 <br>
 <?php
-require 'footer.php';
+require '../shared/footer.php';
 ?>

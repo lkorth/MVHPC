@@ -17,7 +17,7 @@ include '../shared/header.php';
 </div>
 <br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br>
+    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br>
 </div>
 </div>
 </div>

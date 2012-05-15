@@ -18,7 +18,7 @@ else {
 }
 $path = 'book/pages/' . $page . '.jpg';
 
-include 'header.php';
+include '../shared/header.php';
 ?>
 <script>
 	var curPage = <?php echo $pgNum ?>;
@@ -121,5 +121,5 @@ echo "<a id=\"dl\" href=\"$path\">Click here to download this page</a><br>";
 ?>
 <script>document.getElementById("pageSelect").value = curPage;</script>
 <?php
-include 'footer.php';
+include '../shared/footer.php';
 ?>

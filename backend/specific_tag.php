@@ -1,12 +1,13 @@
 <?php
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
 $ctags = "mount vernon ; " . $_POST['ctags'] . " ;";
 $title = "Enter Specific Tags";
 $tag = 1;
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 echo "<br>";
 echo "<table align=\"center\">";
 $mydir = dir('./tmp');
@@ -35,7 +36,7 @@ echo "</table>";
 </div>
 <br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br>
+    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br> <!-- Use auth to get login url? -->
 </div>
 </div>
 </div>

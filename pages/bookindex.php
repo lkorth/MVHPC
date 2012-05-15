@@ -89,5 +89,5 @@ if($list == 1){
 	echo '</p></div>';
 }
 
-require 'footer.php';
+require '../shared/footer.php';
 ?>

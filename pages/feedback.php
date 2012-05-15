@@ -24,5 +24,5 @@ $row = $db->getRow("SELECT * FROM search WHERE id = '$id'");
 </form>
 <br>
 <?php
-include 'footer.php';
+include '../shared/footer.php';
 ?>

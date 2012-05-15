@@ -39,7 +39,7 @@ require_once $level . 'includes/master.inc.php';
     </head>
     <body>
         <div id="header">
-            <a href="index.php"><img src="<?php WEBROOT(); ?>images/header.jpg" border=0/></a>
+            <a href="<?php WEBROOT(); ?>index.php"><img src="<?php WEBROOT(); ?>images/header.jpg" border=0/></a>
         </div>
         <div id="container">
             <div id="navbar">

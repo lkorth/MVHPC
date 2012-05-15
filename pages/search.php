@@ -96,5 +96,5 @@ if ($needed > 1) {
     echo "<br>";
     echo "</div>";
 }
-include 'footer.php';
+include '../shared/footer.php';
 ?>

@@ -5,7 +5,8 @@ $Auth->requireUser();
 
 $upload = 1;
 $title = "Upload Files";
-include 'header.php';
+$level = '../';
+include '../shared/header.php';
 ?>
 <br>
 <div align="center">
@@ -63,7 +64,7 @@ include 'header.php';
 </div>
 <br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br>
+    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br>
 </div>
 </div>
 </div>
