@@ -1,6 +1,6 @@
 <?php
 $title = "404 Error!";
-include '../header.php';
+include '../shared/header.php';
 ?>
 <br>
 <br>
@@ -8,5 +8,5 @@ include '../header.php';
 <br>
 <br>
 <?php
-include '../footer.php';
+include '../shared/footer.php';
 ?>
