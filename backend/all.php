@@ -1,7 +1,4 @@
 <?php
-require_once '../includes/master.inc.php';
-
-$Auth->requireUser();
 
 $title = "All Database Pictures";
 $tag = 1;
@@ -11,13 +8,17 @@ $delete = 1;
 $page = $_GET['page'];
 $level = '../';
 include '../shared/header.php';
+
+$Auth->requireUser();
+
 echo "<br>";
 echo "<table align=\"center\">";
 echo "<form name=\"form\" action=\"\" method=\"\" enctype=\"multipart/form-data\">";
-$query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC";
-$result = mysql_query($query);
-$num = mysql_numrows($result);
-mysql_close();
+
+$db = Database::getDatabase();
+$result = $db->query("SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC");
+$num = $db->numRows($result);
+
 $needed = ($num / 50);
 $needed = ceil($needed);
 $prev = $page - 1;

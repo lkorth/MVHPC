@@ -5,8 +5,9 @@ require_once '../includes/master.inc.php';
 $Auth->requireUser();
 
 $id = $_GET['id'];
-$query = "DELETE FROM search WHERE id = '$id'";
-$result = mysql_query($query);
+
+$db = Database::getDatabase();
+$db->query("DELETE FROM search WHERE id = '$id'");
 
 header("Location: select_to_change.php");
 ?> 

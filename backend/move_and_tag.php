@@ -30,10 +30,9 @@ while (($file = $mydir->read()) !== false) {
             $views = 0;
             $trueviews = 0;
 
-            // now we insert it into the database
-            $insert = "INSERT INTO search (location, medlg, thumbnail, mid, information, tags, views, trueviews)
-VALUES ('" . $location . "', '" . $medlg . "', '" . $filethumb . "','" . $mid . "', '" . $info . "', '" . $tags . "', '" . $views . "', '" . $trueviews . "')";
-            $add_member = mysql_query($insert);
+            $db = Database::getDatabase();
+            $row = $db->query("INSERT INTO search (location, medlg, thumbnail, mid, information, tags, views, trueviews)
+VALUES ('$location', '$medlg', '$filethumb','$mid', '$info', '$tags', '$views', '$trueviews')");
 
             rename(($startdir . $file_name . "." . $file_ext), ($finaldir . $file_name . "." . $file_ext));
         }

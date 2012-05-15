@@ -1,18 +1,17 @@
 <?php
-require_once 'includes/master.inc.php';
-
-$id = $_GET['id'];
-$query="SELECT * FROM search WHERE id = '$id'";
-$result=mysql_query($query);
-$mid=mysql_result($result,0,"mid");
-$information=mysql_result($result,0,"information");
-$tags=mysql_result($result,0,"tags");
 $title = "Request Change of Tags";
 $tag = 1;
-include 'header.php';
+include '../shared/header.php';
+
+$id = $_GET['id'];
+
+$db = Database::getDatabase();
+
+$row = $db->getRow("SELECT * FROM search WHERE id = '$id'");
+
 ?>
 <br>
-<img src="<?php echo $mid; ?>"/><p>Information: <?php echo $information; ?></p><p>Tags: <?php echo $tags;?> </p>
+<img src="<?php echo $row['mid']; ?>"/><p>Information: <?php echo $row['information']; ?></p><p>Tags: <?php echo $row['tags'];?> </p>
 
 <form method="POST" action="sendmail.php">
    <br><p> Enter Your Email Address: <input name="email" type="text" /></p>

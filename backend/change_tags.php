@@ -1,5 +1,8 @@
 <?php
-require_once '../includes/master.inc.php';
+
+$title = "Update Tags";
+$level = '../';
+include '../shared/header.php';
 
 if ($_GET['redirect'] == 1) {
     session_start();
@@ -20,15 +23,13 @@ if ($_SESSION['id'] != null) {
     $id = $_GET['id'];
 }
 
-$query = "SELECT * FROM search WHERE id = '$id'";
-$result = mysql_query($query);
+$db = Database::getDatabase();
+$result = $db->query("SELECT * FROM search WHERE id = '$id'");
 
 $mid = mysql_result($result, 0, "mid");
 $information = mysql_result($result, 0, "information");
 $tags = mysql_result($result, 0, "tags");
 
-$title = "Update Tags";
-include 'header.php';
 ?>
 <img src="<?php echo $mid; ?>"/><p>Info: <?php echo $information; ?></p><p>Tags: <?php echo $tags; ?></p>
 <form enctype="multipart/form-data" name="form" action="update.php" method="POST">
@@ -58,7 +59,7 @@ include 'header.php';
 </div>
 <br>
 <div id="footer">
-    <p><a href="login.php">Manage site</a><br>
+    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br>
 </div>
 </div>
 </div>

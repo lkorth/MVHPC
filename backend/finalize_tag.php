@@ -7,9 +7,9 @@ $Auth->requireUser();
 $id = $_GET['id'];
 $tags = strtolower($_GET['tags']);
 $info = $_GET['info'];
-$query = "UPDATE search SET tags = '" . $tags . "' , information = '" . $info . "', edit = '0' WHERE id = $id";
-$result = mysql_query($query);
-mysql_close();
+
+$db = Database::getDatabase();
+$row = $db->query("UPDATE search SET tags = '$tags' , information = '$info', edit = '0' WHERE id = '$id'");
 
 header("Location: all.php?page=1");
 ?> 

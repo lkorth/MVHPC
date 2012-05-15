@@ -3,24 +3,20 @@ require_once 'includes/master.inc.php';
 
 $Auth->requireUser();
 
-$title = "Edit";
-
 $id = $_GET['id'];
-$query = "SELECT * FROM pages WHERE id = '$id'";
-$result = mysql_query($query);
-$data = mysql_result($result, 0, "data");
-$name = mysql_result($result, 0, "name");
+
+$db = Database::getDatabase();
+$row = $db->getRow("SELECT * FROM pages WHERE id = '$id'");
 
 session_start();
 $_SESSION['id'] = $id;
-$_SESSION['name'] = $name;
+$_SESSION['name'] = $row['name'];
 
-include 'header.php';
 ?>
 <div>
     <form method="post" action="process.php">
         <p>
-            <textarea name="data" style="width: 100%"><?php echo $data; ?></textarea>
+            <textarea name="data" style="width: 100%"><?php echo $row['data']; ?></textarea>
         </p>
     </form>
 </div>

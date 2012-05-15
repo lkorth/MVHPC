@@ -3,8 +3,9 @@
 $level = '../';
 include '../shared/header.php';
 
-$result = mysql_query("SELECT * FROM pages WHERE id = '$id'");
-echo mysql_result($result, 0, "data");
+$db = Database::getDatabase();
+$row = $db->getRow("SELECT * FROM pages WHERE id = '$id'");
+echo $row['data'];
 
 include '../shared/footer.php';
 ?>

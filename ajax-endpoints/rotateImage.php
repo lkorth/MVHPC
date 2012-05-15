@@ -1,6 +1,6 @@
 <?php
 
-require_once 'includes/master.inc.php';
+require_once '../includes/master.inc.php';
 
 function getFilename($origName){
     $arr = explode('.', $origName);
@@ -18,10 +18,11 @@ function getExtention($origName){
 $angle = $_GET['angle'];
 $id = $_GET['id'];
 
-$row = mysql_query("select location, medlg, mid, thumbnail from search where id = '$id'");
+$db = Database::getDatabase();
+$result = $db->query("select location, medlg, mid, thumbnail from search where id = '$id'"); //change db class to return list with result and row nums?
 
-if(mysql_num_rows($row) > 0){
-    $image = mysql_fetch_assoc($row);
+if($db->numRows($result) > 0){
+    $image = mysql_fetch_assoc($result);
     
     $gdl = new GD('../' . $image['location']);
     $l = $gdl->rotate($angle, 0);

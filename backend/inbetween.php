@@ -8,15 +8,15 @@ if ($_GET['id'] != null) {
     //starts session to pass id
     session_start();
     $_SESSION['id'] = $_GET['id'];
-
     header("Location: change_tags.php");
 } else if ($_GET['filename'] != null) {
     $filename = $_GET['filename'];
-    $query = "SELECT id FROM search WHERE location LIKE '%$filename%'";
-    $result = mysql_query($query);
-    $id = mysql_result($result, 0, "id");
+    
+    $db = Database::getDatabase();
+    $row = $db->getRow("SELECT id FROM search WHERE location LIKE '%$filename%'");
+
     session_start();
-    $_SESSION['id'] = $id;
+    $_SESSION['id'] = $row['id'];
 
     header("Location: change_tags.php");
 } else if ($_GET['search'] != null) {

@@ -1,13 +1,16 @@
-<?php require_once '../includes/master.inc.php';
+<?php 
+
 $page = $_GET['page'];
 $terms = $_GET['filename'];
 $title = "Filename Search: " . $terms;
 $terms = ereg_replace("[^A-Za-z0-9]", " ", $terms);
 $terms = strtolower($terms);
-include 'header.php';
+include '../shared/header.php';
 echo "<br>";
-$query = "SELECT thumbnail,id MATCH(location) AGAINST('$terms') AS score FROM search WHERE MATCH(location) AGAINST('$terms') ORDER BY score DESC, views DESC";
-$result = mysql_query($query);
+
+$db = Database::getDatabase();
+$result = $db->query("SELECT thumbnail,id MATCH(location) AGAINST('$terms') AS score FROM search WHERE MATCH(location) AGAINST('$terms') ORDER BY score DESC, views DESC");
+
 if (!($result == false)) {
     $num = mysql_numrows($result);
 } else {
@@ -19,12 +22,9 @@ if (!($result == false)) {
 } else if ($page > 1 && $num > 25) {
     $i = (($page - 1) * 25);
 }if ($num == 0) {
-    $query = "";
-    $result = "";
     $num = "";
-    $query = "SELECT thumbnail,id FROM search WHERE location LIKE '%$terms%' ORDER BY views DESC";
-    $result = mysql_query($query);
-    $num = mysql_numrows($result);
+    $result = $db->query("SELECT thumbnail,id FROM search WHERE location LIKE '%$terms%' ORDER BY views DESC");
+    $num = $db->numRows($result);
     mysql_close();
     if ($num <= 25) {
         $i = 0;
@@ -61,4 +61,4 @@ if ($needed > 1) {
     } if ($page < $needed) {
         echo "<a href=\"filename.php?page=$next&filename=$space\"/>=Next Page=></a>";
     } echo "</div>";
-}include 'footer.php'; ?>
+}include '../shared/footer.php'; ?>
