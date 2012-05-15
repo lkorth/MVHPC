@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="newsfeed">
-
+                
             </div>
             <div class="rightcol">
                 <div class="featured_images">

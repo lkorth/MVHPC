@@ -6,28 +6,64 @@
         Purpose of the stylesheet follows.
 */
 
-$background: #56Bafb;
+
+/* Backgrounds */
+$header_bg: #834C24;
+$body_bg: #F4DBC2;
+$newsfeed_bg: #FFF;
+$menu_bg: #56BAFB;
+
+/* Page Layout */
+$container_width: 960px;
+
+/* Menu Styles */
 $forks: #24a6fa;
 $folds: #0583d5;
-
-$container_width: 40em;
-$fork_content: 1em;
-$fork_width: 3.5em;
-$menu_width: $container_width + 2em;
+$fork_content: 24px;
+$fork_width: 72px;
+$menu_width: $container_width + 48px;
 $menu_height: $fork_width - $fork_content;
-
 $fork_left_margin: - $fork_width;
 $fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content * 2);
-$menu_top_margin: 4em;
+$menu_top_margin: 0px;
 $menu_left_margin: $fork_left_margin + $fork_width - $fork_content;
-$fork_top_margin: $menu_top_margin + 1em; 
+$fork_top_margin: $menu_top_margin + 24px; 
 $fold_right_margin: $fork_right_margin - $menu_left_margin;
+
+/* Mixins */
+
+@mixin box-shadow($top: 0, $right: 0, $blur: 0, $color: #fff) {
+    box-shadow: $top $right $blur $color;
+    -webkit-box-shadow: $top $right $blur $color;
+    -moz-box-shadow: $top $right $blur $color;
+}
+
+body {
+    margin: 0;
+    background: $body_bg;
+}
+
+.newsfeed {
+    width: 100%;
+    height: 600px;
+    background: $newsfeed_bg;
+}
 
 .container {
     width: $container_width;
-    border: 1px solid #000;
     position: relative;
     margin: 0 auto;
+    @include box-shadow(0px, 0px, 10px, #888); 
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    background: $header_bg;
+}
+
+.navbar {
+    position: relative;
 }
 
 .navbar:before, .navbar:after {
@@ -60,7 +96,7 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
     position: relative;
     margin-top: $menu_top_margin;
     margin-left: $menu_left_margin;
-    background: $background;
+    background: $menu_bg;
     text-align: center;
     z-index: 1;
 }
@@ -72,7 +108,7 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
     height: 0;
     left: 0px;
     top: 100%;
-    border-width: .5em .5em;
+    border-width: $fork_content/2 $fork_content/2;
     border-style: solid;
     border-color: $folds $folds transparent transparent;
     z-index: 2;
@@ -85,18 +121,18 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
     height: 0;
     left: $fold_right_margin;
     top: 100%;
-    border-width: .5em .5em;
+    border-width: $fork_content/2 $fork_content/2;
     border-style: solid;
     border-color: $folds transparent transparent $folds;
     z-index: 2;
 }
 
 .navbar .menu_item {
-    background: $background;
+    background: $menu_bg;
     display: inline-block;
-    line-height:2.5em;
-    padding:0 1em;
-    margin-top:0em;
+    line-height:$menu_height;
+    padding:0 $menu_height/2;
+    margin-top:0;
     position:relative;
     font-weight: bold;
     font-family: Arial;
@@ -111,7 +147,7 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
     color:#fff;
     text-decoration:none;
     float:left;
-    height:2.5em;
+    height:$menu_height;
     overflow: hidden;
 }
 
@@ -120,34 +156,28 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
 }
 
 .navbar a:hover {
-    background: #fff;
+    background: $newsfeed_bg;
 }
 
 .navbar a:hover .menu_item {
     background:#24a6fa;
-    margin-top:-0.5em;
+    margin-top:-$fork_content/2;
 }
 
 .navbar .menu_item:before {
     content: "";
     position:absolute;
-    top:2.5em;
+    top:$menu_height;
     left:0;
-    border-right:0.5em solid $folds;
-    border-bottom:0.5em solid $background;
+    border-right:$fork_content/2 solid $folds;
+    border-bottom:$fork_content/2 solid $menu_bg;
 }
 
 .navbar .menu_item:after {
     content: "";
     position:absolute;
-    top:2.5em;
+    top:$menu_height;
     right:0;
-    border-left:0.5em solid $folds;
-    border-bottom:0.5em solid $background;
-}​
-
-.header {
-    width: 100%;
-    height: 200px;
-    background: #A25F08;
+    border-left:$fork_content/2 solid $folds;
+    border-bottom:$fork_content/2 solid $menu_bg;
 }
