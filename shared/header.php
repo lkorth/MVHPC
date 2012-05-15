@@ -67,7 +67,7 @@ require_once $level . 'includes/master.inc.php';
                 </ul>
                 <div id="search">
                     <?php if (!isset($upload)) { ?>
-                        <form enctype="multipart/form-data" action="<?php WEBROOT(); ?>search.php" method="GET" autocomplete="off">
+                        <form enctype="multipart/form-data" action="<?php WEBROOT(); ?>pages/search.php" method="GET" autocomplete="off">
                             <input type="hidden" value="1" name="page" />
                             <input name="terms" type="text" id="global"/>
                             <input type="submit" value="Search" />
