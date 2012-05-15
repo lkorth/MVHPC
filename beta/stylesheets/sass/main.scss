@@ -1,0 +1,153 @@
+/* 
+    Document   : main
+    Created on : May 14, 2012, 2:32:36 PM
+    Author     : areed12
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+$background: #56Bafb;
+$forks: #24a6fa;
+$folds: #0583d5;
+
+$container_width: 40em;
+$fork_content: 1em;
+$fork_width: 3.5em;
+$menu_width: $container_width + 2em;
+$menu_height: $fork_width - $fork_content;
+
+$fork_left_margin: - $fork_width;
+$fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content * 2);
+$menu_top_margin: 4em;
+$menu_left_margin: $fork_left_margin + $fork_width - $fork_content;
+$fork_top_margin: $menu_top_margin + 1em; 
+$fold_right_margin: $fork_right_margin - $menu_left_margin;
+
+.container {
+    width: $container_width;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+}
+
+.navbar:before, .navbar:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    border: {
+        width: ($fork_width - $fork_content)/2;
+        style: solid;
+        color: $forks;
+    }
+    z-index: 0;
+}
+
+.navbar:after {
+    left: $fork_right_margin;
+    top: $fork_top_margin;
+    border-right-color:transparent;
+}
+
+.navbar:before {
+    left: $fork_left_margin;
+    top: $fork_top_margin;
+    border-left-color:transparent;
+}
+
+.menu {
+    width: $menu_width;
+    height: $menu_height;
+    position: relative;
+    margin-top: $menu_top_margin;
+    margin-left: $menu_left_margin;
+    background: $background;
+    text-align: center;
+    z-index: 1;
+}
+
+.menu:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 100%;
+    border-width: .5em .5em;
+    border-style: solid;
+    border-color: $folds $folds transparent transparent;
+    z-index: 2;
+}
+
+.menu:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: $fold_right_margin;
+    top: 100%;
+    border-width: .5em .5em;
+    border-style: solid;
+    border-color: $folds transparent transparent $folds;
+    z-index: 2;
+}
+
+.navbar .menu_item {
+    background: $background;
+    display: inline-block;
+    line-height:2.5em;
+    padding:0 1em;
+    margin-top:0em;
+    position:relative;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: 1px 1px 2px #444;
+}
+
+.menu_wrapper {
+    display: inline-block;
+}
+
+.navbar a:link, .navbar a:visited { 
+    color:#fff;
+    text-decoration:none;
+    float:left;
+    height:2.5em;
+    overflow: hidden;
+}
+
+.navbar a:link:hover, .navbar a:visited:hover { 
+    overflow: visible;
+}
+
+.navbar a:hover {
+    background: #fff;
+}
+
+.navbar a:hover .menu_item {
+    background:#24a6fa;
+    margin-top:-0.5em;
+}
+
+.navbar .menu_item:before {
+    content: "";
+    position:absolute;
+    top:2.5em;
+    left:0;
+    border-right:0.5em solid $folds;
+    border-bottom:0.5em solid $background;
+}
+
+.navbar .menu_item:after {
+    content: "";
+    position:absolute;
+    top:2.5em;
+    right:0;
+    border-left:0.5em solid $folds;
+    border-bottom:0.5em solid $background;
+}​
+
+.header {
+    width: 100%;
+    height: 200px;
+    background: #A25F08;
+}
