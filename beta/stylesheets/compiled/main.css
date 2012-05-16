@@ -32,34 +32,69 @@ body {
   background-image: linear-gradient(#834c24, #693c1c); }
 
 .navbar {
+  width: 980px;
+  margin-left: -10px;
   position: relative; }
 
-.navbar:before, .navbar:after {
-  width: 24px;
-  content: "";
+.navbar:before {
+  content: " ";
   position: absolute;
-  border-width: 24px;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
   border-style: solid;
-  border-color: #24a6fa;
-  z-index: 0; }
+  border-color: #0583d5 #0583d5 transparent transparent; }
 
 .navbar:after {
-  left: 960px;
-  top: 24px;
-  border-right-color: transparent; }
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 970px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  border-color: #0583d5 transparent transparent #0583d5; }
+
+/*.menu:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left : -10px;
+    right: -10px;
+    border-top: 1px dashed #fff;
+    border-bottom: 1px dashed #fff;
+}*/
+/*.navbar:before, .navbar:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    border: {
+        width: ($fork_width - $fork_content)/2;
+        style: solid;
+        color: $forks;
+    }
+}
+
+.navbar:after {
+    left: $fork_right_margin;
+    top: $fork_top_margin;
+    border-right-color:transparent;
+}
 
 .navbar:before {
-  left: -72px;
-  top: 24px;
-  border-left-color: transparent; }
-
+    left: $fork_left_margin;
+    top: $fork_top_margin;
+    border-left-color:transparent;
+}*/
 .menu {
-  width: 1008px;
+  width: 100%;
   height: 48px;
   position: relative;
   margin-top: 0px;
-  margin-left: -24px;
-  /*    background: $menu_bg;*/
   background-color: #56bafb;
   background-image: -moz-linear-gradient(#56bafb, #34acfb);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#56bafb), to(#34acfb));
@@ -68,30 +103,6 @@ body {
   background-image: linear-gradient(#56bafb, #34acfb);
   text-align: center;
   z-index: 1; }
-
-.menu:before {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 12px 12px;
-  border-style: solid;
-  border-color: #0583d5 #0583d5 transparent transparent;
-  z-index: 2; }
-
-.menu:after {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 984px;
-  top: 100%;
-  border-width: 12px 12px;
-  border-style: solid;
-  border-color: #0583d5 transparent transparent #0583d5;
-  z-index: 2; }
 
 .navbar .menu_item {
   background-color: #56bafb;
@@ -107,7 +118,8 @@ body {
   position: relative;
   font-weight: bold;
   font-family: Arial;
-  text-shadow: 1px 1px 2px #444; }
+  text-shadow: 1px 1px 2px #444;
+  z-index: 1; }
 
 .menu_wrapper {
   display: inline-block; }
@@ -154,8 +166,19 @@ body {
   width: 100%;
   height: 600px;
   background: white;
-  padding-top: 36px;
-  position: relative; }
+  position: relative;
+  text-align: center; }
+
+.content_container {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  background: #F4E6CC;
+  box-shadow: 0px 0px 10px #888888;
+  -webkit-box-shadow: 0px 0px 10px #888888;
+  -moz-box-shadow: 0px 0px 10px #888888; }
 
 .newsfeed, .featured_images, .common_tags {
   margin-right: 20px;
@@ -171,13 +194,14 @@ body {
   font-weight: bold;
   color: #fff;
   width: 508px;
-  height: 48px;
-  line-height: 48px;
-  margin: 0 0 10px -10px;
-  padding-left: 30px;
+  height: 36px;
+  line-height: 36px;
+  margin: 15px 0 0px -10px;
+  padding-left: 50px;
   position: relative;
   background-color: #24a6fa;
-  text-shadow: 1px 1px 2px #444; }
+  text-shadow: 1px 1px 2px #444;
+  text-align: left; }
 
 .newsfeed .ribbon:after {
   width: 24px;
@@ -185,11 +209,10 @@ body {
   position: absolute;
   left: 100%;
   top: 0;
-  border-width: 24px;
+  border-width: 18px;
   border-style: solid;
   border-color: #24a6fa;
-  border-right-color: transparent;
-  z-index: 0; }
+  border-right-color: transparent; }
 
 .newsfeed .ribbon:before {
   content: " ";
@@ -200,16 +223,17 @@ body {
   top: 100%;
   border-width: 5px 5px;
   border-style: solid;
-  border-color: #0583d5 #0583d5 transparent transparent;
-  z-index: 2; }
+  border-color: #0583d5 #0583d5 transparent transparent; }
 
 .newsfeed .article {
-  background: #F4E6CC;
   margin: 0 40px 40px 10px;
+  padding: 0 10px 10px 10px; }
+
+.newsfeed .article p {
+  text-align: justify;
+  line-height: 1.3;
   padding: 10px;
-  box-shadow: 3px 3px 5px #cccccc;
-  -webkit-box-shadow: 3px 3px 5px #cccccc;
-  -moz-box-shadow: 3px 3px 5px #cccccc; }
+  margin: 0; }
 
 .featured_images, .common_tags {
   width: 300px;

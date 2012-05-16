@@ -21,44 +21,46 @@
                 </div>
             </div>
             <div class="content">
-                <div class="newsfeed">
-                    <h1 class="ribbon">News Item 1</h1>
-                    <div class="article">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Phasellus fringilla ornare massa, in commodo lacus hendrerit 
-                            non. Etiam volutpat, elit non laoreet lobortis, ipsum tellus 
-                            eleifend sem, ac rhoncus enim elit non massa. Suspendisse varius 
-                            porta metus quis viverra. Praesent posuere viverra tincidunt. 
-                            Sed nec dolor odio, eget ultrices mi. Aliquam erat volutpat. 
-                            Nullam velit sem, iaculis at mollis et, blandit sed nisl. Nam 
-                            vel metus eget mi accumsan dictum ut non sem. Sed mauris elit, 
-                            fermentum adipiscing auctor nec, consectetur vitae tellus. 
-                            Curabitur fringilla dolor vitae mi fringilla facilisis. Nulla 
-                            varius auctor dolor, ut porta lorem porttitor vel. Proin auctor 
-                            ornare tellus sit amet feugiat. Etiam tortor tortor, ultrices 
-                            nec congue non, ultrices vel tortor. Phasellus metus metus, 
-                            venenatis non accumsan vitae, euismod quis justo. Pellentesque 
-                            vitae enim nisi. Pellentesque ut purus dolor.
-                        </p>
+                <div class="content_container">
+                    <div class="newsfeed">
+                        <h1 class="ribbon">News Item 1</h1>
+                        <div class="article">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Phasellus fringilla ornare massa, in commodo lacus hendrerit 
+                                non. Etiam volutpat, elit non laoreet lobortis, ipsum tellus 
+                                eleifend sem, ac rhoncus enim elit non massa. Suspendisse varius 
+                                porta metus quis viverra. Praesent posuere viverra tincidunt. 
+                                Sed nec dolor odio, eget ultrices mi. Aliquam erat volutpat. 
+                                Nullam velit sem, iaculis at mollis et, blandit sed nisl. Nam 
+                                vel metus eget mi accumsan dictum ut non sem. Sed mauris elit, 
+                                fermentum adipiscing auctor nec, consectetur vitae tellus. 
+                                Curabitur fringilla dolor vitae mi fringilla facilisis. Nulla 
+                                varius auctor dolor, ut porta lorem porttitor vel. Proin auctor 
+                                ornare tellus sit amet feugiat. Etiam tortor tortor, ultrices 
+                                nec congue non, ultrices vel tortor. Phasellus metus metus, 
+                                venenatis non accumsan vitae, euismod quis justo. Pellentesque 
+                                vitae enim nisi. Pellentesque ut purus dolor.
+                            </p>
 
-                        <p>
-                            Morbi imperdiet, diam congue accumsan laoreet, dolor orci 
-                            pellentesque turpis, at aliquet urna tellus tristique dolor. 
-                            Sed tincidunt, risus ac sollicitudin vulputate, felis diam 
-                            facilisis eros, eu tincidunt leo nibh posuere nibh. Morbi quis 
-                            tortor nulla. In pretium odio leo. Mauris adipiscing nunc vel 
-                            tortor fermentum sagittis. Cum sociis natoque penatibus et 
-                            magnis dis parturient montes, nascetur ridiculus mus. Vestibulum 
-                            ante ipsum primis in faucibus orci.
-                        </p>
+                            <p>
+                                Morbi imperdiet, diam congue accumsan laoreet, dolor orci 
+                                pellentesque turpis, at aliquet urna tellus tristique dolor. 
+                                Sed tincidunt, risus ac sollicitudin vulputate, felis diam 
+                                facilisis eros, eu tincidunt leo nibh posuere nibh. Morbi quis 
+                                tortor nulla. In pretium odio leo. Mauris adipiscing nunc vel 
+                                tortor fermentum sagittis. Cum sociis natoque penatibus et 
+                                magnis dis parturient montes, nascetur ridiculus mus. Vestibulum 
+                                ante ipsum primis in faucibus orci.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="featured_images">
-                    
-                </div>
-                <div class="common_tags">
+                    <div class="featured_images">
 
+                    </div>
+                    <div class="common_tags">
+
+                    </div>
                 </div>
             </div>
         </div>
