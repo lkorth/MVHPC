@@ -1,5 +1,7 @@
 <?php
-require_once '../includes/master.inc.php';
+$title = "Login";
+$level = '../';
+include '../shared/header.php';
 
 if ($Auth->loggedIn())
     redirect(WEB_ROOT . 'backend/action.php');
@@ -17,10 +19,6 @@ if (!empty($_POST['username'])) {
 
 // Clean the submitted username before redisplaying it.
 $username = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
-
-$title = "Login";
-$level = '../';
-include '../shared/header.php';
 ?>
 <form id="loginForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
     <?php echo $Error ?>
