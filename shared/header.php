@@ -8,7 +8,7 @@ require_once $level . 'includes/master.inc.php';
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
         <?php if (!isset($upload)) { ?>
             <!-- need a jquery lightbox, spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
-            <script type="text/javascript" src="<?php WEBROOT() ?>min/?b=js&f=jquery-1.7.2.js,jquery.bgiframe.min.js,jquery.ajaxQueue.js,jquery.autocomplete.js,inpage_script.js,functions.js,magiczoom.js&1234"></script>
+            <script type="text/javascript" src="<?php WEBROOT() ?>min/?b=js&f=jquery-1.7.2.js,jquery.bgiframe.min.js,jquery.ajaxQueue.js,jquery.autocomplete.js,inpage_script.js,functions.js,base64.js,magiczoom.js&1234"></script>
             <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>min/?b=css&f=jquery.autocomplete.css,magiczoom.css,silhouette.css&1234" />
         <?php } else {
             ?>
