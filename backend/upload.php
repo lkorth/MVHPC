@@ -4,7 +4,7 @@ require_once '../includes/master.inc.php';
 
 $allowedFileTypes = array('jpg', 'jpeg', 'gif', 'png');
 
-$num = rand(1, 1000);
+$num = time();
 $file = $_FILES['Filedata']['name'];
 $fileInfo = pathinfo($file);
 $fileNameNoExtention = basename($file, '.' . $fileInfo['extension']);
