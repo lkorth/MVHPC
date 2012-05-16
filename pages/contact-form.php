@@ -17,7 +17,7 @@ if (!empty($_POST['email']) || $empty($_POST['subject']) || !empty($_POST['messa
             $Error->add('message', "Please enter a message.");
         else {
             send_html_mail('lkorth12@cornellcollege.edu', $subject, $message, $email);
-            //redirect('success.php');
+            redirect('success.php');
         }
 }
 ?>

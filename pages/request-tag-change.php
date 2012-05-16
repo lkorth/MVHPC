@@ -16,7 +16,7 @@ if ((!empty($_POST['email']) || !empty($_POST['message'])) && !empty($_POST['id'
         else {
             $db = Database::getDatabase();
             $db->query("insert into changeRequests set email = '$email', message = '$message', id = '$id'");
-            //redirect('success.php');
+            redirect('success.php');
         }
 }
 
