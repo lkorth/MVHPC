@@ -1,6 +1,6 @@
 <?PHP
 
-function autocomplete($field, $searchString) {
+function autocomplete($field, $searchString, $fullText = false) {
     $db = Database::getDatabase();
 
     $q = strtolower($searchString);
@@ -8,10 +8,12 @@ function autocomplete($field, $searchString) {
     if (!$q)
         return;
     
-    $result = $db->query("SELECT tags MATCH($field) AGAINST('$q') AS score FROM search WHERE MATCH($field) AGAINST('$q') ORDER BY score DESC, views DESC");
-    if ($result != false) {
+    if($fullText){
+        $result = $db->query("SELECT tags, MATCH(tags, information) AGAINST('$q') AS score FROM search WHERE MATCH(tags, information) AGAINST('$q') ORDER BY score DESC, views DESC");
+    }
+    if (isset($result) && $result != false && $db->numRows($result) > 0) {
         $num = $db->numRows($result);
-    } else if ($result == false) {
+    } else {
         $result = $db->query("SELECT $field FROM search WHERE $field LIKE '%$q%' ORDER BY views DESC");
         $num = $db->numRows($result);
     }

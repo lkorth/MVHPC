@@ -1,5 +1,5 @@
 $().ready(function() {
-    $("#global").autocomplete("shared/suggest.php", {
+    $("#global").autocomplete("ajax-endpoints/suggest.php", {
         width: 200,		
         max: 8,		
         scroll: false,		
@@ -8,7 +8,7 @@ $().ready(function() {
         scrollHeight: 500		
     });
 		
-    $("#change").autocomplete("shared/suggest.php", {
+    $("#change").autocomplete("ajax-endpoints/suggest.php", {
         width: 200,		
         max: 8,		
         scroll: false,		
