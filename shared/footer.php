@@ -10,8 +10,8 @@
         }
     } else {
         ?>
-        <p>Contact:  <a href="email_form.php?to=lkorth12&domain=cornellcollege.edu">Webmaster</a> &nbsp; &#124; &nbsp;
-            Designed and Developed: <a href="email_form.php?to=lkorth12&domain=cornellcollege.edu">LARS</a> &nbsp; &#124; &nbsp;
+        <p>Contact:  <a href="<?php WEBROOT() ?>pages/contact-form.php">Webmaster</a> &nbsp; &#124; &nbsp;
+            Designed and Developed: <a href="<?php WEBROOT() ?>pages/contact-form.php">LARS</a> &nbsp; &#124; &nbsp;
             <a href="<?php WEBROOT(); ?>backend/login.php">Login</a> to manage site
             <?php
             if (isset($zoom) && $zoom == 1) {
