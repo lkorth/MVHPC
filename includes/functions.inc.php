@@ -1,8 +1,13 @@
 <?PHP
 
-function returnPost($page, $maxNumberResults = 1){
+function returnPosts($page, $maxNumberResults = 1){
     $db = Database::getDatabase();
     return ($db->getRows("SELECT * FROM posts WHERE page='$page' order by date desc limit $maxNumberResults"));
+}
+
+function returnAPost($id){
+    $db = Database::getDatabase();
+    return ($db->getRow("SELECT * FROM posts WHERE id='$id'"));
 }
 
 function autocomplete($field, $searchString, $fullText = false) {
