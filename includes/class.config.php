@@ -133,10 +133,10 @@
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
             $this->dbName          = 'mvhpcorg_main';
-            $this->dbReadUsername  = 'root';
-            $this->dbWriteUsername = 'root';
-            $this->dbReadPassword  = '';
-            $this->dbWritePassword = '';
+            $this->dbReadUsername  = 'irobot';
+            $this->dbWriteUsername = 'irobot';
+            $this->dbReadPassword  = 'susancalvin';
+            $this->dbWritePassword = 'susancalvin';
             $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
         }
