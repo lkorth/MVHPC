@@ -47,21 +47,21 @@ require_once $level . 'includes/master.inc.php';
                     <li><a href="<?php WEBROOT(); ?>index.php">Home</a></li>
                 </ul>
                 <ul>
-                    <li><a href="<?php WEBROOT(); ?>pages/districts.php">Districts</a></li>
+                    <li><a href="<?php WEBROOT(); ?>pages/districts">Districts</a></li>
                 </ul>
                 <ul>
-                    <li><a href="<?php WEBROOT(); ?>pages/history.php">History</a>
+                    <li><a href="<?php WEBROOT(); ?>pages/history">History</a>
                         <ul>
-                            <li><a href="<?php WEBROOT(); ?>pages/text.php">Text</a></li>
-                            <li><a href="<?php WEBROOT(); ?>pages/images.php">Images</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/text">Text</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/images">Images</a></li>
                         </ul> 
                     </li>
                 </ul>
                 <ul>
-                    <li><a href="<?php WEBROOT(); ?>pages/about-us.php">About Us</a>
+                    <li><a href="<?php WEBROOT(); ?>pages/about-us">About Us</a>
                         <ul>
-                            <li><a href="<?php WEBROOT(); ?>pages/links.php">Links</a></li>
-                            <li><a href="<?php WEBROOT(); ?>pages/design-review.php">Design Review</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/links">Links</a></li>
+                            <li><a href="<?php WEBROOT(); ?>pages/design-review">Design Review</a></li>
                         </ul> 
                     </li>
                 </ul>

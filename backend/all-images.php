@@ -1,6 +1,6 @@
 <?php
 
-$title = "All Database Pictures";
+$title = "All Database Images";
 $tag = 1;
 $all = 1;
 $update = 1;
@@ -12,8 +12,8 @@ include '../shared/header.php';
 $Auth->requireUser();
 
 echo "<br>";
-echo "<table align=\"center\">";
-echo "<form name=\"form\" action=\"\" method=\"\" enctype=\"multipart/form-data\">";
+echo '<table align="center">';
+echo '<form name="form" enctype="multipart/form-data">';
 
 $db = Database::getDatabase();
 $result = $db->query("SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC");

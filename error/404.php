@@ -1,5 +1,6 @@
 <?php
 $title = "404 Error!";
+$level = '../';
 include '../shared/header.php';
 ?>
 <br>

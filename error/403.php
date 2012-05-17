@@ -1,5 +1,6 @@
 <?php
 $title = "403 Error!";
+$level = '../';
 include '../shared/header.php';
 ?>
 <br>
