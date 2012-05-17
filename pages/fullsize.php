@@ -18,9 +18,6 @@ $trueviews = $row['trueviews'] + 1;
 $views = $row['views'] + 0.05;
 $db->query("UPDATE search SET views = '$views', trueviews = '$trueviews' WHERE id = '$id'");
 
-list($width, $height) = getimagesize("$mid");
-$width = $width . "px";
-$height = $height . "px";
 include '../shared/header.php';
 echo "<br>";
 echo "<a href=\"$medlg\" class=\"MagicZoom\" rel=\"click-to-initialize:true;zoom-position:inner;zoom-fade:true;\"><img src=\"$mid\"/></a>";
