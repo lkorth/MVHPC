@@ -15,11 +15,10 @@ $unprocessed = $row['num'];
         <td>
     <tr><td><h3>Welcome<br>
                 What would you like to do?</h3></td></tr>
-    <tr><td><a href="upload_file.php">Upload Files</a></td></tr>
-    <tr><td><a href="select_to_change.php">Change Tags</a></td></tr>
-    <tr><td><a href="all.php?page=1">View and Edit all pictures</a></td></tr>
-    <tr><td><a href="requests.php">View Tag Requests (<?php echo $unprocessed; ?> new)</a></td></tr>
-    <!-- <tr><td><a href="https://host394.hostmonster.com:2096">Check Email</a></td></tr> -->
+    <tr><td><a href="upload-images.php">Upload Images</a></td></tr>
+    <tr><td><a href="select-to-change-tags.php">Change Image Tags</a></td></tr>
+    <tr><td><a href="all-images.php?page=1">View and Edit All Images</a></td></tr>
+    <tr><td><a href="tag-requests.php">View Tag Requests (<?php echo $unprocessed; ?> new)</a></td></tr>
     <tr><td><a href="logout.php">Logout</a></td></tr>
 </td>
 </tr>
