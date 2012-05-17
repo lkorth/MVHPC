@@ -10,25 +10,26 @@
 /* Backgrounds */
 $header_bg: #834C24;
 $body_bg: #F4DBC2;
-$newsfeed_bg: #FFF;
+$content_bg: #FFF;
 $menu_bg: #56BAFB;
 
 /* Page Layout */
 $container_width: 960px;
+$gutter_width: 10px;
 
 /* Menu Styles */
 $forks: #24a6fa;
 $folds: #0583d5;
 $fork_content: 24px;
 $fork_width: 72px;
-$menu_width: $container_width + 48px;
+$menu_width: $container_width + 20px;
 $menu_height: $fork_width - $fork_content;
 $fork_left_margin: - $fork_width;
 $fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content * 2);
 $menu_top_margin: 0px;
-$menu_left_margin: $fork_left_margin + $fork_width - $fork_content;
+$menu_left_margin: -10px;
 $fork_top_margin: $menu_top_margin + 24px; 
-$fold_right_margin: $fork_right_margin - $menu_left_margin;
+$fold_right_margin: $container_width - $menu_left_margin;
 
 /* Mixins */
 
@@ -38,15 +39,18 @@ $fold_right_margin: $fork_right_margin - $menu_left_margin;
     -moz-box-shadow: $top $right $blur $color;
 }
 
+@mixin gradient($from, $to){
+    background-color: $from;
+    background-image: -moz-linear-gradient($from, $to);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+    background-image: -webkit-linear-gradient($from, $to);
+    background-image: -o-linear-gradient($from, $to);
+    background-image: linear-gradient($from, $to);
+}
+
 body {
     margin: 0;
     background: $body_bg;
-}
-
-.newsfeed {
-    width: 100%;
-    height: 600px;
-    background: $newsfeed_bg;
 }
 
 .container {
@@ -59,14 +63,51 @@ body {
 .header {
     width: 100%;
     height: 150px;
-    background: $header_bg;
+    @include gradient($header_bg, #693c1c);
 }
 
 .navbar {
+    width: $menu_width;
+    margin-left: $menu_left_margin;
     position: relative;
 }
 
-.navbar:before, .navbar:after {
+.navbar:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds $folds transparent transparent;
+}
+
+.navbar:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: $fold_right_margin;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds transparent transparent $folds;
+}
+
+/*.menu:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left : -10px;
+    right: -10px;
+    border-top: 1px dashed #fff;
+    border-bottom: 1px dashed #fff;
+}*/
+
+/*.navbar:before, .navbar:after {
     width:$fork_content;
     content: "";
     position: absolute;
@@ -75,7 +116,6 @@ body {
         style: solid;
         color: $forks;
     }
-    z-index: 0;
 }
 
 .navbar:after {
@@ -88,47 +128,20 @@ body {
     left: $fork_left_margin;
     top: $fork_top_margin;
     border-left-color:transparent;
-}
+}*/
 
 .menu {
-    width: $menu_width;
+    width: 100%;
     height: $menu_height;
     position: relative;
     margin-top: $menu_top_margin;
-    margin-left: $menu_left_margin;
-    background: $menu_bg;
+    @include gradient($menu_bg, #34acfb);
     text-align: center;
     z-index: 1;
 }
 
-.menu:before {
-    content: " ";
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: 0px;
-    top: 100%;
-    border-width: $fork_content/2 $fork_content/2;
-    border-style: solid;
-    border-color: $folds $folds transparent transparent;
-    z-index: 2;
-}
-
-.menu:after {
-    content: " ";
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: $fold_right_margin;
-    top: 100%;
-    border-width: $fork_content/2 $fork_content/2;
-    border-style: solid;
-    border-color: $folds transparent transparent $folds;
-    z-index: 2;
-}
-
 .navbar .menu_item {
-    background: $menu_bg;
+    @include gradient($menu_bg, #34acfb);
     display: inline-block;
     line-height:$menu_height;
     padding:0 $menu_height/2;
@@ -137,6 +150,7 @@ body {
     font-weight: bold;
     font-family: Arial;
     text-shadow: 1px 1px 2px #444;
+    z-index: 1;
 }
 
 .menu_wrapper {
@@ -156,11 +170,11 @@ body {
 }
 
 .navbar a:hover {
-    background: $newsfeed_bg;
+    background: $content_bg;
 }
 
 .navbar a:hover .menu_item {
-    background:#24a6fa;
+    @include gradient(#35adfa, #24a6fa);
     margin-top:-$fork_content/2;
 }
 
@@ -170,7 +184,7 @@ body {
     top:$menu_height;
     left:0;
     border-right:$fork_content/2 solid $folds;
-    border-bottom:$fork_content/2 solid $menu_bg;
+    border-bottom:$fork_content/2 solid #34acfb;
 }
 
 .navbar .menu_item:after {
@@ -179,5 +193,93 @@ body {
     top:$menu_height;
     right:0;
     border-left:$fork_content/2 solid $folds;
-    border-bottom:$fork_content/2 solid $menu_bg;
+    border-bottom:$fork_content/2 solid #34acfb;
+}
+
+.content {
+    width: 100%;
+    height: 600px;
+    background: $content_bg;
+    position: relative;
+    text-align: center;
+}
+
+.content_container {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    background: #F4E6CC;
+    @include box-shadow(0px, 0px, 10px, #888);
+}
+
+.newsfeed, .featured_images, .common_tags {
+    margin-right: $gutter_width * 2;
+    padding: 0;
+    float: left;
+}
+
+.newsfeed {
+    width: ($container_width/3) * 2 - $gutter_width * 2;
+    height: 100%;
+}
+
+.newsfeed .ribbon {
+    font-family: Arial;
+    font-weight: bold;
+    color: #fff;
+    width: ($container_width/3) * 2 - $fork_width - $gutter_width * 6;
+    height: 36px;
+    line-height: 36px;
+    margin: 15px 0 0px -10px;
+    padding-left: 50px;
+    position: relative;
+    background-color: $forks;
+    text-shadow: 1px 1px 2px #444;
+    text-align: left;
+}
+
+.newsfeed .ribbon:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border: {
+        width: 18px;
+        style: solid;
+        color: $forks;
+    }
+    border-right-color: transparent;
+}
+
+.newsfeed .ribbon:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds $folds transparent transparent;
+}
+
+.newsfeed .article {
+    margin: 0 40px 40px 10px;
+    padding: 0 10px 10px 10px;
+}
+
+.newsfeed .article p {
+    text-align: justify;
+    line-height: 1.3;
+    padding: 10px;
+    margin: 0;
+}
+
+.featured_images, .common_tags
+{
+    width: ($container_width/3) - $gutter_width * 2;
+    height: 300px;
 }
