@@ -3,6 +3,8 @@
 <html>
     <head>
         <title>Mount Vernon Historical Preservation Commission</title>
+        <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="stylesheets/compiled/main.css" />
     </head>
     <body>
@@ -42,7 +44,10 @@
                                 venenatis non accumsan vitae, euismod quis justo. Pellentesque 
                                 vitae enim nisi. Pellentesque ut purus dolor.
                             </p>
-
+                            <a href="">Read more...</a>
+                        </div>
+                        <h1 class="ribbon">News Item 2</h1>
+                        <div class="article">
                             <p>
                                 Morbi imperdiet, diam congue accumsan laoreet, dolor orci 
                                 pellentesque turpis, at aliquet urna tellus tristique dolor. 
@@ -53,10 +58,12 @@
                                 magnis dis parturient montes, nascetur ridiculus mus. Vestibulum 
                                 ante ipsum primis in faucibus orci.
                             </p>
+                            <a href="">Read more...</a>
                         </div>
                     </div>
                     <div class="featured_images">
-
+                        <h1 class="ribbon">Featured Images</h1>
+                        <img src="http://placehold.it/224x224" />
                     </div>
                     <div class="common_tags">
 
