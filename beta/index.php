@@ -33,7 +33,6 @@ $posts = returnPosts('index', 2);
                 </div>
             </div>
             <div class="content">
-                <div class="content_container">
                     <div class="newsfeed">
                         <?php foreach($posts as $post): ?>
                         <h1 class="ribbon"><?php echo $post['title']; ?></h1>
@@ -41,16 +40,17 @@ $posts = returnPosts('index', 2);
                             <p>
                                 <?php echo max_words($post['text'], 200); ?>
                             </p>
-                            <a href="<?php WEBROOT() ?>/pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>
+                            <a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>
                         </div>
                         <?php endforeach; ?>
                     </div>
-                    <div class="left_box">
+                <div class="left_box">
+                    <div>
                         <h1 class="ribbon">Featured Images</h1>
                         <img src="http://placehold.it/224x224" />
                         <span style="display:block; margin:0 auto; color: #FF6600;">< ooooo ></span>
                     </div>
-                    <div class="left_box">
+                    <div>
                         <h1 class="ribbon">Common Tags</h1>
                     </div>
                 </div>

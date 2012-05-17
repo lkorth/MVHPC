@@ -57,7 +57,7 @@ body {
     width: $container_width;
     position: relative;
     margin: 0 auto;
-    @include box-shadow(0px, 0px, 10px, #888); 
+    @include box-shadow(0px, 0px, 10px, #888);
 }
 
 .header {
@@ -199,10 +199,12 @@ body {
 
 .content {
     width: $container_width;
+    height: 100%;
     min-height: 600px;
     background: $content_bg;
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 
 .content_container {
@@ -216,14 +218,18 @@ body {
 }
 
 .newsfeed, .left_box {
-    margin-right: $gutter_width * 2;
     padding: 0;
+    height: 100%;
+    position: relative;
+    margin-left: 24px;
     float: left;
+    background: #F4E6CC;
+    @include box-shadow(0px, 0px, 10px, #888);
 }
 
 .newsfeed {
-    width: ($container_width *.95/3) * 2 - $gutter_width * 2;
-    height: 100%;
+    width: 588px;
+    
 }
 
 .newsfeed .ribbon {
@@ -240,7 +246,7 @@ body {
     text-align: left;
 }
 
-.newsfeed .ribbon:after {
+.newsfeed .ribbon:after, .left_box .ribbon:after {
     width:$fork_content;
     content: "";
     position: absolute;
@@ -254,7 +260,7 @@ body {
     border-right-color: transparent;
 }
 
-.newsfeed .ribbon:before {
+.newsfeed .ribbon:before, .left_box .ribbon:before {
     content: " ";
     position: absolute;
     width: 0;
@@ -289,7 +295,11 @@ body {
 
 .left_box
 {
-    width: (($container_width *.95/3) - $gutter_width * 2) - 1px;
+    width: 300px;
+    margin-right: 24px;
+}
+
+.left_box div {
     height: 300px;
     margin-bottom: 20px;
 }
@@ -298,36 +308,14 @@ body {
     font-family: 'Lobster Two', cursive;
     color: #fff;
     height: 36px;
+    width: 210px;
     line-height: 36px;
-    margin: 15px 0 0 0;
+    margin: 15px 0 0 -10px;
+    padding-left: 35px;
     position: relative;
     background-color: $forks;
     text-shadow: 1px 1px 2px #444;
-    text-align: center;
-}
-
-.left_box .ribbon:after, .left_box .ribbon:before {
-    width:$fork_content;
-    content: "";
-    position: absolute;
-
-    border: {
-        width: 18px;
-        style: solid;
-        color: $forks;
-    }
-    border-left-color: transparent;
-    border-right-color: transparent;
-}
-
-.left_box .ribbon:before {
-    left: -20px;
-    top: 0;
-}
-
-.left_box .ribbon:after {
-    right: -20px;
-    top: 0;
+    text-align: left;
 }
 
 .left_box img {
