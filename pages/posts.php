@@ -8,7 +8,7 @@ if(!isset($_GET['id']) || empty($_GET['id']))
 
 $post = getAPost($_GET['id']);
 
-print_r($post);
+pr($post);
 
 include '../shared/footer.php';
 ?>
