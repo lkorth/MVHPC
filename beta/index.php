@@ -61,12 +61,13 @@
                             <a href="">Read more...</a>
                         </div>
                     </div>
-                    <div class="featured_images">
+                    <div class="left_box">
                         <h1 class="ribbon">Featured Images</h1>
                         <img src="http://placehold.it/224x224" />
+                        <span style="display:block; margin:0 auto;">< ooooo ></span>
                     </div>
-                    <div class="common_tags">
-
+                    <div class="left_box">
+                        <h1 class="ribbon">Common Tags</h1>
                     </div>
                 </div>
             </div>
