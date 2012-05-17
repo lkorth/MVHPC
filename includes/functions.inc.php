@@ -1,5 +1,10 @@
 <?PHP
 
+function returnPost($page, $maxNumberResults = 1){
+    $db = Database::getDatabase();
+    return ($db->getRows("SELECT * FROM posts WHERE page='$page' order by date desc limit $maxNumberResults"));
+}
+
 function autocomplete($field, $searchString, $fullText = false) {
     $db = Database::getDatabase();
 
