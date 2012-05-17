@@ -29,7 +29,7 @@ if ($_FILES['Filedata']['size'] > 30000000) {
                 $gd->saveAs($medlg, $fileExtention, 100) &&
                 $gd->scale(762) &&
                 $gd->saveAs($mid, $fileExtention, 100) &&
-                $gd->resize(144, 144) &&
+                $gd->resize(224, 224) &&
                 $gd->saveAs($thumb, $fileExtention, 100)) {
             $return = array(
                 'status' => '1',
