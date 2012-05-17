@@ -64,7 +64,7 @@
                     <div class="left_box">
                         <h1 class="ribbon">Featured Images</h1>
                         <img src="http://placehold.it/224x224" />
-                        <span style="display:block; margin:0 auto;">< ooooo ></span>
+                        <span style="display:block; margin:0 auto; color: #FF6600;">< ooooo ></span>
                     </div>
                     <div class="left_box">
                         <h1 class="ribbon">Common Tags</h1>

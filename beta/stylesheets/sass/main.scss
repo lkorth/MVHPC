@@ -281,9 +281,10 @@ body {
     font-size: 1.15em;
 }
 
-.newsfeed .article a {
+.newsfeed .article a, .newsfeed .article a:visited {
     margin-left: 10px;
     font-family: Times;
+    color: #FF6600
 }
 
 .left_box
