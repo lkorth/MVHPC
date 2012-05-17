@@ -37,7 +37,7 @@ $pager->calculate();
 for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
     $thumbnail = mysql_result($result, $i, "thumbnail");
     $id = mysql_result($result, $i, "id");
-    echo "<a href=\"$nextPage" . "id=$id\"><img src=\"$thumbnail\"/></a>&nbsp;";
+    echo "<a href=\"$nextPage" . "id=$id\"><img src=\"" . WEB_ROOT . "$thumbnail\"/></a>&nbsp;";
 }
 
 if ($pager->hasNextPage() || $pager->hasPrevPage()) {
