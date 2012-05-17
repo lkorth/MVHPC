@@ -31,7 +31,7 @@ if ($num == 0) {
 
 echo "<p>Your search returned " . $num . " results</p><br>";
 
-$pager = new Pager($page, 25, $num);
+$pager = new Pager($page, 16, $num);
 $pager->calculate();
 
 for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
