@@ -7,22 +7,8 @@ require_once $level . 'includes/master.inc.php';
         <meta content="text/html;charset=UTF-8" http-equiv="Content-type"/>
         <link REL="SHORTCUT ICON" HREF="favicon.ico"> 
         <?php if (!isset($upload)) { ?>
-            <!-- need a jquery lightbox, spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
             <script type="text/javascript" src="<?php WEBROOT() ?>min/?b=js&f=jquery-1.7.2.js,jquery.bgiframe.min.js,jquery.ajaxQueue.js,jquery.autocomplete.js,inpage_script.js,functions.js,base64.js,magiczoom.js&1234"></script>
             <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>min/?b=css&f=jquery.autocomplete.css,magiczoom.css,silhouette.css&1234" />
-        <?php } else {
-            ?>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/mootools.js"></script>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/Swiff.Uploader.js"></script>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/Fx.ProgressBar.js"></script>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/Lang.js"></script>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/FancyUpload2.js"></script>
-            <script type="text/javascript" src="<?php WEBROOT() ?>js/script.js"></script>
-            <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>css/uploadstyle.css" />
-            <link rel="stylesheet" href="<?php WEBROOT() ?>css/screen.css" type="text/css" media="screen, projection" />
-            <link rel="stylesheet" href="<?php WEBROOT() ?>css/print.css" type="text/css" media="print" />
-            <link href="<?php WEBROOT() ?>css/silhouette.css" type="text/css" rel="stylesheet" />
-            <!--[if IE]><link rel="stylesheet" href="<?php WEBROOT() ?>css/ie.css" type="text/css" media="screen, projection"><![endif]-->
         <?php } ?>
         <title><?php echo $title; ?></title>
         <script type="text/javascript">

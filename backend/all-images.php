@@ -10,7 +10,16 @@ $level = '../';
 include '../shared/header.php';
 
 $Auth->requireUser();
-
+?>
+            <!-- spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
+<script type="text/javascript" src="<?php WEBROOT() ?>js/jquery.lightbox-0.5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>css/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript">
+$(function() {
+	$('[rel=lightbox]').lightBox();
+});
+</script>
+<?php
 echo "<br>";
 echo '<table align="center">';
 echo '<form name="form" enctype="multipart/form-data">';
@@ -46,7 +55,7 @@ while ($i < $finish) {
     $pictags = "tags" . $id;
     $picinfo = "info" . $id;
     $button = "button" . $id;
-    echo "<tr><td><br><br><a href=\"$mid\" rel=\"lightbox\"><img src=\"$thumbnail\" /></a>
+    echo "<tr><td><br><br><a href=\"" . WEB_ROOT . "$mid\" rel=\"lightbox\"><img src=\"" . WEB_ROOT . "$thumbnail\" /></a>
 </td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea class=\"textarea\" name=\"$pictags\" id=\"$pictags\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$tag</textarea></td></tr>
 	<tr><td></td><td align=\"right\"><p>Information:</p> <textarea class = \"textarea\" name=\"$picinfo\" id=\"$picinfo\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$info</textarea><br><br>
 	  <input type=button value=\"Edit\" onClick=\"editfunction($id)\">
