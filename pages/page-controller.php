@@ -21,7 +21,7 @@ if ($page == 'about-us') {
     $id = 6;
 } else if ($page == 'links') {
     $title = "MVHPC :: Links";
-    $id = 9;
+    $id = 8;
 } else if ($page == 'text') {
     $title = "MVHPC :: Text";
     $id = 5;
