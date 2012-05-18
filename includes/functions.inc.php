@@ -10,6 +10,11 @@ function returnAPost($id){
     return ($db->getRow("SELECT * FROM posts WHERE id='$id'"));
 }
 
+function featuredImages(){
+    $db = Database::getDatabase();
+    return ($db->getRows("SELECT id, thumbnail FROM search ORDER BY RAND() LIMIT 5"));
+}
+
 function autocomplete($field, $searchString, $fullText = false) {
     $db = Database::getDatabase();
 
