@@ -1,10 +1,10 @@
 <!doctype html>
 
-<?php 
+<?php
 
 error_reporting('E_ALL');
 
-include('../includes/master.inc.php'); 
+include('../includes/master.inc.php');
 
 $posts = returnPosts('index', 2);
 
@@ -16,6 +16,8 @@ $posts = returnPosts('index', 2);
         <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="stylesheets/compiled/main.css" />
+        <script src="/mvhpc/js/jquery-1.7.2.js"></script>
+        <script src="js/script.js"></script>
     </head>
     <body>
         <div class="container">
@@ -47,8 +49,22 @@ $posts = returnPosts('index', 2);
                 <div class="left_box">
                     <div>
                         <h1 class="ribbon">Featured Images</h1>
-                        <img src="http://placehold.it/224x224" />
-                        <span style="display:block; margin:0 auto; color: #FF6600;">< ooooo ></span>
+                        <div class="featured_images">
+                        <?php $imgArr = featuredImages();
+                              $cnt = 0;
+                              foreach($imgArr as $img): ?>
+                                <?php if($cnt == 0): ?>
+                                    <div class="featured current">
+                                <?php else: ?>
+                                        <div class="featured">
+                                <?php endif; ?>
+                                <a href="<?php WEBROOT(); ?>pages/fullsize.php?id=<?php echo $img['id']; ?>"><img src="<?php echo WEB_ROOT . $img['thumbnail']; ?>" /></a>
+                            </div>
+                        <?php
+                            $cnt++;
+                        endforeach; ?>
+                        </div>
+                        <span style="display:block; margin:0 auto; color: #FF6600;"><button id="prevImg"><</button> ooooo <button id="nextImg">></button></span>
                     </div>
                     <div>
                         <h1 class="ribbon">Common Tags</h1>

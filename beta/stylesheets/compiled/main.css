@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : main
     Created on : May 14, 2012, 2:32:36 PM
     Author     : areed12
@@ -273,3 +273,21 @@ body {
 
 .left_box img {
   margin-top: 15px; }
+
+.featured_images {
+    position: relative;
+    width: 224px;
+    height: 224px !important;
+    margin: 0 auto;
+}
+
+.featured_images .featured {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.featured:first-child {
+    display: block;
+}
