@@ -16,6 +16,12 @@ foreach($result as $row){
     }
 }
 
-echo json_encode($tags);
+$output = array();
+
+foreach($tags as $key => $value){
+    $output[][$key] = $value;
+}
+
+echo json_encode($output);
 
 ?>
