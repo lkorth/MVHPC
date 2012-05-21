@@ -20,9 +20,10 @@ foreach($result as $row){
 $output = array();
 
 foreach($tags as $key => $value){
-    $output[] = array('tag' => $key, 'count' => $value);
+    if($key !== '')
+        $output[] = array('tag' => $key, 'count' => $value);
 }
 
-echo json_encode($output);
+echo json_encode($output, true);
 
 ?>
