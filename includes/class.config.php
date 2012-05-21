@@ -130,13 +130,13 @@
 
             define('WEB_ROOT', '/mvhpc/');
 
-            $this->dbReadHost      = 'localhost';
-            $this->dbWriteHost     = 'localhost';
+            $this->dbReadHost      = '10.104.65.68';
+            $this->dbWriteHost     = '10.104.65.68';
             $this->dbName          = 'mvhpcorg_main';
-            $this->dbReadUsername  = 'irobot';
-            $this->dbWriteUsername = 'irobot';
-            $this->dbReadPassword  = 'susancalvin';
-            $this->dbWritePassword = 'susancalvin';
+            $this->dbReadUsername  = 'luke';
+            $this->dbWriteUsername = 'luke';
+            $this->dbReadPassword  = 'lightsaber';
+            $this->dbWritePassword = 'lightsaber';
             $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
         }
