@@ -64,7 +64,7 @@ $posts = returnPosts('index', 2);
                             $cnt++;
                         endforeach; ?>
                         </div>
-                        <span style="display:block; margin:0 auto; color: #FF6600;"><button id="prevImg"><</button> ooooo <button id="nextImg">></button></span>
+                        <span style="display:block; margin:0 auto; color: #FF6600;"><button id="prevImg"><</button><button id="nextImg">></button></span>
                     </div>
                     <div>
                         <h1 class="ribbon">Common Tags</h1>
