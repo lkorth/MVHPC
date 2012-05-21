@@ -9,6 +9,7 @@ $tags = array();
 foreach($result as $row){
     $tmp = explode(';', $row['tags']);
     foreach($tmp as $tg){
+        $tg = trim($tg);
         if(isset($tags[$tg]))
             $tags[$tg]++;
         else
@@ -19,7 +20,7 @@ foreach($result as $row){
 $output = array();
 
 foreach($tags as $key => $value){
-    $output[][$key] = $value;
+    $output[] = array('tag' => $key, 'count' => $value);
 }
 
 echo json_encode($output);
