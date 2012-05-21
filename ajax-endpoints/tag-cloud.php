@@ -20,7 +20,7 @@ foreach($result as $row){
 $output = array();
 
 foreach($tags as $key => $value){
-    if($key !== '')
+    if($key !== '' && $value > 5 && strlen($key) <= 15)
         $output[] = array('tag' => $key, 'count' => $value);
 }
 
