@@ -9,7 +9,7 @@
         public $username;
         public $user;
         public $expiryDate;
-        public $loginUrl = '/backend/login.php'; // Where to direct users to login
+        public $loginUrl = 'backend/login.php'; // Where to direct users to login
 
         private $nid;
         private $loggedIn;
@@ -38,7 +38,10 @@
         public function init()
         {
             $this->setACookie();
-            $this->loggedIn = $this->attemptCookieLogin();
+            $this->loggedIn = $this->attemptSessionLogin();
+
+            if($this->loggedIn === false)
+                $this->loggedIn = $this->attemptCookieLogin();
         }
 
         public function login($username, $password)
@@ -60,6 +63,7 @@
             $this->user->load($row);
 
             $this->generateBCCookies();
+            $_SESSION['nid'] = $this->nid;
 
             $this->loggedIn = true;
 
@@ -69,6 +73,7 @@
         public function logout()
         {
             $this->loggedIn = false;
+            unset($_SESSION['nid']);
             $this->clearCookies();
             $this->sendToLoginPage();
         }
@@ -230,6 +235,29 @@
             $this->username = $u->username;
             $this->user     = $u;
             $this->generateBCCookies();
+
+            return true;
+        }
+
+        private function attemptSessionLogin(){
+            if(!isset($_SESSION['nid']))
+                return false;
+
+            $nid = $_SESSION['nid'];
+
+            $db = Database::getDatabase();
+
+            // We SELECT * so we can load the full user record into the user DBObject later
+            $row = $db->getRow('SELECT * FROM users WHERE nid = ' . $db->quote($nid));
+            if($row === false)
+                return false;
+
+            $this->id       = $row['id'];
+            $this->nid      = $row['nid'];
+            $this->username = $row['username'];
+            $this->user     = new User();
+            $this->user->id = $this->id;
+            $this->user->load($row);
 
             return true;
         }
