@@ -11,7 +11,7 @@ include '../shared/header.php';
 
 $Auth->requireUser();
 ?>
-            <!-- spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
+<!-- spell checker for all.php http://code.google.com/p/jquery-spellchecker/ -->
 <script type="text/javascript" src="<?php WEBROOT() ?>js/jquery.lightbox-0.5.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>css/jquery.lightbox-0.5.css" media="screen" />
 <script type="text/javascript">
