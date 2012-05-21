@@ -274,13 +274,13 @@ body {
 .left_box img {
   margin-top: 15px; }
 
-.featured_images {
+.left_content {
   position: relative;
   width: 224px;
   height: 224px !important;
   margin: 0 auto; }
 
-.featured_images .featured {
+.left_content .featured {
   position: absolute;
   top: 0;
   left: 0;
@@ -291,3 +291,6 @@ body {
 
 .featured:first-child {
   display: block; }
+
+#tagcloud {
+  width: 100%; }

@@ -1,8 +1,24 @@
-featured = $('.featured');
-total = featured.length;
-count = 1;
+var featured = $('.featured');
+var total = featured.length;
+var count = 1;
+
+//var tags = [{tag: "computers", count: 56}, {tag: "mobile" , count: 12}, 
+//    {tag: "fire" , count: 23}, {tag: "buildings" , count: 2}, {tag: "Mt Vernon" , count: 32}, 
+//    {tag: "Scorz" , count: 2}, {tag: "Cornell College" , count: 10}, 
+//    {tag: "Brick District" , count: 14}];
 
 $().ready(function(){
+    
+    $.get('/mvhpc/ajax-endpoints/tag-cloud.php', function(result){
+        
+        tags = $.parseJSON(result);
+        $('#tagcloud').append('<ul></ul>');
+        ul = $('#tagcloud').find('ul');
+        $.each(tags, function(i, item){
+            $(ul).append("<li value=" + item.count +">" + "<a href=''>" + item.tag + "</a>" + "</li>");
+        });
+        $(ul).tagcloud({type:"list",height:224,colormax:'FF6600',colormin:'ff8f44'});
+    });
 
     $('#prevImg').live('click', function(){
         fadeImg(0);

@@ -17,6 +17,7 @@ $posts = returnPosts('index', 2);
         <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="stylesheets/compiled/main.css" />
         <script src="/mvhpc/js/jquery-1.7.2.js"></script>
+        <script src="js/jquery.tagcloud.min.js"></script>
         <script src="js/script.js"></script>
     </head>
     <body>
@@ -49,7 +50,7 @@ $posts = returnPosts('index', 2);
                 <div class="left_box">
                     <div>
                         <h1 class="ribbon">Featured Images</h1>
-                        <div class="featured_images">
+                        <div class="left_content">
                         <?php $imgArr = featuredImages();
                               $cnt = 0;
                               foreach($imgArr as $img): ?>
@@ -68,6 +69,9 @@ $posts = returnPosts('index', 2);
                     </div>
                     <div>
                         <h1 class="ribbon">Common Tags</h1>
+                        <div class="left_content" id="tagcloud">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
