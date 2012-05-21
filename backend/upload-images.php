@@ -8,17 +8,17 @@ $title = "Upload Files";
 $level = '../';
 include '../shared/header.php';
 ?>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/mootools.js"></script>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/Swiff.Uploader.js"></script>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/Fx.ProgressBar.js"></script>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/Lang.js"></script>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/FancyUpload2.js"></script>
-<script type="text/javascript" src="<?php WEBROOT() ?>js/script.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php WEBROOT() ?>css/uploadstyle.css" />
-<link rel="stylesheet" href="<?php WEBROOT() ?>css/screen.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="<?php WEBROOT() ?>css/print.css" type="text/css" media="print" />
-<link href="<?php WEBROOT() ?>css/silhouette.css" type="text/css" rel="stylesheet" />
-<!--[if IE]><link rel="stylesheet" href="<?php WEBROOT() ?>css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<script type="text/javascript" src="/mvhpc/js/mootools.js"></script>
+<script type="text/javascript" src="/mvhpc/js/Swiff.Uploader.js"></script>
+<script type="text/javascript" src="/mvhpc/js/Fx.ProgressBar.js"></script>
+<script type="text/javascript" src="/mvhpc/js/Lang.js"></script>
+<script type="text/javascript" src="/mvhpc/js/FancyUpload2.js"></script>
+<script type="text/javascript" src="/mvhpc/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/mvhpc/css/uploadstyle.css" />
+<link rel="stylesheet" href="/mvhpc/css/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/mvhpc/css/print.css" type="text/css" media="print" />
+<link href="/mvhpc/css/silhouette.css" type="text/css" rel="stylesheet" />
+<!--[if IE]><link rel="stylesheet" href="/mvhpc/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <br>
 <div align="center">
     <form action="upload.php" method="post" enctype="multipart/form-data" id="form-demo">
@@ -42,11 +42,11 @@ include '../shared/header.php';
             </p>
             <div>
                 <strong class="overall-title"></strong><br>
-                <img src="images/progress-bar/bar.gif" class="progress overall-progress" />
+                <img src="<?php WEBROOT(); ?>images/uploader/bar.gif" class="progress overall-progress" />
             </div>
             <div>
                 <strong class="current-title"></strong><br>
-                <img src="images/progress-bar/bar.gif" class="progress current-progress" />
+                <img src="<?php WEBROOT(); ?>images/uploader/bar.gif" class="progress current-progress" />
             </div>
             <div class="current-text">
             </div>
