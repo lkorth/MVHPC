@@ -10,7 +10,7 @@ $name = $_SESSION['name'];
 session_destroy();
 
 $db = Database::getDatabase();
-$row = $db->query("UPDATE pages SET data = '$data' WHERE id = '$id'");
+$row = $db->getRow("UPDATE pages SET data = '$data' WHERE id = '$id'");
 
 $name=$name . ".php";
 header("Location: $name");
