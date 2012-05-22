@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+<Placemark>
+  <name> Cornell College Historic District </name>
+  <description> content here </description>
+  <Style>
+    <PolyStyle>
+      <color> 4400FF00 </color>
+      <fill> 1 </fill>
+      <outline> 1 </outline>
+    </PolyStyle>
+    <LineStyle>
+      <width> 2 </width>
+      <color> FF00FF00 </color>
+    </LineStyle>
+  </Style>
+  
+  <MultiGeometry> <Polygon> <outerBoundaryIs>
+    <LinearRing> <coordinates>
+      -91.430081, 41.925156, 0
+      -91.430060, 41.928628, 0
+      -91.429175, 41.928626, 0
+      -91.429037, 41.929561, 0
+      -91.423910, 41.929588, 0
+      -91.423687, 41.929039, 0
+      -91.422801, 41.929029, 0
+      -91.422783, 41.928383, 0
+      -91.422488, 41.928379, 0
+      -91.422599, 41.927002, 0
+      -91.422872, 41.926998, 0
+      -91.423438, 41.926414, 0
+      -91.419663, 41.924311, 0
+      -91.418691, 41.923777, 0
+      -91.419479, 41.922993, 0
+      -91.420474, 41.923580, 0
+      -91.422466, 41.921748, 0
+      -91.424456, 41.922967, 0
+      -91.424665, 41.923050, 0
+      -91.424912, 41.923094, 0
+      -91.425635, 41.923153, 0
+      -91.426092, 41.923279, 0
+      -91.426392, 41.923419, 0
+      -91.427158, 41.923838, 0
+      -91.427371, 41.923898, 0
+      -91.426179, 41.925138, 0
+      -91.430081, 41.925156, 0
+    </coordinates> </LinearRing>
+  </outerBoundaryIs> </Polygon> </MultiGeometry>
+</Placemark>
+
+<Placemark>
+  <name> Ash Park Historic District </name>
+  <description> content here </description>
+  <Style>
+    <PolyStyle>
+      <color> 440000FF </color>
+      <fill> 1 </fill>
+      <outline> 1 </outline>
+    </PolyStyle>
+    <LineStyle>
+      <width> 2 </width>
+      <color> FF0000FF </color>
+    </LineStyle>
+  </Style>
+  
+  <MultiGeometry> <Polygon> <outerBoundaryIs>
+    <LinearRing> <coordinates>
+      -91.422579, 41.927002, 0
+      -91.422468, 41.928379, 0
+      -91.420991, 41.928356, 0
+      -91.420994, 41.929041, 0
+      -91.418312, 41.928992, 0
+      -91.418350, 41.926945, 0
+      -91.421389, 41.926981, 0
+      -91.421732, 41.926982, 0
+      -91.422579, 41.927002, 0
+    </coordinates> </LinearRing>
+  </outerBoundaryIs> </Polygon> </MultiGeometry>
+</Placemark>
+
+<Placemark>
+  <name> Commercial Historic District </name>
+  <description> content here </description>
+  <Style>
+    <PolyStyle>
+      <color> 44FF0000 </color>
+      <fill> 1 </fill>
+      <outline> 1 </outline>
+    </PolyStyle>
+    <LineStyle>
+      <width> 2 </width>
+      <color> FFFF0000 </color>
+    </LineStyle>
+  </Style>
+  
+  <MultiGeometry> <Polygon> <outerBoundaryIs>
+    <LinearRing> <coordinates>
+      -91.418413, 41.922398, 0
+      -91.417933, 41.922883, 0
+      -91.417556, 41.922679, 0
+      -91.417252, 41.922985, 0
+      -91.416358, 41.922490, 0
+      -91.416818, 41.922023, 0
+      -91.416914, 41.922075, 0
+      -91.417096, 41.921897, 0
+      -91.417206, 41.921957, 0
+      -91.417349, 41.921820, 0
+      -91.418413, 41.922398, 0
+    </coordinates> </LinearRing>
+  </outerBoundaryIs> </Polygon> </MultiGeometry>
+</Placemark>
+
+</Document>
+</kml>
