@@ -4,14 +4,7 @@ var count = 1;
 
 $().ready(function(){
     
-    news_height = $('.newsfeed').height();
-    left_height = $('.left_box').height();
-    
-    if(news_height > left_height){
-        $('.left_box').css('height', news_height + "px");
-    }else{
-        $('.newsfeed').css('height', left_height + "px");
-    }
+    setTimeout("setHeights()", 500);
     
     $.get('/mvhpc/ajax-endpoints/tag-cloud.php', function(result){
         
@@ -55,4 +48,15 @@ function fadeImg(direction){
     
     current.removeClass('current');
     next.addClass('current');
+}
+
+function setHeights(){
+    news_height = $('.newsfeed').height();
+    left_height = $('.left_box').height();
+    
+    if(news_height > left_height){
+        $('.left_box').css('height', news_height + "px");
+    }else{
+        $('.newsfeed').css('height', left_height + "px");
+    }
 }
