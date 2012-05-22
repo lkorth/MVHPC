@@ -63,7 +63,7 @@ function download() {
 
 // open the current PDF in a new window with the fullscreen viewer
 function fullscreen() {
-  window.open('viewer-fs.php?pdf=' + pdfFile, '_blank');
+  window.open('pdf-viewer-fs.php?pdf=' + pdfFile, '_blank');
 }
 
 // asynchronously download PDF as an ArrayBuffer

@@ -10,7 +10,7 @@ html {
 body {
   height: 100%;
   background-color: #404040;
-  background-image: url(images/texture.png);
+  background-image: url(../images/pdf-js/texture.png);
   font-family: Segoe UI, Verdana, sans-serif;
 }
 
@@ -147,9 +147,9 @@ html[dir='rtl'] #sidebarContent {
 #toolbarSidebar {
   width: 200px;
   height: 32px;
-  background-image: url(images/texture.png),
+  background-image: url(../images/pdf-js/texture.png),
                     -moz-linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
-  background-image: url(images/texture.png),
+  background-image: url(../images/pdf-js/texture.png),
                     -webkit-linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
   box-shadow: inset -2px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
@@ -161,9 +161,9 @@ html[dir='rtl'] #sidebarContent {
 #toolbarViewer {
   position: relative;
   height: 32px;
-  background-image: url(images/texture.png),
+  background-image: url(../images/pdf-js/texture.png),
                     -moz-linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
-  background-image: url(images/texture.png),
+  background-image: url(../images/pdf-js/texture.png),
                     -webkit-linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
   border-left: 1px solid hsla(0,0%,0%,.5);
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
@@ -403,7 +403,7 @@ html[dir='rtl'] .dropdownToolbarButton {
   max-width: 120px;
   padding: 3px 2px 2px;
   overflow: hidden;
-  background: url(images/toolbarButton-menuArrows.png) no-repeat;
+  background: url(../images/pdf-js/toolbarButton-menuArrows.png) no-repeat;
 }
 html[dir='ltr'] .dropdownToolbarButton {
   background-position: 95%;
@@ -459,52 +459,52 @@ html[dir='rtl'] .toolbarButton:first-child {
 
 .toolbarButton#sidebarToggle::before {
   display: inline-block;
-  content: url(images/toolbarButton-sidebarToggle.png);
+  content: url(../images/pdf-js/toolbarButton-sidebarToggle.png);
 }
     
 html[dir='ltr'] .toolbarButton.pageUp::before {
   display: inline-block;
-  content: url(images/toolbarButton-pageUp.png);
+  content: url(../images/pdf-js/toolbarButton-pageUp.png);
 }
 
 html[dir='rtl'] .toolbarButton.pageUp::before {
   display: inline-block;
-  content: url(images/toolbarButton-pageUp-rtl.png);
+  content: url(../images/pdf-js/toolbarButton-pageUp-rtl.png);
 }
     
 html[dir='ltr'] .toolbarButton.pageDown::before {
   display: inline-block;
-  content: url(images/toolbarButton-pageDown.png);
+  content: url(../images/pdf-js/toolbarButton-pageDown.png);
 }
 
 html[dir='rtl'] .toolbarButton.pageDown::before {
   display: inline-block;
-  content: url(images/toolbarButton-pageDown-rtl.png);
+  content: url(../images/pdf-js/toolbarButton-pageDown-rtl.png);
 }
 
 .toolbarButton.zoomOut::before {
   display: inline-block;
-  content: url(images/toolbarButton-zoomOut.png);
+  content: url(../images/pdf-js/toolbarButton-zoomOut.png);
 }
     
 .toolbarButton.zoomIn::before {
   display: inline-block;
-  content: url(images/toolbarButton-zoomIn.png);
+  content: url(../images/pdf-js/toolbarButton-zoomIn.png);
 }
 
 .toolbarButton.download::before {
   display: inline-block;
-  content: url(images/toolbarButton-download.png);
+  content: url(../images/pdf-js/toolbarButton-download.png);
 }
 
 #viewThumbnail.toolbarButton::before {
   display: inline-block;
-  content: url(images/toolbarButton-viewThumbnail.png);
+  content: url(../images/pdf-js/toolbarButton-viewThumbnail.png);
 }
     
 #viewOutline.toolbarButton::before {
   display: inline-block;
-  content: url(images/toolbarButton-viewOutline.png);
+  content: url(../images/pdf-js/toolbarButton-viewOutline.png);
 }
 
 .toolbarField {
@@ -727,7 +727,7 @@ canvas {
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('images/loading-icon.gif') center no-repeat;
+  background: url('../images/pdf-js/loading-icon.gif') center no-repeat;
 }
 
 #loadingBox {

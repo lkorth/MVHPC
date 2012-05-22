@@ -7,7 +7,7 @@
   <script type="text/javascript">
     var pdfFile = "<?php echo $_GET['pdf'] ?>";
   </script>
-  <link rel="stylesheet" href="../js/pdf-js/viewer.css"/>
+  <link rel="stylesheet" href="../css/pdf-viewer.css"/>
 
   <script type="text/javascript" src="../js/pdf-js/compatibility.js"></script>
   <!-- PDFJSSCRIPT_REMOVE_FIREFOX_EXTENSION -->
