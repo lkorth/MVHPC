@@ -2,12 +2,16 @@ var featured = $('.featured');
 var total = featured.length;
 var count = 1;
 
-//var tags = [{tag: "computers", count: 56}, {tag: "mobile" , count: 12}, 
-//    {tag: "fire" , count: 23}, {tag: "buildings" , count: 2}, {tag: "Mt Vernon" , count: 32}, 
-//    {tag: "Scorz" , count: 2}, {tag: "Cornell College" , count: 10}, 
-//    {tag: "Brick District" , count: 14}];
-
 $().ready(function(){
+    
+    news_height = $('.newsfeed').height();
+    left_height = $('.left_box').height();
+    
+    if(news_height > left_height){
+        $('.left_box').css('height', news_height + "px");
+    }else{
+        $('.newsfeed').css('height', left_height + "px");
+    }
     
     $.get('/mvhpc/ajax-endpoints/tag-cloud.php', function(result){
         
