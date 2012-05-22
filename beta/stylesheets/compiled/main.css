@@ -36,7 +36,7 @@ body {
   margin-left: -10px;
   position: relative; }
 
-.navbar:before {
+.menu:before {
   content: " ";
   position: absolute;
   width: 0;
@@ -47,7 +47,7 @@ body {
   border-style: solid;
   border-color: #0583d5 #0583d5 transparent transparent; }
 
-.navbar:after {
+.menu:after {
   content: " ";
   position: absolute;
   width: 0;
@@ -58,38 +58,6 @@ body {
   border-style: solid;
   border-color: #0583d5 transparent transparent #0583d5; }
 
-/*.menu:after {
-content: "";
-position: absolute;
-top: 3px;
-bottom: 3px;
-left : -10px;
-right: -10px;
-border-top: 1px dashed #fff;
-border-bottom: 1px dashed #fff;
-}*/
-/*.navbar:before, .navbar:after {
-width:$fork_content;
-content: "";
-position: absolute;
-border: {
-width: ($fork_width - $fork_content)/2;
-style: solid;
-color: $forks;
-}
-}
-
-.navbar:after {
-left: $fork_right_margin;
-top: $fork_top_margin;
-border-right-color:transparent;
-}
-
-.navbar:before {
-left: $fork_left_margin;
-top: $fork_top_margin;
-border-left-color:transparent;
-}*/
 .menu {
   width: 100%;
   height: 48px;
@@ -104,6 +72,29 @@ border-left-color:transparent;
   text-align: center;
   z-index: 1; }
 
+/*.navbar:before, .navbar:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    border: {
+        width: ($fork_width - $fork_content)/2;
+        style: solid;
+        color: $forks;
+    }
+    z-index: 1;
+}
+
+.navbar:after {
+    left: $fork_right_margin;
+    top: $fork_top_margin;
+    border-right-color:transparent;
+}
+
+.navbar:before {
+    left: $fork_left_margin;
+    top: $fork_top_margin;
+    border-left-color:transparent;
+}*/
 .navbar .menu_item {
   background-color: #56bafb;
   background-image: -moz-linear-gradient(#56bafb, #34acfb);
@@ -136,33 +127,31 @@ border-left-color:transparent;
   overflow: visible; }
 
 .navbar a:hover {
-  background: #F4E6CC; }
+  background: #F4E6CC;
+  color: #ff6600; }
 
-.navbar a:hover .menu_item {
-  background-color: #35adfa;
-  background-image: -moz-linear-gradient(#35adfa, #24a6fa);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#35adfa), to(#24a6fa));
-  background-image: -webkit-linear-gradient(#35adfa, #24a6fa);
-  background-image: -o-linear-gradient(#35adfa, #24a6fa);
-  background-image: linear-gradient(#35adfa, #24a6fa);
-  margin-top: -12px; }
+/*.navbar a:hover .menu_item {
+@include gradient(#35adfa, #24a6fa);
+margin-top:-$fork_content/2;
+}
 
 .navbar .menu_item:before {
-  content: "";
-  position: absolute;
-  top: 48px;
-  left: 0;
-  border-right: 12px solid #0583d5;
-  border-bottom: 12px solid #34acfb; }
+content: "";
+position:absolute;
+top:$menu_height;
+left:0;
+border-right:$fork_content/2 solid $folds;
+border-bottom:$fork_content/2 solid #34acfb;
+}
 
 .navbar .menu_item:after {
-  content: "";
-  position: absolute;
-  top: 48px;
-  right: 0;
-  border-left: 12px solid #0583d5;
-  border-bottom: 12px solid #34acfb; }
-
+content: "";
+position:absolute;
+top:$menu_height;
+right:0;
+border-left:$fork_content/2 solid $folds;
+border-bottom:$fork_content/2 solid #34acfb;
+}*/
 .content {
   width: 960px;
   height: 100%;

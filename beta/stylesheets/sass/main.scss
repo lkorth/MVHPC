@@ -24,8 +24,8 @@ $fork_content: 24px;
 $fork_width: 72px;
 $menu_width: $container_width + 20px;
 $menu_height: $fork_width - $fork_content;
-$fork_left_margin: - $fork_width;
-$fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content * 2);
+$fork_left_margin: - $fork_width + 10px;
+$fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content) + 5px;
 $menu_top_margin: 0px;
 $menu_left_margin: -10px;
 $fork_top_margin: $menu_top_margin + 24px; 
@@ -72,7 +72,7 @@ body {
     position: relative;
 }
 
-.navbar:before {
+.menu:before {
     content: " ";
     position: absolute;
     width: 0;
@@ -84,7 +84,7 @@ body {
     border-color: $folds $folds transparent transparent;
 }
 
-.navbar:after {
+.menu:after {
     content: " ";
     position: absolute;
     width: 0;
@@ -96,40 +96,6 @@ body {
     border-color: $folds transparent transparent $folds;
 }
 
-/*.menu:after {
-content: "";
-position: absolute;
-top: 3px;
-bottom: 3px;
-left : -10px;
-right: -10px;
-border-top: 1px dashed #fff;
-border-bottom: 1px dashed #fff;
-}*/
-
-/*.navbar:before, .navbar:after {
-width:$fork_content;
-content: "";
-position: absolute;
-border: {
-width: ($fork_width - $fork_content)/2;
-style: solid;
-color: $forks;
-}
-}
-
-.navbar:after {
-left: $fork_right_margin;
-top: $fork_top_margin;
-border-right-color:transparent;
-}
-
-.navbar:before {
-left: $fork_left_margin;
-top: $fork_top_margin;
-border-left-color:transparent;
-}*/
-
 .menu {
     width: 100%;
     height: $menu_height;
@@ -139,6 +105,30 @@ border-left-color:transparent;
     text-align: center;
     z-index: 1;
 }
+
+/*.navbar:before, .navbar:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    border: {
+        width: ($fork_width - $fork_content)/2;
+        style: solid;
+        color: $forks;
+    }
+    z-index: 1;
+}
+
+.navbar:after {
+    left: $fork_right_margin;
+    top: $fork_top_margin;
+    border-right-color:transparent;
+}
+
+.navbar:before {
+    left: $fork_left_margin;
+    top: $fork_top_margin;
+    border-left-color:transparent;
+}*/
 
 .navbar .menu_item {
     @include gradient($menu_bg, #34acfb);
@@ -172,30 +162,31 @@ border-left-color:transparent;
 
 .navbar a:hover {
     background: #F4E6CC;
+    color: #ff6600;
 }
 
-.navbar a:hover .menu_item {
-    @include gradient(#35adfa, #24a6fa);
-    margin-top:-$fork_content/2;
+/*.navbar a:hover .menu_item {
+@include gradient(#35adfa, #24a6fa);
+margin-top:-$fork_content/2;
 }
 
 .navbar .menu_item:before {
-    content: "";
-    position:absolute;
-    top:$menu_height;
-    left:0;
-    border-right:$fork_content/2 solid $folds;
-    border-bottom:$fork_content/2 solid #34acfb;
+content: "";
+position:absolute;
+top:$menu_height;
+left:0;
+border-right:$fork_content/2 solid $folds;
+border-bottom:$fork_content/2 solid #34acfb;
 }
 
 .navbar .menu_item:after {
-    content: "";
-    position:absolute;
-    top:$menu_height;
-    right:0;
-    border-left:$fork_content/2 solid $folds;
-    border-bottom:$fork_content/2 solid #34acfb;
-}
+content: "";
+position:absolute;
+top:$menu_height;
+right:0;
+border-left:$fork_content/2 solid $folds;
+border-bottom:$fork_content/2 solid #34acfb;
+}*/
 
 .content {
     width: $container_width;

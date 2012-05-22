@@ -30,8 +30,8 @@ $posts = returnPosts('index', 2);
                     <span class="menu_wrapper">
                         <a href='#'><span class="menu_item">Home</span></a>
                         <a href='#'><span class="menu_item">About</span></a>
-                        <a href='#'><span class="menu_item">Services</span></a>
-                        <a href='#'><span class="menu_item">Contact</span></a>
+                        <a href='#'><span class="menu_item">Map</span></a>
+                        <a href='#'><span class="menu_item">History</span></a>
                     </span>
                 </div>
             </div>
