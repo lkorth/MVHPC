@@ -17,12 +17,18 @@ foreach($result as $row){
     }
 }
 
+asort($tags);
+
+$tags = array_slice($tags, count($tags) - 25, count($tags));
+
 $output = array();
 
 foreach($tags as $key => $value){
     if($key !== '' && $value > 5 && strlen($key) <= 15 && $key != "mount vernon")
         $output[] = array('tag' => $key, 'count' => $value);
 }
+
+shuffle($output);
 
 echo json_encode($output, true);
 
