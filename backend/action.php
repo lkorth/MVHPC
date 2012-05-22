@@ -6,7 +6,7 @@ include '../shared/header.php';
 $Auth->requireUser();
 
 $db = Database::getDatabase();
-$row = $db->getRow("SELECT count(date) as num FROM changeRequests WHERE processed = 'false'");
+$row = $db->getRow("SELECT count(date) as num FROM change_requests WHERE processed = 'false'");
 $unprocessed = $row['num'];
 
 if(isset($_GET['message']))

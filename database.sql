@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `changerequests` (
+CREATE TABLE IF NOT EXISTS `change_requests` (
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `email` varchar(500) NOT NULL,
   `message` text NOT NULL,
