@@ -1,5 +1,5 @@
 // URL to the pdf file to load (dynamic in PHP)
-var url = 'data/' + pdfFile + '.pdf';
+var url = '../data/' + pdfFile + '.pdf';
 
 // disable workers to avoid cross-origin issues
 PDFJS.disableWorker = true;

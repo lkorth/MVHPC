@@ -3,7 +3,7 @@
 
 'use strict';
 
-var kDefaultURL = 'data/' + pdfFile + '.pdf';
+var kDefaultURL = '../data/' + pdfFile + '.pdf';
 var kDefaultScale = 'auto';
 var kDefaultScaleDelta = 1.1;
 var kUnknownScale = 0;
@@ -12,7 +12,7 @@ var kCssUnits = 96.0 / 72.0;
 var kScrollbarPadding = 40;
 var kMinScale = 0.25;
 var kMaxScale = 4.0;
-var kImageDirectory = './images/';
+var kImageDirectory = '../js/pdf-js/images/';
 var kSettingsMemory = 20;
 
 var mozL10n = document.mozL10n || document.webL10n;
