@@ -41,7 +41,7 @@ $posts = returnPosts('index', 2);
                         <h1 class="ribbon"><?php echo $post['title']; ?></h1>
                         <div class="article">
                             <p>
-                                <?php echo max_words($post['text'], 200); ?>
+                                <?php echo max_words($post['text'], 150); ?>
                             </p>
                             <a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>
                         </div>
