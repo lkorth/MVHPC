@@ -1,16 +1,16 @@
 # This turns on mod_rewrite and redirects according to the rules below
 
 RewriteEngine On
-RewriteRule    ^pages/([A-Za-z0-9-]+)/?$     pages/page-controller.php?page=$1    [NC,L] #rewrite all /pages/x to single page controller
+RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?$     pages/page-controller.php?page=$1&subpage=$2    [NC,L] #rewrite all /foo to single page controller
 
 # ----------------------------------------------------------------------
 # Prevent 404 errors for non-existing redirected folders
 # ----------------------------------------------------------------------
 
-# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist 
+# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist
 #   e.g. /blog/hello : webmasterworld.com/apache/3808792.htm
 
-Options -MultiViews 
+Options -MultiViews
 
 
 # ----------------------------------------------------------------------
@@ -18,9 +18,9 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /error/404.php
-ErrorDocument 500 /error/500.php
-ErrorDocument 403 /error/403.php
+ErrorDocument 404 /mvhpc/error/404.php
+ErrorDocument 500 /mvhpc/error/500.php
+ErrorDocument 403 /mvhpc/error/403.php
 
 
 # ----------------------------------------------------------------------
