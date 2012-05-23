@@ -27,7 +27,9 @@ function initialize() {
   kml.setMap(map);
 
   // must do manually, this sucks
-  var cornellLoc = new google.maps.LatLng(41.926985, -91.425205);
+  setMarkers(map, districts);
+
+/*  var cornellLoc = new google.maps.LatLng(41.926985, -91.425205);
   var cornellMark = new MarkerWithLabel({
     position: cornellLoc,
     map: map,
@@ -61,7 +63,7 @@ function initialize() {
   });
   google.maps.event.addListener(commMark, 'click', function(e) {
     window.location.href = "../old-site/Commercial%20District.html";
-  });
+  });*/
 
   // load new link in polygon
   google.maps.event.addListener(kml, 'click', function(kmlEvent) {
@@ -93,4 +95,40 @@ function initialize() {
 //  var text = kmlEvent.featureData.description;
 //  showInDiv(text);
 //});
+}
+
+// locations to mark
+var districts = [
+  ['Cornell College', 41.926985, -91.425205, 1],
+  ['Ash Park', 41.928230, -91.419626, 2],
+  ['Commercial', 41.922675, -91.417502, 3]
+];
+
+function setMarkers (map, locations) {
+  var img = new google.maps.MarkerImage('../images/marker-panel.png',
+    new google.maps.Size(100, 39),
+    new google.maps.Point(0, 0),
+    new google.maps.Point(50, 39));
+  var shape = {
+    coord: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  };
+  for (var i = 0; i < locations.length; i++) {
+    var district = locations[i];
+    var myLatLng = new google.maps.LatLng(district[1], district[2]);
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: img,
+      shape: shape,
+      title: district[0],
+      zindex: district[3]
+    });
+    var label = new Label({
+      map: map
+    });
+    label.set('zIndex', 1234);
+    label.bindTo('position', marker, 'position');
+    label.set('text', district[0]);
+  }
 }
