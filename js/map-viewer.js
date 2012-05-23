@@ -35,17 +35,17 @@ function initialize() {
 
     // Cornell College district - load page
     if (kmlEvent.featureData.description == "Cornell") {
-      window.location.href = "../old-site/Cornell%20Dostrict.html";
+      window.location.href = "map/cornell-district/";
     }
 
     // Ash Park district - load page
     else if (kmlEvent.featureData.description == "Ash") {
-      window.location.href = "../old-site/Ash%20Park%20District.html";
+      window.location.href = "map/ash-park-district";
     }
 
     // Commercial district - load page
     else if (kmlEvent.featureData.description == "Commercial") {
-      window.location.href = "../old-site/Commercial%20District.html";
+      window.location.href = "map/commercial-district";
     }
   });
 }
@@ -62,7 +62,7 @@ var districts = [
 // create the labels for each district on the map
 function setMarkers (map, locations) {
   // load the custom label image
-  var img = new google.maps.MarkerImage('../images/marker-panel.png',
+  var img = new google.maps.MarkerImage('images/marker-panel.png',
     new google.maps.Size(100, 39),
     new google.maps.Point(0, 0),
     new google.maps.Point(50, 39));
