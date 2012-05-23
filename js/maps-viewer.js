@@ -22,7 +22,21 @@ function initialize() {
   
   // grab and generate the overlay
   // REMOVE MY URL FOR PRODUCTION SERVER!!!
-  var kml = new google.maps.KmlLayer("http://seanpmckenna.com/temp/mtVernonDistricts.kml");
+  var kml = new google.maps.KmlLayer("http://seanpmckenna.com/temp/mtVernonDistricts.kml", {suppressInfoWindows: true});
   var map = new google.maps.Map(document.getElementById("map"), options);
   kml.setMap(map);
+google.maps.event.addListener(kml, 'click', function(kmlEvent) {
+window.location.href = "http://www.google.com/";
+//this.setOptions({fillColor: "#00FF00"});
+//console.debug(kmlEvent);
+//  var text = kmlEvent.featureData.description;
+//  showInDiv(text);
+});
+google.maps.event.addListener(kml, 'mouseover', function() {
+//window.location.href = "http://www.google.com/";
+this.setOptions({fillColor: "#00FF00"});
+console.debug(kmlEvent);
+//  var text = kmlEvent.featureData.description;
+//  showInDiv(text);
+});
 }

@@ -28,6 +28,12 @@ if ($page == 'about-us') {
 } else if ($page == 'design-review') {
     $title = "MVHPC :: Design Review";
     $id = 7;
+// additions to current page-listings
+// id = 1 for non-database loading pages
+// currently, this is the maps page, 
+} else if ($page == 'map'){
+    $title = "MVHPC :: Map of Mount Vernon";
+    $id = 0;
 } else {
     redirect('../error/404.php');
 }
@@ -36,9 +42,19 @@ if ($page == 'about-us') {
 $level = '../';
 include '../shared/header.php';
 
+// if $id exists, load page from database
+if ($id != 0) {
 $db = Database::getDatabase();
 $row = $db->getRow("SELECT * FROM pages WHERE id = '$id'");
 echo $row['data'];
+}
+
+// otherwise, load a file to display content
+else {
+  if ($page == 'map') {
+    include 'map.php';
+  }
+}
 
 include '../shared/footer.php';
 ?>
