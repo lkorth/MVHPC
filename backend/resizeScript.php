@@ -24,6 +24,7 @@ while (($file = $mydir->read()) !== false && $cnt < 60) {
                 $gd->resize(224, 224);
                 $gd->saveAs($filethumb, $file_ext, 100);
                 $cnt++;
+                echo 'Resized!<br>';
             }
             else {
                 echo 'Already Done<br>';
