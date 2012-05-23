@@ -4,16 +4,16 @@
 
 <Placemark>
   <name> Cornell College Historic District </name>
-  <description> content here </description>
+  <description> Cornell </description>
   <Style>
     <PolyStyle>
-      <color> 4400FF00 </color>
+      <color> 22E30071 </color>
       <fill> 1 </fill>
       <outline> 1 </outline>
     </PolyStyle>
     <LineStyle>
       <width> 2 </width>
-      <color> FF00FF00 </color>
+      <color> FFE30071 </color>
     </LineStyle>
   </Style>
   
@@ -52,16 +52,16 @@
 
 <Placemark>
   <name> Ash Park Historic District </name>
-  <description> content here </description>
+  <description> Ash </description>
   <Style>
     <PolyStyle>
-      <color> 440000FF </color>
+      <color> 22FB9800 </color>
       <fill> 1 </fill>
       <outline> 1 </outline>
     </PolyStyle>
     <LineStyle>
       <width> 2 </width>
-      <color> FF0000FF </color>
+      <color> FFFB9800 </color>
     </LineStyle>
   </Style>
   
@@ -82,16 +82,16 @@
 
 <Placemark>
   <name> Commercial Historic District </name>
-  <description> content here </description>
+  <description> Commercial </description>
   <Style>
     <PolyStyle>
-      <color> 44FF0000 </color>
+      <color> 220043A2 </color>
       <fill> 1 </fill>
       <outline> 1 </outline>
     </PolyStyle>
     <LineStyle>
       <width> 2 </width>
-      <color> FFFF0000 </color>
+      <color> FF0043A2 </color>
     </LineStyle>
   </Style>
   
