@@ -19,14 +19,16 @@ foreach($result as $row){
 
 asort($tags);
 
-$tags = array_slice($tags, count($tags) - 25, count($tags));
+$tags = array_slice($tags, count($tags) - 100, count($tags));
 
 $output = array();
 
 foreach($tags as $key => $value){
-    if($key !== '' && $value > 5 && strlen($key) <= 15 && $key != "mount vernon")
+    if($key !== '' && $value > 5 && strlen($key) <= 15 && $key != 'mount vernon' && $key != 'needstobetagged' && $key != 'new')
         $output[] = array('tag' => $key, 'count' => $value);
 }
+
+$output = array_slice($output, count($output) - 25, count($output));
 
 shuffle($output);
 
