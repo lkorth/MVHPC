@@ -26,13 +26,13 @@ if ($page == 'map') {
       $id = 0;
 
   } else if ($subpage == 'ash-park-district') {
-      
+
 
   } else if ($subpage == 'commercial-district') {
-      
+
 
   } else if ($subpage == 'cornell-district') {
-      
+
 
   } else {
       redirect('../error/404.php');
@@ -55,7 +55,7 @@ if ($page == 'map') {
       redirect('../error/404.php');
   }
 
-} else if ($page == 'about-us') {
+} else if ($page == 'about') {
   if ( $subpage == NULL) {
       $title = 'MVHPC :: About Us';
       $id = 3;
