@@ -3,53 +3,86 @@
     {
         private $DEFAULT_TITLE = "Mount Vernon Historical Preservation Commission";
         private $DEFAULT_BODY = "There was an error finding the content for this page. Please contact the system administrator for assistance.";
-                
+
         private $style;
         private $title;
         private $headerExtras;
         private $body;
-        
+
         public function _construct() {
             $this->style = "oneColumn";
             $this->title = $DEFAULT_TITLE;
             $this->body = $DEFAULT_BODY;
         }
-        
+
         public function setStyle($style) {
             $this->style = $style;
-        } 
-        
+        }
+
         public function setTitle($title) {
             $this->title = $title;
         }
-        
+
         public function setHeaderExtras($extras) {
             $this->headerExtras = $extras;
         }
-        
+
         public function setBody($body) {
             $this->body = $body;
         }
-        
+
         public function output() {
+            $custom = '';
+            if(isset($this->headerExtras['custom'])){
+                foreach($this->headerExtras['custom'] as $customFile){
+                    $custom .= $customFile . ' ';
+                }
+            }
+
+            $css = 'main.css,';
+            if(isset($this->headerExtras['css'])){
+                foreach($this->headerExtras['css'] as $cssFile){
+                    $css .= $cssFile . ',';
+                }
+            }
+
+            $js = '';
+            foreach($this->headerExtras['js'] as $jsFile){
+                $js .= $jsFile . ',';
+            }
+
+            $css = substr($css, 0, -1);
+            $js = substr($js, 0, -1);
+
             echo "<html>";
-            echo 
+            echo
                 "
                 <head>
+                    <link rel='shortcut icon' href='/favicon.ico'>
                     <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
                     <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
-                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "beta/stylesheets/compiled/main.css' />
-                    <script src='" . WEB_ROOT . "js/jquery-1.7.2.js'></script>
-                    <script src='" . WEB_ROOT . "beta/js/script.js'></script>
+                    " . $custom . "
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1234' />
+                    <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1234'></script>
+                    <script type='text/javascript'>
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-23828542-1']);
+                        _gaq.push(['_trackPageview']);
+
+                        (function() {
+                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                        })();
+                    </script>
                 ";
             echo "<title>".$this->title."</title>";
-            echo $this->headerExtras;
             echo "</head>";
-            
-            echo 
+
+            echo
                 "
                 <body>
-                    
+
                     <div class='container'>
                         <div class='header'>
                         <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
@@ -80,5 +113,5 @@
                 </body>
                 ";
             echo "</html>";
-        }   
+        }
     }
