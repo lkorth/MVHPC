@@ -4,75 +4,55 @@
 // let's set the variables for PDF files
 // we already got $pdfFile from page-controller
 $pdfDir = 'data/history/';
-$pdfLoadURL = 'documents/';
-$pdfLinkURL = '../';
+$pdfLoadURL = '';
+//$pdfLinkURL = '../../../';
 
     // if browser is IE or Opera, unsupported for pdf.js
-    $supported = true;
-    if(strpos($_SERVER['HTTP_USER_AGENT'], "MSIE") !== false)
-      $supported = false;
-    else if(strpos($_SERVER['HTTP_USER_AGENT'], "Opera") !== false)
-      $supported = false;
+//    $supported = true;
+//    if(strpos($_SERVER['HTTP_USER_AGENT'], "MSIE") !== false)
+//      $supported = false;
+//    else if(strpos($_SERVER['HTTP_USER_AGENT'], "Opera") !== false)
+//      $supported = false;
 
     // if set as a URL var, load a PDF's URL
     // $pdfFile is set in the page controller
-    $viewing = ($pdfFile != NULL);
-    if($viewing){
+//    $viewing = ($pdfFile != NULL);
+//    if($viewing){
 // let's set the variables for PDF files
 // we already got $pdfFile from page-controller
-$pdfLoadURL = '../';
-$pdfLinkURL = '../../../';
-$pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
-  ?>
-      <script type="text/javascript">
+//$pdfLoadURL = '../';
+//$pdfLinkURL = '../../../';
+//$pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
+//  ?>
+<!--      <script type="text/javascript">
         // grab the specified PDF to display
-        var pdfFile = "<?php echo $pdfFile; ?>";
-        var pdfURL = "<?php echo $pdfURL; ?>";
+        var pdfFile = "<?//php echo $pdfFile; ?>";
+        var pdfURL = "<?//php echo $pdfURL; ?>";
       </script>
-    
+-->    
   <?php
-    }
+//    }
     // if supported & viewing, load pdf.js
-    $viewPDFjs = $supported && $viewing;
-    if($viewPDFjs){
+//    $viewPDFjs = $supported && $viewing;
+//    if($viewPDFjs){
   ?>
-      <script type="text/javascript" src="<?php echo $dirNesting; ?>js/pdf-js/pdf.js"> </script>
-
+<!--      <script type="text/javascript" src="<?php echo $dirNesting; ?>js/pdf-js/pdf.js"> </script>
+-->
   <?php
-    }
+//    }
     // if unsupported & viewing, set to embed Google Docs Viewer
-    $viewPDFdocs = !$supported && $viewing;
+//    $viewPDFdocs = !$supported && $viewing;
   ?>
-
-  <div id="pdf-list">
-    <?php
-      // get & print out all PDF files in data folder
-// DIRECTORY ISSUES!!!
-//      $dir = "../data/history/";
-$dir = "../$pdfDir";
-//      $loc = basename($_SERVER['SCRIPT_NAME']);
-      $dirHandle = opendir($dir);
-      while(($file = readdir($dirHandle)) !== false)
-        if(preg_match("/\.pdf/i", $file)){
-          $fileName = basename($file, ".pdf");
-          $name = str_replace("_", " ", $fileName);
-          $name = str_replace("-", " ", $name);
-          echo "<div class='pdf-item'>";
-//            echo "<a href='$loc?pdf=$fileName'> $name </a>";
-// DIRECTORY ISSUES!!!
-echo "<a href='$pdfLoadURL$fileName/'> $name </a>";
-            echo "<span class='pdf-item-dl'>";
-              echo "<a href='$pdfLinkURL$pdfDir$fileName.pdf'> (download PDF) </a>";
-          echo "</span> </div>";
-        }
-      closedir($dirHandle);
-    ?>
-  </div>
 
   <?php
-    if($viewPDFjs){
+    include 'pdf-viewer.php';
+    include 'pdf-list.php';
   ?>
-      <div id="pdf-viewer">
+
+  <?php
+//    if($viewPDFjs){
+  ?>
+<!--      <div id="pdf-viewer">
         <div id="pdf-toolbar">
           <button id="pdf-prev" onclick="goPrevious()"> Previous </button>
           <button id="pdf-next" onclick="goNext()"> Next </button>
@@ -91,29 +71,30 @@ echo "<a href='$pdfLoadURL$fileName/'> $name </a>";
       
       </div>
       
-      <script type="text/javascript" src="<?php echo $dirNesting; ?>js/pdf-js/pdf-viewer.js"> </script>
-      
+      <script type="text/javascript" src="<?php //echo $dirNesting; ?>js/pdf-js/pdf-viewer.js"> </script>
+    -->  
   <?php
     // if unsupported browser viewing a PDF, embed wtih Google Docs
-    }else if($viewPDFdocs){
+//    }else if($viewPDFdocs){
       // get the current location as a URL
-      $goBack = substr_count($pdfLinkURL, '/');
-      $path = $_SERVER['REQUEST_URI'];
-      for($i = 0; $i < $goBack; $i++){
-        $path = dirname($path);
-      }
-      $host = $_SERVER['SERVER_NAME'];
+//      $goBack = substr_count($pdfLinkURL, '/');
+//      $path = $_SERVER['REQUEST_URI'];
+//      for($i = 0; $i < $goBack; $i++){
+//        $path = dirname($path);
+//      }
+//      $host = $_SERVER['SERVER_NAME'];
       // assemble this to a URL for the PDF
-      $pdfFullURL = "http://$host$path";
-      $pdfFullURL .= "/$pdfDir$pdfFile.pdf";
-      echo $pdfFullURL;
+//      $pdfFullURL = "http://$host$path";
+//      $pdfFullURL .= "/$pdfDir$pdfFile.pdf";
+//      echo $pdfFullURL;
 // TESTING ONLY - remove for production!!!!!
-      $pdfFullURL = 'http://www.education.gov.yk.ca/pdf/pdf-test.pdf';
+//      $pdfFullURL = 'http://www.education.gov.yk.ca/pdf/pdf-test.pdf';
       
       // create URL to Google Docs Viewer & embed on page
-      $docsViewer = "http://docs.google.com/viewer?url=$pdfFullURL";
+//      $docsViewer = "http://docs.google.com/viewer?url=$pdfFullURL";
   ?>
-      <iframe id="docs-viewer" src="<?php echo $docsViewer; ?>&embedded=true" width="600" height="780"> </iframe>
+<!--      <iframe id="docs-viewer" src="<?php //echo $docsViewer; ?>&embedded=true" width="600" height="780"> </iframe> -->
   <?php
-    }
+//    }
+viewPDF($viewPDFjs, $viewPDFdocs, $dirNesting, $pdfLinkURL, $pdfDir, $pdfFile);
   ?>
