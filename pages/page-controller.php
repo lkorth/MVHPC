@@ -7,20 +7,17 @@ if (!isset($_GET['page']))
 
 // get current page
 $page = $_GET['page'];
-//$dirNesting = '../';
 
 // get the sub-page, if applicable
 $subpage = NULL;
 if (isset($_GET['subpage']) && !empty($_GET['subpage'])) {
   $subpage = $_GET['subpage'];
-//  $dirNesting = '../../';
 }
 
 // get the sub-sub-page, if applicable
 $subpage2 = NULL;
 if (isset($_GET['subpage2']) && !empty($_GET['subpage2'])) {
   $subpage2 = $_GET['subpage2'];
-//  $dirNesting = '../../../';
 }
 
 if ($page == 'map') {
