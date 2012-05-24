@@ -1,11 +1,12 @@
 var featured = $('.featured');
 var total = featured.length;
 var count = 1;
+var timeout = null;
 
 $().ready(function(){
-    
+
     setTimeout("setHeights()", 500);
-    
+
     $('#tagcloud').append("<img id='loading' src='/mvhpc/images/pdf-js/loading-icon.gif' alt='Loading Image' />");
     $.get('/mvhpc/ajax-endpoints/tag-cloud.php', function(result){
         $('#tagcloud').empty();
@@ -14,7 +15,7 @@ $().ready(function(){
         ul = $('#tagcloud').find('ul');
         $.each(tags, function(i, item){
             li = $("<li>");
-            $("<a>").text(item.tag).attr({title:"See all pages tagged with " + item.tag, href:"" + item.tag + ".html"}).appendTo(li);  
+            $("<a>").text(item.tag).attr({title:"See all pages tagged with " + item.tag, href:"" + item.tag + ".html"}).appendTo(li);
             li.children().css("fontSize", (item.count / 50 < 1) ? item.count / 50 + 15 + "px": (item.count / 50 > 2) ? "25px" : item.count / 50 + 10 + "px");
             li.appendTo(ul);
         });
@@ -27,6 +28,8 @@ $().ready(function(){
     $('#nextImg').live('click', function(){
         fadeImg(1);
     });
+
+     timeout = setTimeout("fadeImg(1)", 5000);
 });
 
 function fadeImg(direction){
@@ -44,9 +47,12 @@ function fadeImg(direction){
         }
     }
 
+    clearTimeout(timeout);
+    timeout = setTimeout("fadeImg(1)", 8000);
+
     current.fadeOut(500);
     next.fadeIn(500);
-    
+
     current.removeClass('current');
     next.addClass('current');
 }
@@ -54,7 +60,7 @@ function fadeImg(direction){
 function setHeights(){
     news_height = $('.newsfeed').height();
     left_height = $('.left_box').height();
-    
+
     if(news_height > left_height){
         $('.left_box').css('height', news_height + "px");
     }else{
