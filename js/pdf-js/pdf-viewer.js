@@ -1,5 +1,7 @@
-// URL to the pdf file to load (dynamic in PHP)
-var url = '../data/' + pdfFile + '.pdf';
+// URL for the pdf file to load (dynamic in PHP)
+// stored in a vars called pdfURL and pdfFile
+// DIRECTORY ISSUES!!!
+//var url = '../../../data/history/' + pdfFile + '.pdf';
 
 // disable workers to avoid cross-origin issues
 PDFJS.disableWorker = true;
@@ -58,16 +60,17 @@ function goToPage(num) {
 
 // download the current PDF
 function download() {
-  window.open(url, '_parent');
+  window.open(pdfURL, '_parent');
 }
 
+// DIRECTORY ISSUES!!!
 // open the current PDF in a new window with the fullscreen viewer
 function fullscreen() {
   window.open('pdf-viewer-fs.php?pdf=' + pdfFile, '_blank');
 }
 
 // asynchronously download PDF as an ArrayBuffer
-PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+PDFJS.getDocument(pdfURL).then(function getPdfHelloWorld(_pdfDoc) {
   pdfDoc = _pdfDoc;
   renderPage(pageNum);
 });

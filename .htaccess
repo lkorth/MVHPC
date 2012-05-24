@@ -1,7 +1,7 @@
 # This turns on mod_rewrite and redirects according to the rules below
 
 RewriteEngine On
-RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?$     pages/page-controller.php?page=$1&subpage=$2    [NC,L] #rewrite all /foo to single page controller
+RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9_-]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3    [NC,L] #rewrite all /foo to single page controller
 
 # ----------------------------------------------------------------------
 # Prevent 404 errors for non-existing redirected folders
