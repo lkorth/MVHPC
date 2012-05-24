@@ -41,11 +41,11 @@ class GD {
         $this->type = image_type_to_extension($info[2], false);
         $this->mime = $info['mime'];
 
-        if (($this->type == 'jpeg' || $this->type == 'jpg') && (imagetypes() & IMG_JPG))
+        if (($this->type == 'jpeg' || $this->type == 'jpg' || $this->type == 'JPG' || $this->type == 'JPEG') && (imagetypes() & IMG_JPG))
             $this->im = imagecreatefromjpeg($filename);
-        elseif ($this->type == 'png' && (imagetypes() & IMG_PNG))
+        elseif (($this->type == 'png' || $this->type == 'PNG') && (imagetypes() & IMG_PNG))
             $this->im = imagecreatefrompng($filename);
-        elseif ($this->type == 'gif' && (imagetypes() & IMG_GIF))
+        elseif (($this->type == 'gif' || $this->type == 'GIF') && (imagetypes() & IMG_GIF))
             $this->im = imagecreatefromgif($filename);
         else
             return false;
@@ -139,7 +139,7 @@ class GD {
         return false;
     }
 
-    // Rotates an image counterclockwise by the angle specified  
+    // Rotates an image counterclockwise by the angle specified
     public function rotate($angle, $bkgnd_color, $ignore_transparent = 0) {
         $tmp = imagerotate($this->im, $angle, $bkgnd_color, $ignore_transparent);
 

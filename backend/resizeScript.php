@@ -15,6 +15,7 @@ while (($file = $mydir->read()) !== false && $cnt < 60) {
             $file_ext = $info['extension']; //outputs the file extension
 
             $full = "../media/" . $file_name . '.' . $file_ext;
+            $file_ext = strtolower($file_ext);
             $filethumb = "../media/" . $file_name . "_thumbnail" . "." . $file_ext;
 
             list($width, $height) = getimagesize($filethumb);
