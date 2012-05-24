@@ -9,7 +9,7 @@ include('../includes/class.template.php');
 
 $template = new Template();
 
-$posts = returnPosts('index', 2);
+$posts = returnPosts('index', 1);
 
 ?>
 <html>
@@ -20,6 +20,25 @@ $posts = returnPosts('index', 2);
     ob_start();
 ?>
     <div class="newsfeed">
+        <h1 class="ribbon">Welcome!</h1>
+        <div class="article">
+            <p>
+                Welcome to the exciting past and present of an unusual small 
+                community in the heart of the Heartland!
+            </p>
+            <p>
+                This site opens our historical resources to the Internet and 
+                invites you to share in adding information, correcting our 
+                sources, and asking us for specific information you cannot find 
+                here. This site is an organic history book &mdash; it continues to grow 
+                from the input and knowledge of anyone in the world. Almost all 
+                of our known historical resources will eventually be available 
+                on this website.
+            </p>
+            <p>
+                Mount Vernon Historic Preservation Commission :: Mount Vernon, Iowa
+            </p>
+        </div>
         <?php foreach($posts as $post): ?>
         <h1 class="ribbon"><?php echo $post['title']; ?></h1>
         <div class="article">

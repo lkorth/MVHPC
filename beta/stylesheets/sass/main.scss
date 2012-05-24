@@ -66,6 +66,10 @@ body {
     @include gradient($header_bg, #693c1c);
 }
 
+#logo {
+    margin: 25px;
+}
+
 .navbar {
     width: $menu_width;
     margin-left: $menu_left_margin;
@@ -282,6 +286,12 @@ body {
     display: block;
 }
 
+button {
+    background: #F60;
+    border: 1px solid #444;
+    box-shadow: 1px 1px 2px #888;
+}
+
 #tagcloud {
     width: 100%;
     margin-top: 15px;
@@ -304,4 +314,8 @@ body {
 }  
 #tagcloud ul li a:hover {
     text-decoration: underline;
-}  
+}
+
+#loading {
+    margin-left: 138px;
+}

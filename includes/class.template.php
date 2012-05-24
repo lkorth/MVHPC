@@ -52,6 +52,7 @@
                     
                     <div class='container'>
                         <div class='header'>
+                        <img id='logo' src='/mvhpc/images/MVHPC-Logo.png' alt='MVHPC Logo' />
                         </div>
                         <div class='navbar'>
                             <div class='menu'>
