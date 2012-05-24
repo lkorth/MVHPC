@@ -66,7 +66,7 @@ function download() {
 // DIRECTORY ISSUES!!!
 // open the current PDF in a new window with the fullscreen viewer
 function fullscreen() {
-  window.open('pdf-viewer-fs.php?pdf=' + pdfFile, '_blank');
+  window.open('fullscreen/', '_blank');
 }
 
 // asynchronously download PDF as an ArrayBuffer

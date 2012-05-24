@@ -7,20 +7,20 @@ if (!isset($_GET['page']))
 
 // get current page
 $page = $_GET['page'];
-$dirNesting = '../';
+//$dirNesting = '../';
 
 // get the sub-page, if applicable
 $subpage = NULL;
 if (isset($_GET['subpage']) && !empty($_GET['subpage'])) {
   $subpage = $_GET['subpage'];
-  $dirNesting = '../../';
+//  $dirNesting = '../../';
 }
 
 // get the sub-sub-page, if applicable
 $subpage2 = NULL;
 if (isset($_GET['subpage2']) && !empty($_GET['subpage2'])) {
   $subpage2 = $_GET['subpage2'];
-  $dirNesting = '../../../';
+//  $dirNesting = '../../../';
 }
 
 if ($page == 'map') {
@@ -68,7 +68,7 @@ if ($page == 'map') {
       $id = 8;
   } else if ($subpage == 'design-review') {
       $title = 'MVHPC :: Design Review';
-      $id = 7;
+      $id = 0;
   } else {
       redirect('../error/404.php');
   }
@@ -92,9 +92,13 @@ else {
   if ($page == 'map') {
       include 'map.php';
 
-  } else if ($subpage == 'documents') {
+  } else if ($page == 'archives' && $subpage == 'documents') {
       $pdfFile = $subpage2;
       include 'documents.php';
+
+  } else if ($page == 'about-us' && $subpage == 'design-review') {
+    $pdfFile = $subpage2;
+    include 'design-review.php';
   }
 }
 

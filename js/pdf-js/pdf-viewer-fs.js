@@ -3,7 +3,7 @@
 
 'use strict';
 
-var kDefaultURL = '../data/' + pdfFile + '.pdf';
+var kDefaultURL = pdfURL;
 var kDefaultScale = 'auto';
 var kDefaultScaleDelta = 1.1;
 var kUnknownScale = 0;

@@ -1,11 +1,4 @@
 <?php
-// nesting from page controller!!!
-//$dirNesting = '../../../';
-// let's set the variables for PDF files
-// we already got $pdfFile from page-controller
-// i am unclear if this should be one or two nested folders... check later???
-$pdfLinkURL = '../../';
-
     // if browser is IE or Opera, unsupported for pdf.js
     $supported = true;
     if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)
@@ -19,9 +12,10 @@ $pdfLinkURL = '../../';
     if($viewing){
 // let's set the variables for PDF files
 // we already got $pdfFile from page-controller
-$pdfLoadURL = '../';
-$pdfLinkURL = '../../../';
-$pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
+//$pdfLoadURL = '../';
+//$pdfLinkURL = '../../../';
+//$pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
+$pdfURL .= $pdfFile . '.pdf';
   ?>
       <script type="text/javascript">
         // grab the specified PDF to display
@@ -35,7 +29,7 @@ $pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
     $viewPDFjs = $supported && $viewing;
     if($viewPDFjs){
   ?>
-      <script type="text/javascript" src="<?php echo $dirNesting; ?>js/pdf-js/pdf.js"> </script>
+      <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf.js"> </script>
 
   <?php
     }
@@ -44,7 +38,7 @@ $pdfURL = "$pdfLinkURL$pdfDir$pdfFile.pdf";
   ?>
 
   <?php
-function viewPDF($viewPDFjs, $viewPDFdocs, $dirNesting, $pdfLinkURL, $pdfDir, $pdfFile){
+//function viewPDF($viewPDFjs, $viewPDFdocs, $pdfDir, $pdfFile){
     if($viewPDFjs){
   ?>
       <div id="pdf-viewer">
@@ -66,22 +60,22 @@ function viewPDF($viewPDFjs, $viewPDFdocs, $dirNesting, $pdfLinkURL, $pdfDir, $p
       
       </div>
       
-      <script type="text/javascript" src="<?php echo $dirNesting; ?>js/pdf-js/pdf-viewer.js"> </script>
+      <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf-viewer.js"> </script>
       
   <?php
     // if unsupported browser viewing a PDF, embed wtih Google Docs
     }else if($viewPDFdocs){
       // get the current location as a URL
-      $goBack = substr_count($pdfLinkURL, '/');
-      $path = $_SERVER['REQUEST_URI'];
-      for($i = 0; $i < $goBack; $i++){
-        $path = dirname($path);
-      }
+ //     $goBack = substr_count($pdfLinkURL, '/');
+//      $path = $_SERVER['REQUEST_URI'];
+//$path = WEB_ROOT;
+  //    for($i = 0; $i < $goBack; $i++){
+  //      $path = dirname($path);
+  //    }
       $host = $_SERVER['SERVER_NAME'];
       // assemble this to a URL for the PDF
-      $pdfFullURL = "http://$host$path";
-      $pdfFullURL .= "/$pdfDir$pdfFile.pdf";
-      echo $pdfFullURL;
+      $pdfFullURL = 'http://' . $host . $pdfURL;
+
 // TESTING ONLY - remove for production!!!!!
       $pdfFullURL = 'http://www.education.gov.yk.ca/pdf/pdf-test.pdf';
       
@@ -91,5 +85,5 @@ function viewPDF($viewPDFjs, $viewPDFdocs, $dirNesting, $pdfLinkURL, $pdfDir, $p
       <iframe id="docs-viewer" src="<?php echo $docsViewer; ?>&embedded=true" width="600" height="780"> </iframe>
   <?php
     }
-}
+//}
   ?>

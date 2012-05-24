@@ -1,27 +1,33 @@
+<?php
+  include '../includes/master.inc.php';
+?>
+
 <!DOCTYPE html>
 <html dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>PDF.js viewer</title>
+  <title>PDF Viewer</title>
   <!-- PDFJSSCRIPT_INCLUDE_FIREFOX_EXTENSION -->
   <script type="text/javascript">
-    var pdfFile = "<?php echo $_GET['pdf'] ?>";
+    var pdfFile = "<?php echo $_GET['pdf']; ?>";
+    var webRoot = "<?php echo WEB_ROOT; ?>";
+    var pdfURL = webRoot + "data/" + "<?php echo $_GET['dir']; ?>" + "/" + pdfFile + ".pdf";
   </script>
-  <link rel="stylesheet" href="../css/pdf-viewer.css"/>
+  <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/pdf-viewer.css"/>
 
-  <script type="text/javascript" src="../js/pdf-js/compatibility.js"></script>
+  <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/compatibility.js"></script>
   <!-- PDFJSSCRIPT_REMOVE_FIREFOX_EXTENSION -->
 
   <!-- This snippet is used in production, see Makefile -->
-  <link rel="resource" type="application/l10n" href="../js/pdf-js/locale.properties"/>
-  <script type="text/javascript" src="../js/pdf-js/l10n.js"></script>
-  <script type="text/javascript" src="../js/pdf-js/pdf.js"></script>
+  <link rel="resource" type="application/l10n" href="<?php echo WEB_ROOT; ?>js/pdf-js/locale.properties"/>
+  <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/l10n.js"></script>
+  <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf.js"></script>
   <script type="text/javascript">
     // This specifies the location of the pdf.js file.
-    PDFJS.workerSrc = "../js/pdf-js/pdf.js";
+    PDFJS.workerSrc = "<?php echo WEB_ROOT; ?>js/pdf-js/pdf.js";
   </script>
-  <script type="text/javascript" src="../js/pdf-js/debugger.js"></script>
-  <script type="text/javascript" src="../js/pdf-js/pdf-viewer-fs.js"></script>
+  <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/debugger.js"></script>
+  <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf-viewer-fs.js"></script>
 </head>
 
 <body>
