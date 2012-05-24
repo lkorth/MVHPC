@@ -38,9 +38,9 @@
                 <head>
                     <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
                     <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
-                    <link rel='stylesheet' type='text/css' href='/mvhpc/beta/stylesheets/compiled/main.css' />
-                    <script src='/mvhpc/js/jquery-1.7.2.js'></script>
-                    <script src='/mvhpc/beta/js/script.js'></script>
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "beta/stylesheets/compiled/main.css' />
+                    <script src='" . WEB_ROOT . "js/jquery-1.7.2.js'></script>
+                    <script src='" . WEB_ROOT . "beta/js/script.js'></script>
                 ";
             echo "<title>".$this->title."</title>";
             echo $this->headerExtras;
@@ -52,7 +52,7 @@
                     
                     <div class='container'>
                         <div class='header'>
-                        <img id='logo' src='/mvhpc/images/MVHPC-Logo.png' alt='MVHPC Logo' />
+                        <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
                         </div>
                         <div class='navbar'>
                             <div class='menu'>
