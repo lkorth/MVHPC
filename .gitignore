@@ -1,4 +1,5 @@
 additional-content/*
 media/*
+cache/*
 includes/class.config.php
 beta/stylesheets/.sass-cache/*
