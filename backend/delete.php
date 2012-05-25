@@ -7,7 +7,11 @@ $Auth->requireUser();
 $id = $_GET['id'];
 
 $db = Database::getDatabase();
-$db->query("DELETE FROM search WHERE id = '$id'");
+$result = $db->query("DELETE FROM search WHERE id = '$id'");
 
-header("Location: select_to_change.php");
-?> 
+if($result)
+    header("Location: action.php?message=Image+was+successfully+deleted");
+else
+    header("Location: action.php?message=There+was+an+error+deleting+the+image");
+
+?>
