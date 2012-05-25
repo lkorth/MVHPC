@@ -1,10 +1,10 @@
 <?php
 
 // where this page or sub-page sits
-$pageRoot = 'about-us/design-review/';
+$pageRoot = 'about/design-review/';
 
 // where to find PDF files within site
-$pdfDir = 'data/about-us/';
+$pdfDir = 'data/about/';
 
 // where to find PDF files on server
 $pdfURL = WEB_ROOT . $pdfDir;
