@@ -13,7 +13,7 @@
     var webRoot = "<?php echo WEB_ROOT; ?>";
     var pdfURL = webRoot + "data/" + "<?php echo $_GET['dir']; ?>" + "/" + pdfFile + ".pdf";
   </script>
-  <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/pdf-viewer.css"/>
+  <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/pdf-viewer-fs.css"/>
 
   <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/compatibility.js"></script>
   <!-- PDFJSSCRIPT_REMOVE_FIREFOX_EXTENSION -->
