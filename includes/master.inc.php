@@ -40,4 +40,4 @@
     $Error = Error::getError();
 
     // If you need to bootstrap a first user into the database, you can run this line once
-     Auth::createNewUser('username', 'password');
+    // Auth::createNewUser('username', 'password');
