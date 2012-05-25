@@ -17,14 +17,15 @@ $pdfURL = $pdfDirURL . $pdfFile . '.pdf';
 // check what PDF loading is supported
 include 'pdf-support.php';
 
+// display the entire content for listing and viewing PDFs
 function pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL){
-// load the list pdf
-include 'pdf-list.php';
+  // load the list of PDFs
+  include 'pdf-list.php';
 
-// load the pdf viewer if needed
-if ($viewing) {
-  include 'pdf-viewer.php';
-}
+  // load the pdf viewer if needed
+  if ($viewing) {
+    include 'pdf-viewer.php';
+  }
 }
 
 ?>

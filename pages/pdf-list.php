@@ -1,7 +1,6 @@
 <div id="pdf-list">
 
   <?php
-
     // folder containing PDFs
     $pdfFullURL = $_SERVER['DOCUMENT_ROOT'] . $pdfDirURL;
 
@@ -30,4 +29,5 @@
     closedir($dirHandle);
     
   ?>
+  
 </div>

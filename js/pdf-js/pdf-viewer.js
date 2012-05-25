@@ -1,17 +1,35 @@
+// wait to load viewer till page load
+$(window).load(function() {
+  initialize();
+});
+
+// initialize PDF variables
+var pdfDoc = null,
+  pageNum,
+  scale,
+  canvas,
+  ctx;
+
 // URL for the pdf file to load (dynamic in PHP)
 // stored in a vars called pdfURL and pdfFile
-// DIRECTORY ISSUES!!!
-//var url = '../../../data/history/' + pdfFile + '.pdf';
+function initialize() {
 
-// disable workers to avoid cross-origin issues
-PDFJS.disableWorker = true;
+  // disable workers to avoid cross-origin issues
+  PDFJS.disableWorker = true;
 
-// create the PDF variable, where to save PDF info
-var pdfDoc = null,
-  pageNum = 1,
-  scale = 0.8,
-  canvas = document.getElementById('pdf'),
-  ctx = canvas.getContext('2d');
+  // set the PDF variables, where to save PDF info
+  pdfDoc = null,
+    pageNum = 1,
+    scale = 0.8,
+    canvas = document.getElementById('pdf'),
+    ctx = canvas.getContext('2d');
+
+  // asynchronously download PDF as an ArrayBuffer
+  PDFJS.getDocument(pdfURL).then(function getPdfHelloWorld(_pdfDoc) {
+    pdfDoc = _pdfDoc;
+    renderPage(pageNum);
+  });
+}
 
 // generate one page at a time to display
 function renderPage(num) {
@@ -63,14 +81,7 @@ function download() {
   window.open(pdfURL, '_parent');
 }
 
-// DIRECTORY ISSUES!!!
 // open the current PDF in a new window with the fullscreen viewer
 function fullscreen() {
   window.open('fullscreen/', '_blank');
 }
-
-// asynchronously download PDF as an ArrayBuffer
-PDFJS.getDocument(pdfURL).then(function getPdfHelloWorld(_pdfDoc) {
-  pdfDoc = _pdfDoc;
-  renderPage(pageNum);
-});

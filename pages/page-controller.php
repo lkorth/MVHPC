@@ -8,7 +8,7 @@ require_once '../includes/class.template.php';
 $template = new Template();
 
 // custom JS, CSS, etc. for any page (loaded first)
-$headerCustom = array();
+$headerCustom = NULL;
 
 // default JS to load
 $headerJS = array(
@@ -53,7 +53,7 @@ if ($page == 'map') {
       ?>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>
       <?php
-      array_push($headerCustom, ob_get_clean());
+      $headerCustom = ob_get_clean();
       array_push($headerJS, 'map-labels.js', 'map-viewer.js');
 
   } else if ($subpage == 'ash-park-district') {
@@ -82,12 +82,11 @@ if ($page == 'map') {
       if ($viewing) {
         ob_start();
         pageVars($pdfFile, $pdfURL);
-        array_push($headerCustom, ob_get_clean());
+        $headerCustom = ob_get_clean();
         if ($supported) {
-//          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
         }
       }
-      
 
   } else if ($subpage == 'images') {
       $title = 'MVHPC :: Images';
@@ -118,9 +117,9 @@ if ($page == 'map') {
       if ($viewing) {
         ob_start();
         pageVars($pdfFile, $pdfURL);
-        array_push($headerCustom, ob_get_clean());
+        $headerCustom = ob_get_clean();
         if ($supported) {
-//          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
         }
       }
 
@@ -160,9 +159,11 @@ else {
   if ($page == 'map') {
       include 'map.php';
 
+  // pdf viewer, display the page by passing in needed variables
   } else if ($page == 'archives' && $subpage == 'documents') {
       pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
-      
+
+  // pdf viewer, display the page by passing in needed variables
   } else if ($page == 'about' && $subpage == 'design-review') {
       pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
   }
