@@ -58,12 +58,12 @@ function fadeImg(direction){
 }
 
 function setHeights(){
-    news_height = $('.newsfeed').height();
-    left_height = $('.left_box').height();
+    left_height = $('.left_col').height();
+    right_height = $('.right_col').height();
 
-    if(news_height > left_height){
-        $('.left_box').css('height', news_height + "px");
+    if(left_height > right_height){
+        $('.right_col').css('height', left_height + "px");
     }else{
-        $('.newsfeed').css('height', left_height + "px");
+        $('.left_col').css('height', right_height + "px");
     }
 }
