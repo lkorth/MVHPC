@@ -1,13 +1,5 @@
 <?php
 
-if (!empty($_GET['changetags'])) {
-    $nextPage = "change_tags.php?";
-    $cgtags = 1;
-} else {
-    $nextPage = "fullsize.php?";
-    $cgtags = null;
-}
-
 $page = $_GET['page'];
 $terms = strtolower(urldecode($_GET['terms']));
 $title = "Search of " . $terms;
@@ -37,7 +29,7 @@ $pager->calculate();
 for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
     $thumbnail = mysql_result($result, $i, "thumbnail");
     $id = mysql_result($result, $i, "id");
-    echo "<a href=\"$nextPage" . "id=$id\"><img src=\"" . WEB_ROOT . "$thumbnail\"/></a>&nbsp;";
+    echo "<a href=\"fullsize.php" . "id=$id\"><img src=\"" . WEB_ROOT . "$thumbnail\"/></a>&nbsp;";
 }
 
 if ($pager->hasNextPage() || $pager->hasPrevPage()) {
@@ -45,7 +37,7 @@ if ($pager->hasNextPage() || $pager->hasPrevPage()) {
     echo '<div><br>';
 
     if ($pager->hasPrevPage()) {
-        echo '<a href="search.php?page=' . $pager->prevPage() . '&terms=' . $encodedTerms . '&changetags=' . $cgtags . '"/><=Prevous Page=</a>';
+        echo '<a href="search.php?page=' . $pager->prevPage() . '&terms=' . $encodedTerms . '"/><=Prevous Page=</a>';
         echo "&nbsp;&nbsp;&nbsp;";
     }
 
@@ -54,7 +46,7 @@ if ($pager->hasNextPage() || $pager->hasPrevPage()) {
         $j = $pager->prevPage();
         $previousCount = 0;
         while ($j >= 1 && $previousCount < 3) {
-            $previousPageNumbers = '<a href="search.php?page=' . $j . '&terms=' . $encodedTerms . '&changetags=' . $cgtags . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
+            $previousPageNumbers = '<a href="search.php?page=' . $j . '&terms=' . $encodedTerms . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
             $previousCount++;
             $j--;
         }
@@ -69,13 +61,13 @@ if ($pager->hasNextPage() || $pager->hasPrevPage()) {
             $k = $pager->nextPage();
             $nextCount = 0;
             while ($k <= $pager->numPages && $nextCount < 3) {
-                echo '<a href="search.php?page=' . $k . '&terms=' . $encodedTerms . '&changetags=' . $cgtags . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
+                echo '<a href="search.php?page=' . $k . '&terms=' . $encodedTerms . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
                 $nextCount++;
                 $k++;
             }
         }
 
-        echo '<a href="search.php?page=' . $pager->nextPage() . '&terms=' . $encodedTerms . '&changetags=' . $cgtags . '"/>=Next Page=></a>';
+        echo '<a href="search.php?page=' . $pager->nextPage() . '&terms=' . $encodedTerms . '"/>=Next Page=></a>';
     }
 
     echo '<br></div>';

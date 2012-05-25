@@ -23,9 +23,19 @@ $(function() {
 echo "<br>";
 echo '<table align="center">';
 echo '<form name="form" enctype="multipart/form-data">';
+$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+if(isset($_GET['id']))
+    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE " . $_GET['id'] . " ORDER BY id DESC";
+else if(isset($_GET['tag']))
+    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE tags like '%" . $_GET['tag'] . "%' ORDER BY id DESC";
+else if(isset($_GET['filename']))
+    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE location like '%" . $_GET['filename'] . "%' ORDER BY id DESC";
+else
+    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC";
 
 $db = Database::getDatabase();
-$result = $db->query("SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC");
+$result = $db->query($query);
 $num = $db->numRows($result);
 
 $needed = ($num / 50);
