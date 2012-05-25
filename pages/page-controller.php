@@ -78,13 +78,14 @@ if ($page == 'map') {
       $title = 'MVHPC :: Documents';
       $id = 0;
       $pdfFile = $subpage2;
+      array_push($headerCSS, 'pdf-viewer.css');
       include 'documents.php';
       if ($viewing) {
         ob_start();
         pageVars($pdfFile, $pdfURL);
         $headerCustom = ob_get_clean();
         if ($supported) {
-          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+          array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
         }
       }
 
@@ -113,13 +114,14 @@ if ($page == 'map') {
       $title = 'MVHPC :: Design Review';
       $id = 0;
       $pdfFile = $subpage2;
+      array_push($headerCSS, 'pdf-viewer.css');
       include 'design-review.php';
       if ($viewing) {
         ob_start();
         pageVars($pdfFile, $pdfURL);
         $headerCustom = ob_get_clean();
         if ($supported) {
-          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+          array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
         }
       }
 

@@ -20,7 +20,7 @@
         echo "<div class='pdf-item'>";
           echo '<a href="' . WEB_ROOT . $pageRoot . $fileName . '/">' . $name . '</a>';
           echo "<span class='pdf-item-dl'>";
-              echo '<a href="' . $pdfDirURL . $fileName . '.pdf"> (download PDF) </a>';
+              echo '<a href="' . $pdfDirURL . $fileName . '.pdf"> (download) </a>';
         echo '</span> </div>';
       }
     }

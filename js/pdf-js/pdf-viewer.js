@@ -20,7 +20,7 @@ function initialize() {
   // set the PDF variables, where to save PDF info
   pdfDoc = null,
     pageNum = 1,
-    scale = 0.8,
+    scale = 1.6,
     canvas = document.getElementById('pdf'),
     ctx = canvas.getContext('2d');
 
