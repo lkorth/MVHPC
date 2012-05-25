@@ -2,6 +2,8 @@
 
 require_once '../includes/master.inc.php';
 
+$Auth->requireUser();
+
 $allowedFileTypes = array('jpg', 'jpeg', 'gif', 'png');
 
 $num = time();
@@ -63,4 +65,4 @@ if ($_FILES['Filedata']['size'] > 30000000) {
         echo "<br>Sorry, there was a problem uploading your file.<br>";
     }
 }
-?> 
+?>
