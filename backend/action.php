@@ -42,7 +42,7 @@ $template = new Template();
 
     $template->setStyle('oneColumn');
     $template->setTitle('Manage Site');
-    $template->setHeaderExtras($headerExtras);
+    $template->setHeaderExtras(null);
     $template->setBody($content);
 
     $template->output();

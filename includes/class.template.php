@@ -33,7 +33,7 @@
 
         public function output() {
             $custom = '';
-            if(isset($this->headerExtras['custom'])){
+            if(isset($this->headerExtras['custom']) && !empty($this->headerExtras['custom'])){
                 $custom = $this->headerExtras['custom'];
             }
 
@@ -45,8 +45,10 @@
             }
 
             $js = '';
-            foreach($this->headerExtras['js'] as $jsFile){
-                $js .= $jsFile . ',';
+            if(isset($this->headerExtras['js']) && !empty($this->headerExtras['js'])){
+                foreach($this->headerExtras['js'] as $jsFile){
+                    $js .= $jsFile . ',';
+                }
             }
 
             $css = substr($css, 0, -1);
