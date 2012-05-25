@@ -15,9 +15,6 @@ $template = new Template();
 
 ?>
 <html>
-<?php
-    $headerExtras['js'] = array('jquery-172.js');
-?>
 <?php ob_start(); ?>
     <div>
         <?php
