@@ -15,7 +15,7 @@ $posts = returnPosts('index', 1);
     $headerExtras['js'] = array('jquery-172.js', 'image-script.js');
 ?>
 <?php ob_start(); ?>
-    <div class="newsfeed">
+    <div class="left_col">
         <h1 class="ribbon">Welcome!</h1>
         <div class="article">
             <p>
@@ -45,7 +45,7 @@ $posts = returnPosts('index', 1);
         </div>
         <?php endforeach; ?>
     </div>
-    <div class="left_box">
+    <div class="right_col">
         <div>
             <h1 class="ribbon">Featured Images</h1>
             <div class="left_content">
