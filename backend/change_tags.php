@@ -4,24 +4,13 @@ $title = "Update Tags";
 $level = '../';
 include '../shared/header.php';
 
-if ($_GET['redirect'] == 1) {
-    session_start();
-    $_SESSION['id'] = $_GET['id'];
-    $_SESSION['redirect'] = 1;
-}
-
 $Auth->requireUser();
 
 $tag = 1;
 $delete = 1;
 $change = 1;
-session_start();
-if ($_SESSION['id'] != null) {
-    $id = $_SESSION['id'];
-    session_destroy();
-} else {
-    $id = $_GET['id'];
-}
+$id = $_GET['id'];
+
 
 $db = Database::getDatabase();
 $result = $db->query("SELECT * FROM search WHERE id = '$id'");
@@ -44,7 +33,7 @@ $tags = mysql_result($result, 0, "tags");
 
 
 
-</form> 
+</form>
 <table align="center">
     <tr>
     <tr>
