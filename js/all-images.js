@@ -11,4 +11,7 @@ $(function() {
         },
         'removeWithBackspace': false
     });
+
+    //spell checker implementation
+    //http://code.google.com/p/jquery-spellchecker/wiki/Documentation
 });
