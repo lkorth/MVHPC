@@ -62,8 +62,8 @@
                     <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
                     <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
                     " . $custom . "
-                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1234' />
-                    <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1234'></script>
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&debug' />
+                    <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&debug'></script>
                     <script type='text/javascript'>
                         var _gaq = _gaq || [];
                         _gaq.push(['_setAccount', 'UA-23828542-1']);
