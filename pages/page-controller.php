@@ -13,19 +13,14 @@ $headerCustom = array();
 // default JS to load
 $headerJS = array(
   0 => 'jquery-172.js',
-  1 => 'jquery-bgiframe-min.js',
-  2 => 'jquery-ajaxQueue.js',
-  3 => 'jquery-autocomplete.js',
-  4 => 'inpage_script.js',
-  5 => 'functions.js',
-  6 => 'base64.js',
-  7 => 'magiczoom.js',
+  1 => 'functions.js',
+  2 => 'base64.js',
+  3 => 'magiczoom.js',
 );
 
 // default CSS to load
 $headerCSS = array(
-  0 => 'jquery.autocomplete.css',
-  1 => 'magiczoom.css',
+  0 => 'magiczoom.css',
 );
 
 // get current page
@@ -96,8 +91,12 @@ if ($page == 'map') {
 
   } else if ($subpage == 'images') {
       $title = 'MVHPC :: Images';
-      $id = 6;
-
+      $id = 0;
+      array_push($headerJS, 'jquery-bgiframe-min.js',
+                            'jquery-ajaxQueue.js',
+                            'jquery-autocomplete.js',
+                            'inpage_script.js');
+      array_push($headerCSS, 'jquery.autocomplete.css');
   } else {
       redirect('../error/404.php');
   }
@@ -167,6 +166,7 @@ else {
   } else if ($page == 'about' && $subpage == 'design-review') {
       pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
   }
+
 }
 
 // grab the content to display
