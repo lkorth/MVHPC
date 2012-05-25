@@ -1,31 +1,12 @@
 <?php
 
 // where this page or sub-page sits
-$pageRoot = 'archives/documents/';
+$pdfPageRoot = 'archives/documents/';
 
-// where to find PDF files within site
+// where to find PDF files in the folder for the site
 $pdfDir = 'data/archives/';
 
-// where to find PDF files on server
-$pdfDirURL = WEB_ROOT . $pdfDir;
-
-// $pdfFile is set in page-controller
-
-// where this specific PDF file is
-$pdfURL = $pdfDirURL . $pdfFile . '.pdf';
-
-// check what PDF loading is supported
-include 'pdf-support.php';
-
-// display the entire content for listing and viewing PDFs
-function pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL){
-  // load the list of PDFs
-  include 'pdf-list.php';
-
-  // load the pdf viewer if needed
-  if ($viewing) {
-    include 'pdf-viewer.php';
-  }
-}
+// load variables and functions for PDF lists and viewing
+include 'pdf-viewer.php';
 
 ?>

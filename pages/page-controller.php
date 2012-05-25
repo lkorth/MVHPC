@@ -80,11 +80,11 @@ if ($page == 'map') {
       $pdfFile = $subpage2;
       array_push($headerCSS, 'pdf-viewer.css');
       include 'documents.php';
-      if ($viewing) {
+      if ($pdfViewing) {
         ob_start();
-        pageVars($pdfFile, $pdfURL);
+        jsVars();
         $headerCustom = ob_get_clean();
-        if ($supported) {
+        if ($pdfSupported) {
           array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
         }
       }
@@ -116,11 +116,11 @@ if ($page == 'map') {
       $pdfFile = $subpage2;
       array_push($headerCSS, 'pdf-viewer.css');
       include 'design-review.php';
-      if ($viewing) {
+      if ($pdfViewing) {
         ob_start();
-        pageVars($pdfFile, $pdfURL);
+        jsVars();
         $headerCustom = ob_get_clean();
-        if ($supported) {
+        if ($pdfSupported) {
           array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
         }
       }
@@ -163,13 +163,12 @@ else {
 
   // pdf viewer, display the page by passing in needed variables
   } else if ($page == 'archives' && $subpage == 'documents') {
-      pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
+      generatePage();
 
   // pdf viewer, display the page by passing in needed variables
   } else if ($page == 'about' && $subpage == 'design-review') {
-      pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
+      generatePage();
   }
-
 }
 
 // grab the content to display
