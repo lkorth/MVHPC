@@ -11,14 +11,19 @@ $template = new Template();
 
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-if(isset($_GET['id']))
+if(isset($_GET['id'])){
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE " . $_GET['id'] . " ORDER BY id DESC";
-else if(isset($_GET['tag']))
+    $params = 'id=' . $_GET['id'];
+} else if(isset($_GET['tag'])) {
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE tags like '%" . $_GET['tag'] . "%' ORDER BY id DESC";
-else if(isset($_GET['filename']))
+    $params = 'tag=' . $_GET['tag'];
+} else if(isset($_GET['filename'])) {
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE location like '%" . $_GET['filename'] . "%' ORDER BY id DESC";
-else
+    $params = 'filename=' . $_GET['filename'];
+} else {
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC";
+    $params = 'all=true';
+}
 
 $db = Database::getDatabase();
 $result = $db->query($query);
@@ -41,24 +46,15 @@ $num = $db->numRows($result);
     <table align="center">
     <form name="form" enctype="multipart/form-data">
     <?php
-    $needed = ($num / 50);
-    $needed = ceil($needed);
-    $prev = $page - 1;
-    $next = $page + 1;
+
+    $pager = new Pager($page, 25, $num);
+    $pager->calculate();
+
     echo "<h2>Click the thumbnail to see a larger image</h2>";
-    echo "<h3>There are " . $num . " entries in the database<br>";
-    echo "Currently on page $page of $needed, entries " . ((($page - 1) * 50) + 1) . " through " . ($page * 50) . "</h3>";
-    if ($page == 1) {
-        $finish = 50;
-        $i = 0;
-    } else if ($page == $needed) {
-        $finish = $num;
-        $i = ($page - 1) * 50;
-    } else {
-        $finish = $page * 50;
-        $i = ($page - 1) * 50;
-    }
-    while ($i < $finish) {
+    echo "<h3>There are " . $num . " images that match your search<br>";
+    echo "Currently on page $page of " . $pager->numPages . ", images " . ($pager->firstRecord + 1) . " through " . ($pager->lastRecord + 1) . "</h3>";
+
+    for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
         $thumbnail = mysql_result($result, $i, "thumbnail");
         $id = mysql_result($result, $i, "id");
         $tag = mysql_result($result, $i, "tags");
@@ -78,35 +74,9 @@ $num = $db->numRows($result);
     }
     echo "</form>";
     echo "</table>";
-    if ($page == 1) {
-        echo "<span style=\"color:white\">$page</span>";
-        echo "&nbsp;&nbsp;&nbsp;";
-        $pageindex = $page + 1;
-        for ($i = 0; $i < 5; $i++) {
-            if ($pageindex <= $needed) {
-                echo "<a href=\"all.php?page=$pageindex\"/>$pageindex</a>";
-                echo "&nbsp;&nbsp;&nbsp;";
-                $pageindex++;
-            }
-        }
-        echo "<a href=\"all.php?page=2\"/>=Next Page=></a>";
-    } else {
-        echo "<a href=\"all.php?page=$prev\"/><=Prevous Page=</a>";
-        echo "&nbsp;&nbsp;&nbsp;";
-        echo "<span style=\"color:white\">$page</span>";
-        echo "&nbsp;&nbsp;&nbsp;";
-        $pageindex = $page + 1;
-        for ($i = 0; $i < 5; $i++) {
-            if ($pageindex <= $needed) {
-                echo "<a href=\"all.php?page=$pageindex\"/>$pageindex</a>";
-                echo "&nbsp;&nbsp;&nbsp;";
-                $pageindex++;
-            }
-        }
-        if ($page < $needed) {
-            echo "<a href=\"all.php?page=$next\"/>=Next Page=></a>";
-        }
-    }
+
+    renderPaging($pager, WEB_ROOT . 'backend/all-images.php?' . $params);
+
     ?>
     </div>
 

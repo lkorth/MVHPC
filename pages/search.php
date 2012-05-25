@@ -32,46 +32,7 @@ for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
     echo "<a href=\"fullsize.php" . "id=$id\"><img src=\"" . WEB_ROOT . "$thumbnail\"/></a>&nbsp;";
 }
 
-if ($pager->hasNextPage() || $pager->hasPrevPage()) {
-    $encodedTerms = urlencode($terms);
-    echo '<div><br>';
-
-    if ($pager->hasPrevPage()) {
-        echo '<a href="search.php?page=' . $pager->prevPage() . '&terms=' . $encodedTerms . '"/><=Prevous Page=</a>';
-        echo "&nbsp;&nbsp;&nbsp;";
-    }
-
-    if ($pager->prevPage() > 1) {
-        $previousPageNumbers = '';
-        $j = $pager->prevPage();
-        $previousCount = 0;
-        while ($j >= 1 && $previousCount < 3) {
-            $previousPageNumbers = '<a href="search.php?page=' . $j . '&terms=' . $encodedTerms . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
-            $previousCount++;
-            $j--;
-        }
-        echo $previousPageNumbers;
-    }
-
-    echo "<span style=\"color:white\">$page</span>";
-    echo "&nbsp;&nbsp;&nbsp;";
-
-    if ($pager->hasNextPage()) {
-        if ($pager->nextPage() != $pager->numPages) {
-            $k = $pager->nextPage();
-            $nextCount = 0;
-            while ($k <= $pager->numPages && $nextCount < 3) {
-                echo '<a href="search.php?page=' . $k . '&terms=' . $encodedTerms . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
-                $nextCount++;
-                $k++;
-            }
-        }
-
-        echo '<a href="search.php?page=' . $pager->nextPage() . '&terms=' . $encodedTerms . '"/>=Next Page=></a>';
-    }
-
-    echo '<br></div>';
-}
+renderPaging($pager, WEB_ROOT . 'pages/search.php?terms=' . $terms);
 
 include '../shared/footer.php';
 ?>

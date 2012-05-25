@@ -15,14 +15,56 @@ function featuredImages(){
     return ($db->getRows("SELECT id, thumbnail FROM search ORDER BY RAND() LIMIT 5"));
 }
 
+function renderPaging($pager, $url){
+    if ($pager->hasNextPage() || $pager->hasPrevPage()) {
+        echo '<div><br>';
+
+        if ($pager->hasPrevPage()) {
+            echo '<a href="' . $url . '&page=' . $pager->prevPage() . '"/><=Prevous Page=</a>';
+            echo "&nbsp;&nbsp;&nbsp;";
+        }
+
+        if ($pager->prevPage() > 1) {
+            $previousPageNumbers = '';
+            $j = $pager->prevPage();
+            $previousCount = 0;
+            while ($j >= 1 && $previousCount < 3) {
+                $previousPageNumbers = '<a href="' . $url . '&page=' . $j . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
+                $previousCount++;
+                $j--;
+            }
+            echo $previousPageNumbers;
+        }
+
+        echo "<span>" . $pager->page . "</span>";
+        echo "&nbsp;&nbsp;&nbsp;";
+
+        if ($pager->hasNextPage()) {
+            if ($pager->nextPage() != $pager->numPages) {
+                $k = $pager->nextPage();
+                $nextCount = 0;
+                while ($k <= $pager->numPages && $nextCount < 3) {
+                    echo '<a href="' . $url . '&page=' . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
+                    $nextCount++;
+                    $k++;
+                }
+            }
+
+            echo '<a href="' . $url . '&page=' . $pager->nextPage() . '"/>=Next Page=></a>';
+        }
+
+        echo '<br></div>';
+    }
+}
+
 function autocomplete($field, $searchString, $fullText = false) {
     $db = Database::getDatabase();
 
     $q = strtolower($searchString);
-    
+
     if (!$q)
         return;
-    
+
     if($fullText){
         $result = $db->query("SELECT tags, MATCH(tags, information) AGAINST('$q') AS score FROM search WHERE MATCH(tags, information) AGAINST('$q') ORDER BY score DESC, views DESC");
     }
@@ -32,12 +74,12 @@ function autocomplete($field, $searchString, $fullText = false) {
         $result = $db->query("SELECT $field FROM search WHERE $field LIKE '%$q%' ORDER BY views DESC");
         $num = $db->numRows($result);
     }
-    
+
     $tags = '';
     for($i = 0; $i < $num; $i++) {
         $tags = $tags . ";" . mysql_result($result, $i, "tags");
     }
-    
+
     $final = array_unique(array_map("trim", explode(";", $tags)), SORT_STRING);
 
     $stop = 0;
