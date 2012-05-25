@@ -85,7 +85,9 @@
 
                     <div class='container'>
                         <div class='header'>
-                        <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
+                        <a href='" . WEB_ROOT . "'>
+                            <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
+                        </a>
                         <div class='header_text'>
                             <h1>Mount Vernon Historical Preservation Commission</h1>
                         </div>
