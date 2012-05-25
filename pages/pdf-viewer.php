@@ -1,44 +1,5 @@
 <?php
-  // if browser is Chrome, Firefox, or Safari, support pdf.js
-  $supported = false;
-  if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== false)
-    $supported = true;
-  else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false)
-    $supported = true;
-  else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false)
-    $supported = true;
-
-  // if we are viewing a PDF, set some variables
-  // $pdfFile is set in the page controller
-  $viewing = ($pdfFile != NULL);
-  if ($viewing) {
-    $pdfURL .= $pdfFile . '.pdf';
-?>
-    <script type="text/javascript">
-      // grab the specified PDF to display
-      // utilized in pdf-viewer.js
-      var pdfFile = "<?php echo $pdfFile; ?>";
-      var pdfURL = "<?php echo $pdfURL; ?>";
-    </script>
-    
-<?php
-  }
-
-  // if supported & viewing, load pdf.js
-  $viewPDFjs = $supported && $viewing;
-  if ($viewPDFjs) {
-?>
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf.js"> </script>
-
-<?php
-  }
-
-  // if unsupported & viewing, set to embed Google Docs Viewer
-  $viewPDFdocs = !$supported && $viewing;
-?>
-
-<?php
-  if($viewPDFjs){
+  if ($supported) {
 ?>
     <div id="pdf-viewer">
       <div id="pdf-toolbar">
@@ -57,13 +18,12 @@
         
       <canvas id="pdf"> </canvas>
       
+      <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf-viewer.js"> </script>
     </div>
-      
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/pdf-js/pdf-viewer.js"> </script>
       
 <?php
   // if unsupported browser viewing a PDF, embed wtih Google Docs
-  } else if($viewPDFdocs) {
+  } else {
       $host = $_SERVER['SERVER_NAME'];
 
       // assemble this to a URL for the PDF

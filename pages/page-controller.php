@@ -24,10 +24,8 @@ $headerJS = array(
 
 // default CSS to load
 $headerCSS = array(
-  0 => '../beta/stylesheets/compiled/main.css',
-  1 => 'jquery.autocomplete.css',
-  2 => 'magiczoom.css',
-  3 => 'silhouette.css',
+  0 => 'jquery.autocomplete.css',
+  1 => 'magiczoom.css',
 );
 
 // get current page
@@ -55,10 +53,13 @@ if (isset($_GET['subpage2']) && !empty($_GET['subpage2'])) {
 if ($page == 'map') {
   if ($subpage == NULL) {
       $title = 'MVHPC :: Map of Mount Vernon';
-      $gMaps = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>';
-      array_push($headerCustom, $gMaps);
-      array_push($headerJS, 'map-labels.js', 'map-viewer.js');
       $id = 0;
+      ob_start();
+      ?>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>
+      <?php
+      array_push($headerCustom, ob_get_clean());
+      array_push($headerJS, 'map-labels.js', 'map-viewer.js');
 
   } else if ($subpage == 'ash-park-district') {
 
@@ -81,6 +82,17 @@ if ($page == 'map') {
   } else if ($subpage == 'documents') {
       $title = 'MVHPC :: Documents';
       $id = 0;
+      $pdfFile = $subpage2;
+      include 'documents.php';
+      if ($viewing) {
+        ob_start();
+        pageVars($pdfFile, $pdfURL);
+        array_push($headerCustom, ob_get_clean());
+        if ($supported) {
+//          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+        }
+      }
+      
 
   } else if ($subpage == 'images') {
       $title = 'MVHPC :: Images';
@@ -98,9 +110,21 @@ if ($page == 'map') {
   } else if ($subpage == 'links') {
       $title = 'MVHPC :: Links';
       $id = 8;
+
   } else if ($subpage == 'design-review') {
       $title = 'MVHPC :: Design Review';
       $id = 0;
+      $pdfFile = $subpage2;
+      include 'design-review.php';
+      if ($viewing) {
+        ob_start();
+        pageVars($pdfFile, $pdfURL);
+        array_push($headerCustom, ob_get_clean());
+        if ($supported) {
+//          array_push($headerJS, 'pdf-js/pdf.js', 'pdf-js/pdf-viewer.js');
+        }
+      }
+
   } else {
       redirect('../error/404.php');
   }
@@ -138,12 +162,10 @@ else {
       include 'map.php';
 
   } else if ($page == 'archives' && $subpage == 'documents') {
-      $pdfFile = $subpage2;
-      include 'documents.php';
-
+      pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
+      
   } else if ($page == 'about' && $subpage == 'design-review') {
-    $pdfFile = $subpage2;
-    include 'design-review.php';
+      pageDisplay($viewing, $supported, $pageRoot, $pdfDirURL, $pdfURL);
   }
 }
 
