@@ -160,9 +160,12 @@ if ($id != 0) {
 else {
   if ($page == 'map') {
       include 'map.php';
-
+  }
+  else if($subpage == 'images'){
+      include 'images.php';
+  }
   // pdf viewer, display the page by passing in needed variables
-  } else if ($page == 'archives' && $subpage == 'documents') {
+  else if ($page == 'archives' && $subpage == 'documents') {
       generatePage();
 
   // pdf viewer, display the page by passing in needed variables
