@@ -9,10 +9,12 @@ $log = file('cem.csv');
 foreach ($log as $line) {
     $line = trim($line);
 
-    $fields = str_getcsv($line);
+    $f = str_getcsv($line);
 
-    $query = "insert into cemetery_records set name = '" . $fields[0] . "', location = '" . $fields[1] . "', plot = '" . $fields[2] . "', extra = '" . $fields[3] . ' ' . $fields[4] . ' ' . $fields[5] . "'";
-    $db->query($query);
+    $ext = $f[3] . ' ' . $f[4] . ' ' . $f[5];
+
+    $query = "insert into cemetery_records set name = :f0:, location = :f1:, plot = :f2:, extra = :ext:";
+    $db->query($query, array('f0' => $f[0], 'f1' => $f[1], 'f2' => $f[2], 'ext' => $ext));
 
 }
 ?>
