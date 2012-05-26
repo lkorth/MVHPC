@@ -5,7 +5,7 @@ require_once '../includes/master.inc.php';
 $id = $_GET['id'];
 
 $db = Database::getDatabase();
-$result = $db->query("SELECT edit FROM seach WHERE id = '$id'");
+$result = $db->query("SELECT edit FROM search WHERE id = '$id'");
 
 if ($db->numRows($result) == 0) {
     echo 0;
