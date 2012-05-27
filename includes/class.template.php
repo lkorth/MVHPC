@@ -3,15 +3,21 @@
     {
         private $DEFAULT_TITLE = "Mount Vernon Historic Preservation Commission";
         private $DEFAULT_BODY = "There was an error finding the content for this page. Please contact the system administrator for assistance.";
+        private $DEFAULT_IMAGE = "http://www.mvhpc.org/images/MVHPC-Logo-Brown.png";
+        private $DEFAULT_SUMMARY = "Welcome to the exciting past and present of an unusual small community in the heart of the Heartland! This site opens our historical resources to the Internet and invites you to share in adding information, correcting our sources, and asking us for specific information you cannot find here. This site is an organic history book — it continues to grow from the input and knowledge of anyone in the world. Almost all of our known historical resources will eventually be available on this website.";
 
         private $style;
         private $title;
+        private $image;
+        private $summary;
         private $headerExtras;
         private $body;
 
         public function _construct() {
             $this->style = "oneColumn";
             $this->title = $DEFAULT_TITLE;
+            $this->image = $DEFAULT_IMAGE;
+            $this->summary = $DEFAULT_SUMMARY;
             $this->body = $DEFAULT_BODY;
         }
 
@@ -21,6 +27,14 @@
 
         public function setTitle($title) {
             $this->title = $title;
+        }
+
+        public function setImage($image) {
+            $this->image = $image;
+        }
+
+        public function setSummary($summary) {
+            $this->summary = $summary;
         }
 
         public function setHeaderExtras($extras) {
@@ -77,6 +91,10 @@
                     </script>
                 ";
             echo "<title>".$this->title."</title>";
+            echo '<meta property="og:title" content="' . $this->title . '" />
+                  <meta property="og:image" content="' . $this->image . '" />
+                  <meta property="og:description" content="' . $this->summary . '" />
+                  <meta property="og:url" content="' . WEB_ROOT . $_SERVER['REQUEST_URI'] . '">';
             echo "</head>";
 
             echo
