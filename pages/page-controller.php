@@ -16,14 +16,11 @@ $headerCustom = NULL;
 $headerJS = array(
   0 => 'jquery-172.js',
   1 => 'functions.js',
-  2 => 'base64.js',
-  3 => 'magiczoom.js',
+  2 => 'base64.js'
 );
 
 // default CSS to load
-$headerCSS = array(
-  0 => 'magiczoom.css',
-);
+$headerCSS = array();
 
 // get current page
 if (!isset($_GET['page'])) {

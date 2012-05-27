@@ -41,8 +41,7 @@ $imgZoomH = $imgZoom[1];
                                 'all-images.js',
                                 'jquery-mousewheel.js',
                                 'jquery-ui-1820-custom-min.js',
-                                'jquery-gzoom.js',
-//                                'magiczoom.js',
+                                'jquery-gzoom.js'
                                 );
     $headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery.autocomplete.css', 'jquery-tagsinput.css', 'jquery-ui-1820-custom.css', 'jquery-gzoom.css');
 ?>
@@ -59,7 +58,7 @@ $imgZoomH = $imgZoom[1];
     echo "<br><br>";
     echo "<a href=\"" . WEB_ROOT . "$location\">Click here for full resolution picture (Warning some pictures are VERY large)</a><br>";
     echo "<a href=\"feedback.php?id=$id\">Click here to request tag update</a>";
-    
+
     echo "
 		<script type= \"text/javascript\">
 			/*<![CDATA[*/
