@@ -136,3 +136,23 @@
             echo "</html>";
         }
     }
+
+
+/* //footer items that need to be added
+ *  <a href='" . WEB_ROOT . "'><span title='Click here to go to the home page' class='footer_item'>Home</span></a>
+ *  <a href='" . WEB_ROOT . "archives'><span title='Click here to go to the archives' class='footer_item'>Archives</span></a>
+ *  <a href='" . WEB_ROOT . "archives/documents'><span title='Click here to view historical documents' class='footer_item'>Documents</span></a>
+ *  <a href='" . WEB_ROOT . "archives/images'><span title='Click here to search images' class='footer_item'>Images</span></a>
+ *  <a href='" . WEB_ROOT . "map'><span title='Click here to view a map of Mount Vernon' class='footer_item'>Map</span></a>
+ *  <a href='" . WEB_ROOT . "map/ash-park-district'><span title='Click here to view the Ash Park District' class='footer_item'>Ash Park District</span></a>
+ *  <a href='" . WEB_ROOT . "map/commercial-district'><span title='Click here to view the Commercial District' class='footer_item'>Commercial District</span></a>
+ *  <a href='" . WEB_ROOT . "map/cornell-district'><span title='Click here to view the Cornell District' class='footer_item'>Cornell District</span></a>
+ *  <a href='" . WEB_ROOT . "making-history'><span title='Click here to see Mount Vernon Public School's contribution to History' class='footer_item'>Making History</span></a>
+ *  <a href='" . WEB_ROOT . "about'><span title='Click here to find out about the commission' class='footer_item'>About</span></a>
+ *  <a href='" . WEB_ROOT . "about/design-review'><span title='Click here to the guidelines on design review' class='footer_item'>Design Review</span></a>
+ *  <a href='" . WEB_ROOT . "about/links'><span title='Click here to view useful links' class='footer_item'>Links</span></a>
+ *  <a href='" . WEB_ROOT . "contact'><span title='Click here to contact us' class='footer_item'>Contact</span></a>
+ *  <a href='" . WEB_ROOT . "backend/login.php'><span title='Click here to login' class='footer_item'>Login</span></a>
+ *  COPYRIGHT
+ *  DEVELOPED BY
+ */
