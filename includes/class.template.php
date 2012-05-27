@@ -1,7 +1,7 @@
 <?php
     class Template
     {
-        private $DEFAULT_TITLE = "Mount Vernon Historical Preservation Commission";
+        private $DEFAULT_TITLE = "Mount Vernon Historic Preservation Commission";
         private $DEFAULT_BODY = "There was an error finding the content for this page. Please contact the system administrator for assistance.";
 
         private $style;
@@ -89,7 +89,7 @@
                             <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
                         </a>
                         <div class='header_text'>
-                            <h1>Mount Vernon Historical Preservation Commission</h1>
+                            <h1>Mount Vernon Historic Preservation Commission</h1>
                         </div>
                         </div>
                         <div class='navbar'>
