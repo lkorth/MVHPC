@@ -1,19 +1,11 @@
-<!doctype html>
-
 <?php
 
-include('../includes/master.inc.php');
-include('../includes/class.template.php');
-
-$template = new Template();
-
-
-$id = $_GET['id'];
+$id = $subpage2;
 
 $db = Database::getDatabase();
 $row = $db->getRow("SELECT * FROM search WHERE id = '$id'");
 
-$location = $row['location'];
+$location = WEB_ROOT . $row['location'];
 $medlg = WEB_ROOT . $row['medlg'];
 $mid = WEB_ROOT . $row['mid'];
 
@@ -29,58 +21,27 @@ $imgZoomW = $imgZoom[0];
 $imgZoomH = $imgZoom[1];
 
 ?>
-<html>
-<?php
-    $headerExtras['js'] = array('jquery-172.js',
-                                'jquery-bgiframe-min.js',
-                                'jquery-ajaxQueue.js',
-                                'jquery-autocomplete.js',
-                                'jquery-lightbox-05-min.js',
-                                'jquery-spellchecker.js',
-                                'jquery-tagsinput.js',
-                                'all-images.js',
-                                'jquery-mousewheel.js',
-                                'jquery-ui-1820-custom-min.js',
-                                'jquery-gzoom.js'
-                                );
-    $headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery.autocomplete.css', 'jquery-tagsinput.css', 'jquery-ui-1820-custom.css', 'jquery-gzoom.css');
-?>
-<?php ob_start(); ?>
-    <?php
-//    echo "<br>";
-//    echo "<a href=\"" . WEB_ROOT . "$medlg\" class=\"MagicZoom\" rel=\"click-to-initialize:true;zoom-position:inner;zoom-fade:true;\"><img src=\"" . WEB_ROOT . "$mid\"/></a>";
-    echo '<div id="zoom01" class="zoom">';
-    echo "<img src=\"$mid\" />";
-    echo '</div>';
-//    echo "<p>Click the picture to turn on zooming</p>";
-//    echo "<br><br>";
-    echo '<p>' . $row['information'] . '</p>';
-    echo "<br><br>";
-    echo "<a href=\"" . WEB_ROOT . "$location\">Click here for full resolution picture (Warning some pictures are VERY large)</a><br>";
-    echo "<a href=\"feedback.php?id=$id\">Click here to request tag update</a>";
 
-    echo "
-		<script type= \"text/javascript\">
-			/*<![CDATA[*/
-			$(function() {
-				$(\"#zoom01\").gzoom({
-						sW: $imgThumbW,
-						sH: $imgThumbH,
-						lW: $imgZoomW,
-						lH: $imgZoomH,
-						lighbox : true
-				});
-		  });
-			/*]]>*/
-		</script>
-		";
-    ?>
-<?php
-    $content = ob_get_clean();
+<div id="zoom01" class="zoom">
+  <img src="<?php echo $mid; ?>" />
+</div>
 
-    $template->setStyle('oneColumn');
-    $template->setHeaderExtras($headerExtras);
-    $template->setBody($content);
+<p> <?php $row['information']; ?> </p>
+    
+<a href="<?php echo $location; ?>"> Click here for full resolution picture (Warning some pictures are VERY large) </a>
 
-    $template->output();
-?>
+<a href="feedback.php?id=<?php echo $id; ?>"> Click here to request tag update </a>
+
+<script type="text/javascript">
+  /*<![CDATA[*/
+  $(function() {
+    $("#zoom01").gzoom({
+      sW: <?php echo $imgThumbW; ?>,
+      sH: <?php echo $imgThumbH; ?>,
+      lW: <?php echo $imgZoomW; ?>,
+      lH: <?php echo $imgZoomH; ?>,
+      lighbox : true
+    });
+  });
+  /*]]>*/
+</script>

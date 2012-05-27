@@ -89,13 +89,29 @@ if ($page == 'map') {
       }
 
   } else if ($subpage == 'images') {
-      $title = 'MVHPC :: Images';
-      $id = 0;
-      array_push($headerJS, 'jquery-bgiframe-min.js',
-                            'jquery-ajaxQueue.js',
-                            'jquery-autocomplete.js',
-                            'inpage_script.js');
-      array_push($headerCSS, 'jquery.autocomplete.css');
+      $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]));
+      if (!$fullsize) {
+        $title = 'MVHPC :: Images';
+        $id = 0;
+        array_push($headerJS, 'jquery-bgiframe-min.js',
+                              'jquery-ajaxQueue.js',
+                              'jquery-autocomplete.js',
+                              'inpage_script.js');
+        array_push($headerCSS, 'jquery.autocomplete.css');
+      }
+      else {
+        $title = 'MVHPC :: Images';
+        $id = 0;
+        array_push($headerJS,
+          'jquery-mousewheel.js',
+          'jquery-ui-1820-custom-min.js',
+          'jquery-gzoom.js'
+        );
+        array_push($headerCSS,
+          'jquery-ui-1820-custom.css',
+          'jquery-gzoom.css'
+        );
+      }
   } else {
       redirect('../error/404.php');
   }
@@ -161,7 +177,12 @@ else {
       include 'map.php';
   }
   else if($subpage == 'images'){
-      include 'images.php';
+      if (!$fullsize) {
+        include 'images.php';
+      }
+      else {
+        include 'fullsize.php';
+      }
   }
   // pdf viewer, display the page by passing in needed variables
   else if ($page == 'archives' && $subpage == 'documents') {
