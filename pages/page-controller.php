@@ -1,3 +1,5 @@
+<!doctype html>
+
 <?php
 
 // include the framework and templating
