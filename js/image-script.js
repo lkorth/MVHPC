@@ -15,7 +15,7 @@ $().ready(function(){
         ul = $('#tagcloud').find('ul');
         $.each(tags, function(i, item){
             li = $("<li>");
-            $("<a>").text(item.tag).attr({title:"See all pages tagged with " + item.tag, href:"" + item.tag + ".html"}).appendTo(li);
+            $("<a>").text(item.tag).attr({title:"See all pages tagged with " + item.tag, href:"pages/search.php?terms=" + item.tag }).appendTo(li);
             li.children().css("fontSize", (item.count / 50 < 1) ? item.count / 50 + 15 + "px": (item.count / 50 > 2) ? "25px" : item.count / 50 + 10 + "px");
             li.appendTo(ul);
         });
