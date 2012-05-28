@@ -40,6 +40,12 @@ if (isset($_GET['subpage2']) && !empty($_GET['subpage2'])) {
   $subpage2 = $_GET['subpage2'];
 }
 
+// get the sub-sub-sub-page, if applicable
+$subpage3 = NULL;
+if (isset($_GET['subpage3']) && !empty($_GET['subpage3'])) {
+  $subpage3 = $_GET['subpage3'];
+}
+
 // Define variables for each page, like title
 // include ALL custom CSS, Javascript, etc.
 // load custom page content with $id = 0, otherwise from DB

@@ -23,7 +23,12 @@ else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false)
 else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false)
   $pdfSupported = true;
 
-
+// if viewing to a specified page, get that page number
+if (isset($subpage3) && is_numeric($subpage3)) {
+    $pdfPage = $subpage3;
+} else {
+    $pdfPage = 1;
+}
 
 // FUNCTIONS - these get loaded as needed for PDF display
 
@@ -32,6 +37,7 @@ else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false)
 function jsVars(){
   global $pdfFile;
   global $pdfURL;
+  global $pdfPage;
   ?>
   
 <script type="text/javascript">
@@ -39,6 +45,7 @@ function jsVars(){
   // utilized in pdf-viewer.js
   var pdfFile = "<?php echo $pdfFile; ?>";
   var pdfURL = "<?php echo $pdfURL; ?>";
+  var pdfPage = "<?php echo $pdfPage; ?>";
 </script>
 
   <?php
