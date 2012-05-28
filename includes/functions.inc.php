@@ -15,12 +15,17 @@ function featuredImages(){
     return ($db->getRows("SELECT id, thumbnail FROM search ORDER BY RAND() LIMIT 5"));
 }
 
-function renderPaging($pager, $url){
+function renderPaging($pager, $url, $rewrite = false){
+    if($rewrite)
+        $pre = '/';
+    else
+        $pre = '&page=';
+
     if ($pager->hasNextPage() || $pager->hasPrevPage()) {
         echo '<div><br>';
 
         if ($pager->hasPrevPage()) {
-            echo '<a href="' . $url . '&page=' . $pager->prevPage() . '"/><=Prevous Page=</a>';
+            echo '<a href="' . $url . $pre . $pager->prevPage() . '"/><=Prevous Page=</a>';
             echo "&nbsp;&nbsp;&nbsp;";
         }
 
@@ -29,7 +34,7 @@ function renderPaging($pager, $url){
             $j = $pager->prevPage();
             $previousCount = 0;
             while ($j >= 1 && $previousCount < 3) {
-                $previousPageNumbers = '<a href="' . $url . '&page=' . $j . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
+                $previousPageNumbers = '<a href="' . $url . $pre . $j . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
                 $previousCount++;
                 $j--;
             }
@@ -44,13 +49,13 @@ function renderPaging($pager, $url){
                 $k = $pager->nextPage();
                 $nextCount = 0;
                 while ($k <= $pager->numPages && $nextCount < 3) {
-                    echo '<a href="' . $url . '&page=' . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
+                    echo '<a href="' . $url . $pre . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
                     $nextCount++;
                     $k++;
                 }
             }
 
-            echo '<a href="' . $url . '&page=' . $pager->nextPage() . '"/>=Next Page=></a>';
+            echo '<a href="' . $url . $pre . $pager->nextPage() . '"/>=Next Page=></a>';
         }
 
         echo '<br></div>';

@@ -1,7 +1,7 @@
 # This turns on mod_rewrite and redirects according to the rules below
 
 RewriteEngine On
-RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9_-]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3    [NC,L] #rewrite all /foo to single page controller
+RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9,\-\ _-]*)/?([0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L] #rewrite all /foo to single page controller
 RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9_-]*)/?(fullscreen)/?$     pages/pdf-viewer-fs.php?dir=$1&pdf=$3    [NC,L] #rewrite for full-screen pdf-viewer
 
 # ----------------------------------------------------------------------
@@ -15,7 +15,7 @@ Options -MultiViews
 
 
 # ----------------------------------------------------------------------
-# Custom 404 page
+# Custom Error pages
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.

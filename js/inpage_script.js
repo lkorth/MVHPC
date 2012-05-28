@@ -16,4 +16,8 @@ $().ready(function() {
         delay: 150,
         scrollHeight: 500
     });
+
+    $("#search").click(function(){
+       window.location = '/mvhpc/archives/images/' + $("#global").val();
+    });
 });

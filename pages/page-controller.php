@@ -178,6 +178,7 @@ else {
   }
   else if($subpage == 'images'){
       if (!$fullsize) {
+        $subpage3 = $_GET['subpage3'];
         include 'images.php';
       }
       else {
