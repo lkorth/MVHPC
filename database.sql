@@ -22,6 +22,14 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+
+CREATE TABLE `sessions` (
+  `id` varchar(255) NOT NULL,
+  `data` text NOT NULL,
+  `updated_on` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+);
+
 --
 -- Table structure for table `cemetery_records`
 --
