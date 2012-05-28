@@ -3,7 +3,7 @@ $(function() {
 
     $('.tagArea').tagsInput({
         'onRemoveTag': function(tag){
-            onRemove(tag);
+            $(this).addTag(tag);
         },
         'interactive': false
     });
@@ -23,19 +23,6 @@ $(function() {
 
 
 });
-
-function onRemove(tag){
-    var current = $(this).val();
-    current = current + tag + ';';
-    $(this).val(current);
-    $('#' + $(this).attr('id') + '_taginput').remote();
-    $(this).tagsInput({
-        'onRemoveTag': function(tag){
-            onRemove(tag);
-        },
-        'interactive': false
-    });
-}
 
 function rotate(id, angle){
     $('#thumb' + id).html('<img src="/mvhpc/images/pdf-js/loading-icon.gif" />');

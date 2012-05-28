@@ -27,16 +27,16 @@ function editfunction(id)
         type: "GET",
         url: "/mvhpc/ajax-endpoints/check_use.php",
         data: 'id='+id,  //with the id as a parameter
-        dataType: value,
+        dataType: 'text',
         success: function(msg){
             if(parseInt(msg)==1){  //if no errors make text areas editable
                 alert('You may now begin editing this item. You have 1 hour to edit it before your changes are discarded');
                 var info = 'info' + id;
                 var tags = 'tags' + id;
-                document.form[info].readOnly = false;
-                document.form[tags].readOnly = false;
-                document.getElementById('button' + id).style.visibility='visible';
-                document.getElementById('update' + id).style.visibility='visible';
+                $('#' + info).attr('readonly', false);
+                $('#' + tags).attr('readonly', false);
+                $('#button' + id).css('visibility', 'visible');
+                $('#update' + id).css('visibility', 'visible');
                 $('#' + tags + '_tagsinput').remove();
                 $('#' + tags).tagsInput({
                     'autocomplete_url':'/mvhpc/ajax-endpoints/suggest.php',

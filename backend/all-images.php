@@ -41,11 +41,10 @@ $num = $db->numRows($result);
                                 'jquery-tagsinput.js',
                                 'all-images.js',
                                 'functions.js');
-    $headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery.autocomplete.css', 'jquery-tagsinput.css');
+    $headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery-autocomplete.css', 'jquery-tagsinput.css');
 ?>
 <?php ob_start(); ?>
     <table align="center">
-    <form name="form" enctype="multipart/form-data">
     <?php
 
     $pager = new Pager($page, 25, $num);
@@ -66,8 +65,8 @@ $num = $db->numRows($result);
         $picinfo = "info" . $id;
         $button = "button" . $id;
         $update = "update" . $id;
-        echo "<tr><td><br><br><a id='thumb$id' href=\"" . WEB_ROOT . "$mid\" rel=\"lightbox\"><img src=\"" . WEB_ROOT . "$thumbnail\" /></a>
-            <br><a href='#' onClick='rotate($id,90)'><img src='" . WEB_ROOT . "images/rotate-cc.png'/></a>&nbsp;&nbsp;<a href='#' onClick='rotate($id,270)'><img src='" . WEB_ROOT . "images/rotate-c.png'/></a>
+        echo "<tr><td><br><br><div style=\"width: 224px; height: 224px;\"><a id='thumb$id' href=\"" . WEB_ROOT . "$mid\" rel=\"lightbox\"><img src=\"" . WEB_ROOT . "$thumbnail\" /></a></div>
+            <br><button onClick='rotate($id,90)'><img src='" . WEB_ROOT . "images/rotate-cc.png'/></button>&nbsp;&nbsp;<button onClick='rotate($id,270)'><img src='" . WEB_ROOT . "images/rotate-c.png'/></button>
             </td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea class=\"tagArea\" name=\"$pictags\" id=\"$pictags\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$tag</textarea></td></tr>
             <tr><td></td><td align=\"right\"><p>Information:</p> <textarea class = \"textarea\" name=\"$picinfo\" id=\"$picinfo\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$info</textarea><br><br>
             <input type=button value=\"Edit\" onClick=\"editfunction($id)\">
@@ -75,7 +74,6 @@ $num = $db->numRows($result);
             <input type=button id=\"$button\" class=\"hidden-button\" value=\"Delete\" onClick=\"deletefunction($id)\">
             </td></tr><tr><td><br><br></td></tr>";
     }
-    echo "</form>";
     echo "</table>";
 
     renderPaging($pager, WEB_ROOT . 'backend/all-images.php?' . $params);
@@ -89,7 +87,7 @@ $num = $db->numRows($result);
     $template->setStyle('oneColumn');
     $template->setTitle('All Images');
     $template->setHeaderExtras($headerExtras);
-    $template->setBody($content);
+    $template->setSingleCol($content);
 
     $template->output();
 ?>
