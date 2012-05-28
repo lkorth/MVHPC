@@ -2,10 +2,9 @@
 
 $id = $subpage2;
 
-$db = Database::getDatabase();
-$row = $db->getRow("SELECT * FROM search WHERE id = '$id'");
+$img = returnImage($id);
 
-if ($row == NULL) {
+if ($img == NULL) {
   ?>
 
 <p> "<?php echo $id; ?>" is not a valid image id. Please go back to the
@@ -16,14 +15,13 @@ if ($row == NULL) {
 }
 
 else {
+  $location = WEB_ROOT . $img['location'];
+  $medlg = WEB_ROOT . $img['medlg'];
+  $mid = WEB_ROOT . $img['mid'];
 
-  $location = WEB_ROOT . $row['location'];
-  $medlg = WEB_ROOT . $row['medlg'];
-  $mid = WEB_ROOT . $row['mid'];
-
-  $trueviews = $row['trueviews'] + 1;
-  $views = $row['views'] + 0.05;
-  $db->query("UPDATE search SET views = '$views', trueviews = '$trueviews' WHERE id = '$id'");
+  $trueViews = $img['trueviews'] + 1;
+  $views = $img['views'] + 0.05;
+  updateImageViews($views, $trueViews, $id);
 
   $imgThumb = getimagesize($_SERVER['DOCUMENT_ROOT'] . $mid);
   $imgZoom = getimagesize($_SERVER['DOCUMENT_ROOT'] . $medlg);
@@ -55,7 +53,7 @@ else {
   </div>
 
   <div id="image-info">
-    <p> <?php $row['information']; ?> </p>
+    <p> <?php echo $img['information']; ?> </p>
 
     <a href="<?php echo $location; ?>"> Click here for full resolution picture (Warning some pictures are VERY large) </a>
 

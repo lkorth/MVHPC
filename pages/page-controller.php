@@ -83,17 +83,25 @@ if ($page == 'map') {
       $id = 2;
 
   } else if ($subpage == 'documents') {
-      $title = 'MVHPC :: Documents';
-      $id = 0;
-      $pdfFile = $subpage2;
-      array_push($headerCSS, 'pdf-viewer.css');
-      include 'documents.php';
-      if ($pdfViewing) {
-        ob_start();
-        jsVars();
-        $headerCustom = ob_get_clean();
-        if ($pdfSupported) {
-          array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
+      // only for Centennial Book index
+      if ($subpage2 == 'Centennial-Book-Index') {
+        $title = 'MVHPC:: Centennial Book';
+        $id = 0;
+      }
+      // otherwise, normal document display
+      else {
+        $title = 'MVHPC :: Documents';
+        $id = 0;
+        $pdfFile = $subpage2;
+        array_push($headerCSS, 'pdf-viewer.css');
+        include 'documents.php';
+        if ($pdfViewing) {
+          ob_start();
+          jsVars();
+          $headerCustom = ob_get_clean();
+          if ($pdfSupported) {
+            array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
+          }
         }
       }
 
@@ -194,9 +202,16 @@ else {
         include 'fullsize.php';
       }
   }
-  // pdf viewer, display the page by passing in needed variables
+  // documents from the archives
   else if ($page == 'archives' && $subpage == 'documents') {
-      generatePage();
+      // show the Centennial Book index instead
+      if ($subpage2 == 'Centennial-Book-Index') {
+        include 'bookindex.php';
+      }
+      // pdf viewer, display the page by passing in needed variables
+      else {
+        generatePage();
+      }
 
   // pdf viewer, display the page by passing in needed variables
   } else if ($page == 'about' && $subpage == 'design-review') {

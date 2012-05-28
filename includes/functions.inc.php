@@ -1,5 +1,20 @@
 <?PHP
 
+function returnImage($id) {
+  $db = Database::getDatabase();
+  return ($db->getRow("SELECT * FROM search WHERE id = '$id'"));
+}
+
+function updateImageViews($views, $trueViews, $id){
+  $db = Database::getDatabase();
+  return ($db->query("UPDATE search SET views = '$views', trueviews = '$trueViews' WHERE id = '$id'"));
+}
+
+function returnCentennialIndex($letter){
+  $db = Database::getDatabase();
+  return ($db->getRow("SELECT data FROM centennial_book_index WHERE letter = '$letter'"));
+}
+
 function returnPosts($page, $maxNumberResults = 1){
     $db = Database::getDatabase();
     return ($db->getRows("SELECT * FROM posts WHERE page='$page' order by date desc limit $maxNumberResults"));
@@ -13,6 +28,53 @@ function returnAPost($id){
 function featuredImages(){
     $db = Database::getDatabase();
     return ($db->getRows("SELECT id, thumbnail FROM search ORDER BY RAND() LIMIT 5"));
+}
+
+function renderPaging($pager, $url, $rewrite = false){
+    if($rewrite)
+        $pre = '/';
+    else
+        $pre = '&page=';
+
+    if ($pager->hasNextPage() || $pager->hasPrevPage()) {
+        echo '<div><br>';
+
+        if ($pager->hasPrevPage()) {
+            echo '<a href="' . $url . $pre . $pager->prevPage() . '"/><=Prevous Page=</a>';
+            echo "&nbsp;&nbsp;&nbsp;";
+        }
+
+        if ($pager->prevPage() > 1) {
+            $previousPageNumbers = '';
+            $j = $pager->prevPage();
+            $previousCount = 0;
+            while ($j >= 1 && $previousCount < 3) {
+                $previousPageNumbers = '<a href="' . $url . $pre . $j . '"/>' . $j . '</a>&nbsp;&nbsp;&nbsp;' . $previousPageNumbers;
+                $previousCount++;
+                $j--;
+            }
+            echo $previousPageNumbers;
+        }
+
+        echo "<span>" . $pager->page . "</span>";
+        echo "&nbsp;&nbsp;&nbsp;";
+
+        if ($pager->hasNextPage()) {
+            if ($pager->nextPage() != $pager->numPages) {
+                $k = $pager->nextPage();
+                $nextCount = 0;
+                while ($k <= $pager->numPages && $nextCount < 3) {
+                    echo '<a href="' . $url . $pre . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
+                    $nextCount++;
+                    $k++;
+                }
+            }
+
+            echo '<a href="' . $url . $pre . $pager->nextPage() . '"/>=Next Page=></a>';
+        }
+
+        echo '<br></div>';
+    }
 }
 
 function autocomplete($field, $searchString, $fullText = false) {

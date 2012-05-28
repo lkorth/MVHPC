@@ -1,35 +1,36 @@
 <?php
 
 
-$title="MVHPC :: Centennial Book Index";
+//$title="MVHPC :: Centennial Book Index";
 
-if(isset($_GET['letter'])){
-	$letter = strtolower($_GET['letter']);
+if(isset($subpage3)){
+	$letter = strtolower($subpage3);
 	$list = 1;
+$upperLetter = strtoupper($letter);
 }
 else {
 	$list = 0;
 }
-$upperLetter = strtoupper($letter);
+
 
 //require 'shared/header.php';
-require 'header.php';
+//require 'header.php';
 
-echo '<div align="center">';
+//echo '<div align="center">';
 $ct = 0;
 foreach(range('A', 'Z') as $l){
-	if($l == $upperLetter){
-		$color = 'style="color: white;"';
-	}
-	else {
-		$color = '';
-	}
+//	if($l == $upperLetter){
+//		$color = 'style="color: white;"';
+//	}
+//	else {
+//		$color = '';
+//	}
 	if($ct == 15){
 		echo '<br>';
-		echo '<a ' . $color . 'href="bookindex.php?letter=' . $l . '">[' . $l . ']</a>&nbsp;&nbsp;';
+		echo '<a href="' . WEB_ROOT . 'archives/documents/Centennial-Book-Index/' . $l . '">[' . $l . ']</a>&nbsp;&nbsp;';
 	}
 	else {
-		echo '<a ' . $color . 'href="bookindex.php?letter=' . $l . '">[' . $l . ']</a>&nbsp;&nbsp;';
+		echo '<a href="' . WEB_ROOT . 'archives/documents/Centennial-Book-Index/' . $l . '">[' . $l . ']</a>&nbsp;&nbsp;';
 	}
 	$ct++;
 }
@@ -39,12 +40,14 @@ if($list == 1){
 	echo '<div align="left" style="padding-left: 50px;"><p style="font-size: 16px;">';
 	//$letter = 'book/index/' . $letter . '.txt';
 	//$strings = file($letter);
-	$strings = mysql_fetch_assoc(mysql_query("select data from centennial_book_index where letter = '$upperLetter'"));
-	$strings = $strings['data'];
+$db = Database::getDatabase();
+$strings = ($db->getRows("select data from centennial_book_index where letter = '$upperLetter'"));
+//	$strings = mysql_fetch_assoc(mysql_query("select data from centennial_book_index where letter = '$upperLetter'"));
+//  $strings = returnCentennialIndex($upperLetter);
+	$strings = $strings[0]['data'];
 	$strings = explode("\n", $strings);
 	foreach($strings as $string){
 		$string = trim($string);
-
 		$pattern = '/[0-9]{1,3}/';
 		preg_match_all($pattern, $string, $matches, PREG_OFFSET_CAPTURE);
 
@@ -79,7 +82,7 @@ if($list == 1){
 			}
 			else {
 				$start = $linking[$j][1] + $offset;
-				$replace = "<a href=\"book.php?page=" . $linking[$j][0] . "\">" . $linking[$j][0] . "</a>";
+				$replace = '<a href="' . WEB_ROOT . 'archives/documents/Centennial-Book/' . '"' . $linking[$j][0] . '">' . $linking[$j][0] . "</a>";
 				$string = substr_replace($string, $replace, $start, $linking[$j][2]);
 				$offset += 29 + $linking[$j][2];
 			}
@@ -89,5 +92,5 @@ if($list == 1){
 	echo '</p></div>';
 }
 
-require '../shared/footer.php';
+//require '../shared/footer.php';
 ?>

@@ -1,7 +1,7 @@
 # This turns on mod_rewrite and redirects according to the rules below
 
 RewriteEngine On
-RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9,\-\ &_-]*)/?([0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L,B] #rewrite all /foo to single page controller
+RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9,\-\ &_-]*)/?([a-z0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L,B] #rewrite all /foo to single page controller
 RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9_-]*)/?(fullscreen)/?$     pages/pdf-viewer-fs.php?dir=$1&pdf=$3    [NC,L] #rewrite for full-screen pdf-viewer
 
 # ----------------------------------------------------------------------
