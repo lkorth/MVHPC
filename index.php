@@ -56,7 +56,7 @@ $posts = returnPosts('index', 1);
                         <?php else: ?>
                                 <div class="featured">
                         <?php endif; ?>
-                        <a href="<?php WEBROOT(); ?>pages/fullsize.php?id=<?php echo $img['id']; ?>"><img src="<?php echo WEB_ROOT . $img['thumbnail']; ?>" /></a>
+                        <a href="<?php WEBROOT(); ?>archives/images/<?php echo $img['id']; ?>"><img src="<?php echo WEB_ROOT . $img['thumbnail']; ?>" /></a>
                     </div>
                 <?php
                     $cnt++;
