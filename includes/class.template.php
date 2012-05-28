@@ -116,7 +116,7 @@
                                     <a href='" . WEB_ROOT . "'><span title='MVHPC Home Page' class='menu_item'>Home</span></a>
                                     <a href='" . WEB_ROOT . "archives'><span title='Text and Image Archives' class='menu_item'>Archives</span></a>
                                     <a href='" . WEB_ROOT . "map'><span title='Map Laying out the Districts of Mount Vernon' class='menu_item'>Map</span></a>
-                                    <a href='" . WEB_ROOT . "map'><span title='Mount Vernon Public Schools Class Work' class='menu_item'>Making History</span></a>
+                                    <a href='" . WEB_ROOT . "making-history'><span title='Mount Vernon Public Schools Class Work' class='menu_item'>Making History</span></a>
                                     <a href='" . WEB_ROOT . "about'><span title='About the Preservation Commission and What We Do' class='menu_item'>About</span></a>
                                 </span>
                             </div>
