@@ -36,6 +36,17 @@ function editfunction(id)
                 document.form[info].readOnly = false;
                 document.form[tags].readOnly = false;
                 document.getElementById('button' + id).style.visibility='visible';
+                document.getElementById('update' + id).style.visibility='visible';
+                $('#' + tags + '_tagsinput').remove();
+                $('#' + tags).tagsInput({
+                    'autocomplete_url':'/mvhpc/ajax-endpoints/suggest.php',
+                    'autocomplete':{
+                        selectFirst: false,
+                        width:'250px',
+                        autoFill: false
+                    },
+                    'removeWithBackspace': false
+                });
             }
             else if(parseInt(msg)==0){
                 alert('Someone else is editing this item at this time.  Please come back later.  This item will be available in 1 hour or less.');

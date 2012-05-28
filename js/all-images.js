@@ -2,13 +2,10 @@ $(function() {
     $('[rel=lightbox]').lightBox();
 
     $('.tagArea').tagsInput({
-        'autocomplete_url':'/mvhpc/ajax-endpoints/suggest.php',
-        'autocomplete':{
-            selectFirst: false,
-            width:'250px',
-            autoFill: false
+        'onRemoveTag': function(tag){
+            onRemove(tag);
         },
-        'removeWithBackspace': false
+        'interactive': false
     });
 
     $("textarea").spellchecker({
@@ -26,6 +23,19 @@ $(function() {
 
 
 });
+
+function onRemove(tag){
+    var current = $(this).val();
+    current = current + tag + ';';
+    $(this).val(current);
+    $('#' + $(this).attr('id') + '_taginput').remote();
+    $(this).tagsInput({
+        'onRemoveTag': function(tag){
+            onRemove(tag);
+        },
+        'interactive': false
+    });
+}
 
 function rotate(id, angle){
     $('#thumb' + id).html('<img src="/mvhpc/images/pdf-js/loading-icon.gif" />');

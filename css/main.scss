@@ -1,4 +1,4 @@
-/* 
+/*
 Document   : main
 Created on : May 14, 2012, 2:32:36 PM
 Author     : areed12
@@ -28,7 +28,7 @@ $fork_left_margin: - $fork_width + 10px;
 $fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content) + 5px;
 $menu_top_margin: 0px;
 $menu_left_margin: -10px;
-$fork_top_margin: $menu_top_margin + 24px; 
+$fork_top_margin: $menu_top_margin + 24px;
 $fold_right_margin: $container_width - $menu_left_margin;
 
 /* Mixins */
@@ -147,7 +147,7 @@ body {
     display: inline-block;
 }
 
-.navbar a:link, .navbar a:visited { 
+.navbar a:link, .navbar a:visited {
     color:#fff;
     text-decoration:none;
     float:left;
@@ -191,7 +191,7 @@ body {
 
 .left_col {
     width: 588px;
-    
+
 }
 
 .left_col .ribbon {
@@ -327,20 +327,20 @@ button {
     text-align: justify;
 }
 
-#tagcloud ul { 
-    margin:0; 
-    padding:0; 
-}  
-#tagcloud ul li {  
-    list-style-type: none; 
-    float: left; 
-    margin:0 10px; 
+#tagcloud ul {
+    margin:0;
+    padding:0;
+}
+#tagcloud ul li {
+    list-style-type: none;
+    float: left;
+    margin:0 10px;
     height:35px;
-}  
-#tagcloud ul li a { 
+}
+#tagcloud ul li a {
     text-decoration: none;
     color: #FF6600;
-}  
+}
 #tagcloud ul li a:hover {
     text-decoration: underline;
 }
@@ -351,4 +351,8 @@ button {
 
 #map {
     margin: 0 auto;
+}
+
+.hidden-button{
+    visibility: hidden;
 }

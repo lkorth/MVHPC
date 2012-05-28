@@ -1,4 +1,4 @@
-/* 
+/*
 Document   : main
 Created on : May 14, 2012, 2:32:36 PM
 Author     : areed12
@@ -295,3 +295,7 @@ button {
 
 #map {
   margin: 0 auto; }
+
+.hidden-button{
+visibility: hidden;
+}
