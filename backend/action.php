@@ -43,7 +43,7 @@ $template = new Template();
     $template->setStyle('oneColumn');
     $template->setTitle('Manage Site');
     $template->setHeaderExtras(null);
-    $template->setBody($content);
+    $template->setSingleCol($content);
 
     $template->output();
 ?>
