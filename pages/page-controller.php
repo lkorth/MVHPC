@@ -177,7 +177,7 @@ ob_start();
 if (isset($id) && $id != 0) {
   $db = Database::getDatabase();
   $row = $db->getRow("SELECT * FROM pages WHERE id = '$id'");
-  echo $row['data'];
+  echo $row['text'];
 }
 
 // otherwise, load page from a file
