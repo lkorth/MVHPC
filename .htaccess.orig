@@ -1,0 +1,40 @@
+# This turns on mod_rewrite and redirects according to the rules below
+
+RewriteEngine On
+<<<<<<< Updated upstream
+RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9,\-\ _-]*)/?([0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L] #rewrite all /foo to single page controller
+RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9_-]*)/?(fullscreen)/?$     pages/pdf-viewer-fs.php?dir=$1&pdf=$3    [NC,L] #rewrite for full-screen pdf-viewer
+=======
+RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9,\-\ &_-]*)/?([0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L,B] #rewrite all /foo to single page controller
+RewriteRule    ^([A-Za-z0-9-]+)/?([A-Za-z0-9-]*)/?([A-Za-z0-9_-]*)/?(fullscreen)/?$     pages/pdf-viewer-fs.php?dir=$1&pdf=$3    [NC,L] #rewrite for full-screen pdf-viewer
+>>>>>>> Stashed changes
+
+# ----------------------------------------------------------------------
+# Prevent 404 errors for non-existing redirected folders
+# ----------------------------------------------------------------------
+
+# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist
+#   e.g. /blog/hello : webmasterworld.com/apache/3808792.htm
+
+Options -MultiViews
+
+
+# ----------------------------------------------------------------------
+# Custom Error pages
+# ----------------------------------------------------------------------
+
+# You can add custom pages to handle 500 or 403 pretty easily, if you like.
+ErrorDocument 404 /mvhpc/error/404.php
+ErrorDocument 500 /mvhpc/error/500.php
+ErrorDocument 403 /mvhpc/error/403.php
+
+
+# ----------------------------------------------------------------------
+# UTF-8 encoding
+# ----------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
