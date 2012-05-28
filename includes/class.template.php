@@ -82,6 +82,7 @@
             $css = substr($css, 0, -1);
             $js = substr($js, 0, -1);
 
+            echo "<!doctype html>";
             echo "<html>";
             echo
                 "

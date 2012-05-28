@@ -1,5 +1,3 @@
-<!doctype html>
-
 <?php
 
 include('includes/master.inc.php');
@@ -10,13 +8,12 @@ $template = new Template();
 $posts = returnPosts('index', 1);
 
 ?>
-<html>
 <?php
     $headerExtras['js'] = array('jquery-172.js', 'image-script.js');
 ?>
 <?php ob_start(); ?>
         <h1 class="ribbon">Welcome!</h1>
-        <div class="article">
+        <div class="article body_text">
             <p>
                 Welcome to the exciting past and present of an unusual small
                 community in the heart of the Heartland!
@@ -36,7 +33,7 @@ $posts = returnPosts('index', 1);
         </div>
         <?php foreach($posts as $post): ?>
         <h1 class="ribbon"><?php echo $post['title']; ?></h1>
-        <div class="article">
+        <div class="article body_text">
             <p>
                 <?php echo max_words($post['text'], 150); ?>
             </p>

@@ -199,11 +199,8 @@ body {
 
 .left_col .article p {
   text-align: justify;
-  line-height: 1.3;
   padding: 10px;
-  margin: 0;
-  font-family: 'Glass Antiqua', cursive;
-  font-size: 1.15em; }
+  margin: 0; }
 
 .left_col .article a, .left_col .article a:visited {
   margin-left: 10px;
@@ -263,6 +260,11 @@ body {
 .featured:first-child {
   display: block; }
 
+.body_text {
+  font-family: 'Glass Antiqua', cursive;
+  font-size: 1.15em;
+  line-height: 1.3; }
+
 button {
   background: #F60;
   border: 1px solid #444;
@@ -298,3 +300,19 @@ button {
 
 .hidden-button {
   visibility: hidden; }
+
+.fill_list {
+  list-style: none;
+  text-align: justify;
+  overflow: hidden;
+  position: relative; }
+
+.fill_list li {
+  float: left;
+  padding: 10px; }
+
+.fill_list li:before, .fill_list li:after {
+  content: '\2022'; }
+
+.fill_list li:hover {
+  text-shadow: 0px 0px 3px #f60; }
