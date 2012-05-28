@@ -208,7 +208,7 @@ body {
 .left_col .article a, .left_col .article a:visited {
   margin-left: 10px;
   font-family: Times;
-  color: #ff6600; }
+  color: #FF6600; }
 
 .right_col {
   width: 300px;
@@ -296,6 +296,5 @@ button {
 #map {
   margin: 0 auto; }
 
-.hidden-button{
-visibility: hidden;
-}
+.hidden-button {
+  visibility: hidden; }

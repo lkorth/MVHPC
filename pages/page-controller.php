@@ -56,7 +56,6 @@ $template->setStyle('oneColumn');
 if ($page == 'map') {
   if ($subpage == NULL) {
       $title = 'MVHPC :: Map of Mount Vernon';
-      $id = 0;
       ob_start();
       ?>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>
@@ -80,18 +79,16 @@ if ($page == 'map') {
 } else if ($page == 'archives') {
   if ($subpage == NULL) {
       $title = 'MVHPC :: Archives';
-      $id = 2;
+      $page_id = $page;
 
   } else if ($subpage == 'documents') {
       // only for Centennial Book index
       if ($subpage2 == 'Centennial-Book-Index') {
         $title = 'MVHPC:: Centennial Book';
-        $id = 0;
       }
       // otherwise, normal document display
       else {
         $title = 'MVHPC :: Documents';
-        $id = 0;
         $pdfFile = $subpage2;
         array_push($headerCSS, 'pdf-viewer.css');
         include 'documents.php';
@@ -109,7 +106,6 @@ if ($page == 'map') {
       $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]));
       if (!$fullsize) {
         $title = 'MVHPC :: Images';
-        $id = 0;
         array_push($headerJS, 'jquery-bgiframe-min.js',
                               'jquery-ajaxQueue.js',
                               'jquery-autocomplete.js',
@@ -118,7 +114,6 @@ if ($page == 'map') {
       }
       else {
         $title = 'MVHPC :: Images';
-        $id = 0;
         array_push($headerJS,
           'jquery-mousewheel.js',
           'jquery-ui-1820-custom-min.js',
@@ -136,15 +131,14 @@ if ($page == 'map') {
 } else if ($page == 'about') {
   if ( $subpage == NULL) {
       $title = 'MVHPC :: About Us';
-      $id = 3;
+      $page_id = $page;
 
   } else if ($subpage == 'links') {
       $title = 'MVHPC :: Links';
-      $id = 8;
+      $page_id = $subpage;
 
   } else if ($subpage == 'design-review') {
       $title = 'MVHPC :: Design Review';
-      $id = 0;
       $pdfFile = $subpage2;
       array_push($headerCSS, 'pdf-viewer.css');
       include 'design-review.php';
@@ -182,10 +176,11 @@ if (isset($title)) {
 ob_start();
 
 // if $id exists, load page from database
-if (isset($id) && $id != 0) {
+if (isset($page_id)) {
   $db = Database::getDatabase();
-  $row = $db->getRow("SELECT * FROM pages WHERE id = '$id'");
-  echo $row['text'];
+  $rows = $db->getRows("SELECT * FROM pages WHERE page='{$page_id}'");
+  pr($rows);
+//  echo $row['text'];
 }
 
 // otherwise, load page from a file
