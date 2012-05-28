@@ -2,8 +2,6 @@
 
 require_once '../includes/master.inc.php';
 
-$Auth->requireUser();
-
 $allowedFileTypes = array('jpg', 'jpeg', 'gif', 'png');
 
 $num = time();
@@ -12,7 +10,7 @@ $fileInfo = pathinfo($file);
 $fileNameNoExtention = basename($file, '.' . $fileInfo['extension']);
 $fileExtention = strtolower($fileInfo['extension']);
 
-$fullsize = 'tmp/' . $num . "_" . $fileNameNoExtention . '.' . $fileExtention;
+$fullsize = '../tmp/' . $num . "_" . $fileNameNoExtention . '.' . $fileExtention;
 
 if ($_FILES['Filedata']['size'] > 30000000) {
     echo "<br>This file is too large. All files must be less than 30mb.<br>";
@@ -21,9 +19,9 @@ if ($_FILES['Filedata']['size'] > 30000000) {
     echo "<br>Only jpg, jpeg, gif and png images are allowed<br>";
 } else {
     if (move_uploaded_file($_FILES['Filedata']['tmp_name'], $fullsize)) {
-        $mid = 'tmp/' . $num . "_" . $fileNameNoExtention . "_mid" . "." . $fileExtention;
-        $medlg = 'tmp/' . $num . "_" . $fileNameNoExtention . "_medlg" . "." . $fileExtention;
-        $thumb = 'tmp/' . $num . "_" . $fileNameNoExtention . "_thumbnail" . "." . $fileExtention;
+        $mid = '../tmp/' . $num . "_" . $fileNameNoExtention . "_mid" . "." . $fileExtention;
+        $medlg = '../tmp/' . $num . "_" . $fileNameNoExtention . "_medlg" . "." . $fileExtention;
+        $thumb = '../tmp/' . $num . "_" . $fileNameNoExtention . "_thumbnail" . "." . $fileExtention;
 
         $gd = new GD($fullsize);
         if ($gd &&
