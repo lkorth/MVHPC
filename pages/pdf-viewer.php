@@ -8,6 +8,7 @@ $pdfDirURL = WEB_ROOT . $pdfDir;
 // $pdfFile is set in page-controller
 
 // where this specific PDF file is
+$pdfFile = urldecode($pdfFile);
 $pdfURL = $pdfDirURL . $pdfFile . '.pdf';
 
 // set whether or not we are viewing a PDF
@@ -65,8 +66,8 @@ function generateList(){
     $pdfFullURL = $_SERVER['DOCUMENT_ROOT'] . $pdfDirURL;
 
     // open PDF folder, look for PDFs
-    $dirHandle = opendir($pdfFullURL);
-    while (($file = readdir($dirHandle)) !== false) {
+    $dir = scandir($pdfFullURL);
+    foreach ($dir as $file) {
       if (preg_match('/\.pdf/i', $file)) {
 
         // get its filename (no extension)
@@ -75,6 +76,9 @@ function generateList(){
         // prettify the filename
         $name = str_replace('_', ' ', $fileName);
         $name = str_replace('-', ' ', $name);
+        
+        // encode URL for more filename support
+        $fileName = urlencode($fileName);
 
         // generate the PDF list with load and download links
         echo "<div class='pdf-item'>";
@@ -84,10 +88,7 @@ function generateList(){
         echo '</span> </div>';
       }
     }
-    
-    // close the folder
-    closedir($dirHandle);
-    
+  
   ?>
 </div>
   <?php
@@ -98,6 +99,7 @@ function generateList(){
 function generateViewer(){
   global $pdfSupported;
   global $pdfURL;
+  global $pdfPage;
 
   // if a supported browser, view PDF with PDF.js
   if ($pdfSupported) {
@@ -128,15 +130,25 @@ function generateViewer(){
 
       // assemble this to a URL for the PDF
       $pdfFullURL = 'http://' . $host . $pdfURL;
-echo $pdfFullURL;
+
 // TESTING ONLY - remove for production!!!!!
-      $pdfFullURL = 'http://www.education.gov.yk.ca/pdf/pdf-test.pdf';
+      $pdfFullURL = 'http://www.mvhpc.org/data/history_intro_to_mount_vernon.pdf';
       
       // create URL to Google Docs Viewer & embed on page
       $docsViewer = "http://docs.google.com/viewer?url=$pdfFullURL";
+      
+      // set to embed this on the page
+      $docsViewer .= '&embedded=true';
+      
+      // GDocs glitch: off by one & cannot show first page
+      // so this properly sets the page number
+      if ($pdfPage != 1) {
+        $pdfPage -= 1;
+        $docsViewer .= '#:0.page.' . $pdfPage;
+      }
 
       ?>
-<iframe id="docs-viewer" src="<?php echo $docsViewer; ?>&embedded=true" width="600" height="780"> </iframe>
+<iframe id="docs-viewer" src="<?php echo $docsViewer; ?>" width="900" height="700"> </iframe>
       <?php
   }
 }
