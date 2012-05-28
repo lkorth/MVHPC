@@ -15,7 +15,6 @@ $posts = returnPosts('index', 1);
     $headerExtras['js'] = array('jquery-172.js', 'image-script.js');
 ?>
 <?php ob_start(); ?>
-    <div class="left_col">
         <h1 class="ribbon">Welcome!</h1>
         <div class="article">
             <p>
@@ -44,8 +43,8 @@ $posts = returnPosts('index', 1);
             <a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>
         </div>
         <?php endforeach; ?>
-    </div>
-    <div class="right_col">
+<?php $left_col = ob_get_clean(); ?>
+<?php ob_start(); ?>
         <div>
             <h1 class="ribbon">Featured Images</h1>
             <div class="left_content">
@@ -72,14 +71,13 @@ $posts = returnPosts('index', 1);
                 </div>
             </div>
         </div>
-    </div>
+<?php $right_col = ob_get_clean(); ?>
 <?php
-    $content = ob_get_clean();
-
     $template->setStyle('twoColumn');
     $template->setTitle('Mount Vernon Historial Preservation Commission');
     $template->setHeaderExtras($headerExtras);
-    $template->setBody($content);
+    $template->setLeftCol($left_col);
+    $template->setRightCol($right_col);
 
     $template->output();
 ?>

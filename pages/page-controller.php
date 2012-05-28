@@ -50,6 +50,9 @@ if (isset($_GET['subpage3']) && !empty($_GET['subpage3'])) {
 // include ALL custom CSS, Javascript, etc.
 // load custom page content with $id = 0, otherwise from DB
 // for two-column page: $template -> setStyle('twoColumn');
+
+$template->setStyle('oneColumn');
+
 if ($page == 'map') {
   if ($subpage == NULL) {
       $title = 'MVHPC :: Map of Mount Vernon';
@@ -205,7 +208,14 @@ else {
 $content = ob_get_clean();
 
 // send the body to the template to display
-$template->setBody($content);
+if($template->getStyle() == 'oneColumn') {
+    $template->setSingleCol($content);
+}else{
+    $template->setLeftCol($leftCol);
+    $template->setRightCol($rightCol);
+}
+
+
 
 // render the template
 $template->output();

@@ -208,7 +208,7 @@ body {
 .left_col .article a, .left_col .article a:visited {
   margin-left: 10px;
   font-family: Times;
-  color: #FF6600; }
+  color: #ff6600; }
 
 .right_col {
   width: 300px;
@@ -249,6 +249,17 @@ body {
   height: 100%;
   margin: 0; }
 
+.single_col {
+  padding: 0;
+  position: relative;
+  margin: 0 24px;
+  padding: 15px;
+  background: #F4E6CC;
+  width: 882px;
+  box-shadow: 0px 0px 10px #888888;
+  -webkit-box-shadow: 0px 0px 10px #888888;
+  -moz-box-shadow: 0px 0px 10px #888888; }
+
 .featured:first-child {
   display: block; }
 
@@ -281,3 +292,6 @@ button {
 
 #loading {
   margin-left: 138px; }
+
+#map {
+  margin: 0 auto; }

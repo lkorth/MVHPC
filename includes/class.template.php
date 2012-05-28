@@ -11,14 +11,16 @@
         private $image;
         private $summary;
         private $headerExtras;
-        private $body;
+        private $singleCol;
+        private $leftCol;
+        private $rightCol;
 
         public function _construct() {
             $this->style = "oneColumn";
             $this->title = $DEFAULT_TITLE;
             $this->image = $DEFAULT_IMAGE;
             $this->summary = $DEFAULT_SUMMARY;
-            $this->body = $DEFAULT_BODY;
+            $this->singleCol = $DEFAULT_BODY;
         }
 
         public function setStyle($style) {
@@ -40,9 +42,21 @@
         public function setHeaderExtras($extras) {
             $this->headerExtras = $extras;
         }
+        
+        public function setSingleCol($singleCol) {
+            $this->singleCol = $singleCol;
+        }
 
-        public function setBody($body) {
-            $this->body = $body;
+        public function setLeftCol($leftCol) {
+            $this->leftCol = $leftCol;
+        }
+        
+        public function setRightCol($rightCol) {
+            $this->rightCol = $rightCol;
+        }
+        
+        public function getStyle(){
+            return $this->style;
         }
 
         public function output() {
@@ -124,10 +138,18 @@
                 ";
             if($this->style == "oneColumn"){
                 echo "<div class='content oneColumn'>";
+                echo "<div class='single_col'>";
+                echo $this->singleCol;
+                echo "</div>";
             }else if($this->style == "twoColumn"){
                 echo "<div class='content twoColumn'>";
+                echo "<div class='left_col'>";
+                echo $this->leftCol;
+                echo "</div>";
+                echo "<div class='right_col'>";
+                echo $this->rightCol;
+                echo "</div>";
             }
-            echo $this->body;
             echo "
                         </div>
                     </div>
