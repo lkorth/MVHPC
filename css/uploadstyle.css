@@ -47,7 +47,7 @@
 
 #demo-list li.file {
 	border-bottom: 1px solid #eee;
-	background: url(../images/uploader/file.png) no-repeat 4px 4px;
+	background: url(/mvhpc/images/uploader/file.png) no-repeat 4px 4px;
 	overflow: auto;
 }
 #demo-list li.file.file-uploading {
