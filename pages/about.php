@@ -4,7 +4,7 @@
 $template->setTitle('MVHPC :: About Us');
 $template->setStyle('twoColumn');
 
-array_push($headerJS, 'image-script.js');
+// page, (left-column)
 ob_start();
 ?>
 
@@ -40,6 +40,8 @@ ob_start();
 
 <?php
 $left_col = ob_get_clean();
+
+// page content (right column)
 ob_start();
 ?>
 
@@ -80,6 +82,11 @@ ob_start();
 
 <?php
 $right_col = ob_get_clean();
+
+// add JavaScript to header
+array_push($headerJS, 'image-script.js');
+
+// set content on template
 $template->setLeftCol($left_col);
 $template->setRightCol($right_col);
 

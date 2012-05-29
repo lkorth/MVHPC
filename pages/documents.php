@@ -16,6 +16,11 @@ $pdfDir = 'data/archives/';
 // load variables and functions for PDF lists and viewing
 include 'pdf-viewer.php';
 
+// page content (from PDF-Viewer)
+ob_start();
+  generatePage();
+$content = ob_get_clean();
+
 // use custom CSS and viewPDF javascript if need be
 array_push($headerCSS, 'pdf-viewer.css');
 if ($pdfViewing) {
@@ -26,11 +31,6 @@ if ($pdfViewing) {
     array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
   }
 }
-
-// page content
-ob_start();
-  generatePage();
-$content = ob_get_clean();
 
 // send content to template
 $template->setSingleCol($content);
