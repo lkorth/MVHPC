@@ -47,6 +47,7 @@ if ($page == 'archives') {
       include 'documents.php';
     } else if($subpage == 'cemetery') {
     } else if($subpage == 'eras') {
+        include 'eras.php';
     } else {
         include 'archives.php';
     }
