@@ -18,8 +18,8 @@ ob_start();
 ?>
 <div align="center">
     <form action="specific-tag.php" method="post" enctype="multipart/form-data" id="nextpage">
-        <p>Common Tags: MUST be seperated by a semicolon(;)</p><br><textarea id="tagArea" name="ctags" rows="10" cols="40"></textarea><br>
-        <input type="submit" value="Next Page" /></form>
+        <p class="body_text">Common Tags: MUST be seperated by a semicolon(;)</p><br><textarea id="tagArea" name="ctags" rows="10" cols="40"></textarea><br>
+        <input class="button" type="submit" value="Next Page" /></form>
 </div>
 <?php
 $SingleCol = ob_get_clean();

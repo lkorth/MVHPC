@@ -46,7 +46,7 @@ while (($file = $mydir->read()) !== false) {
     }
 }
 $mydir->close();
-echo "<tr><td></td><td><input type=\"submit\" value=\"Submit\" /></form></td>";
+echo "<tr><td></td><td><input class=\"button\" type=\"submit\" value=\"Submit\" /></form></td>";
 echo "</table>";
 ?>
 </div>
