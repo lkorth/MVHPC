@@ -153,7 +153,7 @@ function generateViewer(){
       }
 
       ?>
-<iframe id="docs-viewer" src="<?php echo $docsViewer; ?>" width="900" height="700"> </iframe>
+<iframe id="docs-viewer" src="<?php echo $docsViewer; ?>" width="850" height="700"> </iframe>
       <?php
   }
 }

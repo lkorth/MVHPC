@@ -83,6 +83,5 @@ function download() {
 
 // open the current PDF in a new window with the fullscreen viewer
 function fullscreen() {
-  fsURL += '.pdf';
-  window.open(fsURL, '_blank');
+  window.open(fsURL + '.pdf', '_blank');
 }
