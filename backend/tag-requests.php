@@ -1,16 +1,21 @@
 <?php
-$title = "Change requests";
-$level = '../';
-include '../shared/header.php';
+
+include('../includes/master.inc.php');
+include('../includes/class.template.php');
 
 $Auth->requireUser();
+
+$template = new Template();
 
 $type = (isset($_GET['old']) && $_GET['old'] == 'true') ? 'true' : 'false';
 
 $db = Database::getDatabase();
-$result = $db->query("SELECT * FROM changeRequests WHERE processed = '$type' order by date desc");
+$result = $db->query("SELECT * FROM change_requests WHERE processed = '$type' order by date desc");
 $unprocessed = $db->numRows($result);
 
+ob_start();
+?>
+<?php
 if ($unprocessed == 0 && $type != 'true') {
     ?>
     <br>
@@ -25,5 +30,14 @@ if ($unprocessed == 0 && $type != 'true') {
         echo $row['date'];
     }
 }
-include '../shared/footer.php';
+?>
+<?php
+    $content = ob_get_clean();
+
+    $template->setStyle('oneColumn');
+    $template->setTitle('Tag Requests');
+    //$template->setHeaderExtras($headerExtras);
+    $template->setSingleCol($content);
+
+    $template->output();
 ?>
