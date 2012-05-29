@@ -1,5 +1,3 @@
-<!doctype html>
-
 <?php
 // include the framework and templating
 require_once '../includes/master.inc.php';

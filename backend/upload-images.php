@@ -1,5 +1,3 @@
-<!doctype html>
-
 <?php
 
 include('../includes/master.inc.php');
