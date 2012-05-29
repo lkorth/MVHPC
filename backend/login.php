@@ -14,7 +14,7 @@ if (!empty($_POST['username'])) {
             redirect(WEB_ROOT . 'backend/action.php');
     }
     else
-        $Error->add('username', "We're sorry, you have entered an incorrect username and password. Please try again.");
+        $Error->add('username', "<p class='body_text'>We're sorry, you have entered an incorrect username and password. Please try again.</p>");
 }
 
 $username = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
@@ -28,11 +28,9 @@ $template = new Template();
 ?>
 <?php ob_start(); ?>
     <form id="loginForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+        <h1 class="ribbon">Login</h1>
         <?php echo $Error ?>
         <table align="center">
-            <tr>
-                <td colspan=2><h1>Login</h1></td>
-            </tr>
             <tr>
                 <td><p>Username:</p></td>
                 <td><input type="text" name="username" maxlength="40" value="<?php echo $username; ?>"></td>
@@ -43,7 +41,7 @@ $template = new Template();
             </tr>
             <tr>
                 <td colspan="2" align="right">
-                    <input type="submit" name="submit" value="Login"></td>
+                    <input class="button" type="submit" name="submit" value="Login"></td>
             </tr>
         </table>
         <input type="hidden" name="r" value="<?php echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
