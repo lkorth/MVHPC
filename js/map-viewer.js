@@ -62,7 +62,7 @@ var districts = [
 // create the labels for each district on the map
 function setMarkers (map, locations) {
   // load the custom label image
-  var img = new google.maps.MarkerImage('images/marker-panel.png',
+  var img = new google.maps.MarkerImage('/mvhpc/images/marker-panel.png',
     new google.maps.Size(100, 39),
     new google.maps.Point(0, 0),
     new google.maps.Point(50, 39));
