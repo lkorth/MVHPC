@@ -42,7 +42,7 @@
         public function setHeaderExtras($extras) {
             $this->headerExtras = $extras;
         }
-        
+
         public function setSingleCol($singleCol) {
             $this->singleCol = $singleCol;
         }
@@ -50,11 +50,11 @@
         public function setLeftCol($leftCol) {
             $this->leftCol = $leftCol;
         }
-        
+
         public function setRightCol($rightCol) {
             $this->rightCol = $rightCol;
         }
-        
+
         public function getStyle(){
             return $this->style;
         }
@@ -128,11 +128,11 @@
                         <div class='navbar'>
                             <div class='menu'>
                                 <span class='menu_wrapper'>
-                                    <a href='" . WEB_ROOT . "'><span title='MVHPC Home Page' class='menu_item'>Home</span></a>
-                                    <a href='" . WEB_ROOT . "archives'><span title='Text and Image Archives' class='menu_item'>Archives</span></a>
-                                    <a href='" . WEB_ROOT . "map'><span title='Map Laying out the Districts of Mount Vernon' class='menu_item'>Map</span></a>
-                                    <a href='" . WEB_ROOT . "making-history'><span title='Mount Vernon Public Schools Class Work' class='menu_item'>Making History</span></a>
-                                    <a href='" . WEB_ROOT . "about'><span title='About the Preservation Commission and What We Do' class='menu_item'>About</span></a>
+                                    <a href='" . WEB_ROOT . "'><span class='menu_item'>Home</span></a>
+                                    <a href='" . WEB_ROOT . "archives'><span class='menu_item'>Archives</span></a>
+                                    <a href='" . WEB_ROOT . "map'><span class='menu_item'>Map</span></a>
+                                    <a href='" . WEB_ROOT . "making-history'><span class='menu_item'>Making History</span></a>
+                                    <a href='" . WEB_ROOT . "about'><span class='menu_item'>About</span></a>
                                 </span>
                             </div>
                         </div>
