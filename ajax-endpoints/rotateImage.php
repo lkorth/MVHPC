@@ -2,53 +2,51 @@
 
 require_once '../includes/master.inc.php';
 
-function getFilename($origName){
-    $arr = explode('.', $origName);
-    $tmp = '';
-    for($i = 0; $i < count($arr) - 1; $i++){
-        $tmp = $tmp . $arr[$i];
-    }
-    return $tmp;
-}
-
-function getExtention($origName){
-    return end(explode('.', $origName));
+function getExtention($origName) {
+    return '.' . end(explode('.', $origName));
 }
 
 $angle = $_GET['angle'];
 $id = $_GET['id'];
 
-$db = Database::getDatabase();
-$result = $db->query("select location, medlg, mid, thumbnail from search where id = '$id'"); //change db class to return list with result and row nums?
+if (strpos($id, '../', 0) === 0) {
+    $pre = '';
+    $ext = getExtention($id);
+    $fileName = str_replace($ext, '', $id);
 
-if($db->numRows($result) > 0){
+    $image['location'] = $id;
+    $image['medlg'] = $fileName . '_medlg' . $ext;
+    $image['mid'] = $fileName . '_mid' . $ext;
+    $image['thumbnail'] = $fileName . '_thumbnail' . $ext;
+} else {
+    $db = Database::getDatabase();
+    $result = $db->query("select location, medlg, mid, thumbnail from search where id = '$id'"); //change db class to return list with result and row nums?
     $image = mysql_fetch_assoc($result);
-
-    $gdl = new GD('../' . $image['location']);
-    $l = $gdl->rotate($angle, 0);
-
-    $gdmlg = new GD('../' . $image['medlg']);
-    $mlg = $gdmlg->rotate($angle, 0);
-
-    $gdmd = new GD('../' . $image['mid']);
-    $md = $gdmd->rotate($angle, 0);
-
-    $gdtb = new GD('../' . $image['thumbnail']);
-    $tb = $gdtb->rotate($angle, 0);
-
-    if($l && $mlg && $md && $tb){
-        $l = $gdl->saveAs('../' . $image['location'], getExtention($image['location']), 100);
-        $mlg = $gdmlg->saveAs('../' . $image['medlg'], getExtention($image['medlg']), 100);
-        $md = $gdmd->saveAs('../' . $image['mid'], getExtention($image['mid']), 100);
-        $tb = $gdtb->saveAs('../' . $image['thumbnail'], getExtention($image['thumbnail']), 100);
-
-        if($l && $mlg && $md && $tb)
-            echo '1|' . $image['thumbnail'];
-        else
-            echo '0|' . $image['thumbnail'];
-    }
+    $pre = '../';
+    $ext = getExtention($image['location']);
 }
-else {
-    echo '0|';
+
+$gdl = new GD($pre . $image['location']);
+$l = $gdl->rotate($angle, 0);
+
+$gdmlg = new GD($pre . $image['medlg']);
+$mlg = $gdmlg->rotate($angle, 0);
+
+$gdmd = new GD($pre . $image['mid']);
+$md = $gdmd->rotate($angle, 0);
+
+$gdtb = new GD($pre . $image['thumbnail']);
+$tb = $gdtb->rotate($angle, 0);
+
+if ($l && $mlg && $md && $tb) {
+    $l = $gdl->saveAs($pre . $image['location'], substr($ext, 1), 100);
+    $mlg = $gdmlg->saveAs($pre . $image['medlg'], substr($ext, 1), 100);
+    $md = $gdmd->saveAs($pre . $image['mid'], substr($ext, 1), 100);
+    $tb = $gdtb->saveAs($pre . $image['thumbnail'], substr($ext, 1), 100);
+
+    if ($l && $mlg && $md && $tb)
+        echo '1|' . str_replace('../', '/', $image['thumbnail']);
+    else
+        echo '0|' . str_replace('../', '/', $image['thumbnail']);
 }
 ?>

@@ -54,3 +54,25 @@ function editfunction(id)
         }
     });
 }
+
+function rotate(id, angle, css){
+
+
+    $('#thumb' + css).html('<img src="/mvhpc/images/pdf-js/loading-icon.gif" />');
+
+    $.ajax({
+        type: "GET",
+        url: "/mvhpc/ajax-endpoints/rotateImage.php",
+        data: 'id='+id+'&angle='+angle,
+        dataType: 'text',
+        success: function(msg){
+            var tmp = msg.split("|");
+            if(parseInt(tmp[0])==0){
+                alert('There was an error rotating the image, please try again later.');
+            }
+            $('#thumb' + css).html('<img src="/mvhpc/' + tmp[1] + '?' + new Date().getTime() + '" />');
+            var link = $('#thumb' + css).attr('href');
+            $('#thumb' + css).attr('href', link + '?' + new Date().getTime());
+        }
+    });
+}

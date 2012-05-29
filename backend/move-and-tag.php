@@ -4,9 +4,9 @@ require_once '../includes/master.inc.php';
 
 $Auth->requireUser();
 
-$mydir = dir('./tmp');
-$startdir = "tmp/";
-$finaldir = "media/";
+$mydir = dir('../tmp');
+$startdir = "../tmp/";
+$finaldir = "../media/";
 while (($file = $mydir->read()) !== false) {
     // Security - remove "." and ".." files (directories)
     if ($file != "." && $file != "..") {
@@ -40,4 +40,4 @@ VALUES ('$location', '$medlg', '$filethumb','$mid', '$info', '$tags', '$views', 
 }
 $mydir->close();
 header("Location: action.php");
-?> 
+?>

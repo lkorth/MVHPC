@@ -1,25 +1,33 @@
 <?php
-require_once '../includes/master.inc.php';
+include('../includes/master.inc.php');
+include('../includes/class.template.php');
 
 $Auth->requireUser();
 
-$title = "Enter Common Tags";
-$tag = 1;
-$level = '../';
-include '../shared/header.php';
+$template = new Template();
+
+$headerExtras['js'] = array('jquery-172.js',
+                            'jquery-bgiframe-min.js',
+                            'jquery-ajaxQueue.js',
+                            'jquery-autocomplete.js',
+                            'jquery-tagsinput.js',
+                            'common-tags.js');
+$headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery-autocomplete.css', 'jquery-tagsinput.css');
+
+
+ob_start();
 ?>
-<br>
 <div align="center">
-    <form action="specific_tag.php" method="post" enctype="multipart/form-data" id="nextpage">
-        <p>Common Tags: MUST be seperated by a semicolon(;)</p><br><textarea name="ctags" rows="10" cols="40"></textarea><br>
+    <form action="specific-tag.php" method="post" enctype="multipart/form-data" id="nextpage">
+        <p>Common Tags: MUST be seperated by a semicolon(;)</p><br><textarea id="tagArea" name="ctags" rows="10" cols="40"></textarea><br>
         <input type="submit" value="Next Page" /></form>
 </div>
-</div>
-<br>
-<div id="footer">
-    <p><a href="<?php WEBROOT() ?>backend/login.php">Manage site</a><br>
-</div>
-</div>
-</div>
-</body>
-</html>
+<?php
+$SingleCol = ob_get_clean();
+$template->setStyle('oneColumn');
+$template->setTitle('Enter Common Tags');
+$template->setHeaderExtras($headerExtras);
+$template->setSingleCol($SingleCol);
+
+$template->output();
+?>
