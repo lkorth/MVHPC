@@ -4,7 +4,7 @@ require_once '../includes/master.inc.php';
 require_once '../includes/class.template.php';
 
 // get current page
-if (!isset($_GET['page'])) {
+if (!isset($_GET['page']) || !file_exists($_GET['page'].'.php') ) {
     redirect('../error/404.php');
 }
 $page = $_GET['page'];

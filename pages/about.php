@@ -2,7 +2,7 @@
 
 $template = new Template();
 
-$headerExtras['js'] = array('jquery-172.js', 'image-script.js');
+$headerExtras['js'] = array('image-script.js');
 ob_start();
 ?>
 

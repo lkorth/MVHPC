@@ -21,28 +21,39 @@ $template = new Template();
             echo '<h2>' . $_GET['message'] . '</h2>';
         ?>
 
-        <h3>Welcome,<br> What would you like to do?</h3>
+        <h1 class="ribbon">Images</h1>
+        <ul class="link_list body_text">
+            <li><a href="upload-images.php">Upload Images</a></li>
+            <li><a href="select-to-change-tags.php">Change Image Tags</a></li>
+            <li><a href="all-images.php?page=1">View and Edit All Images</a></li>
+            <li><a href="tag-requests.php">View Tag Requests (<?php echo $unprocessed; ?> new)</a></li>
+        </ul>
 
-        <h4>Images</h4>
-        <a href="upload-images.php">Upload Images</a><br>
-        <a href="select-to-change-tags.php">Change Image Tags</a><br>
-        <a href="all-images.php?page=1">View and Edit All Images</a><br>
-        <a href="tag-requests.php">View Tag Requests (<?php echo $unprocessed; ?> new)</a><br>
-        <br>
-        <h4>Text</h4>
-        <a href="add-post.php">Add Post</a><br>
-        <a href="edit-post.php">Edit posts</a><br>
-
-        <br>
-        <a href="logout.php">Logout</a>
+        <h1 class="ribbon">Text</h1>
+        <ul class="link_list body_text">
+            <li><a href="add-post.php">Add Post</a></li>
+            <li><a href="edit-post.php">Edit posts</a></li>
+        </ul>
+        
     </div>
 <?php
-    $content = ob_get_clean();
+    $leftCol = ob_get_clean();
+    ob_start();
+?>
+    
+    <h1 class="ribbon">Welcome!</h1>
+    <p class="body_text">Please select your desired task from the options on the left.</p>
+    <a class="button" href="logout.php">Logout</a>
+    
+    
+<?php
+    $rightCol = ob_get_clean();
 
-    $template->setStyle('oneColumn');
+    $template->setStyle('twoColumn');
     $template->setTitle('Manage Site');
     $template->setHeaderExtras(null);
-    $template->setSingleCol($content);
+    $template->setRightCol($rightCol);
+    $template->setLeftCol($leftCol);
 
     $template->output();
 ?>
