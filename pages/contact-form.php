@@ -43,7 +43,7 @@ if (isset($success) && $success == true) {
 $content = ob_get_clean();
 
 $template->setStyle('oneColumn');
-$template->setTitle('Manage Site');
+$template->setTitle('Contact Us');
 $template->setHeaderExtras(null);
 $template->setSingleCol($content);
 
