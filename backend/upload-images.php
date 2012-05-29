@@ -19,20 +19,20 @@ $template = new Template();
 
             <fieldset id="demo-fallback">
                 <legend>File Upload</legend>
-                <p>
+                <p class="body_text">
                     We were not able to load the multiple picture upload manager, please upload one picture at a time.
                 </p>
                 <label for="demo-photoupload">
                     Upload a Photo:
-                    <input type="file" name="Filedata" />
+                    <input class="button" type="file" name="Filedata" />
                 </label>
             </fieldset>
 
             <div id="demo-status" class="hide">
                 <p>
-                    <a href="#" id="demo-browse">Browse Files</a> |
-                    <a href="#" id="demo-clear">Clear List</a> |
-                    <a href="#" id="demo-upload">Start Upload</a>
+                    <a class="button" href="#" id="demo-browse">Browse Files</a> |
+                    <a class="button" href="#" id="demo-clear">Clear List</a> |
+                    <a class="button" href="#" id="demo-upload">Start Upload</a>
                 </p>
                 <div>
                     <strong class="overall-title"></strong><br>
@@ -59,13 +59,13 @@ $template = new Template();
     <div>
         <br>
     </div>
-    <p align="center">Please browse and select all the files you wish to upload and click upload.<br>  After the upload has finished click on the next page button to tag the files.</p>
+    <p class="body_text" align="center">Please browse and select all the files you wish to upload and click upload.<br>  After the upload has finished click on the next page button to tag the files.</p>
     <div>
         <br>
     </div>
     <div align="center">
         <form action="common-tag.php" method="post" enctype="multipart/form-data" id="nextpage">
-            <input type="submit" value="Next Page" />
+            <input class="button" type="submit" value="Next Page" />
     </div>
 <?php
     $content = ob_get_clean();
