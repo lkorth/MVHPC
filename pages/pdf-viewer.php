@@ -11,6 +11,9 @@ $pdfDirURL = WEB_ROOT . $pdfDir;
 $pdfFile = urldecode($pdfFile);
 $pdfURL = $pdfDirURL . $pdfFile . '.pdf';
 
+// beginning to fullscreen PDF url
+$fsURL = WEB_ROOT . $pdfPageRoot . $pdfFile;
+
 // set whether or not we are viewing a PDF
 // $pdfFile is set in the page controller
 $pdfViewing = ($pdfFile != NULL);
@@ -39,6 +42,7 @@ function jsVars(){
   global $pdfFile;
   global $pdfURL;
   global $pdfPage;
+  global $fsURL;
   ?>
   
 <script type="text/javascript">
@@ -47,6 +51,7 @@ function jsVars(){
   var pdfFile = "<?php echo $pdfFile; ?>";
   var pdfURL = "<?php echo $pdfURL; ?>";
   var pdfPage = "<?php echo $pdfPage; ?>";
+  var fsURL = "<?php echo $fsURL; ?>";
 </script>
 
   <?php

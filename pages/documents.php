@@ -1,14 +1,10 @@
 <?php
-$template = new Template();
+
+// set up template title & style
+$template->setTitle('MVHPC :: Documents');
 $template->setStyle('oneColumn');
-$title = 'MVHPC :: Documents';
-$headerCustom = NULL;
-$headerJS = array(
-  0=>'jquery-172.js',
-  1=>'functions.js',
-  2=>'base64.js'
-);
-$headerCSS = array();
+
+// grab the pdfFile to display (if any)
 $pdfFile = $subpage2;
 
 // where this page or sub-page sits
@@ -20,20 +16,23 @@ $pdfDir = 'data/archives/';
 // load variables and functions for PDF lists and viewing
 include 'pdf-viewer.php';
 
+// use custom CSS and viewPDF javascript if need be
 array_push($headerCSS, 'pdf-viewer.css');
 if ($pdfViewing) {
   ob_start();
-  jsVars();
+    jsVars();
   $headerCustom = ob_get_clean();
   if ($pdfSupported) {
     array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
   }
 }
 
+// page content
 ob_start();
-generatePage();
-$singleCol = ob_get_clean();
-$template->setSingleCol($singleCol);
-$template->output();
+  generatePage();
+$content = ob_get_clean();
+
+// send content to template
+$template->setSingleCol($content);
 
 ?>

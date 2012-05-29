@@ -14,7 +14,6 @@ $headerCustom = NULL;
 $headerCSS = array();
 $headerJS = array();
 
-
 // get current page
 if (!isset($_GET['page']) || !file_exists($_GET['page'].'.php') ) {
     redirect('../error/404.php');

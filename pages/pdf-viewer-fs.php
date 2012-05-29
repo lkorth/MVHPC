@@ -9,7 +9,7 @@
   <title>PDF Viewer</title>
   <!-- PDFJSSCRIPT_INCLUDE_FIREFOX_EXTENSION -->
   <script type="text/javascript">
-    var pdfFile = "<?php echo $_GET['pdf']; ?>";
+    var pdfFile = "<?php echo urldecode($_GET['pdf']); ?>";
     var webRoot = "<?php echo WEB_ROOT; ?>";
     var pdfURL = webRoot + "data/" + "<?php echo $_GET['dir']; ?>" + "/" + pdfFile + ".pdf";
   </script>
