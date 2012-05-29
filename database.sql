@@ -3733,12 +3733,12 @@ INSERT INTO `centennial_book_index` (`id`, `letter`, `data`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `change_requests` (
-  `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email` varchar(500) NOT NULL,
   `message` text NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `processed` varchar(8) NOT NULL DEFAULT 'false',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
