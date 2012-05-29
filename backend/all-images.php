@@ -26,8 +26,7 @@ $num = $db->numRows($result);
 
 ?>
 <?php
-    $headerExtras['js'] = array('jquery-172.js',
-                                'jquery-bgiframe-min.js',
+    $headerExtras['js'] = array('jquery-bgiframe-min.js',
                                 'jquery-ajaxQueue.js',
                                 'jquery-autocomplete.js',
                                 'jquery-lightbox-05-min.js',

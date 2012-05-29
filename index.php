@@ -9,7 +9,7 @@ $posts = returnPosts('index', 1);
 
 ?>
 <?php
-    $headerExtras['js'] = array('jquery-172.js', 'image-script.js');
+    $headerExtras['js'] = array('image-script.js');
 ?>
 <?php ob_start(); ?>
         <h1 class="ribbon">Welcome!</h1>

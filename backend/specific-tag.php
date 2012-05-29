@@ -7,16 +7,15 @@ $Auth->requireUser();
 
 $template = new Template();
 
-$headerExtras['js'] = array('jquery-172.js',
-                                'jquery-bgiframe-min.js',
-                                'jquery-ajaxQueue.js',
-                                'jquery-autocomplete.js',
-                                'jquery-lightbox-05-min.js',
-                                'jquery-spellchecker.js',
-                                'jquery-tagsinput.js',
-                                'all-images.js',
-                                'common-tags.js',
-                                'functions.js');
+$headerExtras['js'] = array('jquery-bgiframe-min.js',
+                            'jquery-ajaxQueue.js',
+                            'jquery-autocomplete.js',
+                            'jquery-lightbox-05-min.js',
+                            'jquery-spellchecker.js',
+                            'jquery-tagsinput.js',
+                            'all-images.js',
+                            'common-tags.js',
+                            'functions.js');
 $headerExtras['css'] = array('jquery-lightbox-05.css', 'jquery-spellchecker.css', 'jquery-autocomplete.css', 'jquery-tagsinput.css');
 
 $ctags = "mount vernon; " . $_POST['ctags'] . " ;";
