@@ -24,7 +24,7 @@ $template = new Template();
 ?>
 <html>
 <?php
-    $headerExtras['js'] = array('jquery-172.js', 'image-script.js', 'base64.js', 'login.js');
+    $headerExtras['js'] = array('image-script.js', 'base64.js', 'login.js');
 ?>
 <?php ob_start(); ?>
     <form id="loginForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
