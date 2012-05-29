@@ -1822,7 +1822,6 @@ Joriman, Will  172
 Julien, Isaac  28
 Junior-Senior Banquets at the Altoona Hotel (1900) 113
 Jurgenson, Mr (Artist of the portrait of W.F.King)  81
-///////////////////////
 Kafer, Chris  221
 Kafer, Mathias  221
 Kafer, Margaret (Mrs)  155
@@ -2656,7 +2655,7 @@ Old Sem  29, 31, 32
 Oliver, Katherine E  79
 Olmsted, Betty  128
 Order of the Eastern Star  120
-Ordinance #0063 (changing street names) 186
+Ordinance #0063(changing street names) 186
 Orms, Howard ("Moosie") 169, 226, 235
 Osburn, George  30
 Osgood, E J  133, 180, 226
@@ -2774,11 +2773,11 @@ Plattenberger, Luther  224
 Plattenberger, Mary Carol  235
 Plattenberger, Olive  233
 Plattenberger, Robert  235
-Populations: 1838 17
-Populations: 1860 24, 26
-Populations: 1861 51
-Populations: 1890 69
-Populations: 1900 69
+Populations (1838) 17
+Populations (1860) 24, 26
+Populations (1861) 51
+Populations (1890) 69
+Populations (1900) 69
 Porter, Irma  231
 Porter, Florence  231
 Porter, James  222
@@ -2968,7 +2967,7 @@ Rose, Letta  229
 Rose, Mary  229
 Ross, A H  192
 Rotary Club  132
-Route #0024 (Highway IA #1) 261
+Route #0024(Highway IA #1) 261
 Row, Stella 230
 Rowley, Betty 235
 Rowley, Cap 104
