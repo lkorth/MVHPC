@@ -3,7 +3,7 @@
 include('../includes/master.inc.php');
 include('../includes/class.template.php');
 
-//$Auth->requireUser();
+$Auth->requireUser();
 
 $template = new Template();
 
