@@ -1,8 +1,10 @@
 <?php
 
-$template = new Template();
+// set up template title & style
+$template->setTitle('MVHPC :: About Us');
+$template->setStyle('twoColumn');
 
-$headerExtras['js'] = array('image-script.js');
+array_push($headerJS, 'image-script.js');
 ob_start();
 ?>
 
@@ -78,11 +80,7 @@ ob_start();
 
 <?php
 $right_col = ob_get_clean();
-$template->setStyle('twoColumn');
-$template->setTitle('MVHPC: About Us');
-$template->setHeaderExtras($headerExtras);
 $template->setLeftCol($left_col);
 $template->setRightCol($right_col);
 
-$template->output();
 ?>
