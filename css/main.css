@@ -378,3 +378,6 @@ button {
 
 input {
   font-size: 110%; }
+
+#login {
+  margin: 10px; }

@@ -30,17 +30,17 @@ $template = new Template();
     <form id="loginForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
         <h1 class="ribbon">Login</h1>
         <?php echo $Error ?>
-        <table align="center">
+        <table id="login">
             <tr>
-                <td><p>Username:</p></td>
+                <td><label for="username" class="body_text">Username:</label></td>
                 <td><input type="text" name="username" maxlength="40" value="<?php echo $username; ?>"></td>
             </tr>
             <tr>
-                <td><p>Password:</p></td>
+                <td><label for="password" class="body_text">Password:</label></td>
                 <td><input type="password" name="pass" id="pass" maxlength="50"></td>
             </tr>
             <tr>
-                <td colspan="2" align="right">
+                <td colspan="2" align="center">
                     <input class="button" type="submit" name="submit" value="Login"></td>
             </tr>
         </table>
@@ -48,12 +48,25 @@ $template = new Template();
         <input type="hidden" id="password" name="password" value="">
     </form>
 <?php
-    $content = ob_get_clean();
+    $leftCol = ob_get_clean();
+    ob_start();
+?>
+    <h1 class="ribbon">Welcome!</h1>
+    <p class="body_text">
+        Please log in on the left with the username and password you have 
+        been provided. If you have forgotten your username/password or have 
+        other technical difficulties, please contact the system administrator for 
+        assistance.
+    </p>
+    
+<?php
+    $rightCol = ob_get_clean();
 
-    $template->setStyle('oneColumn');
+    $template->setStyle('twoColumn');
     $template->setTitle('Login');
     $template->setHeaderExtras($headerExtras);
-    $template->setSingleCol($content);
+    $template->setleftCol($leftCol);
+    $template->setrightCol($rightCol);
 
     $template->output();
 ?>
