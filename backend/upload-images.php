@@ -30,8 +30,8 @@ $template = new Template();
 
             <div id="demo-status" class="hide">
                 <p>
-                    <a class="button" href="#" id="demo-browse">Browse Files</a> |
-                    <a class="button" href="#" id="demo-clear">Clear List</a> |
+                    <a class="button" href="#" id="demo-browse">Browse Files</a>
+                    <a class="button" href="#" id="demo-clear">Clear List</a>
                     <a class="button" href="#" id="demo-upload">Start Upload</a>
                 </p>
                 <div>

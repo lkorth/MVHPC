@@ -16,20 +16,20 @@ $unprocessed = $db->numRows($result);
 ob_start();
 ?>
 <?php
-if ($unprocessed == 0 && $type != 'true') {
-    ?>
+if ($unprocessed == 0 && $type != 'true'):
+?>
     <br>
     <h2>No new tag requests, click <a href="<?php echo $_SERVER['PHP_SELF'] ?>?old=true">here</a> to see completed requests</h2>
     <br>
     <?php
-} else {
+else:
     while($row = mysql_fetch_assoc($result)){
         echo $row['email'];
         echo $row['message'];
         echo $row['id'];
         echo $row['date'];
     }
-}
+endif;
 ?>
 <?php
     $content = ob_get_clean();

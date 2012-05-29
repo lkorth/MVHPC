@@ -381,3 +381,6 @@ input {
 
 #login {
   margin: 10px; }
+
+.error {
+  color: #f00; }

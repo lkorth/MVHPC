@@ -3736,9 +3736,9 @@ CREATE TABLE IF NOT EXISTS `change_requests` (
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `email` varchar(500) NOT NULL,
   `message` text NOT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `processed` varchar(8) NOT NULL DEFAULT 'false',
-  PRIMARY KEY (`date`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

@@ -14,7 +14,7 @@ if (!empty($_POST['username'])) {
             redirect(WEB_ROOT . 'backend/action.php');
     }
     else
-        $Error->add('username', "<p class='body_text'>We're sorry, you have entered an incorrect username and password. Please try again.</p>");
+        $Error->add('username', "<p class='body_text error'>We're sorry, you have entered an incorrect username and password. Please try again.</p>");
 }
 
 $username = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
