@@ -55,7 +55,7 @@ $template = new Template();
     $template->setStyle('oneColumn');
     $template->setTitle('Login');
     $template->setHeaderExtras($headerExtras);
-    $template->setBody($content);
+    $template->setSingleCol($content);
 
     $template->output();
 ?>

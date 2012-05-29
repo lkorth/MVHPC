@@ -11,5 +11,5 @@ $info = $_GET['info'];
 $db = Database::getDatabase();
 $row = $db->query("UPDATE search SET tags = '$tags' , information = '$info', edit = '0' WHERE id = '$id'");
 
-header("Location: all.php?page=1");
-?> 
+header("Location: all-images.php?page=1");
+?>

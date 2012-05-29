@@ -64,7 +64,7 @@ $template = new Template();
         <br>
     </div>
     <div align="center">
-        <form action="common_tag.php" method="post" enctype="multipart/form-data" id="nextpage">
+        <form action="common-tag.php" method="post" enctype="multipart/form-data" id="nextpage">
             <input type="submit" value="Next Page" />
     </div>
 <?php
@@ -73,7 +73,7 @@ $template = new Template();
     $template->setStyle('oneColumn');
     $template->setTitle('Upload Images');
     $template->setHeaderExtras($headerExtras);
-    $template->setBody($content);
+    $template->setSingleCol($content);
 
     $template->output();
 ?>
