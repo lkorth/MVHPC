@@ -3,7 +3,17 @@
 require_once '../includes/master.inc.php';
 require_once '../includes/class.template.php';
 
+// create the template
 $template = new Template();
+
+// allow for code to be inserted into the header
+// custom HTML, javascript, CSS (in this order)
+// custom HTML is written as an object buffer
+// javascript and CSS should insert files with array_push
+$headerCustom = NULL;
+$headerCSS = array();
+$headerJS = array();
+
 
 // get current page
 if (!isset($_GET['page']) || !file_exists($_GET['page'].'.php') ) {
@@ -56,5 +66,14 @@ if ($page == 'archives') {
     redirect('../error/404.php');
 }
 
+// package up header items and send to template
+$headerExtras = array(
+  'custom' => $headerCustom,
+  'css' => $headerCSS,
+  'js' => $headerJS,
+);
+$template->setHeaderExtras($headerExtras);
+
+// output the template
 $template->output();
 ?>
