@@ -18,6 +18,11 @@ include 'pdf-viewer.php';
 
 // page content (from PDF-Viewer)
 ob_start();
+  ?>
+  
+<h1 class="ribbon"> Historical Documents </h1>
+  
+  <?php
   generatePage();
 $content = ob_get_clean();
 

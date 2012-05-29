@@ -43,9 +43,10 @@ if ($page == 'archives') {
       include 'images.php';
     } else if($subpage2 == 'Centennial-Book-Index'){
         include 'bookindex.php';
-    }else if($subpage == 'documents'){
-      include 'documents.php';
+    } else if($subpage == 'documents'){
+        include 'documents.php';
     } else if($subpage == 'cemetery') {
+        include 'cemetery.php';
     } else if($subpage == 'eras') {
         include 'eras.php';
     } else {
