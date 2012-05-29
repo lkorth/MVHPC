@@ -22,7 +22,7 @@
 
 $template = new Template();
 
-$headerExtras['js'] = array('image-script.js', 'map-labels.js', 'map-viewer.js');
+$headerExtras['js'] = array('map-labels.js', 'map-viewer.js');
 $headerExtras['custom'] = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>';
 ob_start();
 

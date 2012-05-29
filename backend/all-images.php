@@ -3,7 +3,7 @@
 include('../includes/master.inc.php');
 include('../includes/class.template.php');
 
-$Auth->requireUser();
+//$Auth->requireUser();
 
 $template = new Template();
 
@@ -59,7 +59,7 @@ $num = $db->numRows($result);
         $button = "button" . $id;
         $update = "update" . $id;
         echo "<tr><td><br><br><div style=\"width: 224px; height: 224px;\"><a id='thumb$id' href=\"" . WEB_ROOT . "$mid\" rel=\"lightbox\"><img src=\"" . WEB_ROOT . "$thumbnail\" /></a></div>
-            <br><button onClick='rotate($id,90,\"$id\")'><img src='" . WEB_ROOT . "images/rotate-cc.png'/></button>&nbsp;&nbsp;<button onClick='rotate($id,270,\"$id\")'><img src='" . WEB_ROOT . "images/rotate-c.png'/></button>
+            <br><button class='button' onClick='rotate($id,90,\"$id\")'><img src='" . WEB_ROOT . "images/rotate-cc.png'/></button>&nbsp;&nbsp;<button class='button' onClick='rotate($id,270,\"$id\")'><img src='" . WEB_ROOT . "images/rotate-c.png'/></button>
             </td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea class=\"tagArea\" name=\"$pictags\" id=\"$pictags\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$tag</textarea></td></tr>
             <tr><td></td><td align=\"right\"><p>Information:</p> <textarea class = \"textarea\" name=\"$picinfo\" id=\"$picinfo\" rows=\"5\" cols=\"40\" readonly=\"readonly\">$info</textarea><br><br>
             <input type=button value=\"Edit\" onClick=\"editfunction($id)\">
