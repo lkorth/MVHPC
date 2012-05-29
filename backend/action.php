@@ -16,6 +16,7 @@ $template = new Template();
 <?php ob_start(); ?>
     <div>
         <?php
+        /////////////STYLE////////////////////////
         if(isset($_GET['message']))
             echo '<h2>' . $_GET['message'] . '</h2>';
         ?>
