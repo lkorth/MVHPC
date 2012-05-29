@@ -27,9 +27,10 @@ if (isset($_GET['subpage3']) && !empty($_GET['subpage3'])) {
     $subpage3 = $_GET['subpage3'];
 }
 
-if ($page == 'map' && $subpage == 'images') {
+if ($page == 'archives' && $subpage == 'images') {
+//????
     if (!$fullsize) {
-        $subpage3 = $_GET['subpage3'];
+//        $subpage3 = $_GET['subpage3'];
         include 'images.php';
     } else {
         include 'fullsize.php';
@@ -43,12 +44,13 @@ else if ($page == 'archives' && $subpage == 'documents') {
     }
     // pdf viewer, display the page by passing in needed variables
     else {
-        generatePage();
+        include 'documents.php';
+//        generatePage();
     }
 
     // pdf viewer, display the page by passing in needed variables
 } else if ($page == 'about' && $subpage == 'design-review') {
-    generatePage();
+//    generatePage();
 } else {
     include($page . '.php');
 }
