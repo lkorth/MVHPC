@@ -9,15 +9,12 @@ $template = new Template();
 
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-if(isset($_GET['id'])){
+if(isset($_GET['id']) && !empty($_GET['id'])){
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE " . $_GET['id'] . " ORDER BY id DESC";
     $params = 'id=' . $_GET['id'];
-} else if(isset($_GET['tag'])) {
-    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE tags like '%" . $_GET['tag'] . "%' ORDER BY id DESC";
+} else if(isset($_GET['tag']) && !empty($_GET['tag'])) {
+    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE tags like '%" . mysql_escape_string($_GET['tag']) . "%' ORDER BY id DESC";
     $params = 'tag=' . $_GET['tag'];
-} else if(isset($_GET['filename'])) {
-    $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE location like '%" . $_GET['filename'] . "%' ORDER BY id DESC";
-    $params = 'filename=' . $_GET['filename'];
 } else {
     $query = "SELECT thumbnail,id,tags,information,mid FROM search WHERE 1=1 ORDER BY id DESC";
     $params = 'all=true';
@@ -28,7 +25,6 @@ $result = $db->query($query);
 $num = $db->numRows($result);
 
 ?>
-<html>
 <?php
     $headerExtras['js'] = array('jquery-172.js',
                                 'jquery-bgiframe-min.js',
