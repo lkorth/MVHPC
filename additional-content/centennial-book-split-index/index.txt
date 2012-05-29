@@ -489,10 +489,10 @@ Buser, Mrs. J. S. 96E,
 Buser, J. S. (first auto) 70, 96E, 98, 101
 Buser (J.S.) Photography  70
 Business Establishments (1923)  187
-Business Locations: 1870's  65, 66, 67, 188
-Business Locations: 1880's  68
-Business Locations: 1900  103
-Business Locations: 1947   189
+Business Locations (1870's)  65, 66, 67, 188
+Business Locations (1880's)  68
+Business Locations (1900)  103
+Business Locations (1947)   189
 Buswell, William  221
 Butcher, May  229
 Butler, Alvin  191
@@ -614,9 +614,9 @@ Chubbuck, Bert 36
 Citizens' State Bank  103, 109
 City of Homes  186
 City Park (Memorial Park) 187
-Civic Improvements: 1870's  64
-Civic Improvements: 1880's  68
-Civic Improvements: 1923 187
+Civic Improvements (1870's)  64
+Civic Improvements (1880's)  68
+Civic Improvements (1923) 187
 Civil War  25, 26, 34
 Claim markings  11
 Clampitt, William  224
@@ -812,8 +812,8 @@ Cumming, Edith Waln 28, 36, 109
 Cumming, Charles  78 
 Cunningham, Glenn 170, 225
 Curfew   97
-Curriculum (Mt.Vernon HS): 1915-1927 114
-Curriculum (Mt.Vernon HS): 1927 116
+Curriculum (Mt.Vernon HS, 1915-1927) 114
+Curriculum (Mt.Vernon HS, 1927) 116
 Curme, George (Prof) 95, 199, 204
 Curnutt, Charlie  172
 Current, Arthur  232
@@ -1108,8 +1108,8 @@ Finger, Sherman W  79, 132, 135
 Fink, John W  221
 Finnegan, William  221
 Fire District Founded (1877)  65
-Fire District: Fire of 1869  66
-Fire District: Fire of 1893 69, 92
+Fire District: Fire (of 1869)  66
+Fire District: Fire (of 1893) 69, 92
 Firkins, John  221
 Firkins, Addie  229
 Firsts: African American at Cornell  89
@@ -1155,7 +1155,7 @@ Flowers, George  224
 Floyd, Juantia  122
 Floyd, Albert M  57
 Floyd, Martin  119
-Flu Epidenic of 1918  141
+Flu Epidemic (of 1918)  141
 Flude, Alfred L. 129, 203
 Flynn, Catherine  232
 Flynn, Helen  173
@@ -1284,7 +1284,7 @@ Gilleney, Harold S (Rev) 155
 Gillespie, William 40E
 Gillette, Harvey 14, 23, 26
 Gillette, Charles  225
-Gilliland, Francis  210, 225, 234
+Gilliland, Francis  225, 234
 Gilliland, Harry  115, 132, 139, 192, 193
 Gilliland, Louise  120, 124
 Gilliland, Nathan 221
@@ -1374,7 +1374,7 @@ Gruwell, E T  227
 Guild, Elijah L 40C, 67, 103, 208
 Guild, Elijah L (Mrs) 40C, 158
 Guild, Relly 40C
-Guild Hotel/Hall  24, 32, 40Q, 137, 178
+Guild Hotel/Hall  24, 32, 40C, 137, 178
 Gunn, James  236
 Gunsaulas, Frank W  174
 Gustafson,  Alfred 234
@@ -1463,7 +1463,7 @@ Hartsough, 35
 Hartsough, Lewis (Rev)  203
 Hartung, Charles M  68, 138, 140, 202
 Hartung, Charles (Mrs)  141 
-Hartung, Daniel (builder & Cornell) 104, 172, 186H
+Hartung, Daniel (builder & Cornell) 104, 172
 Hartung, Francis  233
 Hartung, Margaret  232
 Hartung, Marjorie Joy  169, 235
@@ -1559,7 +1559,7 @@ Higbie, Charles  183, 225, 234
 Higbie, Dorothy Medary  170, 201
 High School Graduation Requirements, 99
 High School, New (1927) 115, 116
-Hill City Rebekah Lodge #0359 120
+Hill City Rebekah Lodge (#0359) 120
 Hill, Gerald  226
 Hill, G L  129, 130, 132, 180
 Hill, Margaret  230
@@ -1880,7 +1880,7 @@ Kepler Brothers (Peter Henry Conrad)  14
 Kepler, Anita  231
 Kepler, Addie 124, 157
 Kepler, Birdie 36, 125, 126, 229
-Kepler, Charles W  38, 40E, 52, 55, 57, 59, 66, 92, 97, 98, 102, 156, 157, 201, 202, 221, 227, 256 
+Kepler, Charles W  38, 40E, 52, 55, 57, 59, 66, 92, 97, 98, 102, 156, 157, 201, 202, 221, 227
 Kepler, C (Charles) W [Addie] Mrs. 100, 124, 157, 158
 Kepler, Conrad  14, 33 , 146, 147
 Kepler, Edgar  221
@@ -2641,7 +2641,7 @@ Oakland, Lloyd (Prof)  128, 132, 167
 Odd Fellows: Independent Order of,  119
 Odd Fellows: Owners of Bauman Building  120
 Odd Fellows: Hall in Wilcox building  69
-Odd Fellows: Hill City Rebekah Lodge #0359 120
+Odd Fellows: Hill City Rebekah Lodge (#0359) 120
 Odell, L H  153
 Oglebay, William  156
 Oglebay Taylor Shop  22
@@ -2967,7 +2967,6 @@ Rose, Letta  229
 Rose, Mary  229
 Ross, A H  192
 Rotary Club  132
-Route #0024(Highway IA #1) 261
 Row, Stella 230
 Rowley, Betty 235
 Rowley, Cap 104
@@ -3447,7 +3446,7 @@ Travis, Lawrence  202, 226, 234
 Travis, Luverna  235
 Travis, Oren  183, 225, 226, 235
 Travis, Quincy  225
-Travis, Rae A   61, 130, 133, 912
+Travis, Rae A   61, 130, 133
 Travis, Rita  236
 Travis, Ruth  231
 Travis, Willard  233
@@ -3739,7 +3738,7 @@ Wilson, Virgil  100
 Winchip, Mary Alice  236
 Winchip, Roy  102,189
 Winchip, Roy (Mrs) 102
-Winter of 1843  20
+Winter (of 1843)  20
 Windenberg, Earl  225
 Windenberg, Dwight  202, 204, 225
 Winey, Dorothy  236
