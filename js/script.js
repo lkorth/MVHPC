@@ -18,7 +18,7 @@ window.addEvent('domready', function() { // wait for the content
         url: $('form-demo').action,
 
         // path to the SWF file
-        path: '/mvhpc/flash/Swiff.Uploader.swf',
+        path: '/flash/Swiff.Uploader.swf',
 
         // remove that line to select all files, or edit it, add more items
         typeFilter: {

@@ -65,7 +65,7 @@ else {
 
     <p class="body_text center"> <a href="<?php echo $location; ?>"> Download full image (please note: images can be quite large) </a> </p>
 
-    <p class="body_text center"> <a href="/mvhpc/pages/request-tag-change.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
+    <p class="body_text center"> <a href="/pages/request-tag-change.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
   </div>
 
 </div>

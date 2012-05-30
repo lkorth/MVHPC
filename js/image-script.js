@@ -8,7 +8,7 @@ $().ready(function(){
     setTimeout("setHeights()", 500);
 
     $('#tagcloud').append("<img id='loading' src='/images/loading-icon.gif' alt='Loading Image' />");
-    $.get('/mvhpc/ajax-endpoints/tag-cloud.php', function(result){
+    $.get('/ajax-endpoints/tag-cloud.php', function(result){
         $('#tagcloud').empty();
         tags = $.parseJSON(result);
         $('#tagcloud').append('<ul></ul>');

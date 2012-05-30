@@ -9,7 +9,7 @@ $(function() {
     });
 
     $("textarea").spellchecker({
-        url: "/mvhpc/ajax-endpoints/checkspelling.php",
+        url: "/ajax-endpoints/checkspelling.php",
         lang: "en",                     // default language
         engine: "google",               // pspell or google
         addToDictionary: false,         // display option to add word to dictionary (pspell only)

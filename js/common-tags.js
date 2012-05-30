@@ -1,6 +1,6 @@
 $(function() {
     $('#tagArea').tagsInput({
-        'autocomplete_url':'/mvhpc/ajax-endpoints/suggest.php',
+        'autocomplete_url':'/ajax-endpoints/suggest.php',
         'autocomplete':{
             selectFirst: false,
             width:'250px',

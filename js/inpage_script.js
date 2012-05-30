@@ -1,5 +1,5 @@
 $().ready(function() {
-    $("#global").autocomplete("/mvhpc/ajax-endpoints/suggest.php", {
+    $("#global").autocomplete("/ajax-endpoints/suggest.php", {
         width: 200,
         max: 8,
         scroll: false,
@@ -8,7 +8,7 @@ $().ready(function() {
         scrollHeight: 500
     });
 
-    $("#change").autocomplete("/mvhpc/ajax-endpoints/suggest.php", {
+    $("#change").autocomplete("/ajax-endpoints/suggest.php", {
         width: 200,
         max: 8,
         scroll: false,
@@ -18,6 +18,6 @@ $().ready(function() {
     });
 
     $("#search").click(function(){
-       window.location = '/mvhpc/archives/images/' + $("#global").val();
+       window.location = '/archives/images/' + $("#global").val();
     });
 });

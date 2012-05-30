@@ -89,7 +89,7 @@ ob_start();
 </div>
 
 <div class="line_content body_text">
-    <span><strong><a href="/mvhpc/pages/contact-form.php">Email</a></strong></span>
+    <span><strong><a href="/pages/contact-form.php">Email</a></strong></span>
 </div>
 
 

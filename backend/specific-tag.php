@@ -38,7 +38,7 @@ while (($file = $mydir->read()) !== false) {
             $file = $file_name . "_thumbnail" . "." . $file_ext;
             $pictags = "Tags_" . $file_name;
             $picinfo = "Info_" . $file_name;
-            echo "<tr><td><br><br><div style=\"width: 224px; height: 224px;\"><a id='thumb$file_name' href=\"" . WEB_ROOT . 'tmp/' . $file_name . "_mid.$file_ext\" rel=\"lightbox\"><img src='/mvhpc/tmp/$file'/></a></div>
+            echo "<tr><td><br><br><div style=\"width: 224px; height: 224px;\"><a id='thumb$file_name' href=\"" . WEB_ROOT . 'tmp/' . $file_name . "_mid.$file_ext\" rel=\"lightbox\"><img src='/tmp/$file'/></a></div>
                   <br><img onClick=\"rotate('../tmp/" . $file_name . '.' . $file_ext . "',90,'$file_name');\" src='" . WEB_ROOT . "images/rotate-cc.png'/>&nbsp;&nbsp;<img onClick=\"rotate('../tmp/" . $file_name . '.' . $file_ext . "',270,'$file_name');\" src='" . WEB_ROOT . "images/rotate-c.png'/></button>
                   </td><td align=\"right\"><p>Tags: MUST be seperated by a semicolon (;)</p><textarea id=\"tagArea\" name=\"$pictags\" rows=\"5\" cols=\"40\">$ctags</textarea></td></tr>
                   <tr><td></td><td align=\"right\"><p>Information:</p> <textarea name=\"$picinfo\" rows=\"5\" cols=\"40\"></textarea><br><input type=\"checkbox\" name=\"Live_$file_name\" value=\"live\" />Ready for viewing?</td></tr><tr><td><br><br></td></tr>";

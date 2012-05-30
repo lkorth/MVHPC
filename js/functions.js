@@ -8,7 +8,7 @@ function updatefunction(id)
         var i = document.getElementsByName(info);
         var t = document.getElementsByName(tags);
         var l = document.getElementsByName(lv);
-        var link = '/mvhpc/backend/update.php?id=' + id + '&tags=' + t[0].value + '&info=' + i[0].value + '&live=' + l[0].value;
+        var link = '/backend/update.php?id=' + id + '&tags=' + t[0].value + '&info=' + i[0].value + '&live=' + l[0].value;
         window.location = link;
     }
 }
@@ -17,7 +17,7 @@ function deletefunction(id)
 {
     if (confirm ('Are you sure you want to delete this picture?  This action cannot be undone.'))
     {
-        var redir = '/mvhpc/backend/delete.php?id=' + id
+        var redir = '/backend/delete.php?id=' + id
         window.location = redir
     }
 }
@@ -27,7 +27,7 @@ function editfunction(id)
     var value = '';
     $.ajax({    //create an ajax request to check_use.php
         type: "GET",
-        url: "/mvhpc/ajax-endpoints/check_use.php",
+        url: "/ajax-endpoints/check_use.php",
         data: 'id='+id,  //with the id as a parameter
         dataType: 'text',
         success: function(msg){
@@ -41,7 +41,7 @@ function editfunction(id)
                 $('#update' + id).css('visibility', 'visible');
                 $('#' + tags + '_tagsinput').remove();
                 $('#' + tags).tagsInput({
-                    'autocomplete_url':'/mvhpc/ajax-endpoints/suggest.php',
+                    'autocomplete_url':'/ajax-endpoints/suggest.php',
                     'autocomplete':{
                         selectFirst: false,
                         width:'250px',
@@ -64,7 +64,7 @@ function rotate(id, angle, css){
 
     $.ajax({
         type: "GET",
-        url: "/mvhpc/ajax-endpoints/rotateImage.php",
+        url: "/ajax-endpoints/rotateImage.php",
         data: 'id='+id+'&angle='+angle,
         dataType: 'text',
         success: function(msg){
@@ -72,7 +72,7 @@ function rotate(id, angle, css){
             if(parseInt(tmp[0])==0){
                 alert('There was an error rotating the image, please try again later.');
             }
-            $('#thumb' + css).html('<img src="/mvhpc/' + tmp[1] + '?' + new Date().getTime() + '" />');
+            $('#thumb' + css).html('<img src="/' + tmp[1] + '?' + new Date().getTime() + '" />');
             var link = $('#thumb' + css).attr('href');
             $('#thumb' + css).attr('href', link + '?' + new Date().getTime());
         }
