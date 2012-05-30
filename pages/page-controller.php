@@ -59,11 +59,11 @@ if ($page == 'archives') {
         include 'archives.php';
     }
 } else if($page == 'map'){
-    if ($subpage2 == 'ash-park'){
+    if ($subpage == 'ash-park'){
         include 'map-ash-park.php';
-    } else if ($subpage2 == 'commercial'){
+    } else if ($subpage == 'commercial'){
         include 'map-commercial.php';
-    } else if ($subpage2 == 'cornell-college'){
+    } else if ($subpage == 'cornell-college'){
         include 'map-cornell-college.php';
     } else {
         include 'map.php';
