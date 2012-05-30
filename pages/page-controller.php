@@ -59,7 +59,16 @@ if ($page == 'archives') {
         include 'archives.php';
     }
 } else if($page == 'map'){
-    include 'map.php';
+    if ($subpage2 == 'ash-park'){
+        include 'map-ash-park.php';
+    } else if ($subpage2 == 'commercial'){
+        include 'map-commercial.php';
+    } else if ($subpage2 == 'cornell-college'){
+        include 'map-cornell-college.php';
+    } else {
+        include 'map.php';
+    }
+    include 'map-display.php';
 } else if($page == 'making-history'){
     include 'making-history.php';
 } else if($page == 'about'){
