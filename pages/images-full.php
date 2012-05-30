@@ -65,14 +65,14 @@ else {
 
     <p class="body_text"> <a href="<?php echo $location; ?>"> Download full image (please note: images can be quite large) </a> </p>
 
-    <p class="body_text"> <a href="request-tag-change.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
+    <p class="body_text"> <a href="/mvhpc/pages/request-tag-change.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
   </div>
 
 </div>
 
   <?php
   }
-  
+
 // grab page content
 $content = ob_get_clean();
 
@@ -84,6 +84,6 @@ array_push($headerCSS, 'jquery-ui-1820-custom.css',
                        'jquery-gzoom.css');
 
 // send content to template
-$template->setSingleCol($content);    
+$template->setSingleCol($content);
 
 ?>
