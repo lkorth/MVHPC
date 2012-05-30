@@ -15,7 +15,7 @@ if ((!empty($_POST['email']) || !empty($_POST['message'])) && !empty($_POST['id'
         $Error->add('message', "Please enter a message.");
     else {
         $db = Database::getDatabase();
-        $db->query("insert into changeRequests set email = '$email', message = '$message', id = '$id'");
+        $db->query("insert into change_requests set email = :e:, message = :m:, id = :i:", array('e' => $email, 'm' => $message, 'i' => $id));
         $success = true;
     }
 }
