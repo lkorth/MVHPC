@@ -27,7 +27,7 @@ function returnAPost($id){
 
 function featuredImages(){
     $db = Database::getDatabase();
-    return ($db->getRows("SELECT id, thumbnail FROM search ORDER BY RAND() LIMIT 5"));
+    return ($db->getRows("SELECT id, thumbnail FROM search where live = '1' ORDER BY RAND() LIMIT 5"));
 }
 
 function renderPaging($pager, $url, $rewrite = false){
@@ -86,12 +86,12 @@ function autocomplete($field, $searchString, $fullText = false) {
         return;
 
     if($fullText){
-        $result = $db->query("SELECT tags, MATCH(tags, information) AGAINST('$q') AS score FROM search WHERE MATCH(tags, information) AGAINST('$q') ORDER BY score DESC, views DESC");
+        $result = $db->query("SELECT tags, MATCH(tags, information) AGAINST('$q') AS score FROM search WHERE MATCH(tags, information) AGAINST('$q') and live = '1' ORDER BY score DESC, views DESC");
     }
     if (isset($result) && $result != false && $db->numRows($result) > 0) {
         $num = $db->numRows($result);
     } else {
-        $result = $db->query("SELECT $field FROM search WHERE $field LIKE '%$q%' ORDER BY views DESC");
+        $result = $db->query("SELECT $field FROM search WHERE $field LIKE '%$q%' and live = '1' ORDER BY views DESC");
         $num = $db->numRows($result);
     }
 

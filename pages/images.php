@@ -10,11 +10,11 @@ $page = (isset($subpage3) && !empty($subpage3)) ? $subpage3 : 1;
 
 if (!empty($terms)) {
     $db = Database::getDatabase();
-    $result = $db->query("SELECT thumbnail,id, MATCH(tags, information) AGAINST('$terms') AS score FROM search WHERE MATCH(tags, information) AGAINST('$terms') ORDER BY score DESC, views DESC");
+    $result = $db->query("SELECT thumbnail,id, MATCH(tags, information) AGAINST('$terms') AS score FROM search WHERE MATCH(tags, information) AGAINST('$terms') and live = '1' ORDER BY score DESC, views DESC");
     $num = $db->numRows($result) ? $db->numRows($result) : 0;
 
     if ($num == 0) {
-        $result = $db->query("SELECT thumbnail,id FROM search WHERE tags LIKE '%$terms%' OR information LIKE '%$terms%' ORDER BY views DESC");
+        $result = $db->query("SELECT thumbnail,id FROM search WHERE live = '1' and (tags LIKE '%$terms%' OR information LIKE '%$terms%') ORDER BY views DESC");
         $num = $db->numRows($result) ? $db->numRows($result) : 0;
         if ($num == 0) {
             echo "<p class='body_text'>No results found for the search \"" . $terms . "\".&nbsp;&nbsp;Please try a different search.</p>";
