@@ -1,44 +1,36 @@
 <?php
 
-/* from page-controller
-    else if ($page == 'archives') {
-    if ($subpage == NULL) {
-        $title = 'MVHPC :: Archives';
-        $page_id = $page;
-    } else if ($subpage == 'documents') {
-        // only for Centennial Book index
-        if ($subpage2 == 'Centennial-Book-Index') {
-            $title = 'MVHPC:: Centennial Book';
-        }
-        // otherwise, normal document display
-        else {
-            $title = 'MVHPC :: Documents';
-            $pdfFile = $subpage2;
-            array_push($headerCSS, 'pdf-viewer.css');
-            include 'documents.php';
-            if ($pdfViewing) {
-                ob_start();
-                jsVars();
-                $headerCustom = ob_get_clean();
-                if ($pdfSupported) {
-                    array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
-                }
-            }
-        }} else if ($subpage == 'images') {
-        $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]));
-        if (!$fullsize) {
-            $title = 'MVHPC :: Images';
-            array_push($headerJS, 'jquery-bgiframe-min.js', 'jquery-ajaxQueue.js', 'jquery-autocomplete.js', 'inpage_script.js');
-            array_push($headerCSS, 'jquery.autocomplete.css');
-        } else {
-            $title = 'MVHPC :: Images';
-            array_push($headerJS, 'jquery-mousewheel.js', 'jquery-ui-1820-custom-min.js', 'jquery-gzoom.js'
-            );
-            array_push($headerCSS, 'jquery-ui-1820-custom.css', 'jquery-gzoom.css'
-            );
-        }
-    } else {
-        redirect('../error/404.php');
-    }
- */
+// set up template title & style
+$template->setTitle('MVHPC :: Archives');
+$template->setStyle('oneColumn');
+
+// page content
+ob_start();
+  ?>
+  
+<h1 class="ribbon"> Archives </h1>
+
+<p class="body_text">
+  Take a walk through Mount Vernon, Iowa, and you will see why it is a unique midwestern town. Built on and around a long, rolling hill, it is home to one of the most attractive college campuses in the U.S. - Cornell College. Mount Vernon's carefully tended Victorian-era homes and quaint business district recall an era of days gone by. Each era contributed to the town's prosperity, leaving its mark on local culture and the appearance of Mount Vernon today.
+</p>
+
+<p class="body_text">
+  The Archives store important information pertaining to the history of Mount Vernon. Explore below to find archival images, historical documents, and an overview of the history of the town.
+</p>
+
+<h1 class="ribbon"> Resources </h1>
+
+<ul class="body_text">
+  <li><a href="<?php WEBROOT(); ?>archives/images/"> Archival Images </a></li>
+  <li><a href="<?php WEBROOT(); ?>archives/documents/"> Historical Documents </a></li>
+  <li><a href="<?php WEBROOT(); ?>archives/eras/"> Historical Eras </a></li>
+</ul>
+
+
+  <?php
+$content = ob_get_clean();
+
+// send content to template
+$template->setSingleCol($content);
+
 ?>
