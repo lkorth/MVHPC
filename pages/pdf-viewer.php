@@ -11,6 +11,11 @@ $pdfDirURL = WEB_ROOT . $pdfDir;
 $pdfFile = urldecode($pdfFile);
 $pdfURL = $pdfDirURL . $pdfFile . '.pdf';
 
+// pretty name for file to display as a header
+$pdfName = str_replace('.pdf', ' ', $pdfFile);
+$pdfName = str_replace('_', ' ', $pdfName);
+$pdfName = str_replace('-', ' ', $pdfName);
+
 // beginning to fullscreen PDF url
 $fsURL = WEB_ROOT . $pdfPageRoot . $pdfFile;
 
@@ -105,6 +110,11 @@ function generateViewer(){
   global $pdfSupported;
   global $pdfURL;
   global $pdfPage;
+  global $pdfName;
+
+  ?>
+<h1 class="ribbon"> <?php echo $pdfName; ?> </h1>
+  <?php
 
   // if a supported browser, view PDF with PDF.js
   if ($pdfSupported) {
