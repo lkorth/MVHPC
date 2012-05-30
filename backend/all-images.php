@@ -53,7 +53,6 @@ $num = $db->numRows($result);
         $tag = mysql_result($result, $i, "tags");
         $info = mysql_result($result, $i, "information");
         $mid = mysql_result($result, $i, "mid");
-        $i++;
         $pictags = "tags" . $id;
         $picinfo = "info" . $id;
         $button = "button" . $id;
