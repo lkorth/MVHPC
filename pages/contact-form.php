@@ -35,6 +35,7 @@ if (isset($success) && $success == true) {
         <label for="email" class="body_text">Your Email Address:</label> <input name="email" type="text" />
         <label for="subject" class="body_text">Subject:</label> <input name="subject" type="text" />
         <label for="message" class="body_text">Message:</label> <textarea name="message" rows="30" cols="65"></textarea>
+        <br>
         <input class="button" type="submit" value="Submit"/>
     </form>
     <?php

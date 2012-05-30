@@ -77,6 +77,10 @@ ob_start();
     <span>Mt Vernon, IA  52314</span>
 </div>
 
+<div class="line_content body_text">
+    <span><strong><a href="/mvhpc/pages/contact-form.php">Email</a></strong></span>
+</div>
+
 
 
 
