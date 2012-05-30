@@ -1,8 +1,15 @@
 <?php
 
-$id = $subpage2;
+// set up template title & style
+$template->setTitle = 'MVHPC :: View Image';
+$template->setStyle('oneColumn');
 
+// grab image ID & image data
+$id = $subpage2;
 $img = returnImage($id);
+
+// begin page content
+ob_start();
 
 if ($img == NULL) {
   ?>
@@ -55,15 +62,29 @@ else {
   </div>
 
   <div id="image-info" style="position: relative; float: left;">
-    <p> <?php echo $information; ?> </p>
+    <p class="body_text"> <?php echo $information; ?> </p>
 
-    <p> <a href="<?php echo $location; ?>"> Download full image (please note: images can be quite large) </a> </p>
+    <p class="body_text"> <a href="<?php echo $location; ?>"> Download full image (please note: images can be quite large) </a> </p>
 
-    <p> <a href="feedback.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
+    <p class="body_text"> <a href="feedback.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
   </div>
 
 </div>
 
   <?php
   }
+  
+// grab page content
+$content = ob_get_clean();
+
+// set Javascript and CSS
+array_push($headerJS, 'jquery-mousewheel.js',
+                      'jquery-ui-1820-custom-min.js',
+                      'jquery-gzoom.js');
+array_push($headerCSS, 'jquery-ui-1820-custom.css',
+                       'jquery-gzoom.css');
+
+// send content to template
+$template->setSingleCol($content);    
+
 ?>

@@ -40,7 +40,13 @@ if (isset($_GET['subpage3']) && !empty($_GET['subpage3'])) {
 
 if ($page == 'archives') {
     if($subpage == 'images'){
-      include 'images.php';
+      $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]));
+      if (!$fullsize) {
+        include 'images.php';
+      }
+      else{
+        include 'images-full.php';
+      }
     } else if($subpage2 == 'Centennial-Book-Index'){
         include 'bookindex.php';
     } else if($subpage == 'documents'){

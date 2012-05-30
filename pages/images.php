@@ -1,4 +1,9 @@
 <?php
+
+// set up template title & style
+$title = 'MVHPC :: Search Images';
+$template->setStyle('oneColumn');
+
 $terms = strtolower(urldecode($subpage2));
 $page = (isset($subpage3) && !empty($subpage3)) ? $subpage3 : 1;
 
@@ -36,11 +41,22 @@ if (!empty($terms)) {
 
     renderPaging($pager, WEB_ROOT . 'archives/images/' . $terms, true);
 }
-?>
-<?php
-$template->setStyle('oneColumn');
+  
+$content = ob_get_clean();
+
+// change title if searching, and set the title
 if (!empty($terms))
-    $template->setTitle('Search of ' . $terms);
-else
-    $template->setTitle('Search Images');
+    $title = 'Search of ' . $terms;
+$template->setTitle($title);
+
+// set Javascript and CSS
+array_push($headerJS, 'jquery-bgiframe-min.js',
+                      'jquery-ajaxQueue.js',
+                      'jquery-autocomplete.js',
+                      'inpage_script.js');
+array_push($headerCSS, 'jquery-autocomplete.css');
+
+// send content to template
+$template->setSingleCol($content);    
+    
 ?>
