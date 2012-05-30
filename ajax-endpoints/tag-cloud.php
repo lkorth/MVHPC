@@ -32,6 +32,6 @@ $output = array_slice($output, count($output) - 25, count($output));
 
 shuffle($output);
 
-echo json_encode($output, true);
+echo json_encode($output);
 
 ?>
