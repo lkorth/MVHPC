@@ -17,8 +17,8 @@ ob_start();
 // set header for page
   ?>
 <h1 class="ribbon"> Centennial Book Index </h1>
+<div id="book_index">
   <?php
-
 // print out the index selection
 $i = 0;
 foreach (range('A', 'Z') as $l) {
@@ -38,7 +38,9 @@ foreach (range('A', 'Z') as $l) {
   
   $i++;
 }
-
+?>
+</div>
+<?php
 // display index if viewing on a letter
 if ($viewingLetter) {
   ?>
