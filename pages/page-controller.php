@@ -47,10 +47,13 @@ if ($page == 'archives') {
       else{
         include 'images-full.php';
       }
-    } else if($subpage == 'Centennial-Book-Index'){
-        include 'centennial-book-index.php';
     } else if($subpage == 'documents'){
-        include 'documents.php';
+        if ($subpage2 != 'Centennial-Book-Index') {
+          include 'documents.php';
+        }
+        else {
+          include 'centennial-book-index.php';
+        }
     } else if($subpage == 'cemetery') {
         include 'cemetery.php';
     } else if($subpage == 'eras') {
