@@ -22,6 +22,10 @@ ob_start();
   
 <h1 class="ribbon"> Historical Documents </h1>
   
+<p class="body_text">
+  Search through the Centennial Book's <a href="Centennial-Book-Index/"> online index </a>.
+</p>
+
   <?php
   generatePage();
 $content = ob_get_clean();
