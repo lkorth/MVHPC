@@ -4,9 +4,11 @@ function updatefunction(id)
     {
         var info = 'info' + id;
         var tags = 'tags' + id;
+        var lv = 'live_' + id;
         var i = document.getElementsByName(info);
         var t = document.getElementsByName(tags);
-        var link = 'http://www.mvhpc.org/finalize_tag.php?id=' + id + '&tags=' + t[0].value + '&info=' + i[0].value;
+        var l = document.getElementsByName(lv);
+        var link = '/mvhpc/backend/update.php?id=' + id + '&tags=' + t[0].value + '&info=' + i[0].value + '&live=' + l[0].value;
         window.location = link;
     }
 }
@@ -15,7 +17,7 @@ function deletefunction(id)
 {
     if (confirm ('Are you sure you want to delete this picture?  This action cannot be undone.'))
     {
-        var redir = 'http://www.mvhpc.org/delete.php?id=' + id
+        var redir = '/mvhpc/backend/delete.php?id=' + id
         window.location = redir
     }
 }

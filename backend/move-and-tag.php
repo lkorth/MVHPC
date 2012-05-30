@@ -25,14 +25,20 @@ while (($file = $mydir->read()) !== false) {
             $mid = "media/" . $file_name . "_mid" . "." . $file_ext;
             $t = "Tags_" . $file_name;
             $i = "Info_" . $file_name;
+            $l = "Live_" . $file_name;
+            $l = $_POST[$l];
+            if($l == 'live')
+                $l = 1;
+            else
+                $l = 0;
             $tags = strtolower($_POST[$t]);
             $info = $_POST[$i];
             $views = 0;
             $trueviews = 0;
 
             $db = Database::getDatabase();
-            $row = $db->query("INSERT INTO search (location, medlg, thumbnail, mid, information, tags, views, trueviews)
-VALUES ('$location', '$medlg', '$filethumb','$mid', '$info', '$tags', '$views', '$trueviews')");
+            $row = $db->query("INSERT INTO search (location, medlg, thumbnail, mid, information, tags, views, trueviews, live)
+VALUES ('$location', '$medlg', '$filethumb','$mid', '$info', '$tags', '$views', '$trueviews', '$l')");
 
             rename(($startdir . $file_name . "." . $file_ext), ($finaldir . $file_name . "." . $file_ext));
         }
