@@ -460,6 +460,10 @@ label, input, textarea {
     text-align: left;
 }
 
+label.body_text {
+    margin: 10px 0;
+}
+
 #map {
     width: 560px;
     height: 420px;
@@ -481,4 +485,12 @@ label, input, textarea {
 
 .center {
     text-align: center;
+}
+
+input.button {
+    margin-top: 10px;
+}
+
+.form_wrapper {
+    margin: 10px;
 }

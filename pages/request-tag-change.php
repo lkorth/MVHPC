@@ -33,15 +33,23 @@ if (isset($success) && $success == true) {
 } else {
 ?>
 <br>
-<img src="<?php echo WEB_ROOT . $row['mid']; ?>"/><p>Information: <?php echo $row['information']; ?></p><p>Tags: <?php echo $row['tags']; ?> </p>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<img src="<?php echo WEB_ROOT . $row['mid']; ?>"/>
+
+<h1 class="ribbon">Current Information</h1>
+
+<p class="body_text"><?php echo $row['information']; ?></p><p class="body_text">Tags: <?php echo $row['tags']; ?> </p>
+
+<h1 class="ribbon">Requested Changes</h1>
+
+<div class="form_wrapper">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
     <?php echo $Error ?>
-    <br><p> Enter Your Email Address: <input name="email" type="text" /></p>
-    <br>
+
+    <label for="email" class="body_text">Enter Your Email Address:</label><input name="email" type="text" />
     <input type=hidden name="id" value="<?php echo $id; ?>">
-    <p>Changes: <textarea name="message" rows="15" cols="40"></textarea></p>
-    <br><br>
-    <input type="submit" value="Submit"/>
+    <label for="message" class="body_text">Changes:</label> <textarea name="message" rows="15" cols="40"></textarea>
+    <input class="button" type="submit" value="Submit"/>
+</div>
 </form>
 <br>
 <?php
