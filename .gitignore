@@ -2,3 +2,4 @@ media/*
 cache/*
 includes/class.config.php
 css/.sass-cache/*
+tmp/*
