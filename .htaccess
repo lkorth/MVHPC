@@ -19,9 +19,9 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /mvhpc/error/404.php
-ErrorDocument 500 /mvhpc/error/500.php
-ErrorDocument 403 /mvhpc/error/403.php
+ErrorDocument 404 /mvhpc/error/error.php?type=404
+ErrorDocument 500 /mvhpc/error/error.php?type=500
+ErrorDocument 403 /mvhpc/error/error.php?type=403
 
 
 # ----------------------------------------------------------------------

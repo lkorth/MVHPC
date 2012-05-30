@@ -16,7 +16,7 @@ $headerJS = array();
 
 // get current page
 if (!isset($_GET['page']) || !file_exists($_GET['page'].'.php') ) {
-    redirect('../error/404.php');
+    redirect('../error/error.php?type=404');
 }
 $page = $_GET['page'];
 
@@ -80,8 +80,6 @@ if ($page == 'archives') {
     }
 } else if ($page == 'request-tag-change') {
     include 'request-tag-change.php';
-} else {
-    redirect('../error/404.php');
 }
 
 // package up header items and send to template
