@@ -17,7 +17,7 @@ if (!empty($terms)) {
         $result = $db->query("SELECT thumbnail,id FROM search WHERE live = '1' and (tags LIKE '%$terms%' OR information LIKE '%$terms%') ORDER BY views DESC");
         $num = $db->numRows($result) ? $db->numRows($result) : 0;
         if ($num == 0) {
-            echo "<p class='body_text'>No results found for the search \"" . $terms . "\".&nbsp;&nbsp;Please try a different search.</p>";
+            $noResults = "<p class='body_text'>No results found for the search \"" . $terms . "\".&nbsp;&nbsp;Please try a different search.</p>";
         }
     }
 }
@@ -32,7 +32,8 @@ ob_start();
 
 <?php
 if (!empty($terms)) {
-    echo "<p>Your search returned " . $num . " results</p><br>";
+    
+    echo "<p class='body_text center'>Your search returned " . $num . " results</p><br>";
 
     $pager = new Pager($page, 16, $num);
     $pager->calculate();

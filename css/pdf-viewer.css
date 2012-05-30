@@ -1,27 +1,4 @@
-#pdf-list{
-  padding: 2% 35% 2% 15%;
-  text-align: left;
-}
 
-.pdf-item{
-  padding: 1% 0%;
-  margin: 1% 0%;
-  font-size: 130%;
-}
-
-.pdf-item a:link{
-  background-color: #56BAFB;
-  color: #FFFFFF;
-}
-
-.pdf-item a:hover, a:active{
-  color: #FF6600;
-}
-
-.pdf-item-dl{
-  float: right;
-  font-size: 90%;
-}
 
 #pdf-viewer{
   width: 100%;
