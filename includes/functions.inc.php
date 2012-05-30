@@ -80,7 +80,7 @@ function renderPaging($pager, $url, $rewrite = false){
 function autocomplete($field, $searchString, $fullText = false) {
     $db = Database::getDatabase();
 
-    $q = strtolower($searchString);
+    $q = mysql_real_escape_string(strtolower($searchString));
 
     if (!$q)
         return;
