@@ -1,84 +1,90 @@
 <?php
 
+// set up template title & style
+$template->setTitle('MVHPC :: Centennial Book Index');
+$template->setStyle('oneColumn');
+
+// check if we are viewing a letter or not
 $viewingLetter = false;
 if (isset($subpage3)) {
-  $letter = strtolower($subpage3);
+  $letter = $subpage3;
   $viewingLetter = true;
-  $upperLetter = strtoupper($letter);
 }
 
-$ct = 0;
+// display the content
+ob_start();
+
+// set header for page
+  ?>
+<h1 class="ribbon"> Centennial Book Index </h1>
+  <?php
+
+// print out the index selection
+$i = 0;
 foreach (range('A', 'Z') as $l) {
-  echo '<a href="' . WEB_ROOT . 'archives/documents/Centennial-Book-Index/' . $l . '">[' . $l . ']</a>&nbsp;&nbsp;';
-  $ct++;
+  ?>
+
+<a href="<?php WEBROOT(); ?>archives/documents/Centennial-Book-Index/<?php echo $l; ?>"> [<?php echo $l; ?>] </a> &nbsp;&nbsp;
+
+  <?php
+  
+  if ($i == 15) {
+    ?>
+
+<br />
+
+    <?php
+  }
+  
+  $i++;
 }
 
+// display index if viewing on a letter
 if ($viewingLetter) {
-  echo '<div id="index-terms"> <p>';
-  $strings = returnCentennialIndex($upperLetter);
-  $strings = $strings['data'];
-  $strings = explode("\n", $strings);
-  foreach ($strings as $string) {
-    echo '<p>';
-    $string = trim($string);
-    $pattern = '/[0-9]{1,3}/';
-    preg_match_all($pattern, $string, $matches, PREG_OFFSET_CAPTURE);
-    
-    $linking = array();
-    $i = 0;
-    
-    foreach ($matches[0] as $pg) {
-      $length = strlen($pg[0]);		
+  ?>
 
-      // page number
-      $linking[$i][0] = $pg[0];
+<ul class="body_text" id="index-terms">
 
-      // position of the number in the line
-      $linking[$i][1] = $pg[1];
+  <?php
+  // grab all indices for the page
+  $indices = returnCentennialIndex($letter);
 
-      // length of the number
-      $linking[$i][2] = $length;
+  // for each index, display it and its pages
+  foreach ($indices as $index) {
+    ?>
+
+<li> <?php echo $index['index']; ?> :
+
+    <?php
+
+    // iterate through each page
+    $pages = explode(',', $index['pages']);
+    $i = 1;
+    foreach ($pages as $page) {
+
+      // print out each page as a link
+      ?>
+
+<a href="<?php WEBROOT(); ?>archives/documents/Centennial-Book/<?php echo $page; ?>"> <?php echo $page; ?></a> <?php if ($i < count($pages)) {echo ',  '; } ?>
+
+      <?php
       $i++;
     }
-    
-    $offset = 0;
-    for ($j = $i - 1; $j >= 0; $j--) {
-      $next = $linking[$j][1] + $linking[$j][2];
-      $nextOne = $linking[$j][1] + $linking[$j][2] + 1;
-      $str = substr($string, $next, 2);
-      $strOne = substr($string, $nextOne, 2);
+    ?>
 
-// THIS SECTION OF CODE IS BROKEN?
-      if (isset($linking[$j+1]) && $next == $linking[$j+1][1]) {
-        $j++;
-      }
-      else if ($linking[$j][0] > 294) {}
-//      if ($linking[$j][0] > 294) {}
-      else if ($str == 'st' ||
-               $str == 'nd' ||
-               $str == 'rd' ||
-               $str == 'th' ||
-               $strOne == 'st' ||
-               $strOne == 'nd' ||
-               $strOne == 'rd' ||
-               $strOne == 'th') {}
-      else if ($linking[$j][1] < 5) {}
-      else if (substr($string, ($linking[$j][1] - 1), 1) == '(') {}
-      else {
-        $start = $linking[$j][1] + $offset;
-	$replace = '<a href="' . WEB_ROOT;
-        $replace .= 'archives/documents/Centennial-Book/';
-        $replace .= $linking[$j][0] . '">' . $linking[$j][0] . '</a>';
-        $string = substr_replace($string, $replace, $start, $linking[$j][2]);
-        $offset += 29 + $linking[$j][2];
-      }
-    }
+</li>
 
-    echo $string . '</p>';
+    <?php
   }
 
-  echo '</div>';
+  // close the list
+  ?>
+</ul>
+  <?php
 }
 
-//require '../shared/footer.php';
+// send content to template
+$content = ob_get_clean();
+$template->setSingleCol($content);
+
 ?>

@@ -12,7 +12,7 @@ function updateImageViews($views, $trueViews, $id){
 
 function returnCentennialIndex($letter){
   $db = Database::getDatabase();
-  return ($db->getRow("SELECT data FROM centennial_book_index WHERE letter = '$letter'"));
+  return ($db->getRows("SELECT `index`, `pages` FROM centennial_book_index WHERE letter = '$letter'"));
 }
 
 function returnPosts($page, $maxNumberResults = 1){
