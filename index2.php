@@ -37,7 +37,7 @@ $posts = returnPosts('index', 1);
             <p>
                 <?php echo max_words($post['text'], 150); ?>
             </p>
-            <a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>
+            <!--<a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>-->
         </div>
         <?php endforeach; ?>
 <?php $left_col = ob_get_clean(); ?>
