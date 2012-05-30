@@ -975,7 +975,7 @@ Eby, John  22, 23
 Edaburn, Kenneth  234
 Edaburn, Artie  130
 Edgerton, Asher  13, 23
-Edgerton, George 21, 33B
+Edgerton, George 21
 Edleman, Lloyd  231
 Edwards, David  225
 Edwards, Earl E  225, 236
@@ -1583,7 +1583,7 @@ Hobson, Richmond P  101
 Hodge, Gloria  236
 Hodge, Charles  235
 Hodge, Lud  235
-Hodges, John  18, 33B, 34
+Hodges, John  18, 34
 Hodgson, James  200
 Hogg, Thomas Dixon  74 
 Hoffman, Harold  225
@@ -1887,7 +1887,7 @@ Kepler, Edgar  221
 Kepler, Edna  113, 229
 Kepler, Grace  230
 Kepler, Hattie  36
-Kepler, Henry  14, 29, 33B, 146
+Kepler, Henry  14, 29, 146
 Kepler, Howard  36
 Kepler, John  222
 Kepler, Laurene  232
@@ -3550,7 +3550,7 @@ Waln, Alonzo T 222
 Waln, A T 25, 66
 Waln, Clara  231
 Waln, Edith  108, 109
-Waln, Elijah  18, 23, 24, 28, 29, 33B, 66, 92, 119 
+Waln, Elijah  18, 23, 24, 28, 29, 66, 92, 119 
 Waln, George 88
 Waln, Helen 232
 Waln, Lon  229
@@ -3715,7 +3715,7 @@ Williams, Virgilia  234
 Williams, W W   74
 Willimach, Tillie  232
 Willimack, Violette  233
-Willits, Allison  17, 22, 28, 29, 33, 33B
+Willits, Allison  17, 22, 28, 29, 33
 Willits 22, 23, 28
 Willix, E B (Mrs)  120
 Willix, E B   97, 105, 156, 173
