@@ -14,7 +14,7 @@ ob_start();
 if ($img == NULL) {
   ?>
 
-<p> "<?php echo $id; ?>" is not a valid image id. Please go back to the
+<p class="body_text"> "<?php echo $id; ?>" is not a valid image id. Please go back to the
   <a href="<?php echo WEB_ROOT . 'archives/images/'; ?>"> archive image search
 </a> . </p>
 
@@ -54,19 +54,18 @@ else {
   });
   /*]]>*/
 </script>
-
-<div id="image-viewer" style="overflow: hidden;">
+<div id="image-viewer" style="overflow: hidden; width='<?php echo $imgThumbW; ?>px'">
 
   <div id="zoom01" class="zoom">
     <img src="<?php echo $mid; ?>" title="<?php echo $information; ?>" alt="<?php echo $tags; ?>" />
   </div>
 
-  <div id="image-info" style="position: relative; float: left;">
+  <div id="image-info" style="position: relative; float: left; width: 762px;">
     <p class="body_text"> <?php echo $information; ?> </p>
 
     <p class="body_text"> <a href="<?php echo $location; ?>"> Download full image (please note: images can be quite large) </a> </p>
 
-    <p class="body_text"> <a href="feedback.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
+    <p class="body_text"> <a href="request-tag-change.php?id=<?php echo $id; ?>"> Request a tag update </a> </p>
   </div>
 
 </div>

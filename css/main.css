@@ -207,7 +207,7 @@ body {
 .left_col .article a, .left_col .article a:visited {
   margin-left: 10px;
   font-family: Times;
-  color: #FF6600; }
+  color: #ff6600; }
 
 .right_col {
   width: 300px;
@@ -235,8 +235,8 @@ body {
 
 .left_content {
   position: relative;
-  width: 224px;
-  height: 224px !important;
+  width: 210px;
+  height: 210px !important;
   margin: 0 auto; }
 
 .left_content .featured {
@@ -249,7 +249,6 @@ body {
   margin: 0; }
 
 .single_col {
-  padding: 0;
   position: relative;
   margin: 0 24px;
   padding: 15px;
@@ -375,9 +374,6 @@ button {
 .single_col, .left_col, .right_col {
   min-height: 600px; }
 
-input {
-  font-size: 110%; }
-
 #login {
   margin: 10px; }
 
@@ -393,3 +389,13 @@ label, input, textarea {
   width: 560px;
   height: 420px;
   margin-top: 10px; }
+
+#global {
+  margin-top: 10px; }
+
+#image-viewer {
+  width: 762px;
+  margin: 0 auto; }
+
+.body_text a {
+  color: #f60; }

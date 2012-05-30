@@ -69,6 +69,8 @@ if ($page == 'archives') {
     } else {
         include 'about.php';
     }
+} else if ($page == 'request-tag-change') {
+    include 'request-tag-change.php';
 } else {
     redirect('../error/404.php');
 }

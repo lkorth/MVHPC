@@ -3,6 +3,7 @@
 // set up template title & style
 $title = 'MVHPC :: Search Images';
 $template->setStyle('oneColumn');
+$headerExtras['custom'] = "<style type='text/css'>.single_col{padding: 15px 0;}</style>";
 
 $terms = strtolower(urldecode($subpage2));
 $page = (isset($subpage3) && !empty($subpage3)) ? $subpage3 : 1;
@@ -16,15 +17,18 @@ if (!empty($terms)) {
         $result = $db->query("SELECT thumbnail,id FROM search WHERE tags LIKE '%$terms%' OR information LIKE '%$terms%' ORDER BY views DESC");
         $num = $db->numRows($result) ? $db->numRows($result) : 0;
         if ($num == 0) {
-            echo "<p>No results found for the search \"" . $terms . "\".&nbsp;&nbsp;Please try a different search.</p>";
+            echo "<p class='body_text'>No results found for the search \"" . $terms . "\".&nbsp;&nbsp;Please try a different search.</p>";
         }
     }
 }
 
 ob_start();
 ?>
+
+<h1 class="ribbon">Image Search</h1>
+
 <input name="terms" type="text" id="global"/>
-<button id="search" type="button">Search</button>
+<input class="button" id="search" type="submit" value="Search" />
 
 <?php
 if (!empty($terms)) {
@@ -57,6 +61,7 @@ array_push($headerJS, 'jquery-bgiframe-min.js',
 array_push($headerCSS, 'jquery-autocomplete.css');
 
 // send content to template
+$template->setHeaderExtras($headerExtras);
 $template->setSingleCol($content);    
     
 ?>

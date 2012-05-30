@@ -20,9 +20,9 @@ while (($file = $mydir->read()) !== false && $cnt < 60) {
 
             list($width, $height) = getimagesize($filethumb);
 
-            if ($width != 224 && $height != 224) {
+            if ($width != 210 && $height != 210) {
                 $gd = new GD($full);
-                $gd->resize(224, 224);
+                $gd->resize(210, 210);
                 $gd->saveAs($filethumb, $file_ext, 100);
                 $cnt++;
                 echo "Resized: $cnt" . '<br>';
