@@ -23,7 +23,7 @@ function initialize() {
   
   // grab and generate the overlay
   // REMOVE MY URL FOR PRODUCTION SERVER!!!
-  var kml = new google.maps.KmlLayer("http://seanpmckenna.com/temp/mtVernonDistricts.kml", {suppressInfoWindows: true});
+  var kml = new google.maps.KmlLayer("http://mvhpc.org/data/mtVernonDistricts.kml", {suppressInfoWindows: true});
   var map = new google.maps.Map(document.getElementById("map"), options);
   kml.setMap(map);
 

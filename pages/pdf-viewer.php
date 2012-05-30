@@ -145,9 +145,6 @@ function generateViewer(){
 
       // assemble this to a URL for the PDF
       $pdfFullURL = 'http://' . $host . $pdfURL;
-
-// TESTING ONLY - remove for production!!!!!
-      $pdfFullURL = 'http://www.mvhpc.org/data/history_intro_to_mount_vernon.pdf';
       
       // create URL to Google Docs Viewer & embed on page
       $docsViewer = "http://docs.google.com/viewer?url=$pdfFullURL";
