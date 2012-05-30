@@ -14,9 +14,9 @@ ob_start();
 </p>
 
 <ul class="body_text">
-  <li><a href="ash-park/"> Ash Park </a></li>
-  <li><a href="commercial/"> Commercial </a></li>
-  <li><a href="cornell-college/"> Cornell College </a></li>
+  <li><a href="<?php WEBROOT(); ?>map/ash-park/"> Ash Park </a></li>
+  <li><a href="<?php WEBROOT(); ?>map/commercial/"> Commercial </a></li>
+  <li><a href="<?php WEBROOT(); ?>map/cornell-college/"> Cornell College </a></li>
 </ul>
 
   <?php 
