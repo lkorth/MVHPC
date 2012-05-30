@@ -27,19 +27,8 @@ ob_start();
 </p>
 
   <?php
-  generatePage();
+generatePage();
 $content = ob_get_clean();
-
-// use custom CSS and viewPDF javascript if need be
-array_push($headerCSS, 'pdf-viewer.css');
-if ($pdfViewing) {
-  ob_start();
-    jsVars();
-  $headerCustom = ob_get_clean();
-  if ($pdfSupported) {
-    array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
-  }
-}
 
 // send content to template
 $template->setSingleCol($content);

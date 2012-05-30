@@ -39,18 +39,7 @@ $pdfDir = 'data/about/';
 include 'pdf-viewer.php';
 
 // page content (from PDF-Viewer)
-  generatePage();
-
-// use custom CSS and viewPDF javascript if need be
-array_push($headerCSS, 'pdf-viewer.css');
-if ($pdfViewing) {
-  ob_start();
-    jsVars();
-  $headerCustom = ob_get_clean();
-  if ($pdfSupported) {
-    array_push($headerJS, 'pdf-js/pdf-min.js', 'pdf-js/pdf-viewer.js');
-  }
-}
+generatePage();
 
 $content = ob_get_clean();
 // send content to template

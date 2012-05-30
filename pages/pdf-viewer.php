@@ -23,15 +23,6 @@ $fsURL = WEB_ROOT . $pdfPageRoot . $pdfFile;
 // $pdfFile is set in the page controller
 $pdfViewing = ($pdfFile != NULL);
 
-// if browser is Chrome, Firefox, or Safari, support pdf.js
-$pdfSupported = false;
-if (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== false)
-  $pdfSupported = true;
-else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== false)
-  $pdfSupported = true;
-else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false)
-  $pdfSupported = true;
-
 // if viewing to a specified page, get that page number
 if (isset($subpage3) && is_numeric($subpage3)) {
     $pdfPage = $subpage3;
@@ -39,29 +30,8 @@ if (isset($subpage3) && is_numeric($subpage3)) {
     $pdfPage = 1;
 }
 
+
 // FUNCTIONS - these get loaded as needed for PDF display
-
-// output the page variables in javascript
-// only needed to load the PDF in PDF.js      
-function jsVars(){
-  global $pdfFile;
-  global $pdfURL;
-  global $pdfPage;
-  global $fsURL;
-  ?>
-  
-<script type="text/javascript">
-  // grab the specified PDF to display
-  // utilized in pdf-viewer.js
-  var pdfFile = "<?php echo $pdfFile; ?>";
-  var pdfURL = "<?php echo $pdfURL; ?>";
-  var pdfPage = "<?php echo $pdfPage; ?>";
-  var fsURL = "<?php echo $fsURL; ?>";
-</script>
-
-  <?php
-}
-
 
 // create the list of PDFs, output to HTML
 function generateList(){
@@ -106,45 +76,19 @@ function generateList(){
 
 
 // create the PDF viewer, output to HTML
-function generateViewer(){
-  global $pdfSupported;
+function generateViewer() {
   global $pdfURL;
   global $pdfPage;
   global $pdfName;
 
   ?>
-<h1 class="ribbon"> <?php echo $pdfName; ?> </h1>
+<h1 class="ribbon"> <?php echo $pdfName; ?> </h1> <br />
   <?php
 
-  // if a supported browser, view PDF with PDF.js
-  if ($pdfSupported) {
-    ?>
-
-<div id="pdf-viewer">
-  <div id="pdf-toolbar">
-    <button id="pdf-prev" onclick="goPrevious()"> Previous </button>
-    <button id="pdf-next" onclick="goNext()"> Next </button>
-    <label id="pdf-page-num-label" for="pdf-page-num"> Page: </label>
-    <input id="pdf-page-num" onchange="goToPage(this.value);" type="number" value="1" size="4" min="1"> </input>
-    / <span id="pdf-page-count"> </span>
-    <button id="pdf-fullscreen" onclick="fullscreen();">
-      <span> Fullscreen </span>
-    </button>
-    <button id="pdf-download" onclick="download();">
-      <span> Download </span>
-    </button>
-  </div>
-    
-  <canvas id="pdf"> </canvas>
-</div>
-
-    <?php
-  // if unsupported browser, view PDF wtih Google Docs
-  } else {
       $host = $_SERVER['SERVER_NAME'];
 
       // assemble this to a URL for the PDF
-      $pdfFullURL = 'http://' . $host . $pdfURL;
+      $pdfFullURL = urlencode('http://' . $host . $pdfURL);
       
       // create URL to Google Docs Viewer & embed on page
       $docsViewer = "http://docs.google.com/viewer?url=$pdfFullURL";
@@ -163,7 +107,6 @@ function generateViewer(){
 <iframe id="docs-viewer" src="<?php echo $docsViewer; ?>" width="850" height="700"> </iframe>
       <?php
   }
-}
 
 // generate the page's HTML, only what is needed to load
 function generatePage(){
