@@ -7,7 +7,7 @@ $template->setStyle('twoColumn');
 // display the intro content in right pane
 ob_start();
   ?>
-<h1 class="ribbon"> Districts</h1>
+<h1 class="ribbon"> Districts </h1>
 
 <p class="body_text">
   The primary responsibility of the Commission is to designate Historic Districts. Mt. Vernon has three National Historic Districts:

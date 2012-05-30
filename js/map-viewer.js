@@ -35,17 +35,17 @@ function initialize() {
 
     // Cornell College district - load page
     if (kmlEvent.featureData.description == "Cornell") {
-      window.location.href = "map/cornell-district/";
+      window.location.href = mapsURL + "cornell-college/";
     }
 
     // Ash Park district - load page
     else if (kmlEvent.featureData.description == "Ash") {
-      window.location.href = "map/ash-park-district";
+      window.location.href = mapsURL + "ash-park/";
     }
 
     // Commercial district - load page
     else if (kmlEvent.featureData.description == "Commercial") {
-      window.location.href = "map/commercial-district";
+      window.location.href = mapsURL + "commercial/";
     }
   });
 }

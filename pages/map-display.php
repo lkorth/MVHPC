@@ -3,6 +3,9 @@
 // this file is to display a map permanently
 // in the left content pane, right pane changes
 
+// set custom URL to this maps page
+$mapsURL = WEB_ROOT . 'map/';
+
 // display the Google Map in left content
 ob_start();
   ?>
@@ -16,6 +19,12 @@ $leftCol = ob_get_clean();
 ob_start();
   ?>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCJFrrSGy6p-7k8An5kvqJVJpaGRjV2aV4&sensor=false"> </script>
+  
+<script type="text/javascript">
+  // custom link to proper maps folder
+  var mapsURL = "<?php echo $mapsURL; ?>";
+</script>
+
   <?php
 $headerCustom = ob_get_clean();
 array_push($headerJS, 'map-labels.js', 'map-viewer.js');
