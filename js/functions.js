@@ -60,7 +60,7 @@ function editfunction(id)
 function rotate(id, angle, css){
 
 
-    $('#thumb' + css).html('<img src="/mvhpc/images/pdf-js/loading-icon.gif" />');
+    $('#thumb' + css).html('<img src="/images/loading-icon.gif" />');
 
     $.ajax({
         type: "GET",
