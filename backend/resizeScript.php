@@ -4,7 +4,7 @@ require_once '../includes/master.inc.php';
 
 $cnt = 0;
 $mydir = dir('../media');
-while (($file = $mydir->read()) !== false && $cnt < 60) {
+while (($file = $mydir->read()) !== false && $cnt < 200) {
     if ($file != "." && $file != "..") {
         if (strpos($file, '_thumbnail') !== false || strpos($file, '_mid') !== false || strpos($file, '_medlg') !== false) {
             //do nothing
