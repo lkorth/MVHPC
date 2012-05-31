@@ -40,13 +40,13 @@ ob_start();
 
 <h1 class='ribbon'>Resources</h1>
 <ul class='fill_list body_text'>
-    <li><span class="fill_list_content"><a href="http://www.cr.nps.gov/nr/index.htm">National Register of Historic Places</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="http://www.cornellcollege.edu/library/archives/">Cornell College Archives</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="http://www.iowahistory.org/">State Historical Society of Iowa</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="http://www.preservationnation.org/">Preservation Nation</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="http://www.preservationiowa.org">Preservation Iowa</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="http://www.oldhousejournal.com/">Restoring Old Houses</a></span><span class="bullet">&bull;</span></li>
-    <li><span class="fill_list_content"><a href="<?php WEBROOT(); ?>about/design-review/">Design Review Information</a></span></li>
+    <li><span><a href="http://www.cr.nps.gov/nr/index.htm">National Register of Historic Places</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="http://www.cornellcollege.edu/library/archives/">Cornell College Archives</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="http://www.iowahistory.org/">State Historical Society of Iowa</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="http://www.preservationnation.org/">Preservation Nation</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="http://www.preservationiowa.org">Preservation Iowa</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="http://www.oldhousejournal.com/">Restoring Old Houses</a></span><span class="bullet">&bull;</span></li>
+    <li><span><a href="<?php WEBROOT(); ?>about/design-review/">Design Review Information</a></span></li>
 </ul>
 
 <?php
