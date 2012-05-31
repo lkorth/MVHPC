@@ -33,8 +33,12 @@ AddDefaultCharset utf-8
 # Force UTF-8 for a number of file formats
 AddCharset utf-8 .html .css .js .xml .json .rss .atom
 
-ExpiresActive On
-ExpiresByType font/woff A2592000
-ExpiresByType application/x-font-woff A2592000
-ExpiresByType application/octet-stream A2592000
-ExpiresByType image/x-icon A259200
+# Cache for 1 week
+<filesMatch "\.(ico|woff|pdf|doc)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
+
+# Cache for 8 hours
+<filesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=28800, public"
+</filesMatch>
