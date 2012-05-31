@@ -65,7 +65,7 @@ class Template {
             $custom = $this->headerExtras['custom'];
         }
 
-        $css = 'main.css,';
+        $css = 'LobsterTwo.css,GlassAntiqua.css,main.css,';
         if (isset($this->headerExtras['css'])) {
             foreach ($this->headerExtras['css'] as $cssFile) {
                 $css .= $cssFile . ',';
@@ -87,8 +87,6 @@ class Template {
         "
                 <head>
                     <link rel='shortcut icon' href='/favicon.ico'>
-                    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css' />
-                    <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css' />
                     " . $custom . "
                     <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1234' />
                     <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1234'></script>
