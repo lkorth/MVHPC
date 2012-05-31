@@ -39,7 +39,7 @@ function generateList(){
   global $pdfPageRoot;
   
   ?>
-    <ul id="pdf-list" class="body_text">
+<ul id="pdf-list" class="body_text">
   <?php
   
     // folder containing PDFs
@@ -61,16 +61,19 @@ function generateList(){
         $fileName = urlencode($fileName);
 
         // generate the PDF list with load and download links
-        echo "<li>";
-          echo '<a href="' . WEB_ROOT . $pdfPageRoot . $fileName . '/">' . $name . '</a>';
-          echo "<span class='pdf-item-dl'>";
-              echo '<a href="' . $pdfDirURL . $fileName . '.pdf"> (download) </a>';
-        echo '</span> </li>';
+        ?>
+<li>
+  <a href="<?php echo WEB_ROOT . $pdfPageRoot . $fileName; ?>"> <?php echo $name; ?> </a>
+  <span class="pdf-item-dl">
+    <a href="<?php echo $pdfDirURL . $fileName; ?>.pdf"> (download) </a>
+  </span>
+</li>
+        <?php
       }
     }
   
   ?>
-    </ul>
+</ul>
   <?php
 }
 
