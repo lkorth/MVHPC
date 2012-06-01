@@ -12,6 +12,10 @@ if (isset($subpage3)) {
   $viewingLetter = true;
 }
 
+// where to find the PDF of the Centennial Book
+$centennialBook = WEB_ROOT . 'data/archives/Centennial-Book.pdf';
+$centennialBookPage = $centennialBook . '#page=';
+
 // display the content
 ob_start();
 
@@ -68,7 +72,7 @@ if ($viewingLetter) {
       // print out each page as a link
       ?>
 
-<a href="<?php WEBROOT(); ?>archives/documents/Centennial-Book/<?php echo $page; ?>"> <?php echo $page; ?></a> <?php if ($i < count($pages)) {echo ',  '; } ?>
+<a href="<?php echo $centennialBookPage; echo $page; ?>" target="_blank"> <?php echo $page; ?></a> <?php if ($i < count($pages)) {echo ',  '; } ?>
 
       <?php
       $i++;
