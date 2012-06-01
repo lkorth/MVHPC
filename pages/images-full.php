@@ -58,7 +58,7 @@ else {
 <div id="image-viewer" style="overflow: hidden; width='<?php echo $imgThumbW; ?>px'">
 
   <div id="zoom01" class="zoom">
-    <img src="<?php echo $mid; ?>" title="<?php echo $information; ?>" alt="<?php echo $tags; ?>" />
+    <img src="<?php echo $mid; ?>" title="" alt="<?php echo $information; ?>" />
   </div>
 
   <div id="image-info" style="position: relative; float: left; width: 762px;">
