@@ -29,6 +29,11 @@ switch($type):
 
 <?php
     endswitch;
+
+?>
+    <p class="body_text">If this is a problem, please <a href="<?php WEBROOT(); ?>pages/contact-form.php">let us know</a>!</p>
+<?php
+
 $singleCol = ob_get_clean();
 $template->setStyle('oneColumn');
 $template->setSingleCol($singleCol);
