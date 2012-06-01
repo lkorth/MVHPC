@@ -170,7 +170,8 @@ body {
   text-align: left; }
 
 .single_col .ribbon {
-  margin: 0 0 0px -25px; }
+  margin: 0 0 0px -25px;
+  width: 600px; }
 
 .left_col .ribbon:after, .right_col .ribbon:after, .single_col .ribbon:after {
   width: 24px;
