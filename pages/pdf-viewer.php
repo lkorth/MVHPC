@@ -63,9 +63,9 @@ function generateList(){
         // generate the PDF list with load and download links
         ?>
 <li>
-  <a href="<?php echo WEB_ROOT . $pdfPageRoot . $fileName; ?>"> <?php echo $name; ?> </a>
+  <a href="<?php echo WEB_ROOT . $pdfPageRoot . $fileName; ?>"><?php echo $name; ?></a>
   <span class="pdf-item-dl">
-    <a href="<?php echo $pdfDirURL . $fileName; ?>.pdf"> (download) </a>
+    <a href="<?php echo $pdfDirURL . $fileName; ?>.pdf">(download)</a>
   </span>
 </li>
         <?php
