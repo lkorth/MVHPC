@@ -65,7 +65,7 @@ class Template {
             $custom = $this->headerExtras['custom'];
         }
 
-        $css = 'LobsterTwo.css,GlassAntiqua.css,main.css,';
+        $css = 'LobsterTwo.css,Belleza.css,main.css,';
         if (isset($this->headerExtras['css'])) {
             foreach ($this->headerExtras['css'] as $cssFile) {
                 $css .= $cssFile . ',';
