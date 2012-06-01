@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Making History');
+$template->setCurrentPage('making-history');
 $template->setStyle('oneColumn');
 
 // display the page

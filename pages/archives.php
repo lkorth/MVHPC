@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Archives');
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 
 // page content

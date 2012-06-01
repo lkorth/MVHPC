@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Design Review');
+$template->setCurrentPage('about');
 $template->setStyle('oneColumn');
 
 ob_start();

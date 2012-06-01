@@ -44,6 +44,7 @@ $content = ob_get_clean();
 
 $template->setStyle('oneColumn');
 $template->setTitle('Contact Us');
+$template->setCurrentPage('about');
 $template->setHeaderExtras(null);
 $template->setSingleCol($content);
 

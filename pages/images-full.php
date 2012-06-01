@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle = 'MVHPC :: View Image';
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 
 // grab image ID & image data

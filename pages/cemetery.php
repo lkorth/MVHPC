@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Cemetery Plots');
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 
 // display the page

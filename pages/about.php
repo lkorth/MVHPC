@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: About Us');
+$template->setCurrentPage('about');
 $template->setStyle('twoColumn');
 
 // page, (left-column)

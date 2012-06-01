@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Centennial Book Index');
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 
 // check if we are viewing a letter or not

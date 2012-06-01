@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Documents');
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 
 // grab the pdfFile to display (if any)

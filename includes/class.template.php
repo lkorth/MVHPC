@@ -14,6 +14,7 @@ class Template {
     private $singleCol;
     private $leftCol;
     private $rightCol;
+    private $currentPage;
 
     public function _construct() {
         $this->style = "oneColumn";
@@ -54,9 +55,21 @@ class Template {
     public function setRightCol($rightCol) {
         $this->rightCol = $rightCol;
     }
+    
+    public function setCurrentPage($currentPage) {
+        $this->currentPage = $currentPage;
+    }
 
     public function getStyle() {
         return $this->style;
+    }
+    
+    // display proper class for each menu item
+    private function outputNavClass($page) {
+        if ($page == $this->currentPage)
+            return "menu_item_current";
+        else
+            return "menu_item";
     }
 
     public function output() {
@@ -124,11 +137,11 @@ class Template {
                         <div class='navbar'>
                             <div class='menu'>
                                 <span class='menu_wrapper'>
-                                    <a href='" . WEB_ROOT . "'><span class='menu_item pie'>Home</span></a>
-                                    <a href='" . WEB_ROOT . "archives'><span class='menu_item'>Archives</span></a>
-                                    <a href='" . WEB_ROOT . "map'><span class='menu_item'>Map</span></a>
-                                    <a href='" . WEB_ROOT . "making-history'><span class='menu_item'>Making History</span></a>
-                                    <a href='" . WEB_ROOT . "about'><span class='menu_item'>About</span></a>
+                                    <a href='" . WEB_ROOT . "'><span class='" . $this->outputNavClass('home') . " pie'>Home</span></a>
+                                    <a href='" . WEB_ROOT . "archives'><span class='" . $this->outputNavClass('archives') . "'>Archives</span></a>
+                                    <a href='" . WEB_ROOT . "map'><span class='" . $this->outputNavClass('map') . "'>Map</span></a>
+                                    <a href='" . WEB_ROOT . "making-history'><span class='" . $this->outputNavClass('making-history') . "'>Making History</span></a>
+                                    <a href='" . WEB_ROOT . "about'><span class='" . $this->outputNavClass('about') . "'>About</span></a>
                                 </span>
                             </div>
                         </div>

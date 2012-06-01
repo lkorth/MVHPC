@@ -2,6 +2,7 @@
 
 // set up template title & style
 $template->setTitle('MVHPC :: Ash Park');
+$template->setCurrentPage('map');
 $template->setStyle('twoColumn');
 
 // display the intro content in right pane

@@ -75,6 +75,7 @@ $posts = returnPosts('index', 1);
     $template->setHeaderExtras($headerExtras);
     $template->setLeftCol($left_col);
     $template->setRightCol($right_col);
+    $template->setCurrentPage('home');
 
     $template->output();
 ?>

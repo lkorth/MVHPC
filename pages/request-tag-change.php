@@ -58,6 +58,7 @@ $content = ob_get_clean();
 
 $template->setStyle('oneColumn');
 $template->setTitle('Request Tag Change');
+$template->setCurrentPage('archives');
 $template->setHeaderExtras(null);
 $template->setSingleCol($content);
 

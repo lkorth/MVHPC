@@ -2,6 +2,7 @@
 
 // set up template title & style
 $title = 'MVHPC :: Search Images';
+$template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 $headerExtras['custom'] = "<style type='text/css'>.single_col{padding: 15px 0;}</style>";
 
