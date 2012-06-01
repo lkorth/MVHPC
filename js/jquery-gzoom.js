@@ -213,7 +213,7 @@ jQuery.fn.gzoom = function(settings) {
 		
 		function drawIface() {
 		
-			$('body').append('<div id="gzoomoverlay"></div><div id="gzoomlbox"><div id="imagebox"><div id="gzoom-cont-img"><img id="zoomedimage"><div id="gzoomloading"><a href="#" id="gzoomloadinglink"><img src="images/loading.gif"></a></div></div></div><div id="gzoomlbox-con-imgdata"><div id="lboximgdatacontainer"><div id="gzoomlbox-image-details"><span id="gzoom-image-caption"></span></div></div></div></div>');	
+			$('body').append('<div id="gzoomoverlay"></div><div id="gzoomlbox"><div id="imagebox"><div id="gzoom-cont-img"><img id="zoomedimage"><div id="gzoomloading"><a href="#" id="gzoomloadinglink"><img src="/images/loading-icon.gif"></a></div></div></div><div id="gzoomlbox-con-imgdata"><div id="lboximgdatacontainer"><div id="gzoomlbox-image-details"><span id="gzoom-image-caption"></span></div></div></div></div>');	
 		
 			$('#gzoomoverlay').css({
 				backgroundColor:	settings.overlayBgColor,
