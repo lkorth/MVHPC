@@ -1,6 +1,7 @@
 # This turns on mod_rewrite and redirects according to the rules below
 
 RewriteEngine On
+RewriteRule    ^old-site/?([.]*)$ old-site/$1 [NC,L]
 RewriteRule    ^([a-z0-9-]+)/?([a-z0-9-]*)/?([a-z0-9,\-\ %&_-]*)/?([a-z0-9]*)/?$     pages/page-controller.php?page=$1&subpage=$2&subpage2=$3&subpage3=$4    [NC,L,B] #rewrite all /foo to single page controller
 
 # ----------------------------------------------------------------------
