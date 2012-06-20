@@ -33,8 +33,8 @@ ob_start();
 
 <?php
 if (!empty($terms)) {
-    
-    echo "<p class='body_text center'>Your search returned " . $num . " results</p><br>";
+
+    echo "<p class='body_text center'>Your search for \"" . $terms . "\" returned " . $num . " results</p><br>";
 
     $pager = new Pager($page, 16, $num);
     $pager->calculate();
@@ -47,7 +47,7 @@ if (!empty($terms)) {
 
     renderPaging($pager, WEB_ROOT . 'archives/images/' . $terms, true);
 }
-  
+
 $content = ob_get_clean();
 
 // change title if searching, and set the title
@@ -64,6 +64,6 @@ array_push($headerCSS, 'jquery-autocomplete.css');
 
 // send content to template
 $template->setHeaderExtras($headerExtras);
-$template->setSingleCol($content);    
-    
+$template->setSingleCol($content);
+
 ?>

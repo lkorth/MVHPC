@@ -40,7 +40,7 @@ if (isset($_GET['subpage3']) && !empty($_GET['subpage3'])) {
 
 if ($page == 'archives') {
     if($subpage == 'images'){
-      $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]));
+      $fullsize = ($subpage2 != NULL && is_numeric($subpage2[0]) && returnImage($subpage2) != NULL);
       if (!$fullsize) {
         include 'images.php';
       }
