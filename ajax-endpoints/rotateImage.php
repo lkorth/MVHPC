@@ -1,5 +1,7 @@
 <?php
 
+ini_set('memory_limit', '512M');
+
 require_once '../includes/master.inc.php';
 
 function getExtention($origName) {
