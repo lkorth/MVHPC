@@ -101,8 +101,8 @@ class Template {
                 <head>
                     <link rel='shortcut icon' href='/favicon.ico'>
                     " . $custom . "
-                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1234' />
-                    <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1234'></script>
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1235' />
+                    <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1235'></script>
                     <script type='text/javascript'>
                         var _gaq = _gaq || [];
                         _gaq.push(['_setAccount', 'UA-23828542-1']);
