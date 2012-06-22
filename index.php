@@ -72,6 +72,7 @@ $posts = returnPosts('index', 1);
 <?php
     $template->setStyle('twoColumn');
     $template->setTitle('Mount Vernon Historial Preservation Commission');
+    $template->setHeaderExtras($headerExtras);
     $template->setLeftCol($left_col);
     $template->setRightCol($right_col);
     $template->setCurrentPage('home');
