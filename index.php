@@ -67,7 +67,6 @@ $posts = returnPosts('index', 1);
 
                 </div>
             </div>
-        </div>
 <?php $right_col = ob_get_clean(); ?>
 <?php
     $template->setStyle('twoColumn');
