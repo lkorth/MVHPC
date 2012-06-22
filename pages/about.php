@@ -93,9 +93,6 @@ ob_start();
     <span><strong><a href="/pages/contact-form.php">Email</a></strong></span>
 </div>
 
-
-
-
 <?php
 $right_col = ob_get_clean();
 
