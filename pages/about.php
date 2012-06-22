@@ -99,9 +99,6 @@ ob_start();
 <?php
 $right_col = ob_get_clean();
 
-// add JavaScript to header
-array_push($headerJS, 'image-script.js');
-
 // set content on template
 $template->setLeftCol($left_col);
 $template->setRightCol($right_col);
