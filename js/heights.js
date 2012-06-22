@@ -1,7 +1,5 @@
 $(window).bind('load', function(){
-    if(!jQuery.browser.msie){ 
-        setHeights();
-    }
+    setHeights();
 });
 
 function setHeights(){
