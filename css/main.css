@@ -44,7 +44,7 @@ body {
 
 .header_text h1 {
   font-family: 'Engravers MT';
-  font-size: 1em;
+  font-size: 1.25em;
   text-shadow: 2px 2px 4px #444;
   color: #fff;
   display: inline;
@@ -105,7 +105,7 @@ body {
   position: relative;
   font-weight: bold;
   font-family: 'Engravers MT';
-  font-size: 1.3em;
+  font-size: 1.25em;
   text-shadow: 1px 1px 2px #444;
   z-index: 1; }
 
@@ -159,6 +159,7 @@ body {
 
 .left_col .ribbon, .single_col .ribbon {
   font-family: 'Engravers MT';
+  font-size: 1.1em;
   color: #fff;
   width: 476px;
   height: 36px;
@@ -221,6 +222,7 @@ body {
 
 .right_col .ribbon {
   font-family: 'Engravers MT';
+  font-size: 1.1em;
   color: #fff;
   height: 36px;
   width: 220px;
