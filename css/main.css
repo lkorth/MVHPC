@@ -159,7 +159,7 @@ body {
 
 .left_col .ribbon, .single_col .ribbon {
   font-family: 'Engravers MT';
-  font-size: 1.1em;
+  font-size: 1em;
   color: #fff;
   width: 476px;
   height: 36px;
@@ -222,7 +222,7 @@ body {
 
 .right_col .ribbon {
   font-family: 'Engravers MT';
-  font-size: 1.1em;
+  font-size: 1em;
   color: #fff;
   height: 36px;
   width: 220px;
