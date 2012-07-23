@@ -78,7 +78,7 @@ class Template {
             $custom = $this->headerExtras['custom'];
         }
 
-        $css = 'LobsterTwo.css,Belleza.css,main.css,';
+        $css = 'EngraversMT.css,Belleza.css,main.css,';
         if (isset($this->headerExtras['css'])) {
             foreach ($this->headerExtras['css'] as $cssFile) {
                 $css .= $cssFile . ',';
@@ -101,7 +101,7 @@ class Template {
                 <head>
                     <link rel='shortcut icon' href='/favicon.ico'>
                     " . $custom . "
-                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1236' />
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&1239' />
                     <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&1235'></script>
                     <script type='text/javascript'>
                         var _gaq = _gaq || [];

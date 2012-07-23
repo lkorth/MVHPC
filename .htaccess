@@ -35,7 +35,7 @@ AddDefaultCharset utf-8
 AddCharset utf-8 .html .css .js .xml .json .rss .atom
 
 # Cache for 1 week
-<filesMatch "\.(ico|woff|pdf|doc)$">
+<filesMatch "\.(ico|woff|ttf|pdf|doc)$">
 Header set Cache-Control "max-age=604800, public"
 </filesMatch>
 
