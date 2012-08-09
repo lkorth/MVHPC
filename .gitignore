@@ -3,3 +3,4 @@ cache/*
 includes/class.config.php
 css/.sass-cache/*
 tmp/*
+css/main.css
