@@ -29,10 +29,10 @@ $i = 0;
 foreach (range('A', 'Z') as $l) {
   ?>
 
-<a href="<?php WEBROOT(); ?>archives/documents/Centennial-Book-Index/<?php echo $l; ?>"> [<?php echo $l; ?>] </a> &nbsp;&nbsp;
+<a href="<?php WEBROOT(); ?>archives/secondary-documents/Centennial-Book-Index/<?php echo $l; ?>"> [<?php echo $l; ?>] </a> &nbsp;&nbsp;
 
   <?php
-  
+
   if ($i == 15) {
     ?>
 
@@ -40,7 +40,7 @@ foreach (range('A', 'Z') as $l) {
 
     <?php
   }
-  
+
   $i++;
 }
 ?>
