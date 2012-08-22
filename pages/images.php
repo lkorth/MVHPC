@@ -34,7 +34,7 @@ ob_start();
 
 <h1 class="ribbon">Image Search</h1>
 
-<input name="terms" type="text" id="global"/>
+<input name="terms" type="text" id="global" value="<?php echo $terms; ?>" />
 <input class="button" id="search" type="submit" value="Search" />
 
 <?php
