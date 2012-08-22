@@ -13,6 +13,8 @@ if(strstr($subpage2, '/')){
     $subpage3 = $tmp[1];
 }
 
+$paging = str_replace('%2F', '$999', $subpage2);
+
 $terms = strtolower(urldecode($subpage2));
 $page = (isset($subpage3) && !empty($subpage3)) ? $subpage3 : 1;
 
@@ -52,7 +54,7 @@ if (!empty($terms)) {
         echo "<a href=\"" . WEB_ROOT . "archives/images/" . "$id\"><img src=\"" . WEB_ROOT . "$thumbnail\"/></a>&nbsp;";
     }
 
-    renderPaging($pager, WEB_ROOT . 'archives/images/' . $terms, true);
+    renderPaging($pager, WEB_ROOT . 'archives/images/' . $paging, true);
 }
 
 $content = ob_get_clean();
