@@ -23,7 +23,7 @@ ob_start();
 
 <ul class="body_text">
   <li><a href="<?php WEBROOT(); ?>archives/images/"> Archival Images </a></li>
-  <li><a href="<?php WEBROOT(); ?>archives/documents/"> Historical Documents </a></li>
+  <li><a href="<?php WEBROOT(); ?>archives/secondary-documents/"> Secondary Documents </a></li>
 </ul>
 
 

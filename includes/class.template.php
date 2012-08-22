@@ -165,7 +165,7 @@ class Template {
                                 <div class='body_text' style='text-align: center; margin: 0'>
                                     <a href='" . WEB_ROOT . "'><span title='Click here to go to the home page' class='footer_item'>Home</span></a><span class='bullet'>&bull;</span>
                                     <a href='" . WEB_ROOT . "archives'><span title='Click here to go to the archives' class='footer_item'>Archives</span></a><span class='bullet'>&bull;</span>
-                                    <a href='" . WEB_ROOT . "archives/documents'><span title='Click here to view historical documents' class='footer_item'>Documents</span></a><span class='bullet'>&bull;</span>
+                                    <a href='" . WEB_ROOT . "archives/secondary-documents'><span title='Click here to view historical documents' class='footer_item'>Secondary Documents</span></a><span class='bullet'>&bull;</span>
                                     <a href='" . WEB_ROOT . "archives/images'><span title='Click here to search images' class='footer_item'>Images</span></a><span class='bullet'>&bull;</span>
                                     <a href='" . WEB_ROOT . "map'><span title='Click here to view a map of Mount Vernon' class='footer_item'>Map</span></a><span class='bullet'>&bull;</span>
                                     <a href='" . WEB_ROOT . "map/ash-park'><span title='Click here to view the Ash Park District' class='footer_item'>Ash Park District</span></a><span class='bullet'>&bull;</span>

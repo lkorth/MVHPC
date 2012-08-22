@@ -47,9 +47,9 @@ if ($page == 'archives') {
       else{
         include 'images-full.php';
       }
-    } else if($subpage == 'documents'){
+    } else if($subpage == 'secondary-documents'){
         if ($subpage2 != 'Centennial-Book-Index') {
-          include 'documents.php';
+          include 'secondary-documents.php';
         }
         else {
           include 'centennial-book-index.php';
