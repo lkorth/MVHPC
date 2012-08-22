@@ -6,6 +6,7 @@ $template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 $headerExtras['custom'] = "<style type='text/css'>.single_col{padding: 15px 0;}</style>";
 
+$subpage2 = str_replace('$999', '%2F', $subpage2);
 if(strstr($subpage2, '/')){
     $tmp = explode('/', $subpage2);
     $subpage2 = $tmp[0];

@@ -18,6 +18,8 @@ $().ready(function() {
     });
 
     $("#search").click(function(){
-       window.location = '/archives/images/' + $("#global").val();
+        var search = $("#global").val();
+        search = search.replace('/', '$999');
+        window.location = '/archives/images/' + search;
     });
 });
