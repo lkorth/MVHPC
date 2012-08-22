@@ -8,7 +8,7 @@ $template->setStyle('oneColumn');
 // page content
 ob_start();
   ?>
-  
+
 <h1 class="ribbon"> Archives </h1>
 
 <p class="body_text">
@@ -24,7 +24,6 @@ ob_start();
 <ul class="body_text">
   <li><a href="<?php WEBROOT(); ?>archives/images/"> Archival Images </a></li>
   <li><a href="<?php WEBROOT(); ?>archives/documents/"> Historical Documents </a></li>
-  <li><a href="<?php WEBROOT(); ?>archives/eras/"> Historical Eras </a></li>
 </ul>
 
 
