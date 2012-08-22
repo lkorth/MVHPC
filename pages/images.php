@@ -6,6 +6,12 @@ $template->setCurrentPage('archives');
 $template->setStyle('oneColumn');
 $headerExtras['custom'] = "<style type='text/css'>.single_col{padding: 15px 0;}</style>";
 
+if(strstr($subpage2, '/')){
+    $tmp = explode('/', $subpage2);
+    $subpage2 = $tmp[0];
+    $subpage3 = $tmp[1];
+}
+
 $terms = strtolower(urldecode($subpage2));
 $page = (isset($subpage3) && !empty($subpage3)) ? $subpage3 : 1;
 
