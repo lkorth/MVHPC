@@ -76,19 +76,18 @@ body {
 
 .header_text {
     width: 835px;
-    height: 150px;
+    margin-top: 39px;
     float: left;
     text-align: center;
 }
 
 .header_text h1 {
     font-family: 'Engravers MT';
-    font-size: 1.25em;
+    font-size: 1.6em;
     font-weight: bold;
     text-shadow: 2px 2px 4px #444;
     color: #fff;
     display: inline;
-    line-height: 150px;
 }
 
 .navbar {

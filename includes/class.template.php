@@ -130,7 +130,8 @@ class Template {
                             <img id='logo' src='" . WEB_ROOT . "images/MVHPC-Logo.png' alt='MVHPC Logo' />
                         </a>
                         <div class='header_text'>
-                            <h1 class='pie'>Mount Vernon Historic Preservation Commission</h1>
+                            <h1>Mount Vernon, Iowa</h1><br>
+                            <h1>Historic Preservation Commission</h1>
                         </div>
                         </div>
                         <div class='navbar'>
