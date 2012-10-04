@@ -139,7 +139,7 @@ class Template {
                                 <span class='menu_wrapper'>
                                     <a href='" . WEB_ROOT . "'><span class='" . $this->outputNavClass('home') . " pie'>Home</span></a>
                                     <a href='" . WEB_ROOT . "archives'><span class='" . $this->outputNavClass('archives') . "'>Archives</span></a>
-                                    <a href='" . WEB_ROOT . "map'><span class='" . $this->outputNavClass('map') . "'>Map</span></a>
+                                    <a href='" . WEB_ROOT . "map'><span class='" . $this->outputNavClass('map') . "'>History and Historic Districts</span></a>
                                     <a href='" . WEB_ROOT . "making-history'><span class='" . $this->outputNavClass('making-history') . "'>Making History</span></a>
                                     <a href='" . WEB_ROOT . "about'><span class='" . $this->outputNavClass('about') . "'>About</span></a>
                                 </span>
