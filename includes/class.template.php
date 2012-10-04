@@ -101,7 +101,7 @@ class Template {
                 <head>
                     <link rel='shortcut icon' href='/favicon.ico'>
                     " . $custom . "
-                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&'" . CACHE_BREAK_CSS . " />
+                    <link rel='stylesheet' type='text/css' href='" . WEB_ROOT . "min/?b=css&f=" . $css . "&" . CACHE_BREAK_CSS . "' />
                     <script type='text/javascript' src='" . WEB_ROOT . "min/?b=js&f=" . $js . "&" . CACHE_BREAK_JS . "'></script>
                     <script type='text/javascript'>
                         var _gaq = _gaq || [];
