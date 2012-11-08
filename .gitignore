@@ -1,7 +1,8 @@
-media/*
-cache/*
+media/
+cache/
 includes/class.config.php
-css/.sass-cache/*
-tmp/*
+css/.sass-cache/
+tmp/
 css/main.css
-vendor/*
+vendor/
+composer.lock
