@@ -11,4 +11,5 @@ return array(
     'Slim\\Extras' => $vendorDir . '/slim/extras/.',
     'Slim' => $vendorDir . '/slim/slim/.',
     'RedBean_' => $vendorDir . '/gabordemooij/redbean/',
+    'PFBC' => $vendorDir . '/pfbc/pfbc/.',
 );

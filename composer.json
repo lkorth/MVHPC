@@ -3,6 +3,7 @@
 		"gabordemooij/redbean": "dev-master",
         "slim/slim": "dev-master",
 		"slim/extras": "dev-master",
-		"twig/twig": "dev-master"
+		"twig/twig": "dev-master",
+		"pfbc/pfbc": "dev-master"
     }
 }
