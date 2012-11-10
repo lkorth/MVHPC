@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel='shortcut icon' href='/favicon.ico'>
+        {{ custom }}
+        <link rel='stylesheet' type='text/css' href='/min/?b=css&f={{ css|join(',') }}&{{ CACHE_BREAK_CSS }}' />
+
+        <title>{% block title %}Mount Vernon Historic Preservation Commission{% endblock %}</title>
+        <meta property="og:title" content="{{ block('title') }}" />
+        <meta property="og:image" content="{% block ogimage %}http://www.mvhpc.org/images/MVHPC-Logo-Brown.png{% endblock %}" />
+        <meta property="og:description" content="{% block ogdescription %}Welcome to the exciting past and present
+              of an unusual small community in the heart of the Heartland! This site opens our historical resources
+              to the Internet and invites you to share in adding information, correcting our sources, and asking us
+              for specific information you cannot find here. This site is an organic history book ‚ it continues to
+              grow from the input and knowledge of anyone in the world. Almost all of our known historical resources
+              will eventually be available on this website.{% endblock %}" />
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <a href='/'>
+                    <img id='logo' src='/images/MVHPC-Logo.png' alt='MVHPC Logo' />
+                </a>
+                <div class='header_text'>
+                    <h1>Mount Vernon, Iowa</h1><br>
+                    <h1>Historic Preservation Commission</h1>
+                </div>
+            </div>
+            <div class='navbar'>
+                <div class='menu'>
+                    <span class='menu_wrapper'>
+                        <a href='/'><span class='{% if page == 'home' %}menu_item_current{% else %}menu_item{% endif %}'>Home</span></a>
+                        <a href='/archives'><span class='{% if page == 'archives' %}menu_item_current{% else %}menu_item{% endif %}'>Archives</span></a>
+                        <a href='/map'><span class='{% if page == 'map' %}menu_item_current{% else %}menu_item{% endif %}'>History and Historic Districts</span></a>
+                        <a href='/making-history'><span class='{% if page == 'making-history' %}menu_item_current{% else %}menu_item{% endif %}'>Making History</span></a>
+                        <a href='/about'><span class='{% if page == 'about' %}menu_item_current{% else %}menu_item{% endif %}'>About</span></a>
+                    </span>
+                </div>
+            </div>
+                {% block body %}{% endblock %}
+            <div class='clear'></div>
+            <div class='footer'>
+                <div class='body_text' style='text-align: center; margin: 0'>
+                    <a href='/'><span title='Click here to go to the home page' class='footer_item'>Home</span></a><span class='bullet'>&bull;</span>
+                    <a href='/archives'><span title='Click here to go to the archives' class='footer_item'>Archives</span></a><span class='bullet'>&bull;</span>
+                    <a href='/archives/secondary-documents'><span title='Click here to view historical documents' class='footer_item'>Secondary Documents</span></a><span class='bullet'>&bull;</span>
+                    <a href='/archives/images'><span title='Click here to search images' class='footer_item'>Images</span></a><span class='bullet'>&bull;</span>
+                    <a href='/map'><span title='Click here to view a map of Mount Vernon' class='footer_item'>Map</span></a><span class='bullet'>&bull;</span>
+                    <a href='/map/ash-park'><span title='Click here to view the Ash Park District' class='footer_item'>Ash Park District</span></a><span class='bullet'>&bull;</span>
+                    <a href='/map/commercial'><span title='Click here to view the Commercial District' class='footer_item'>Commercial District</span></a><br>
+                    <a href='/map/cornell-college'><span title='Click here to view the Cornell District' class='footer_item'>Cornell District</span></a><span class='bullet'>&bull;</span>
+                    <a href='/making-history'><span title='Click here to see Mount Vernon Public School's contribution to History' class='footer_item'>Making History</span></a><span class='bullet'>&bull;</span>
+                    <a href='/about'><span title='Click here to find out about the commission' class='footer_item'>About</span></a><span class='bullet'>&bull;</span>
+                    <a href='/about/design-review'><span title='Click here to the guidelines on design review' class='footer_item'>Design Review</span></a><span class='bullet'>&bull;</span>
+                    <a href='/about#resources'><span title='Click here to view useful links' class='footer_item'>Resources</span></a><span class='bullet'>&bull;</span>
+                    <a href='/pages/contact-form.php'><span title='Click here to contact us' class='footer_item'>Contact</span></a><span class='bullet'>&bull;</span>
+                    <a href='/backend/login.php'><span title='Click here to login' class='footer_item'>Login</span></a><br>
+                    <span align='center'>&copy; 2012 by MVHPC</span>
+                    <!-- TODO: Add developed by -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/min/?b=js&f={{ js|join(',') }}&{{ CACHE_BREAK_JS }}'></script>
+    <script type='text/javascript'>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23828542-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = 'http://www.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    </body>
+</html>
