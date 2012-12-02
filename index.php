@@ -7,12 +7,13 @@ require('vendor/autoload.php');
 //R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
 //R::freeze();
 
-$app = new \Slim\Slim(array(
-    'view' => new \Slim\Extras\Views\Twig()
-));
+\Slim\Extras\Views\Twig::$twigOptions = array(
+    'charset'           => 'utf-8',
+);
+
+$app = new \Slim\Slim();
+$app->view(new \Slim\Extras\Views\Twig());
 $twig = $app->view()->getEnvironment();
-$twig->twigDirectory = './vendor/twig/twig/lib/Twig';
-$twig->twigTemplateDirs = array('./templates');
 $twig->addFilter('max_words', new Twig_Filter_Function('max_words'));
 
 $js = array();
