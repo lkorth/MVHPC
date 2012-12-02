@@ -1,0 +1,17 @@
+{% extends "single-column.twig" %}
+
+{% block title %}MVHPC :: Search Images{% endblock %}
+
+{% block singlecolumnbody %}
+<h1 class="ribbon">Image Search</h1>
+
+<input name="terms" type="text" size="40" id="global" value="{{ terms }}" />
+<input class="button" id="search" type="submit" value="Search" />
+
+{% if terms is not empty %}
+<p class='body_text center'>Your search for "{{ terms }}" returned {{ count }} results</p><br>
+
+
+{% endif%}
+
+{% endblock %}
