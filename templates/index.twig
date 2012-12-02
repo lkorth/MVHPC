@@ -22,7 +22,9 @@
 </div>
 <h1 class="ribbon">{{ post.title }}</h1>
 <div class="article body_text">
+    {% autoescape false %}
     <p>{{ post.text|max_words(150) }}</p>
+    {% endautoescape %}
     <!--<a href="<?php WEBROOT() ?>pages/posts.php?id=<?php echo $post['id']; ?>">Read more...</a>-->
 </div>
 {% endblock %}
