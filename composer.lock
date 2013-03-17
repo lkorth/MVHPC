@@ -1,0 +1,249 @@
+{
+    "hash": "834b033ba056602bd7e0b197d5fdcbce",
+    "packages": [
+        {
+            "name": "gabordemooij/redbean",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gabordemooij/redbean.git",
+                "reference": "fc64ee77dd5a4873871670d2c7a25653138fbee7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/gabordemooij/redbean/archive/fc64ee77dd5a4873871670d2c7a25653138fbee7.zip",
+                "reference": "fc64ee77dd5a4873871670d2c7a25653138fbee7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "time": "2012-12-11 20:57:20",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "RedBean_": ""
+                }
+            },
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Gabor de Mooij",
+                    "email": "gabordemooij@gmail.com",
+                    "homepage": "http://www.redbeanphp.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy ORM for PHP",
+            "homepage": "http://github.com/gabordemooij/redbean",
+            "keywords": [
+                "orm",
+                "Object Relational Mapping"
+            ]
+        },
+        {
+            "name": "pfbc/pfbc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lkorth/php-form-builder-class",
+                "reference": "955a1ea399ca359bf76abce51cda32bbceea8a33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/lkorth/php-form-builder-class/archive/955a1ea399ca359bf76abce51cda32bbceea8a33.zip",
+                "reference": "955a1ea399ca359bf76abce51cda32bbceea8a33",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-12 13:32:43",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "PFBC": "."
+                }
+            },
+            "license": [
+                "GNU GPL v3"
+            ],
+            "authors": [
+                {
+                    "email": "ajporterfield@gmail.com",
+                    "role": "Owner"
+                },
+                {
+                    "email": "moncojhr@gmail.com",
+                    "role": "Committer"
+                }
+            ],
+            "description": "Rapid form bulding in PHP",
+            "homepage": "http://code.google.com/p/php-form-builder-class/",
+            "keywords": [
+                "php",
+                "form",
+                "html"
+            ]
+        },
+        {
+            "name": "slim/extras",
+            "version": "dev-master",
+            "target-dir": "Slim/Extras",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeguy/Slim-Extras",
+                "reference": "a831f4e0a7e52ea7b982edaa9fe0e5b1640412d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/codeguy/Slim-Extras/archive/a831f4e0a7e52ea7b982edaa9fe0e5b1640412d6.zip",
+                "reference": "a831f4e0a7e52ea7b982edaa9fe0e5b1640412d6",
+                "shasum": ""
+            },
+            "require": {
+                "slim/slim": ">=2.0.0",
+                "php": ">=5.3.0"
+            },
+            "time": "2012-11-02 12:54:16",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "Views/Extension/",
+                    "Slim\\Extras": "."
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Smith",
+                    "email": "a.smith@silentworks.co.uk",
+                    "homepage": "http://www.silentworks.co.uk/"
+                },
+                {
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
+                }
+            ],
+            "description": "Extras package for the Slim Framework",
+            "homepage": "http://github.com/codeguy/Slim-Extras",
+            "keywords": [
+                "templating",
+                "extensions",
+                "middleware"
+            ]
+        },
+        {
+            "name": "slim/slim",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeguy/Slim",
+                "reference": "2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/codeguy/Slim/archive/2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-13 02:15:50",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Slim": "."
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
+                }
+            ],
+            "description": "Slim Framework, a PHP micro framework",
+            "homepage": "http://github.com/codeguy/Slim",
+            "keywords": [
+                "microframework",
+                "rest",
+                "router"
+            ]
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/fabpot/Twig.git",
+                "reference": "2757f482c679aa00bb8c7fdfcb337f2bb922fa5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fabpot/Twig/archive/2757f482c679aa00bb8c7fdfcb337f2bb922fa5a.zip",
+                "reference": "2757f482c679aa00bb8c7fdfcb337f2bb922fa5a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2012-12-11 14:30:16",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ]
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "gabordemooij/redbean": 20,
+        "slim/slim": 20,
+        "slim/extras": 20,
+        "twig/twig": 20,
+        "pfbc/pfbc": 20
+    }
+}
