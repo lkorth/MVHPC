@@ -1,4 +1,13 @@
 {
+    "name": "mvhpc/mvhpc",
+    "license": "Apache 2.0",
+    "description": "mvhpc.org",
+    "authors": [
+        {
+            "name": "Luke Korth",
+            "email": "luke@lukekorth.com"
+        }
+    ],
     "require": {
         "silex/silex": "1.0.*@dev",
         "silex/web-profiler": "1.0.*",
