@@ -5,3 +5,4 @@ css/.sass-cache/
 tmp/
 css/main.css
 vendor/
+.idea/
