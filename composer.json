@@ -1,9 +1,9 @@
 {
     "require": {
-		"gabordemooij/redbean": "dev-master",
-        "slim/slim": "dev-master",
-		"slim/extras": "dev-master",
-		"twig/twig": "dev-master",
-		"pfbc/pfbc": "dev-master"
+        "silex/silex": "1.0.*@dev",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/twig-bridge": "~2.1",
+        "devture/silex-provider-pjax": "dev-master",
+        "gabordemooij/redbean": "dev-master"
     }
 }
