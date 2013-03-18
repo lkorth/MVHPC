@@ -3,12 +3,11 @@
 namespace MVHPC {
 
     use Silex\Application;
-    use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
 
     class Home {
 
-        public function index(Application $app, Request $request) {
+        public function index(Application $app) {
             global $js;
 
             $arr = array();
@@ -19,12 +18,8 @@ namespace MVHPC {
             array_push($js, 'image-script.js');
             $arr['js'] = $js;
 
-            $response = new Response($app['twig']->render('index.twig', $arr));
-            $response->setPublic();
-            $response->setEtag(md5($response->getContent()));
-            $response->isNotModified($request);
-
-            return $response;
+            // page will not be cached at this time, due to random images
+            return new Response($app['twig']->render('index.twig', $arr));
         }
     }
 }
