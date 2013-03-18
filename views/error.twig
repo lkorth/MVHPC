@@ -1,0 +1,11 @@
+{% extends "single-column.twig" %}
+
+{% block title %}MVHPC :: {{ code }} Error{% endblock %}
+
+{% block singlecolumnbody %}
+    <h1 class="ribbon">Oops! {{ code }} Error...</h1>
+
+    <p class="body_text">{{ message }}</p>
+
+    <p class="body_text">If there is a problem, please <a href="/contact">let us know</a>!</p>
+{% endblock %}

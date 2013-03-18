@@ -58,6 +58,27 @@ $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
     'http_cache.esi'       => null,
 ));
 
+$app->error(function (\Exception $e, $code) use ($app) {
+    if ($app['debug'])
+        return;
+
+    $arr = array();
+    $arr['page'] = 'error';
+    $arr['code'] = $code;
+    switch ($code) {
+        case 403:
+            $arr['message'] = 'Sorry, you do not have access to this page.';
+            break;
+        case 404:
+            $arr['message'] = 'Sorry, the page you are looking for could not be found.';
+            break;
+        default:
+            $arr['message'] = 'Sorry, but something went terribly wrong.';
+            break;
+    }
+
+    return new Response($app['twig']->render('error.twig', $arr));
+});
 $app->get('/', 'MVHPC\Home::index');
 $app->get('/archives', 'MVHPC\Archives::index');
 $app->get('/archives/secondary-documents', 'MVHPC\Archives::secondaryDocuments');
