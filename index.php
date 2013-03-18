@@ -66,13 +66,14 @@ $app->get('/archives/images/{terms}/{page}', 'MVHPC\Archives::images')
     ->value('page', 0);
 $app->get('/about', 'MVHPC\About::index');
 
+$app->get('/making-history', 'MVHPC\History::makingHistory');
+
 /*
 require('error/error.php');
 require('ajax/ajax.php');
 require('backend/backend.php');
 
 require('pages/history.php');
-require('pages/makingHistory.php');
 */
 
 $app['http_cache']->run();
