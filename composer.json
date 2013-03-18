@@ -15,5 +15,8 @@
         "symfony/twig-bridge": "~2.1",
         "devture/silex-provider-pjax": "dev-master",
         "gabordemooij/redbean": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {"MVHPC": "controllers/"}
     }
 }
