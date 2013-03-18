@@ -1,20 +1,13 @@
 <?php
 
-include('includes/master.inc.php');
-require('vendor/autoload.php');
+session_cache_limiter('');
 
-//class R extends RedBean_Facade {}
-//R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
-//R::freeze();
+require_once('includes/master.inc.php');
+require_once('vendor/autoload.php');
 
-\Slim\Extras\Views\Twig::$twigOptions = array(
-    'charset'           => 'utf-8',
-);
-
-$app = new \Slim\Slim();
-$app->view(new \Slim\Extras\Views\Twig());
-$twig = $app->view()->getEnvironment();
-$twig->addFilter('max_words', new Twig_Filter_Function('max_words'));
+use Silex\Application;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 $js = array();
 $js[] = 'jquery-172.js';
@@ -25,26 +18,61 @@ $css[] = 'EngraversMT.css';
 $css[] = 'Belleza.css';
 $css[] = 'main.css';
 
-$twig->addGlobal('css', $css);
-$twig->addGlobal('js', $js);
-$twig->addGlobal('CACHE_BREAK_CSS', CACHE_BREAK_CSS);
-$twig->addGlobal('CACHE_BREAK_JS', CACHE_BREAK_JS);
+//class R extends RedBean_Facade {}
+//R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
+//R::freeze();
 
-$app->get('/', function () use ($app) {
-    global $js;
+$app = new Application();
+$app['debug'] = true;
+$app->register(new Silex\Provider\ServiceControllerServiceProvider());
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__ . '/views',
+    'twig.options' => array(
+        'charset' => 'utf-8',
+        'cache' => __DIR__ . '/cache'
+    ),
+));
 
-    $arr = array();
-    $arr['page'] = 'home';
-    $arr['images'] = featuredImages();
-    $arr['post'] = returnPosts('index', 1);
-    $arr['post'] = $arr['post'][0];
-    array_push($js, 'image-script.js');
-    $arr['js'] = $js;
+$app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
+    global $css, $js;
 
-    $app->render('index.twig', $arr);
-});
+    $twig->addFilter('max_words', new Twig_Filter_Function('max_words'));
 
-require('pages/archives.php');
+    $twig->addGlobal('css', $css);
+    $twig->addGlobal('js', $js);
+    $twig->addGlobal('CACHE_BREAK_CSS', CACHE_BREAK_CSS);
+    $twig->addGlobal('CACHE_BREAK_JS', CACHE_BREAK_JS);
 
+    return $twig;
+}));
 
-$app->run();
+$app->register(new \Devture\SilexProvider\PJAX\ServicesProvider());
+$app->register($p = new \Silex\Provider\WebProfilerServiceProvider(), array(
+    'profiler.cache_dir' => __DIR__ . '/cache/profiler',
+));
+$app->mount('/_profiler', $p);
+
+$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+    'http_cache.cache_dir' => __DIR__ . '/cache/',
+    'http_cache.esi'       => null,
+));
+
+$app->get('/', 'MVHPC\Home::index');
+$app->get('/archives', 'MVHPC\Archives::index');
+$app->get('/archives/secondary-documents', 'MVHPC\Archives::secondaryDocuments');
+$app->get('/archives/images/{terms}/{page}', 'MVHPC\Archives::images')
+    ->value('terms', null)
+    ->value('page', 0);
+
+/*
+require('error/error.php');
+require('ajax/ajax.php');
+require('backend/backend.php');
+
+require('pages/history.php');
+require('pages/makingHistory.php');
+require('pages/about.php')
+*/
+
+$app['http_cache']->run();
