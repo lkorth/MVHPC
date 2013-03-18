@@ -1,5 +1,5 @@
 {
-    "hash": "b0299684b58bf9b0d3d11f0ad894589f",
+    "hash": "9eb0f8abedfe13b3d720d1b1a084c403",
     "packages": [
         {
             "name": "devture/silex-provider-pjax",
@@ -47,12 +47,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gabordemooij/redbean.git",
-                "reference": "a877ac602fe830e57ed4292239ccf16643083ed4"
+                "reference": "0fbb38b800484fae997f7e1433b47489477cc366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/a877ac602fe830e57ed4292239ccf16643083ed4",
-                "reference": "a877ac602fe830e57ed4292239ccf16643083ed4",
+                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/0fbb38b800484fae997f7e1433b47489477cc366",
+                "reference": "0fbb38b800484fae997f7e1433b47489477cc366",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 "Object Relational Mapping",
                 "orm"
             ],
-            "time": "2013-03-16 13:44:06"
+            "time": "2013-03-17 22:32:24"
         },
         {
             "name": "pimple/pimple",
