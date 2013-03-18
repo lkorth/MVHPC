@@ -31,17 +31,19 @@ function featuredImages(){
 }
 
 function renderPaging($pager, $url, $rewrite = false){
+    $output = '';
+
     if($rewrite)
         $pre = '/';
     else
         $pre = '&page=';
 
     if ($pager->hasNextPage() || $pager->hasPrevPage()) {
-        echo '<div><br>';
+        $output .= '<div><br>';
 
         if ($pager->hasPrevPage()) {
-            echo '<a href="' . $url . $pre . $pager->prevPage() . '"/><=Prevous Page=</a>';
-            echo "&nbsp;&nbsp;&nbsp;";
+            $output .= '<a href="' . $url . $pre . $pager->prevPage() . '"/><=Prevous Page=</a>';
+            $output .= "&nbsp;&nbsp;&nbsp;";
         }
 
         if ($pager->prevPage() > 1) {
@@ -53,28 +55,30 @@ function renderPaging($pager, $url, $rewrite = false){
                 $previousCount++;
                 $j--;
             }
-            echo $previousPageNumbers;
+            $output .= $previousPageNumbers;
         }
 
-        echo "<span>" . $pager->page . "</span>";
-        echo "&nbsp;&nbsp;&nbsp;";
+        $output .= "<span>" . $pager->page . "</span>";
+        $output .= "&nbsp;&nbsp;&nbsp;";
 
         if ($pager->hasNextPage()) {
             if ($pager->nextPage() != $pager->numPages) {
                 $k = $pager->nextPage();
                 $nextCount = 0;
                 while ($k <= $pager->numPages && $nextCount < 3) {
-                    echo '<a href="' . $url . $pre . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
+                    $output .= '<a href="' . $url . $pre . $k . '"/>' . $k . '</a>&nbsp;&nbsp;&nbsp;';
                     $nextCount++;
                     $k++;
                 }
             }
 
-            echo '<a href="' . $url . $pre . $pager->nextPage() . '"/>=Next Page=></a>';
+            $output .= '<a href="' . $url . $pre . $pager->nextPage() . '"/>=Next Page=></a>';
         }
 
-        echo '<br></div>';
+        $output .= '<br></div>';
     }
+
+    return $output;
 }
 
 function autocomplete($field, $searchString, $fullText = false) {

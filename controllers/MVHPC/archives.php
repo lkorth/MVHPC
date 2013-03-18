@@ -34,7 +34,7 @@ namespace MVHPC {
             $arr['terms'] = $terms;
 
             if(!empty($terms)) {
-                $db = Database::getDatabase();
+                $db = \Database::getDatabase();
                 $result = $db->query("SELECT thumbnail,id, MATCH(tags, information) AGAINST('$terms') AS score FROM search WHERE MATCH(tags, information) AGAINST('$terms') and live = '1' ORDER BY score DESC, views DESC");
                 $num = $db->numRows($result) ? $db->numRows($result) : 0;
 
@@ -46,13 +46,16 @@ namespace MVHPC {
                     }
                 }
 
-                $pager = new Pager($page, 16, $num);
+                $arr['count'] = $num;
+
+                $pager = new \Pager($page, 16, $num);
                 $pager->calculate();
 
+                $cnt = 0;
                 for ($i = $pager->firstRecord; $i <= $pager->lastRecord; $i++) {
-                    $thumbnail = mysql_result($result, $i, "thumbnail");
-                    $id = mysql_result($result, $i, "id");
-                    echo "<a href=\"/archives/images/" . "$id\"><img src=\"/$thumbnail\"/></a>&nbsp;";
+                    $arr['images'][$cnt]['thumbnail'] = mysql_result($result, $i, "thumbnail");
+                    $arr['images'][$cnt]['id'] = mysql_result($result, $i, "id");
+                    $cnt++;
                 }
 
                 $arr['paging'] = renderPaging($pager, '/archives/images/' . $terms, true);

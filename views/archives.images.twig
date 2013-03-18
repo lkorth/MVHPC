@@ -11,6 +11,13 @@
 {% if terms is not empty %}
 <p class='body_text center'>Your search for "{{ terms }}" returned {{ count }} results</p><br>
 
+{% for image in images %}
+    <a href="/archives/images/{{ image.id }}"><img src="http://mvhpc.org/{{ image.thumbnail }}" /></a>&nbsp;
+{% endfor %}
+
+{% autoescape false %}
+{{ paging }}
+{% endautoescape %}
 
 {% endif%}
 
