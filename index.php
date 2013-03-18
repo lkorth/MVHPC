@@ -64,6 +64,7 @@ $app->get('/archives/secondary-documents', 'MVHPC\Archives::secondaryDocuments')
 $app->get('/archives/images/{terms}/{page}', 'MVHPC\Archives::images')
     ->value('terms', null)
     ->value('page', 0);
+$app->get('/about', 'MVHPC\About::index');
 
 /*
 require('error/error.php');
@@ -72,7 +73,6 @@ require('backend/backend.php');
 
 require('pages/history.php');
 require('pages/makingHistory.php');
-require('pages/about.php')
 */
 
 $app['http_cache']->run();
