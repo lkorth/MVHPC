@@ -1,5 +1,5 @@
 {
-    "hash": "9eb0f8abedfe13b3d720d1b1a084c403",
+    "hash": "9ac59011c325ff6d3e02ce4cce63f16c",
     "packages": [
         {
             "name": "devture/silex-provider-pjax",
@@ -47,12 +47,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gabordemooij/redbean.git",
-                "reference": "0fbb38b800484fae997f7e1433b47489477cc366"
+                "reference": "254245d8fbcd2a0c0859936635902ab39b12f274"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/0fbb38b800484fae997f7e1433b47489477cc366",
-                "reference": "0fbb38b800484fae997f7e1433b47489477cc366",
+                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/254245d8fbcd2a0c0859936635902ab39b12f274",
+                "reference": "254245d8fbcd2a0c0859936635902ab39b12f274",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 "Object Relational Mapping",
                 "orm"
             ],
-            "time": "2013-03-17 22:32:24"
+            "time": "2013-03-18 22:33:49"
         },
         {
             "name": "pimple/pimple",
@@ -524,6 +524,72 @@
             "description": "Symfony Routing Component",
             "homepage": "http://symfony.com",
             "time": "2013-02-11 11:24:47"
+        },
+        {
+            "name": "symfony/security",
+            "version": "v2.2.0",
+            "target-dir": "Symfony/Component/Security",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Security.git",
+                "reference": "v2.2.0-RC3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Security/zipball/v2.2.0-RC3",
+                "reference": "v2.2.0-RC3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": ">=2.1,<3.0",
+                "symfony/http-foundation": ">=2.1,<2.3-dev",
+                "symfony/http-kernel": ">=2.1,<=2.3-dev"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.2,<3.0",
+                "doctrine/dbal": ">=2.2,<3.0",
+                "psr/log": ">=1.0,<2.0",
+                "symfony/form": ">=2.0,<3.0",
+                "symfony/routing": ">=2.2,<2.3-dev",
+                "symfony/validator": ">=2.2,<2.3-dev"
+            },
+            "suggest": {
+                "doctrine/dbal": "to use the built-in ACL implementation",
+                "symfony/class-loader": "2.2.*",
+                "symfony/finder": "2.2.*",
+                "symfony/form": "2.2.*",
+                "symfony/routing": "2.2.*",
+                "symfony/validator": "2.2.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Security\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Security Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-02-23 06:46:07"
         },
         {
             "name": "symfony/stopwatch",
