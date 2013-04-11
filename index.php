@@ -29,10 +29,10 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . '/views',
+    'twig.path' => 'views',
     'twig.options' => array(
         'charset' => 'utf-8',
-        'cache' => __DIR__ . '/cache'
+        'cache' => 'cache'
     ),
 ));
 
@@ -51,12 +51,12 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 $app->register(new \Devture\SilexProvider\PJAX\ServicesProvider());
 $app->register($p = new \Silex\Provider\WebProfilerServiceProvider(), array(
-    'profiler.cache_dir' => __DIR__ . '/cache/profiler',
+    'profiler.cache_dir' => 'cache/profiler',
 ));
 $app->mount('/_profiler', $p);
 
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
-    'http_cache.cache_dir' => __DIR__ . '/cache/',
+    'http_cache.cache_dir' => 'cache',
     'http_cache.esi'       => null,
 ));
 
