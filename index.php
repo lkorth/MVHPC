@@ -20,7 +20,11 @@ $css[] = 'main.css';
 //R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASSWORD);
 //R::freeze();
 
-$app = new Application();
+class CustomApplication extends Application {
+    use Silex\Application\TwigTrait;
+}
+
+$app = new CustomApplication();
 $app['debug'] = true;
 if($app['debug']) {
     $app->register(new Whoops\Provider\Silex\WhoopsServiceProvider);
