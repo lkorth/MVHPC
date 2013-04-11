@@ -1,7 +1,5 @@
 <?php
 
-session_cache_limiter('');
-
 require_once('includes/master.inc.php');
 require_once('vendor/autoload.php');
 
@@ -27,6 +25,7 @@ $app['debug'] = true;
 if($app['debug']) {
     $app->register(new Whoops\Provider\Silex\WhoopsServiceProvider);
 }
+$app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
