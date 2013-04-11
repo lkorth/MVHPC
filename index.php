@@ -24,6 +24,9 @@ $css[] = 'main.css';
 
 $app = new Application();
 $app['debug'] = true;
+if($app['debug']) {
+    $app->register(new Whoops\Provider\Silex\WhoopsServiceProvider);
+}
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(

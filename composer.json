@@ -15,6 +15,7 @@
         "twig/twig": ">=1.8,<2.0-dev",
         "symfony/twig-bridge": "~2.1",
         "devture/silex-provider-pjax": "dev-master",
+        "filp/whoops": "1.*",
         "gabordemooij/redbean": "dev-master"
     },
     "autoload": {
