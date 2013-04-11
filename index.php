@@ -35,6 +35,7 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => 'views',
     'twig.options' => array(
+        'strict_variables' => false,
         'charset' => 'utf-8',
         'cache' => 'cache'
     ),
