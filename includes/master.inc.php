@@ -11,8 +11,11 @@
     require DOC_ROOT . '/includes/class.objects.php';  // and its subclasses
 
     // Cache breaks
-    define('CACHE_BREAK_CSS', '123456789');
-    define('CACHE_BREAK_JS', '123456789');
+    define('CACHE_BREAK_CSS', '123456780&debug');
+    define('CACHE_BREAK_JS', '123456789&debug');
+
+    // Debugging
+    define('DEBUG', true);
 
     // Fix magic quotes
     if(get_magic_quotes_gpc())
