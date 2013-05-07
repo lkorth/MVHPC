@@ -103,6 +103,8 @@ $app->error(function (\Exception $e, $code) use ($app) {
 $app->get('/', 'MVHPC\Home::index');
 $app->get('/archives', 'MVHPC\Archives::index');
 $app->get('/archives/secondary-documents', 'MVHPC\Archives::secondaryDocuments');
+$app->get('/archives/images/{id}', 'MVHPC\Archives::image')
+    ->assert('id', '\d+');
 $app->get('/archives/images/{terms}/{page}', 'MVHPC\Archives::images')
     ->value('terms', null)
     ->value('page', 0);

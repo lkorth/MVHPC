@@ -76,5 +76,9 @@ namespace MVHPC {
 
             return $response;
         }
+
+        public function image(Application $app, Request $request) {
+
+        }
     }
 }
