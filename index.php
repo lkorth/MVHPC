@@ -54,7 +54,21 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     return $twig;
 }));
 
+$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+    'security.firewalls' => array(
+        'admin' => array(
+            'pattern' => '^/admin',
+            'form' => array('login_path' => '/login', 'check_path' => '/admin/login'),
+            'logout' => array('logout_path' => '/logout'),
+            'users' => array(
+                'admin' => array('ROLE_ADMIN', '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='),
+            ),
+        )
+    )
+));
+
 $app->register(new \Devture\SilexProvider\PJAX\ServicesProvider());
+
 $app->register($p = new \Silex\Provider\WebProfilerServiceProvider(), array(
     'profiler.cache_dir' => 'cache/profiler',
 ));
@@ -93,7 +107,7 @@ $app->get('/archives/images/{terms}/{page}', 'MVHPC\Archives::images')
     ->value('terms', null)
     ->value('page', 0);
 $app->get('/about', 'MVHPC\About::index');
-
+$app->get('/login', 'MVHPC\Admin::login');
 $app->get('/making-history', 'MVHPC\History::makingHistory');
 
 /*

@@ -1,0 +1,35 @@
+{% extends "double-column.twig" %}
+
+{% block title %}MVHPC :: Login{% endblock %}
+
+{% block leftcolumn %}
+    <form id="loginForm" action="{{ path('admin_login') }}" method="post">
+        <h1 class="ribbon">Login</h1>
+        <p class="body_text error">{{ error }}</p>
+        <table id="login">
+            <tr>
+                <td><label for="_username" class="body_text">Username:</label></td>
+                <td><input type="text" id="_username" value="{{ last_username }}"></td>
+            </tr>
+            <tr>
+                <td><label for="_password" class="body_text">Password:</label></td>
+                <td><input type="password" id="_password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input class="button" type="submit" name="submit" value="Login"></td>
+            </tr>
+        </table>
+        <input type="hidden" id="password" name="password" value="">
+    </form>
+{% endblock %}
+
+{% block rightcolumn %}
+    <h1 class="ribbon">Welcome!</h1>
+    <p class="body_text">
+        Please log in on the left with the username and password you have
+        been provided. If you have forgotten your username/password or have
+        other technical difficulties, please contact the system administrator for
+        assistance.
+    </p>
+{% endblock %}
