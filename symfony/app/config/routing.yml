@@ -1,0 +1,4 @@
+mvhpc_web:
+    resource: "@MVHPCWebBundle/Controller"
+    type:     annotation
+
