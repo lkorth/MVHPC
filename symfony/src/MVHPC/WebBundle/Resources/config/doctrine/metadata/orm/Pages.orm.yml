@@ -1,0 +1,30 @@
+Pages:
+    type: entity
+    table: pages
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        page:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        text:
+            type: text
+            nullable: false
+        title:
+            type: string
+            length: 500
+            fixed: false
+            nullable: false
+        column:
+            type: string
+            length: 10
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }

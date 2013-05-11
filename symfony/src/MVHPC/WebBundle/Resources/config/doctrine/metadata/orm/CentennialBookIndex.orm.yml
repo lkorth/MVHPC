@@ -1,0 +1,27 @@
+CentennialBookIndex:
+    type: entity
+    table: centennial_book_index
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        letter:
+            type: string
+            length: 1
+            fixed: false
+            nullable: false
+        index:
+            type: string
+            length: 80
+            fixed: false
+            nullable: false
+        pages:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }

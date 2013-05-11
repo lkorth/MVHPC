@@ -1,0 +1,56 @@
+Search:
+    type: entity
+    table: search
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        location:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        medlg:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        thumbnail:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        mid:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        information:
+            type: text
+            nullable: true
+        tags:
+            type: text
+            nullable: true
+        views:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        trueviews:
+            type: string
+            length: 5000
+            fixed: false
+            nullable: false
+        edit:
+            type: integer
+            unsigned: false
+            nullable: false
+        live:
+            type: integer
+            unsigned: false
+            nullable: false
+    lifecycleCallbacks: {  }

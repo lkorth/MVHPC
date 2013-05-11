@@ -1,0 +1,28 @@
+Posts:
+    type: entity
+    table: posts
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        title:
+            type: string
+            length: 1000
+            fixed: false
+            nullable: false
+        text:
+            type: text
+            nullable: false
+        page:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+        date:
+            type: datetime
+            nullable: false
+    lifecycleCallbacks: {  }

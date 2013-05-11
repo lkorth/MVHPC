@@ -1,0 +1,28 @@
+ChangeRequests:
+    type: entity
+    table: change_requests
+    fields:
+        date:
+            id: true
+            type: datetime
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        email:
+            type: string
+            length: 500
+            fixed: false
+            nullable: false
+        message:
+            type: text
+            nullable: false
+        id:
+            type: integer
+            unsigned: false
+            nullable: false
+        processed:
+            type: string
+            length: 8
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }
