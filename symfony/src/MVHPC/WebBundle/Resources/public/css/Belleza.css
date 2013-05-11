@@ -2,5 +2,5 @@
   font-family: 'Belleza';
   font-style: normal;
   font-weight: 400;
-  src: local('Belleza'), local('Belleza-Regular'), url('/fonts/Belleza.woff') format('woff');
+  src: local('Belleza'), local('Belleza-Regular'), url('fonts/Belleza.woff') format('woff');
 }
