@@ -4,3 +4,4 @@ includes/class.config.php
 css/.sass-cache/
 vendor/
 .idea/
+*.php~
