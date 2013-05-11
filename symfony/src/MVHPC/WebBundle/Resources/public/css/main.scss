@@ -1,0 +1,531 @@
+/*
+Document   : main
+Created on : May 14, 2012, 2:32:36 PM
+Author     : areed12
+Description:
+Purpose of the stylesheet follows.
+*/
+
+/* Colors */
+$blue: #00529B;
+
+/* Backgrounds */
+$header_bg: #834C24;
+$body_bg: #EBCF9D;
+$content_bg: #FFF;
+$menu_bg: #56BAFB;
+
+/* Page Layout */
+$container_width: 960px;
+$gutter_width: 10px;
+
+/* Menu Styles */
+$forks: #24a6fa;
+$folds: #0583d5;
+$fork_content: 24px;
+$fork_width: 72px;
+$menu_width: $container_width + 20px;
+$menu_height: $fork_width - $fork_content;
+$fork_left_margin: - $fork_width + 10px;
+$fork_right_margin: $fork_left_margin + $fork_width + $menu_width - ($fork_content) + 5px;
+$menu_top_margin: 0px;
+$menu_left_margin: -10px;
+$fork_top_margin: $menu_top_margin + 24px;
+$fold_right_margin: $container_width - $menu_left_margin;
+
+/* Mixins */
+
+@mixin box-shadow($top: 0, $right: 0, $blur: 0, $color: #fff) {
+    box-shadow: $top $right $blur $color;
+    -webkit-box-shadow: $top $right $blur $color;
+    -moz-box-shadow: $top $right $blur $color;
+}
+
+@mixin gradient($from, $to){
+    background-color: $from;
+    background-image: -moz-linear-gradient($from, $to);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+    background-image: -webkit-linear-gradient($from, $to);
+    background-image: -o-linear-gradient($from, $to);
+    background-image: linear-gradient($from, $to);
+}
+
+body {
+    margin: 0;
+    background: $body_bg;
+}
+
+.container {
+    width: $container_width;
+    position: relative;
+    margin: 0 auto;
+    @include box-shadow(0px, 0px, 10px, #888);
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    @include gradient($header_bg, #693c1c);
+    overflow: hidden;
+}
+
+#logo {
+    margin: 25px 0 25px 25px;
+    float: left;
+}
+
+.header_text {
+    width: 805px;
+    margin-top: 39px;
+    margin-left: 30px;
+    float: left;
+    text-align: left;
+}
+
+.header_text h1 {
+    font-family: 'Engravers MT';
+    font-size: 1.6em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #444;
+    color: #fff;
+    display: inline;
+}
+
+.navbar {
+    width: $menu_width;
+    margin-left: $menu_left_margin;
+    position: relative;
+}
+
+.menu:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds $folds transparent transparent;
+}
+
+.menu:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: $fold_right_margin;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds transparent transparent $folds;
+}
+
+.menu {
+    width: 100%;
+    height: $menu_height;
+    position: relative;
+    margin-top: $menu_top_margin;
+    @include gradient($menu_bg, #34acfb);
+    text-align: center;
+    z-index: 1;
+}
+
+.navbar .menu_item, .navbar .menu_item_current {
+    @include gradient($menu_bg, #34acfb);
+    display: inline-block;
+    line-height:$menu_height;
+    padding:0 $menu_height/2;
+    margin-top:0;
+    position:relative;
+    font-weight: bold;
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.6em;
+    text-shadow: 1px 1px 2px #444;
+    z-index: 1;
+}
+
+.navbar .menu_item_current {
+    color: $blue;
+}
+
+.menu_wrapper {
+    display: inline-block;
+}
+
+.navbar a:link, .navbar a:visited {
+    color:#fff;
+    text-decoration:none;
+    float:left;
+    height:$menu_height;
+}
+
+.navbar .menu_item:hover, .navbar .menu_item_current:hover {
+    color: $blue;
+}
+
+.content {
+    width: $container_width;
+    height: 100%;
+    padding-bottom: 20px;
+    background: $content_bg;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content_container {
+    width: $container_width * .95;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    background: #F4E6CC;
+    @include box-shadow(0px, 0px, 10px, #888);
+}
+
+.left_col, .right_col {
+    padding: 0;
+    position: relative;
+    margin-left: 24px;
+    float: left;
+    background: #DEBE85;
+    @include box-shadow(0px, 0px, 10px, #888);
+}
+
+.left_col {
+    width: 588px;
+
+}
+
+.left_col .ribbon, .single_col .ribbon {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.35em;
+    color: #fff;
+    width: ($container_width *.95/3) * 2 - $fork_width - $gutter_width * 6;
+    height: 36px;
+    line-height: 36px;
+    margin: 15px 0 0px -10px;
+    padding-left: 35px;
+    position: relative;
+    background-color: $forks;
+    text-shadow: 1px 1px 2px #444;
+    text-align: left;
+}
+
+.single_col .ribbon {
+    margin: 0 0 0px -25px;
+    width: 600px;
+}
+
+.clear {
+  clear:both;
+}
+
+.footer {
+  position: relative;
+  margin: 24px 24px 0px 24px;
+  padding: 15px;
+  background: #DEBE85;
+  width: 882px;
+  box-shadow: 0px 0px 10px #888888;
+  -webkit-box-shadow: 0px 0px 10px #888888;
+  -moz-box-shadow: 0px 0px 10px #888888;
+}
+
+.left_col .ribbon:after, .right_col .ribbon:after, .single_col .ribbon:after {
+    width:$fork_content;
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border: {
+        width: 18px;
+        style: solid;
+        color: $forks;
+    }
+    border-right-color: transparent;
+}
+
+.left_col .ribbon:before, .right_col .ribbon:before, .single_col .ribbon:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0px;
+    top: 100%;
+    border-width: 5px 5px;
+    border-style: solid;
+    border-color: $folds $folds transparent transparent;
+}
+
+.left_col .article {
+    margin: 0 40px 20px 10px;
+    padding: 0 10px 10px 10px;
+    text-align: left;
+}
+
+.left_col .article p {
+    text-align: justify;
+    padding: 10px;
+    margin: 0;
+
+}
+
+.left_col .article a, .left_col .article a:visited {
+    margin-left: 10px;
+    font-family: Times;
+    color: $blue
+}
+
+.right_col
+{
+    width: 300px;
+    margin-right: 24px;
+}
+
+.right_col div {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.right_col .ribbon {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.35em;
+    color: #fff;
+    height: 36px;
+    width: 220px;
+    line-height: 36px;
+    margin: 15px 0 0 -10px;
+    padding-left: 25px;
+    position: relative;
+    background-color: $forks;
+    text-shadow: 1px 1px 2px #444;
+    text-align: left;
+}
+
+.right_col img {
+    margin-top: 15px;
+}
+
+.left_content {
+    position: relative;
+    width: 210px;
+    height: 210px !important;
+    margin: 0 auto;
+}
+
+.left_content .featured {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.single_col {
+    position: relative;
+    margin: 0 24px;
+    padding: 15px;
+    background: #DEBE85;
+    width: 882px;
+    @include box-shadow(0px, 0px, 10px, #888);
+}
+
+.featured:first-child {
+    display: block;
+}
+
+.body_text {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.15em;
+    line-height: 1.3em;
+    margin: 10px;
+    text-align: left;
+}
+
+button {
+    background: #F60;
+    border: 1px solid #444;
+    box-shadow: 1px 1px 2px #888;
+}
+
+#tagcloud {
+    width: 100%;
+    margin-top: 15px;
+    text-align: justify;
+}
+
+#tagcloud ul {
+    margin:0;
+    padding:0;
+}
+#tagcloud ul li {
+    list-style-type: none;
+    float: left;
+    margin:0 10px;
+    height:35px;
+}
+#tagcloud ul li a {
+    text-decoration: none;
+    color: $blue;
+}
+#tagcloud ul li a:hover {
+    text-decoration: underline;
+}
+
+#loading {
+    margin-left: 138px;
+}
+
+#map {
+    margin: 0 auto;
+}
+
+.hidden-button{
+    visibility: hidden;
+}
+
+.fill_list {
+    margin: 0 20px;
+    padding: 0;
+    list-style: none;
+    text-align: justify;
+    overflow: hidden;
+    position: relative;
+}
+
+.fill_list li {
+    float: left;
+    padding: 10px 0;
+}
+
+.fill_list_content:hover {
+    text-shadow: 0px 0px 3px $blue;
+}
+
+.compressed li {
+    padding: 0;
+}
+
+.compressed li:first-child {
+    padding-top: 10px;
+}
+
+.bullet {
+    padding: 0 10px;
+}
+
+.line_content {
+    height: auto !important;
+}
+
+.line_content span {
+    display: block;
+}
+
+.link_list {
+    text-align: left;
+}
+
+.link_list a {
+    color: $blue;
+}
+
+.button {
+        margin-bottom: 10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+/* This imageless css button was generated by CSSButtonGenerator.com */
+
+.single_col, .left_col, .right_col {
+    min-height: 600px;
+}
+
+#login {
+    margin: 10px;
+}
+
+.error {
+    color: #f00;
+}
+
+label, input, textarea {
+    display: block;
+    font-size: 110%;
+    text-align: left;
+}
+
+label.body_text {
+    margin: 10px 0;
+}
+
+#map {
+    width: 560px;
+    height: 420px;
+    margin-top: 10px;
+}
+
+#global {
+    margin-top: 10px;
+}
+
+#image-viewer {
+    width: 762px;
+    margin: 0 auto;
+}
+
+.body_text a {
+    color: $blue;
+}
+
+.center {
+    text-align: center;
+}
+
+input.button {
+    margin-top: 10px;
+}
+
+.form_wrapper {
+    margin: 10px;
+}
+
+a img {
+    border: none;
+}
+
+#book_index {
+    margin-top: 10px;
+}
+
+.pdf-item-dl {
+    margin-left: 17px;
+}
