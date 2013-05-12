@@ -53,7 +53,26 @@
                 </div>
                 <div>
                     <h1 class="ribbon">Common Tags</h1>
-                    <div class="left_content" id="tagcloud"></div>
+                    <div class="left_content" id="tagcloud">
+                        <ul>
+                            {% for tag in tags %}
+                                {% set size %}
+                                    {% if tag.count / 50 < 1 %}
+                                        {{ tag.count / 50 + 15 }}px
+                                    {% else %}
+                                        {% if tag.count / 50 > 2 %}
+                                            25px
+                                        {% else %}
+                                            {{ tag.count / 50 + 10 }}px
+                                        {% endif %}
+                                    {% endif %}
+                                {% endset %}
+                                <li>
+                                    <a style="font-size: {{ size }};" title="See all pages tagged with {{ tag.tag }}" href="/archives/images/{{ tag.tag }}">{{ tag.tag }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
 {% endblock %}
 

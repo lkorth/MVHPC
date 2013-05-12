@@ -24,6 +24,32 @@ class MVHPCController extends Controller
             ->findOneBy(array('page' => 'index'),
                         array('date' => 'DESC'));
 
-        return array('page' => 'home', 'images' => $images, 'post' => $post);
+        $photos = $this->getDoctrine()->getRepository('MVHPCWebBundle:Search')->findAll();
+
+        $tags = array();
+        foreach($photos as $photo){
+            $tmp = explode(';', $photo->getTags());
+            foreach($tmp as $tg){
+                $tg = trim($tg);
+                if(isset($tags[$tg]))
+                    $tags[$tg]++;
+                else
+                    $tags[$tg] = 1;
+            }
+        }
+
+        asort($tags);
+        $tags = array_slice($tags, count($tags) - 100, count($tags));
+
+        $output = array();
+        foreach($tags as $key => $value){
+            if($key !== '' && $value > 5 && strlen($key) <= 15 && $key != 'mount vernon' && $key != 'needstobetagged' && $key != 'new')
+                $output[] = array('tag' => $key, 'count' => $value);
+        }
+
+        $output = array_slice($output, count($output) - 25, count($output));
+        shuffle($output);
+
+        return array('page' => 'home', 'images' => $images, 'tags' => $output, 'post' => $post);
     }
 }
