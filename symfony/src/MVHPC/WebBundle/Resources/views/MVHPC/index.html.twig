@@ -56,3 +56,12 @@
                     <div class="left_content" id="tagcloud"></div>
                 </div>
 {% endblock %}
+
+{% block javascript %}
+{% javascripts
+    '@MVHPCWebBundle/Resources/public/js/jquery-172.js'
+    '@MVHPCWebBundle/Resources/public/js/heights.js'
+    '@MVHPCWebBundle/Resources/public/js/image-script.js' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
