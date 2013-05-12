@@ -14,6 +14,16 @@ class MVHPCController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $images = $this->getDoctrine()->getRepository('MVHPCWebBundle:Search')->findBy(
+            array('live' => 1),
+            array('trueviews' => 'DESC'),
+            5
+        );
+
+        $post = $this->getDoctrine()->getRepository('MVHPCWebBundle:Posts')
+            ->findOneBy(array('page' => 'index'),
+                        array('date' => 'DESC'));
+
+        return array('page' => 'home', 'images' => $images, 'post' => $post);
     }
 }
