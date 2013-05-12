@@ -5,12 +5,12 @@ namespace MVHPC\WebBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Search
+ * Photo
  *
- * @ORM\Table(name="search")
+ * @ORM\Table(name="photo")
  * @ORM\Entity
  */
-class Search
+class Photo
 {
     /**
      * @var integer
@@ -24,28 +24,28 @@ class Search
     /**
      * @var string
      *
-     * @ORM\Column(name="location", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="location", type="string", length=512, nullable=false)
      */
     private $location;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="medlg", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="medlg", type="string", length=512, nullable=false)
      */
     private $medlg;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="thumbnail", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="thumbnail", type="string", length=512, nullable=false)
      */
     private $thumbnail;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mid", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="mid", type="string", length=512, nullable=false)
      */
     private $mid;
 
@@ -66,14 +66,14 @@ class Search
     /**
      * @var string
      *
-     * @ORM\Column(name="views", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="views", type="string", length=512, nullable=false)
      */
     private $views;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="trueviews", type="string", length=5000, nullable=false)
+     * @ORM\Column(name="trueviews", type="string", length=512, nullable=false)
      */
     private $trueviews;
 
