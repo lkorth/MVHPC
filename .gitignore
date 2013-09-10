@@ -6,3 +6,4 @@ includes/class.config.php
 
 css/.sass-cache/*
 .idea
+mvhpc-config.php
